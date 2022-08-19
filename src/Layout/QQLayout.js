@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { Layout } from "antd";
 import "./GloballLayout.less";
+
 import HeaderComponent from "./Header";
+import { FaFacebookSquare ,FaInstagram,FaPhone} from "react-icons/fa";
 const { Content, Footer } = Layout;
 
 const LayoutWithRoute = () => {
@@ -28,7 +30,10 @@ const LayoutWithRoute = () => {
                 <Outlet />
             </Content>
             <Footer style={{ textAlign: "center" }}>
-                &copy; 2022 - 2023 PET GO TO
+                &copy; 2022 - 2023 PET GO  <FaPhone className="
+communityicon"/><FaInstagram className="
+communityicon"/><FaFacebookSquare className="
+communityicon"/>
             </Footer>
         </Layout>
     );

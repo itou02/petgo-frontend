@@ -1,107 +1,189 @@
 import React from 'react';
-import { message } from 'antd';
-import {
-  CheckCircleOutlined,
-  ClockCircleOutlined,
-  CloseCircleOutlined,
-  ExclamationCircleOutlined,
-  MinusCircleOutlined,
-  SyncOutlined,
-} from '@ant-design/icons';
+import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
-import { Button, Image, Row, Col, Input, Divider, Alert, Steps } from 'antd';
-import { useState } from 'react';
+import { Row, Col, message } from 'antd';
+import { useEffect, useState } from "react";
+import Slider from "react-slick";
 import images from '../../config/images';
 import './index.less'
-import { AiFillMail, AiTwotoneStar } from "react-icons/ai";
-import { GrFormSearch, GrMoney, GrShield, GrStar, GrTooltip } from "react-icons/gr";
 
 
+const contentStyle = {
+  height: '450px',
+  color: '#fff',
+  // lineHeight: '30px',
+  textAlign: 'center',
+  background: '#364d79',
+};
 
 function Index(props) {
-  const success = () => {
-    message.success("預約成功");
+  const [dotPosition, setDotPosition] = useState('top');
+
+  const handlePositionChange = ({ target: { value } }) => {
+    setDotPosition(value);
   };
-  const { Step } = Steps;
-  const steps = [
-    {
-      title: <div><div className='StepBlock'>{<GrFormSearch className='StepBlockimg' />}</div><h3>搜尋服務</h3></div>,
-      content: 'First-content',
-    },
-    {
-      title: <div><div className='StepBlock' style={{ padding: '10%' }}>{< GrTooltip className='StepBlockimg' />}</div><h3>聯絡保母</h3></div>,
-      content: 'Second-content',
-    },
-    {
-      title: <div><div className='StepBlock' style={{ padding: '8%' }}>{< GrMoney className='StepBlockimg' />}</div><h3>安全付款</h3></div>,
-      content: 'third-content',
-    },
-    {
-      title: <div><div className='StepBlock' style={{ padding: '8%' }}>{< GrShield className='StepBlockimg' />}</div><h3>執行服務</h3></div>,
-      content: 'fourth-content',
-    },
-    {
-      title: <div><div className='StepBlock'>{< AiTwotoneStar className='StepBlockimg' />}</div><h3>留下評論</h3></div>,
-      content: 'Last-content',
-    },
-  ];
+  const petGo = () => {
+    message.petGo("預約成功");
+  };
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
 
+  console.log("111", windowSize);
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
     <div>
-      <Row style={{ justifyContent: "space-around", marginBottom: '50px' }}>
-        <Col sm={{ span: 20 }} md={{ span: 10 }} className="picture">
-          <div className='imgblock'>
-            <img
-              src={images.bg1}
-            />
+      <Row className='containter'>
+        <Col span={14} >
+          <div className='Carousel'>
+            <Carousel className='Carousel' autoplay>
+              <div>
+                <h3 style={contentStyle}>1</h3>
+              </div>
+              <div>
+                <h3 style={contentStyle}>2</h3>
+              </div>
+              <div>
+                <h3 style={contentStyle}>3</h3>
+              </div>
+              <div>
+                <h3 style={contentStyle}>4</h3>
+              </div>
+            </Carousel>
           </div>
-        </Col>
-        <Col sm={{ span: 20 }} md={{ span: 10 }} className='right'>
-          <Row className="wrapper">
-            <Col span={20} >
-              <Row>
-                <Alert className="tag"
-                  message=" 因應新冠肺炎疫情嚴峻"
-                  description="毛小愛推出『無接觸』遛狗服務，協助匡列居家隔離毛爸媽一起防疫，
-                您只需要將寵物綁在門口，專業溜狗保母前往將毛小孩接走，確保全程安全無接觸。"
-                  type="warning"
-                  showIcon
-                  closable
-                />
-              </Row>
-              <Row>
-                <h1 style={{ letterSpacing: '8px' }}>毛茸茸到府寵物保母，某次服務免費家訪！優質毛孩照顧只要<i>400元</i></h1>
-              </Row>
-              <Row><Input.Group compact>
-
-                <Input
-                  className='a'
-                  style={{
-                    width: 'calc( 60%)',
-                    height: 'calc( 40px)',
-                  }}
-                  placeholder="電子郵件地址"
-                  prefix={<AiFillMail style={{ opacity: '30%' }} />}
-                />
+          <div className='Chooseall'>
+            <Row className='Choosemain'>
+              <Col sm={24} md={11} className='Choose'>
+                <div className='title'><h1 style={{ color: '#FF6B6B' }}>飼主體驗</h1></div>
+                <span><h1>飼主體驗是一個基於......</h1></span>
                 <ButtonComponent
-                  text="立即預約"
+                  text="前往體驗"
                   size="large"
-                  handleSubmit={success}
+                  name="pet"
+                  handleSubmit={petGo}
                 />
-              </Input.Group></Row>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-      <Row style={{ marginBottom: '50px' }}><Col span={24} className='subscribe'><h2>如何預約我們的服務?</h2></Col></Row>
-      <Row style={{ justifyContent: "center" }}>
-        <Col span={15} style={{ justifyContent: "center" }}>
-          <Steps >
-            {steps.map((item) => (
-              <Step key={item.title} title={item.title} />
-            ))}
-          </Steps>
+              </Col>
+              <Col sm={24} md={11} className='Choose'>
+                <div className='title'><h1 style={{ color: 'rgba(251, 213, 52, 0.94)' }}>寵物供養</h1></div>
+                <span><h1>寵物供養是一個基於......</h1></span>
+                <ButtonComponent
+                  text="前往體驗"
+                  size="large"
+                  name="together"
+                  handleSubmit={petGo}
+                />
+              </Col>
+            </Row>
+          </div>
+          <div className='Comment'>
+            <Slider {...settings}>
+              <div >
+                <h3>1</h3>
+              </div>
+              <div >
+                <h3>2</h3>
+              </div>
+              <div >
+                <h3>3</h3>
+              </div>
+              <div>
+                <h3>4</h3>
+              </div>
+              <div>
+                <h3>5</h3>
+              </div>
+              <div>
+                <h3>6</h3>
+              </div>
+              <div>
+                <h3>7</h3>
+              </div>
+              <div>
+                <h3>8</h3>
+              </div>
+            </Slider>
+          </div>
+          <div className='Idea'>
+            <Row>
+              <Col span={24} className='title'><h1>我們的理念</h1></Col>
+              <Col span={24} className='introduce'>
+                <Row className="bannerBlock">
+                  <Col sm={24} md={12} className="pictureBlock">
+                    <div className="imgBlock">
+                      <img src={images.gold} />
+                    </div>
+                  </Col>
+                  <Col sm={24} md={12} className="titleBlock">
+                    <span level={windowSize.width < 576 ? 4 : 2}>
+                      <h1 >
+                        領養代替購買<br></br>
+                        減少寵物拋棄率</h1></span>
+                  </Col>
+                </Row>
+                {/* <Row className='introduce'>
+                  <Col sm={18} md={10}>
+                    <div className="imgBlock">
+                      <img src={images.gold} />
+                    </div>
+                  </Col>
+                  <Col sm={20} md={10}><h1 >以其他形式給牠們一個家，...............................
+                    ............................................
+                    ............................................
+                    ............................................
+                    領養代替購買<br></br>
+                    減少寵物拋棄率</h1></Col>
+                </Row> */}
+              </Col>
+
+            </Row>
+          </div>
         </Col>
 
       </Row>

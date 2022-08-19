@@ -15,7 +15,7 @@ import {
 const { Header } = Layout;
 
 function HeaderComponent(props) {
-    // const { windowSize } = props;
+    const { windowSize } = props;
     const [visible, setVisible] = useState(false);
     const showDrawer = () => {
         setVisible(true);
@@ -36,7 +36,7 @@ function HeaderComponent(props) {
                     key: "breedrecord",
                 },
                 {
-                    label: "正在供養",
+                    label: "正在共養",
                     key: "breeding",
                 },
             ]}
@@ -122,14 +122,15 @@ function HeaderComponent(props) {
         <div className="header">
             <Header>
                 <a href="/" className="logoBlock">
-                    <img
+                    <h1 className="title">寵物去哪兒</h1>
+                    {/* <img
                         src={images.logo}
                         alt="logo"
                         width={50}
                         height={50}
                         className="logoImage"
                     />
-                    <img src={images.logoText} alt="logo" width={80} height={40} />
+                    <img src={images.logoText} alt="logo" width={80} height={40} /> */}
                 </a>
 
                 <Menu mode="horizontal" items={items} className="menuBar" />
@@ -141,6 +142,30 @@ function HeaderComponent(props) {
                         <Avatar size={36} icon={<FaUserAlt />} />
                     </a>
                 </Dropdown>
+                <Button
+                    type="primary"
+                    onClick={showDrawer}
+                    className={windowSize.width > 992 ? "hide barIcon" : "show barIcon"}>
+                    <FaBars />
+                </Button>
+                <Drawer
+                    title={
+                        <a href="/" className="logoBlock">
+                            <img
+                                src={images.logo}
+                                alt="logo"
+                                width={40}
+                                height={40}
+                                className="logoImage"
+                            />
+                            <img src={images.logoText} alt="logo" width={60} height={35} />
+                        </a>
+                    }
+                    placement="right"
+                    onClose={onClose}
+                    visible={visible}>
+                    <Menu mode="vertical" items={items} className="menuBarList" />
+                </Drawer>
             </Header>
         </div>
     );

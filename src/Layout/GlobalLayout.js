@@ -1,23 +1,38 @@
 import React from "react";
-
 import { Layout } from "antd";
 import { Outlet } from "react-router-dom";
-
-import SideMenu from "./SideMenu";
+import "./GlobalLayout.less";
+import HeaderComponent from "./header";
 import Footer from "./Footer";
 
 const { Content } = Layout;
 
 const LayoutWithRoute = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <Layout style={{ minHeight: "100vh" }}>
-      <SideMenu />
-      <Layout>
-        <Content style={{ margin: "20px 16px" }}>
-          <Outlet />
-        </Content>
-        <Footer />
-      </Layout>
+    <Layout id="global">
+      <HeaderComponent windowSize={windowSize} />
+      <Content>
+        <Outlet />
+      </Content>
+      <Footer style={{ textAlign: "center" }}>
+        &copy; Xiao Lab React Project By QQ DD TT
+      </Footer>
     </Layout>
   );
 };

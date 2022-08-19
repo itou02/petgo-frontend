@@ -1,15 +1,36 @@
 @import url('../../assets/style/theme.less');
 
-.ant-btn-primary {
-    margin: 1rem 0;
-    background-color: @dark-main-color;
-    border-color: @dark-main-color;
-    color: #ffffff;
-    box-shadow: 0 2px 0 rgba(@dark-main-color, 0.1);
+.ant-btn {
+    height:50px;
+    width: 204px;
+    // padding: 10px;
+    margin-top: 40%;
+    font-weight: 800;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+
+.pet{
+
+    background-color: @feature-experience-color;
+    border-color:  @feature-experience-color;
+    color: @bottom-color;
     &:hover,
     &:focus {
-        background-color: @deep-main-color;
-        border-color: @deep-main-color;
+        background-color: @feature-experience-color;
+        border-color:  @feature-experience-color;
+    }
+}
+.together{
+    background-color:@feature-adoptions-color;
+    border-color:@feature-adoptions-color;
+    color: @bottom-color;
+    &:hover,
+    &:focus {
+        background-color:@feature-adoptions-color;
+        border-color:@feature-adoptions-color;
     }
 }
