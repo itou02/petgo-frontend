@@ -21,12 +21,20 @@ h6 {
 h1 {
     font-size: 1.875rem;
 }
+.show {
+    display: block;
+    width: 50px;
+    color: @bottom-color;
+}
 
+.hide {
+    display: none;
+}
 
 /* 佈局樣式 */
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     font-size: 1rem;
 }
 
@@ -34,12 +42,12 @@ body {
     background-color:@main-color;
     display: flex;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 10px;
     border-bottom: 1px solid #f0f0f0;
 }
 
 .ant-layout-content {
-    height: calc(100% - 134px);
+    min-height: calc(100vh - 134px);    
     background-color:@bottom-color;
 }
 
@@ -257,17 +265,21 @@ body {
 
         .barIcon {
             background-color: unset;
-            color: @main-color;
-            border-color: unset;
+            color: @bottom-color;
+            border-color: @bottom-color;
             height: 36px;
-
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &:hover,
             &:focus {
                 background-color: @main-color;
                 color: #ffffff;
             }
         }
-
+        path {
+            width: 50px;
+        }
         .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
             background-color: rgba(@main-color, 0.2);
         }
@@ -279,6 +291,14 @@ body {
         font-size: 1.25rem;
     }
 }
+
+.ant-drawer-content-wrapper {
+    width: 200px !important;
+}
+ul.ant-menu.ant-menu-root.ant-menu-vertical.ant-menu-light {
+    border: none;
+}
+
 /*Footer*/
 .communityicon{
     margin-left: 10px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
-import { Row, Col, message } from 'antd';
+import { Row, Col, message, Card } from 'antd';
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import images from '../../config/images';
@@ -44,63 +44,47 @@ function Index(props) {
 
   console.log("111", windowSize);
 
-  var settings = {
+  const autoplay = {
     dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 100,
+    autoplaySpeed: 2000,
+    cssEase: "linear"
   };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
+  const { Meta } = Card;
   return (
     <div>
       <Row className='containter'>
-        <Col span={14} >
+        <Col span={20} >
           <div className='Carousel'>
-            <Carousel className='Carousel' autoplay>
-              <div>
-                <h3 style={contentStyle}>1</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>2</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>3</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>4</h3>
-              </div>
-            </Carousel>
+            <div className='Carouselson'>
+              <Slider {...autoplay}>
+                <div className='autoblock'>
+                  <img src={images.auto1} />
+                </div>
+                <div className='autoblock'>
+                  <img src={images.auto1} />
+                </div>
+                <div className='autoblock'>
+                  <img src={images.auto1} />
+                </div>
+              </Slider>
+            </div>
           </div>
           <div className='Chooseall'>
             <Row className='Choosemain'>
-              <Col sm={24} md={11} className='Choose'>
+              <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: '#FF6B6B' }}>飼主體驗</h1></div>
                 <span><h1>飼主體驗是一個基於......</h1></span>
                 <ButtonComponent
@@ -110,7 +94,7 @@ function Index(props) {
                   handleSubmit={petGo}
                 />
               </Col>
-              <Col sm={24} md={11} className='Choose'>
+              <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: 'rgba(251, 213, 52, 0.94)' }}>寵物供養</h1></div>
                 <span><h1>寵物供養是一個基於......</h1></span>
                 <ButtonComponent
@@ -123,32 +107,38 @@ function Index(props) {
             </Row>
           </div>
           <div className='Comment'>
-            <Slider {...settings}>
-              <div >
-                <h3>1</h3>
-              </div>
-              <div >
-                <h3>2</h3>
-              </div>
-              <div >
-                <h3>3</h3>
-              </div>
-              <div>
-                <h3>4</h3>
-              </div>
-              <div>
-                <h3>5</h3>
-              </div>
-              <div>
-                <h3>6</h3>
-              </div>
-              <div>
-                <h3>7</h3>
-              </div>
-              <div>
-                <h3>8</h3>
-              </div>
-            </Slider>
+            <div className="site-card-wrapper">
+              <Slider {...settings}>
+                <div >
+                  <Card title="Card title" bordered={false}>
+                    Card content
+                  </Card>
+                </div>
+                <div >
+                <Card title="Card title" bordered={false}>
+                    Card content
+                  </Card>
+                </div>
+                <div >
+                  <h3>3</h3>
+                </div>
+                <div>
+                  <h3>4</h3>
+                </div>
+                <div>
+                  <h3>5</h3>
+                </div>
+                <div>
+                  <h3>6</h3>
+                </div>
+                <div>
+                  <h3>7</h3>
+                </div>
+                <div>
+                  <h3>8</h3>
+                </div>
+              </Slider>
+            </div>
           </div>
           <div className='Idea'>
             <Row>
@@ -163,8 +153,9 @@ function Index(props) {
                   <Col sm={24} md={12} className="titleBlock">
                     <span level={windowSize.width < 576 ? 4 : 2}>
                       <h1 >
-                        領養代替購買<br></br>
-                        減少寵物拋棄率</h1></span>
+                        <strong>領養代替購買<br></br>
+                        減少寵物拋棄率</strong>
+                        </h1></span>
                   </Col>
                 </Row>
                 {/* <Row className='introduce'>

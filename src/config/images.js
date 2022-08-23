@@ -12,6 +12,7 @@ const images = {
   logo: require("../assets/images/logo.png"),
   logoText: require("../assets/images/logoText2.png"),
   gold: require("../assets/images/gold.jpg"),
+  auto1:require("../assets/images/auto1.jpg")
 };
 
 export default images;

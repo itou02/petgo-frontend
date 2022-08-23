@@ -9,7 +9,7 @@
     font-weight: 500;
 }
 .containter{
-
+    min-height: calc(100vh - 134px);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -25,9 +25,36 @@
 
 }
 .Carousel{
-    height: 450px;
+    height: 500px;
+    width: 100%;
+    margin-bottom:100px ;
+    // background-color: aqua;
+}
+.Carouselson{
+    height: 600px;
     width: 100%;
     margin-bottom:50px ;
+    // background-color: aqua;
+}
+.Carouselson .slick-slider.slick-initialized {
+    height: 500px;
+}
+
+.autoblock {
+    height: 550px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit:cover;
+    }
+}
+
+button.slick-arrow.slick-prev {
+    display: none !important;
 }
 
 .Chooseall{
@@ -37,13 +64,14 @@
 }
 .Choosemain{
     display: flex;
-    justify-Content:space-around;
+    justify-content: space-around;
 }
 .Choose{
     height: 420px;
     border-radius: 20px;
     background-color:@bottom-color;
-    box-shadow: 0 5px	#E0E0E0;
+    // box-shadow: 0 5px	#E0E0E0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -71,12 +99,17 @@
     background-color:@bottom-color;
     margin-bottom:50px ;
 }
-.slick-slide.slick-active {
-    width: 200px !important;
-    height: 350px;
-    background-color: red;
-    border: 5px black solid;
+.Comment .slick-slider.slick-initialized {
+    height: 100%;
+    border: 5px red solid;
 }
+
+.Comment .slick-initialized .slick-slide {
+   height: 340px;
+   border: 5px red solid;
+}
+
+
 .Idea{
     height: 100%;
     width: 100%;
@@ -100,6 +133,7 @@
     margin: 30px 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .pictureBlock {
     margin: 48px 0;
@@ -120,18 +154,14 @@
 }
 
 .Idea .introduce h1{
-    font-size: 50px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 600;
     text-align: center;
     color: @bottom-color;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
-
-
 
 
 

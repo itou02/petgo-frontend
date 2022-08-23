@@ -4,28 +4,28 @@ import { Layout } from "antd";
 import "./GloballLayout.less";
 
 import HeaderComponent from "./Header";
-import { FaFacebookSquare ,FaInstagram,FaPhone} from "react-icons/fa";
+import { FaFacebookSquare, FaInstagram, FaPhone } from "react-icons/fa";
 const { Content, Footer } = Layout;
 
 const LayoutWithRoute = () => {
-    // const [windowSize, setWindowSize] = useState({
-    //     width: undefined,
-    //     height: undefined,
-    // });
-    // useEffect(() => {
-    //     function handleResize() {
-    //         setWindowSize({
-    //             width: window.innerWidth,
-    //             height: window.innerHeight,
-    //         });
-    //     }
-    //     window.addEventListener("resize", handleResize);
-    //     handleResize();
-    //     return () => window.removeEventListener("resize", handleResize);
-    // }, []);
+    const [windowSize, setWindowSize] = useState({
+        width: undefined,
+        height: undefined,
+    });
+    useEffect(() => {
+        function handleResize() {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <Layout id="global">
-            <HeaderComponent />
+            <HeaderComponent windowSize={windowSize} />
             <Content>
                 <Outlet />
             </Content>

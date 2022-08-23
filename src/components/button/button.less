@@ -2,22 +2,25 @@
 
 .ant-btn {
     height:50px;
-    width: 204px;
+    
     // padding: 10px;
-    margin-top: 40%;
-    font-weight: 800;
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 
 .pet{
-
+    width: 204px;
     background-color: @feature-experience-color;
     border-color:  @feature-experience-color;
     color: @bottom-color;
+    font-weight: 800;
+    font-size: 28px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     &:hover,
     &:focus {
         background-color: @feature-experience-color;
@@ -25,9 +28,19 @@
     }
 }
 .together{
+    width: 204px;
     background-color:@feature-adoptions-color;
     border-color:@feature-adoptions-color;
     color: @bottom-color;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     &:hover,
     &:focus {
         background-color:@feature-adoptions-color;

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Dropdown, Layout, Menu, Avatar, Button, Drawer } from "antd";
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+
 import "./GloballLayout.less";
 import images from "../config/images";
 import {
@@ -57,6 +59,7 @@ function HeaderComponent(props) {
             ]}
         />
     );
+
     const userMenu = (
         <Menu
             className="userDropdown"
@@ -118,6 +121,29 @@ function HeaderComponent(props) {
             key: "request",
         }
     ];
+    function getItem(label, key, children, type) {
+        return {
+            key,
+            children,
+            label,
+            type,
+        };
+    }
+
+    const dropdownitems = [
+        getItem('飼主體驗'),
+        getItem('寵物共養'),
+        getItem('活動紀錄', 'sub3', [
+            getItem('體驗紀錄'),
+            getItem('共養紀錄'),
+            getItem('正在共養'),
+        ]),
+        getItem('我的評論'),
+        getItem('我的請求', 'sub4', [
+            getItem('我送出的請求'),
+            getItem('我收到的請求'),
+        ]),
+    ];
     return (
         <div className="header">
             <Header>
@@ -150,21 +176,14 @@ function HeaderComponent(props) {
                 </Button>
                 <Drawer
                     title={
-                        <a href="/" className="logoBlock">
-                            <img
-                                src={images.logo}
-                                alt="logo"
-                                width={40}
-                                height={40}
-                                className="logoImage"
-                            />
-                            <img src={images.logoText} alt="logo" width={60} height={35} />
-                        </a>
+                        <Avatar size={36} icon={<FaUserAlt width={40}
+                            height={40} />} />
                     }
                     placement="right"
                     onClose={onClose}
                     visible={visible}>
-                    <Menu mode="vertical" items={items} className="menuBarList" />
+                    <Menu mode="vertical" items={dropdownitems} />
+                    {/* <Menu mode="vertical" items={ items } className="menuBarList" /> */}
                 </Drawer>
             </Header>
         </div>
