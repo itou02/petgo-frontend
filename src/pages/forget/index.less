@@ -6,10 +6,8 @@
     font-family: 'Microsoft JhengHei', 'Arial';
     font-weight: 500;
 }
-.ant-layout-footer {
-   display: none !;
-}
-#login {
+
+#forget {
     .container{
         background-color: @member-feature-color;
         height:calc(100vh - 134px);
@@ -27,6 +25,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -34,6 +33,9 @@
                 color: @dark-main-color;
                 font-weight: bold;
             }
+        }
+        .a{
+            width: 100%;
         }
         form#basic{
             height: 600px;
@@ -45,6 +47,14 @@
         hr{
             width: 90%;
             border: 1px solid rgba(0, 0, 0, 0.55);
+        }
+        .verification{
+            width: 100%;
+        }
+        .verify{
+            display: flex;
+            align-items: center;
+            justify-content:right;
         }
         .link{
             width: 150px;
@@ -86,9 +96,11 @@
             display: flex;
             align-items: center;
             position: relative;
+
             .inputBlock {
                 position: relative;
                 width: 100%;
+
                 svg {
                     // color: @secondary-color;
                     position: absolute;
@@ -148,11 +160,10 @@
             }
         }
     }
-    
 }
 
 @media screen and (max-width:576px) {
-    #login {
+    #index {
         .titleBlock {
             .ant-typography {
                 span {

@@ -6,13 +6,14 @@
     font-family: 'Microsoft JhengHei', 'Arial';
     font-weight: 500;
 }
-.ant-layout-footer {
-   display: none !;
-}
-#login {
+
+#signup {
     .container{
-        background-color: @member-feature-color;
+        background-color:@member-feature-color;
         height:calc(100vh - 134px);
+        display: flex;
+        // justify-content: center;
+        align-items: center;
     }
     .login{
         display: flex;
@@ -23,10 +24,11 @@
     }
 
     .titleBlock {
-        height: 600px;
+        height: 750px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -35,17 +37,37 @@
                 font-weight: bold;
             }
         }
+        .a{
+            width: 100%;
+        }
         form#basic{
-            height: 600px;
+            height: 800px;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            align-content: space-between;
         }
         hr{
             width: 90%;
             border: 1px solid rgba(0, 0, 0, 0.55);
         }
+        .personal{
+            width: 100%;
+            justify-content: space-between;
+        }
+       .sex{
+        display: flex;
+        flex-direction: row;
+       }
+       .date{
+        width: 100%;
+       }
+       .place{
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+       }
         .link{
             width: 150px;
             display: flex;
@@ -86,9 +108,11 @@
             display: flex;
             align-items: center;
             position: relative;
+
             .inputBlock {
                 position: relative;
                 width: 100%;
+
                 svg {
                     // color: @secondary-color;
                     position: absolute;
@@ -148,11 +172,10 @@
             }
         }
     }
-    
 }
 
 @media screen and (max-width:576px) {
-    #login {
+    #index {
         .titleBlock {
             .ant-typography {
                 span {

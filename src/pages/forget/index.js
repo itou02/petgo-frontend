@@ -1,12 +1,15 @@
 import React from 'react';
-import { Row, Col, Button, Checkbox, Form, Icon, Input, Space} from 'antd';
-import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
+import { Link } from "react-router-dom";
 import ButtonComponent from "../../components/button/button";
+import { Row, Col, Button, Checkbox, Form, Icon, Input, Space, Radio, } from 'antd';
+import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { AiFillLock } from "react-icons/ai";
 import images from '../../config/images';
 import './index.less'
 
-function Login() {
+
+
+function Forget(props) {
   const onFinish = (values) => {
     console.log('Success:', values);
   };
@@ -14,22 +17,19 @@ function Login() {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
-
-  
-
   return (
-    <div id="login">
+    <div id="forget">
       <Row justify="center" align="center" className="container">
         <Col xs={22} md={20} className="login">
           <Row className="bannerBlock" >
-            <Col xs={0} sm={0} md={10}>
+            <Col xs={24} md={12}>
               <div className="imgBlock">
-                <img src={images.bg1} alt="bg-1" className="" />
+                <img src={images.bg1} alt="bg-1" />
               </div>
             </Col>
-            <Col xs={24} sm={24} md={14} className="titleBlock">
+            <Col xs={24} md={12} className="titleBlock">
               <Row className='a' align="center">
-                <Col sm={24} md={14} >
+                <Col xs={24} md={14} >
                   <Form
                     name="basic"
                     labelCol={{
@@ -46,35 +46,35 @@ function Login() {
                     autoComplete="off"
                     className="form"
                   >
-                    <h1>登入</h1>
+                    <h1>忘記密碼</h1>
                     <hr></hr>
-                    <Input size="large" placeholder="輸入帳號" prefix={<UserOutlined />} />
-                    <Input.Password size="large" placeholder="輸入密碼" prefix={<AiFillLock />} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
+                    <Input size="large" placeholder="輸入電子郵件" prefix={<UserOutlined />} />
+                    <Row align='center' justify='center' className='verification'>
+                      <Col span={14}>
+                        <Input size="large" placeholder="輸入驗證碼" />
+                      </Col>
+                      <Col span={10} className='verify'>
+                        <ButtonComponent
+                          text="傳送驗證碼"
+                          size="large"
+                          name="verifybtn"
+
+                        />
+                      </Col>
+                    </Row>
+
                     <Form.Item
                       wrapperCol={{
-                        span: 24,
+                        span: 16,
                       }}
                     >
                       <ButtonComponent
                         text="登入"
                         size="large"
                         name="loginbtn"
-                        htmlType="submit"
+                      // handleSubmit={()=>}
                       />
                     </Form.Item>
-                    <Form.Item
-                      name="remember"
-                      valuePropName="checked"
-                      wrapperCol={{
-                        span: 24,
-                      }}
-                    >
-                      <Checkbox>記住我</Checkbox>
-                      <div className="link"><a href="Signup">前往註冊</a><h3>/</h3>
-                        <a href="Forget">忘記密碼</a></div>
-
-                    </Form.Item>
-
 
                   </Form>
                 </Col>
@@ -82,14 +82,16 @@ function Login() {
 
 
               {/* <div className="alertBlock">
-                
-              </div> */}
+              
+            </div> */}
             </Col>
           </Row>
         </Col>
       </Row>
     </div>
-  );
+
+  )
+
 }
 
-export default Login;
+export default Forget;
