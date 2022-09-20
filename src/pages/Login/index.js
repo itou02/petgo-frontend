@@ -19,12 +19,12 @@ function Login() {
 
   return (
     <div id="login">
-      <Row justify="center" align="center" className="container">
-        <Col xs={22} md={20} className="login">
+      <Row  className="container">
+        <Col xs={22} md={18} className="login">
           <Row className="bannerBlock" >
             <Col xs={0} sm={0} md={10}>
               <div className="imgBlock">
-                <img src={images.bg1} alt="bg-1" className="" />
+                <img src={images.bg1} alt="bg-1" />
               </div>
             </Col>
             <Col xs={24} sm={24} md={14} className="titleBlock">
@@ -79,11 +79,6 @@ function Login() {
                   </Form>
                 </Col>
               </Row>
-
-
-              {/* <div className="alertBlock">
-                
-              </div> */}
             </Col>
           </Row>
         </Col>

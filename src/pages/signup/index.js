@@ -73,8 +73,8 @@ const Signup = (props) => {
                 <Input size="large" placeholder="姓名" />
               </Col>
               <Col span={14} className='sex'>
-                <Form.Item label="性別">
-                  <Radio.Group>
+                <Form.Item  label="性別">
+                  <Radio.Group >
                     <Radio value="apple">男</Radio>
                     <Radio value="pear">女</Radio>
                   </Radio.Group>
@@ -125,6 +125,7 @@ const Signup = (props) => {
               wrapperCol={{
                 span: 16,
               }}
+              className='btn'
             >
               <ButtonComponent
                 text="註冊"

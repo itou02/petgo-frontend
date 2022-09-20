@@ -10,7 +10,7 @@
 #signup {
     .container{
         background-color:@member-feature-color;
-        height:calc(100vh - 134px);
+        min-height:calc(100vh - 134px);
         display: flex;
         // justify-content: center;
         align-items: center;
@@ -29,6 +29,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding: 10px;
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -173,7 +174,11 @@
         }
     }
 }
-
+.btn{
+display: flex;
+align-items: center;
+justify-content: center;
+}
 @media screen and (max-width:576px) {
     #index {
         .titleBlock {

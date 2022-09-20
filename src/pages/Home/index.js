@@ -110,12 +110,12 @@ function Index(props) {
             <div className="site-card-wrapper">
               <Slider {...settings}>
                 <div >
-                  <Card title="Card title" bordered={false}>
+                  <Card title="" bordered={false}>
                     Card content
                   </Card>
                 </div>
                 <div >
-                <Card title="Card title" bordered={false}>
+                  <Card title="Card title" bordered={false}>
                     Card content
                   </Card>
                 </div>
@@ -154,8 +154,8 @@ function Index(props) {
                     <span level={windowSize.width < 576 ? 4 : 2}>
                       <h1 >
                         <strong>領養代替購買<br></br>
-                        減少寵物拋棄率</strong>
-                        </h1></span>
+                          減少寵物拋棄率</strong>
+                      </h1></span>
                   </Col>
                 </Row>
                 {/* <Row className='introduce'>

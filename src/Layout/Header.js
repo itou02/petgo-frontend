@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Dropdown, Layout, Menu, Avatar, Button, Drawer } from "antd";
+import { Dropdown, Layout, Menu, Avatar, Button, Drawer,Link } from "antd";
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 
 import "./GloballLayout.less";
@@ -93,11 +93,12 @@ function HeaderComponent(props) {
     );
     const items = [
         {
-            label: "飼主體驗",
+            label: <a href="Forget">飼主體驗</a>,
             key: "breeder",
+            
         },
         {
-            label: "寵物共養",
+            label:<a href="Forget">寵物共養</a>,
             key: "pettogether",
         },
         {
@@ -109,7 +110,7 @@ function HeaderComponent(props) {
             key: "activity record",
         },
         {
-            label: "我的評論",
+            label: <a href="Forget">我的評論</a>,
             key: "Comment",
         },
         {
