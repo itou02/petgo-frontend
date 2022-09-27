@@ -12,7 +12,15 @@ const images = {
   logo: require("../assets/images/logo.png"),
   logoText: require("../assets/images/logoText2.png"),
   gold: require("../assets/images/gold.jpg"),
-  auto1:require("../assets/images/auto1.jpg")
+  auto1:require("../assets/images/auto1.jpg"),
+  /*寵物頭貼*/
+  gimmy:require("../assets/images/gimmy.png"),
+  expet:require("../assets/images/expet.png"),
+
+  /*人類頭貼*/
+  bb:require("../assets/images/bb.png"),
+
+
 };
 
 export default images;
