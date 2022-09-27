@@ -7,15 +7,10 @@
     font-weight: 500;
 }
 
-#login {
+#forget {
     .container{
         background-color: @member-feature-color;
-        height:calc(100vh - 134px);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 3%;
-        padding-bottom: 3%;
+        min-height:calc(100vh - 134px);
     }
     .login{
         display: flex;
@@ -30,6 +25,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -37,6 +33,9 @@
                 color: @dark-main-color;
                 font-weight: bold;
             }
+        }
+        .a{
+            width: 100%;
         }
         form#basic{
             height: 600px;
@@ -48,6 +47,14 @@
         hr{
             width: 90%;
             border: 1px solid rgba(0, 0, 0, 0.55);
+        }
+        .verification{
+            width: 100%;
+        }
+        .verify{
+            display: flex;
+            align-items: center;
+            justify-content:right;
         }
         .link{
             width: 150px;
@@ -89,9 +96,11 @@
             display: flex;
             align-items: center;
             position: relative;
+
             .inputBlock {
                 position: relative;
                 width: 100%;
+
                 svg {
                     // color: @secondary-color;
                     position: absolute;
@@ -114,7 +123,8 @@
     }
 
     .imgBlock {
-        height: 500px;
+        height: 600px;
+
         img {
             width: 100%;
             height: 100%;
@@ -150,11 +160,10 @@
             }
         }
     }
-    
 }
 
 @media screen and (max-width:576px) {
-    #login {
+    #index {
         .titleBlock {
             .ant-typography {
                 span {
