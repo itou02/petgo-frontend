@@ -26,7 +26,7 @@ function ExperienceIllustratePage() {
                                 <p>9. 違規要付婷鈺團隊500萬美金</p>
                                 <p>10. 你要看完上面那些 不管怎樣都要同意</p>
                             </div>
-                            <Button>
+                            <Button  className="Btn1">
                             前往體驗
                             </Button>
                     </div>

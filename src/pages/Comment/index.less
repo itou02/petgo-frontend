@@ -1,0 +1,88 @@
+@import url('../../assets/style/theme.less');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft JhengHei', 'Arial';
+    font-weight: 500;
+}
+#Comment{
+    .container{
+    background-color:@bottom-main-color;
+    min-height: calc(100vh - 134px);
+}
+.Commentlist{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: @bottom-color;
+}
+.Commentlistrow{
+    width: 100%;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+}
+.Commenttitle{
+    background-color: @form-background-color;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h1{
+        font-weight: 600;
+        font-size: 60px;
+        color: @dark-main-color;
+    }
+}
+.commentary{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: auto;
+    border-radius: 20px;
+    background-color:@bottom-main-color ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    .pictureBlock {
+        margin: 20px 0;
+        width: 150px;
+    }
+    .imgBlock {
+        height: 140px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            border-radius: 20px;
+        }
+    }
+    .Content{
+        margin: 20px 0;
+        width: 700px;
+        min-height: 140px;
+        display: flex;
+        flex-direction: column;
+        .Name{
+            width: 100%;
+            height: 50px;
+            hr{
+                border: 1px black solid;
+            }
+        }
+        span{
+            word-break: break-all;
+            min-height: 70px;
+        }
+        .Time{
+            font-size: 10px;
+            margin-left: auto;
+        }
+    }
+}
+}

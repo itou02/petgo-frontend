@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Microsoft JhengHei', 'Arial';
-    font-weight: 500;
+    // font-weight: 500;
 }
 .containter{
     min-height: calc(100vh - 134px);
@@ -16,13 +16,6 @@
     padding-top: 3%;
     padding-bottom: 3%;
     background-color:@bottom-main-color;
-}
-.wrapper{
-    width: 1344px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
 }
 .Carousel{
     height: 500px;
@@ -53,10 +46,12 @@
     }
 }
 
-button.slick-arrow.slick-prev {
+.Carousel button.slick-arrow.slick-prev {
     display: none !important;
 }
-
+.Carousel button.slick-arrow.slick-next {
+    display: none !important;
+}
 .Chooseall{
     height: 100%;
     width: 100%;
@@ -201,7 +196,6 @@ button.slick-arrow.slick-prev {
     display: flex;
     align-items: center;
     justify-content: center;
-   
 }
 
 

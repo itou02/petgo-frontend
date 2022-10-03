@@ -21,35 +21,36 @@
 }
 
 hr{
-    border: 1px solid #1A535C;
+    border: 1px solid #1a535c86;
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 
-.ant-form-item-label > label {
+.MemberFormWarp .ant-form-item-label > label {
     color: #1A535C;
     font-weight: 600;
     font-size: 18px;
 }
-.ant-radio-checked .ant-radio-inner{
+.MemberFormWarp .ant-radio-checked .ant-radio-inner{
 
 border-color: #1A535C !important ;
     
 }
     
-.ant-radio-checked .ant-radio-inner:after{
+.MemberFormWarp .ant-radio-checked .ant-radio-inner:after{
 
 background-color: #1A535C;
 
 }
 
-.ant-radio:hover .ant-radio-inner {
+.MemberFormWarp .ant-radio:hover .ant-radio-inner {
 
 border-color: #1A535C ;
 
 }
 
-.ant-picker{
+.MemberFormWarp.ant-picker{
     width: 174.32px;
 }
 
@@ -57,8 +58,55 @@ border-color: #1A535C ;
     font-size: 1.1em;
   }
 
-.ant-row .ant-form-item{
+.MemberFormWarp .ant-row .ant-form-item{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
+
+
+.MemberFormWarp .ant-col .ant-form-item-control{
+    width: 100%;
+}
+.MemberFormWarp .ant-picker {
+    width: 100%;
+}
+
+.MemberFormWarp .ant-form-item-control-input-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password_btn{
+    width: 100%;
+    margin: 0;
+}
+
+
+.MemberFormWarp .ant-upload.ant-upload-select-picture-card {
+    width: 150px;
+    height: 150px;
+    border-radius: 99px;
+}
+
+.FormCancel{
+    width: 100%;
+    border-radius: 0px;
+    background-color: #f9f9f9;
+    color: #1A535C;
+    border: #1A535C 1px solid;
+}
+.FormCancel:hover{
+    background-color: #e9e9e9;
+    color: #1A535C;
+    border: #1A535C 1px solid;
+}
+.FormSave{
+    width: 100%;
+    border-radius: 0px;
+    background-color: #1A535C;
+    color: #F7FFF7;
+}
+
+
+
