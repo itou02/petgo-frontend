@@ -58,7 +58,6 @@ function Forget(props) {
                           text="傳送驗證碼"
                           size="large"
                           name="verifybtn"
-
                         />
                       </Col>
                     </Row>

@@ -78,6 +78,12 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    &:hover,
+    &:focus {
+        background-color:@bottom-color;
+        border-color:@bottom-color;
+        color: black;
+    }
 }
 .changebtn{
     height: 40px;
@@ -97,6 +103,26 @@
     &:focus {
         background-color:@dark-main-color;
         border-color:@dark-main-color;
+    }
+}
+.accept-request{
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    background-color:@main-color;
+    border-color:@main-color;
+    color: @bottom-color;
+    border-radius: 40px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+    &:hover,
+    &:focus {
+        background-color:@main-color;
+        border-color:@main-color;
+        color: @bottom-color;
     }
 }
 .cancel-request{

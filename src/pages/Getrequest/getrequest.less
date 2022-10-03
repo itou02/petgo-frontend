@@ -1,4 +1,5 @@
 @import url('../../assets/style/theme.less');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,8 @@
     font-family: 'Microsoft JhengHei', 'Arial';
     font-weight: 500;
 }
-#Comment{
+
+#Sendrequest {
     .container {
         background-color: @bottom-main-color;
         min-height: calc(100vh - 134px);
@@ -32,7 +34,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: @drop-down-color;
+
         h1 {
             font-weight: 600;
             font-size: 40px;
@@ -79,12 +81,14 @@
 
                 .wrapper {
                     width: 100%;
+
                     .Content {
                         margin: 20px 0;
                         width: 100%;
+                        // min-height: 140px;
                         display: flex;
                         flex-direction: column;
-                        align-content: space-around !important;
+
                         .Name {
                             width: 100%;
                             height: 50px;
@@ -95,13 +99,18 @@
                                 color: @dark-main-color;
                             }
                         }
-                        span{
-                            width: 100%;
-                            height: auto;
-                        }
-                        .Time{
-                            width: 100px;
-                            margin-left: auto ;
+
+                        .Data {
+                            display: flex;
+                            justify-content: space-between;
+                            flex-direction: row;
+
+                            .Probably {
+                                width: 70%;
+                                display: flex;
+                                flex-direction: column;
+
+                            }
                         }
                     }
                 }

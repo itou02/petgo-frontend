@@ -12,7 +12,10 @@ import Revise from "./Forget/index2.js";
 import Comment from "./Comment/index.js";
 import Petlist  from "./Petlist/index.js";
 import Norequest  from "./sendrequest/norequest.js";
-import Sendrequest  from "./sendrequest/sendrequest.js";
+import Sentrequest  from "./sendrequest/sendrequest.js";
+import Receiverequest  from "./Getrequest/getrequest";
+import Noreceiverequest  from "./Getrequest/norequest";
+
 function Router() {
   return (
     <BrowserRouter>
@@ -24,8 +27,10 @@ function Router() {
           <Route path="revise" element={<Revise />} />
           <Route path="comment" element={<Comment />} />
           <Route path="petlist" element={<Petlist />} />
-          <Route path="norequest" element={<Norequest/>} />
-          <Route path="sendrequest" element={<Sendrequest/>} />
+          <Route path="nosent-request" element={<Norequest/>} />
+          <Route path="sent-request" element={<Sentrequest/>} />
+          <Route path="receive-request" element={<Receiverequest/>} />
+          <Route path="noreceive-request" element={<Noreceiverequest/>} />
           <Route path="/" element={<Home />} />
           <Route path="counter" element={<Counter />} />
         </Route>
