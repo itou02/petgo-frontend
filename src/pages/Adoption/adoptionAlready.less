@@ -11,14 +11,14 @@
 
 .container{
     background-color: #E6E6E6!important;
-    width: 100%;
+    width: 98.9vw;
     height: 100%;
     // display: flex;    
     margin: 0;
     .exFilter{
         background-color: @bottom-main-color;
         box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.15);
-        width: 98.9vw;
+        width: 100%;
         height: 150px;
         margin: 0;
         display: flex;
@@ -41,8 +41,19 @@
             font-weight: bold;
             margin: 0.5%;
         }
-            
-        
+        input:nth-child(3){
+            margin-left: 1%;
+        }
+
+        .shareBtn{
+            display: inline;
+            height: 100%;
+            button{
+                display: inline;
+                position:absolute;
+                bottom:0;
+            }
+        }
     }
     .exCards{
         // border: 1px solid red;

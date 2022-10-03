@@ -20,9 +20,9 @@ import Adoption from "./Adoption/adoptionAlready";
 
 import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
-import Signup from "./Signup/index.js";
-import Forget from "./Forget/index.js";
-import Revise from "./Forget/index2.js";
+import Signup from "./signup/index.js";
+import Forget from "./forget/index.js";
+import Revise from "./forget/index2.js";
 import Comment from "./Comment/index.js";
 import Petlist  from "./Petlist/index.js";
 import Norequest  from "./sendrequest/norequest.js";
@@ -42,14 +42,21 @@ function Router() {
           <Route path="sendrequest" element={<Sendrequest/>} />
           <Route path="/" element={<Home />} />
           <Route path="counter" element={<Counter />} />
-          <Route path="owner" element={<Owner />} />
-          <Route path="nopet" element={<NoPet />} />
-          <Route path="check-no" element={<CheckPetN />} />
-          <Route path="check" element={<CheckPet />} />
-          <Route path="expet" element={<ExPet />} />
-          <Route path="expet-check" element={<ExPetCheck />} />
-
-          <Route path="adoption" element={<Adoption />} />
+          {/* 飼主專區 */}
+          <Route path="Experience/owner-illustrate/post" element={<Owner />} />
+          {/* 飼主專區-無寵物 */}
+          <Route path="Experience/owner-illustrate/nopost" element={<NoPet />} />
+          {/* 飼主專區-查看詳細 */}
+          <Route path="Experience/owner-illustrate/post/ex-pet-detail" element={<CheckPet />} />
+          {/* 飼主專區-查看詳細-無評論 */}
+          <Route path="Experience/owner-illustrate/post/ex-pet-detail-no" element={<CheckPetN />} />
+          {/* 體驗者專區首頁 */}
+          <Route path="Experience/experiencer-illustrate/card" element={<ExPet />} />
+          {/* 體驗者專區-查看 */}
+          <Route path="Experience/experiencer-illustrate/card/ex-pet-detail" element={<ExPetCheck />} />
+          
+          {/* 已有共養人 */}
+          <Route path="Share-already" element={<Adoption />} />
 
 
 

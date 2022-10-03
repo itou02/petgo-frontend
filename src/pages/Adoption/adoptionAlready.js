@@ -20,18 +20,31 @@ function ExPet() {
         <div className="container">
             <Row>
                 <Col span={24} className="exFilter">
-                    <h2>
-                        <select style={{width:"200px"}}>
-                            <option>縣市</option>                       
-                        </select>
-                    </h2>
-                    <h2>
-                        <select style={{width:"200px"}}>
-                            <option>地區</option>                      
-                        </select>
-                    </h2>
-                    <input type="radio" name="dog" value="dog" /><label>狗</label>
-                    <input type="radio" name="cat" value="cat" /><label>貓</label>
+                    
+                        <Col span={21}>
+                            <h2>
+                                <select style={{width:"200px"}}>
+                                    <option>縣市</option>                       
+                                </select>
+                            </h2>
+                            <h2>
+                                <select style={{width:"200px"}}>
+                                    <option>地區</option>                      
+                                </select>
+                            </h2>
+                            <input type="radio" name="dog" value="dog" /><label>狗</label>
+                            <input type="radio" name="cat" value="cat" /><label>貓</label>
+                        </Col>
+                        <Col span={3} className="shareBtn">
+                            <ButtonComponent
+                                text="已有共養人"                    
+                                name="alreadyBtn"
+                            />
+                            <ButtonComponent
+                                text="未有共養人"                    
+                                name="notYetBtn"
+                            />
+                        </Col>                                        
                 </Col>
             </Row>
             <Row justify="center">
