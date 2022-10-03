@@ -19,13 +19,15 @@ function ExPet() {
         <div className="container">
             <Row>
                 <Col span={24} className="exFilter">
-                    <h2>篩選：<input type={"date"}></input></h2>
+                    <h2>日期：<input type={"date"}></input></h2>
                     <h2>
-                        <select>
-                            <option>區域</option>
-                            <option>123123132112</option>
-                            <option>1231231321</option>
-                            <option>1231231321</option>                        
+                        <select style={{width:"200px"}}>
+                            <option>---</option>                      
+                        </select>
+                    </h2>
+                    <h2>
+                        <select style={{width:"200px"}}>
+                            <option>---</option>                      
                         </select>
                     </h2>
                     <input type="radio" name="dog" value="dog" /><label>狗</label>

@@ -18,6 +18,7 @@ import Adoption from "./Adoption/adoptionAlready";
 
 import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
+<<<<<<< HEAD
 import Experience from "./Experience/Experience";
 import Illustrate from "./Experience/Illustrate";
 import Member from "./Member/Member";
@@ -34,6 +35,8 @@ import DoingShareList from "./RecordList/DoingShareList";
 import ExperienceList from "./RecordList/ExperienceList";
 import ShareList from "./RecordList/ShareList";
 
+=======
+>>>>>>> 0aa8fce0ad80fc79042cecf8de0c1c195e8fbed9
 import Signup from "./signup/index.js";
 import Forget from "./forget/index.js";
 import Revise from "./forget/index2.js";
@@ -108,6 +111,24 @@ function Router() {
           <Route path="expet-check" element={<ExPetCheck />} />
 
           <Route path="adoption" element={<Adoption />} />
+          {/* 飼主專區 */}
+          <Route path="Experience/owner-illustrate/post" element={<Owner />} />
+          {/* 飼主專區-無寵物 */}
+          <Route path="Experience/owner-illustrate/nopost" element={<NoPet />} />
+          {/* 飼主專區-查看詳細 */}
+          <Route path="Experience/owner-illustrate/post/ex-pet-detail" element={<CheckPet />} />
+          {/* 飼主專區-查看詳細-無評論 */}
+          <Route path="Experience/owner-illustrate/post/ex-pet-detail-no" element={<CheckPetN />} />
+          {/* 體驗者專區首頁 */}
+          <Route path="Experience/experiencer-illustrate/card" element={<ExPet />} />
+          {/* 體驗者專區-查看 */}
+          <Route path="Experience/experiencer-illustrate/card/ex-pet-detail" element={<ExPetCheck />} />
+          
+          {/* 已有共養人 */}
+          <Route path="Share-already" element={<Adoption />} />
+
+
+
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
