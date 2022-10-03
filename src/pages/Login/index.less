@@ -1,0 +1,166 @@
+@import url('../../assets/style/theme.less');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft JhengHei', 'Arial';
+    font-weight: 500;
+}
+
+#login {
+    .container{
+        background-color: @member-feature-color !important;
+        height:calc(100vh - 134px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .login{
+        display: flex;
+        align-items: center;
+    }
+    .bannerBlock {
+        margin: 48px 0;
+    }
+
+    .titleBlock {
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .ant-typography {
+            span {
+                font-size: 2.875rem;
+                margin: 0 0.5rem;
+                color: @dark-main-color;
+                font-weight: bold;
+            }
+        }
+        form#basic{
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        hr{
+            width: 90%;
+            border: 1px solid rgba(0, 0, 0, 0.55);
+        }
+        .link{
+            width: 150px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .ant-row.ant-form-item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .ant-form-item-control-input-content {
+            display: flex;
+            justify-content: space-around;
+        }
+        .alertBlock {
+            .ant-alert-info {
+                // background-color: rgba(@secondary-color, 0.1);
+                // border: 1px solid rgba(@secondary-color, 0.1);
+
+                .ant-alert-icon {
+                    // color: @secondary-color;
+                }
+            }
+           
+
+            // .formtitle{
+            //     display: flex;
+            //     flex-direction: column;
+            //     justify-content: center;
+            //     align-items: center;
+            // }
+        }
+
+        .buttonBlock {
+            display: flex;
+            align-items: center;
+            position: relative;
+            .inputBlock {
+                position: relative;
+                width: 100%;
+                svg {
+                    // color: @secondary-color;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 24px;
+                    transform: translate(-50%, -50%);
+                }
+
+                .ant-input {
+                    padding-left: 40px;
+                    height: 48px;
+                }
+
+                .ant-btn {
+                    height: 48px;
+                }
+            }
+        }
+    }
+
+    .imgBlock {
+        height: 500px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .processBlock {
+        .iconBlock {
+            width: 100%;
+            margin: 2rem 0;
+
+            .ant-steps-item-content {
+                text-align: center;
+            }
+
+            .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-icon {
+                // background-color: @secondary-color;
+                // border-color: @secondary-color;
+            }
+
+            svg {
+                // background-color: @brown-color;
+                color: #ffffff;
+                padding: 16px;
+                border-radius: 16px;
+                font-size: 4rem;
+                margin: 1rem 0;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width:576px) {
+    #login {
+        .titleBlock {
+            .ant-typography {
+                span {
+                    font-size: 2.25rem;
+                }
+            }
+        }
+    }
+}
