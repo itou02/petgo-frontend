@@ -149,15 +149,15 @@ function HeaderComponent(props) {
         <div className="header">
             <Header>
                 <a href="/" className="logoBlock">
-                    <h1 className="title">寵物去哪兒</h1>
-                    {/* <img
+                    
+                     <img
                         src={images.logo}
                         alt="logo"
-                        width={50}
-                        height={50}
+                        width={200}
+                        height={60}
                         className="logoImage"
                     />
-                    <img src={images.logoText} alt="logo" width={80} height={40} /> */}
+                    
                 </a>
 
                 <Menu mode="horizontal" items={items} className="menuBar" />

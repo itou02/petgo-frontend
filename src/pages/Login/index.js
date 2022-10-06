@@ -20,14 +20,14 @@ function Login() {
   return (
     <div id="login">
       <Row  className="container">
-        <Col xs={22} md={18} className="login">
-          <Row className="bannerBlock" >
-            <Col xs={0} sm={0} md={10}>
+        <Col xs={22} md={24} className="login">
+          <Row className="bannerBlock1" type="flex" justify="center" align="middle">
+            <Col xs={0} sm={0} md={14}>
               <div className="imgBlock">
                 <img src={images.bg1} alt="bg-1" />
               </div>
             </Col>
-            <Col xs={24} sm={24} md={14} className="titleBlock">
+            <Col xs={24} sm={24} md={10} className="titleBlock">
               <Row className='a' align="center">
                 <Col sm={24} md={14} >
                   <Form
