@@ -62,7 +62,7 @@ function Comment() {
                                             </div>
                                         </Col>
                                         <Col xs={0} sm={0} md={15} className='right'>
-                                            <Row className='wrapper' align="center">
+                                            <Row className='wrapper'>
                                                 <div className='Content'>
                                                     <div className='Name'>
                                                         <h2>臭臭</h2>

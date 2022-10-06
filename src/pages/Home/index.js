@@ -16,7 +16,7 @@ const contentStyle = {
   background: '#364d79',
 };
 
-function Index(props) {
+function Home(props) {
   const [dotPosition, setDotPosition] = useState('top');
 
   const handlePositionChange = ({ target: { value } }) => {
@@ -201,7 +201,7 @@ function Index(props) {
 
 }
 
-export default Index;
+export default Home;
 // function Index(props) {
 
 //   const success = () => {
