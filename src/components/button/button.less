@@ -1,17 +1,16 @@
 @import url('../../assets/style/theme.less');
 
 .ant-btn {
-    height:30px;
-    
+    height: 30px;
+
     // padding: 10px;
 }
 
-
-.pet{
+.pet {
     width: 204px;
-    height:50px;
+    height: 50px;
     background-color: @feature-experience-color;
-    border-color:  @feature-experience-color;
+    border-color: @feature-experience-color;
     color: @bottom-color;
     font-weight: 800;
     font-size: 28px;
@@ -22,18 +21,19 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+
     &:hover,
     &:focus {
-        background-color: @feature-experience-color;
-        border-color:  @feature-experience-color;
+        background-color: @feature-experience-color  !important;
+        border-color: @feature-experience-color;
     }
 }
 
-.together{
-    height:50px;
+.together {
+    height: 50px;
     width: 204px;
-    background-color:@feature-adoptions-color;
-    border-color:@feature-adoptions-color;
+    background-color: @feature-adoptions-color;
+    border-color: @feature-adoptions-color;
     color: @bottom-color;
     position: absolute;
     bottom: 0;
@@ -44,28 +44,30 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+
     &:hover,
     &:focus {
-        background-color:@feature-adoptions-color;
-        border-color:@feature-adoptions-color;
+        background-color: @feature-adoptions-color  !important;
+        border-color: @feature-adoptions-color;
     }
 }
 
-.addExPet{
-    background-color:@main-color ;
+.addExPet {
+    background-color: @main-color ;
     border: none;
     border-radius: 5px;
     height: 35px;
+
     &hover,
-    &focus{
+    &focus {
         background-color: @dark-main-color;
-        
+
     }
 }
 
 /*移除按鍵*/
-.del{
-    background-color:@feature-experience-color ;
+.del {
+    background-color: @feature-experience-color ;
     border: none;
     border-radius: 20px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
@@ -73,15 +75,16 @@
     height: 30px;
     font-weight: bolder;
     font-size: 15px;
+
     &:hover,
     &:focus {
-        background-color:@dark-main-color;
+        background-color: @dark-main-color;
     }
 }
 
 /*查看詳細按鍵*/
-.check{
-    background-color:@bottom-color ;
+.check {
+    background-color: @bottom-color ;
     border: none;
     border-radius: 20px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
@@ -90,14 +93,15 @@
     font-weight: bolder;
     font-size: 15px;
     color: @dark-main-color;
+
     &:hover,
     &:focus {
-        background-color:@dark-main-color;
+        background-color: @dark-main-color;
     }
 }
 
 /*長長的 選擇寵物按鍵*/
-.enter{
+.enter {
     background-color: #5EBBB4;
     color: @bottom-color;
     width: 678px;
@@ -106,7 +110,7 @@
 }
 
 /*長長的 深綠確認鍵*/
-.ok{
+.ok {
     width: 450px;
     height: 50px;
     border-radius: 2px;
@@ -115,7 +119,7 @@
 }
 
 /*儲存資料的取消鍵*/
-.cancel{
+.cancel {
     width: 300px;
     height: 50px;
     border-radius: 2px;
@@ -125,45 +129,45 @@
 }
 
 /*儲存資料的儲存鍵*/
-.save{
+.save {
     width: 300px;
     height: 50px;
     border-radius: 2px;
-    background-color:@dark-main-color;
+    background-color: @dark-main-color;
     color: #C5C5C5;
 }
 
 /*展開/收起經歷*/
-.open{
+.open {
     width: 720px;
     height: 70px;
-    background-color:#FBFBFB;
+    background-color: #FBFBFB;
     color: #B0B0B0;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
 }
 
 /*體驗者專區的查看鍵*/
-.exPetCheckBtn{
+.exPetCheckBtn {
     width: 100%;
     height: 50px;
     margin-top: 3%;
     font-size: 24px;
     font-weight: bold;
-    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);    
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
     color: @bottom-color;
     background-color: @feature-adoptions-color;
     border: none;
+
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662);
-        color:rgb(96, 75, 6);
+        color: rgb(96, 75, 6);
     }
 }
 
 /*前往體驗按鍵*/
-.goToEx{
-    background-color:@dark-main-color ;
+.goToEx {
+    background-color: @dark-main-color ;
     border: none;
     border-radius: 20px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
@@ -172,36 +176,38 @@
     font-weight: bolder;
     font-size: 24px;
     color: @bottom-color;
+
     &:hover,
     &:focus {
-        background-color:@drop-down-color;
+        background-color: @drop-down-color;
         color: @dark-main-color;
     }
+
     margin: 2% 0 1.5% 0;
 }
 
 /*共養的查看鍵*/
-.adoptionCheckBtn{
+.adoptionCheckBtn {
     width: 40%;
     height: 50px;
     margin-top: 5%;
     font-size: 24px;
     font-weight: bold;
     // display: inline;
-    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);    
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
     color: @bottom-color;
     background-color: @feature-adoptions-color;
     border: none;
+
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662);
-        color:rgb(96, 75, 6);
+        color: rgb(96, 75, 6);
     }
 }
 
 // 共養分頁按鍵-已有共養人
-.alreadyBtn{
+.alreadyBtn {
     width: 100px;
     color: @bottom-color;
     background-color: @dark-main-color;
@@ -209,7 +215,7 @@
 }
 
 // 共養分頁按鍵-未有共養人
-.notYetBtn{
+.notYetBtn {
     width: 100px;
     color: @dark-main-color;
     background-color: #E6E6E6;
@@ -217,11 +223,11 @@
 }
 
 
-.loginbtn{
+.loginbtn {
     height: 40px;
     width: 100%;
-    background-color:@dark-main-color;
-    border-color:@dark-main-color;
+    background-color: @dark-main-color;
+    border-color: @dark-main-color;
     color: @bottom-color;
     position: absolute;
     bottom: 0;
@@ -231,27 +237,37 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+
     &:hover,
     &:focus {
-        background-color:@dark-main-color;
-        border-color:@dark-main-color;
+        background-color: @dark-main-color;
+        border-color: @dark-main-color;
     }
 }
-.verifybtn{
+
+.verifybtn {
     height: 40px;
-    background-color:@bottom-color;
-    border-color:@bottom-color;
+    background-color: @bottom-color;
+    border-color: @bottom-color;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+
+    &:hover,
+    &:focus {
+        background-color: @bottom-color;
+        border-color: @bottom-color;
+        color: black;
+    }
 }
-.changebtn{
+
+.changebtn {
     height: 40px;
     width: 100%;
-    background-color:@dark-main-color;
-    border-color:@dark-main-color;
+    background-color: @dark-main-color;
+    border-color: @dark-main-color;
     color: @bottom-color;
     position: absolute;
     bottom: 0;
@@ -261,49 +277,76 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+
     &:hover,
     &:focus {
-        background-color:@dark-main-color;
-        border-color:@dark-main-color;
+        background-color: @dark-main-color;
+        border-color: @dark-main-color;
     }
 }
-.cancel-request{
+
+.accept-request {
     height: 30px;
     width: 100%;
     display: flex;
-    align-items: center;  
+    align-items: center;
     justify-content: center;
-    background-color:@feature-experience-color;
-    border-color:@feature-experience-color;
+    background-color: @main-color;
+    border-color: @main-color;
     color: @bottom-color;
     border-radius: 40px;
     margin-top: auto;
     margin-left: auto;
     margin-bottom: 10px;
+
     &:hover,
     &:focus {
-        background-color:@feature-experience-color;
-        border-color:@feature-experience-color;
+        background-color: @main-color;
+        border-color: @main-color;
         color: @bottom-color;
     }
 }
-.more-detail{
+
+.cancel-request {
     height: 30px;
     width: 100%;
     display: flex;
-    align-items: center;  
+    align-items: center;
     justify-content: center;
-    background-color:@bottom-color;
-    border-color:@bottom-color;
+    background-color: @feature-experience-color;
+    border-color: @feature-experience-color;
+    color: @bottom-color;
+    border-radius: 40px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: 10px;
+
+    &:hover,
+    &:focus {
+        background-color: @feature-experience-color;
+        border-color: @feature-experience-color;
+        color: @bottom-color;
+    }
+}
+
+.more-detail {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: @bottom-color;
+    border-color: @bottom-color;
     color: @dark-main-color;
     border-radius: 40px;
     margin-top: auto;
     margin-left: auto;
     margin-bottom: 10px;
+
     &:hover,
     &:focus {
-        background-color:@bottom-color;
-        border-color:@bottom-color;
+        background-color: @bottom-color;
+        border-color: @bottom-color;
         color: @dark-main-color;
     }
 

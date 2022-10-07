@@ -7,7 +7,8 @@ import HeaderComponent from "./Header";
 import { FaFacebookSquare, FaInstagram, FaPhone } from "react-icons/fa";
 const { Content, Footer } = Layout;
 
-const LayoutWithRoute = () => {
+const QQLayout = () => {
+    console.log('6666666666666666');
     const [windowSize, setWindowSize] = useState({
         width: undefined,
         height: undefined,
@@ -30,13 +31,10 @@ const LayoutWithRoute = () => {
                 <Outlet />
             </Content>
             <Footer style={{ textAlign: "center" }}>
-                &copy; 2022 - 2023 PET GO  <FaPhone className="
-communityicon"/><FaInstagram className="
-communityicon"/><FaFacebookSquare className="
-communityicon"/>
+                &copy; 2022 - 2023 PET GO  <FaPhone className="communityicon" /><FaInstagram className="communityicon" /><FaFacebookSquare className="communityicon" />
             </Footer>
         </Layout>
     );
 };
 
-export default LayoutWithRoute;
+export default QQLayout;

@@ -1,4 +1,5 @@
 @import url('../../assets/style/theme.less');
+
 * {
     margin: 0;
     padding: 0;
@@ -6,97 +7,112 @@
     font-family: 'Microsoft JhengHei', 'Arial';
     font-weight: 500;
 }
-#Petlist{
-    .container{
-    background-color:@bottom-main-color;
-    min-height: calc(100vh - 134px);
-}
-.Commentlist{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: @bottom-color;
-    width: 1200px;
-}
-.Commentlistrow{
-    width: 100%;
-    display: flex;
-    align-items: center;
-   flex-direction: column;
-}
-.Commenttitle{
-    background-color: @form-background-color;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1{
-        font-weight: 600;
-        font-size: 60px;
-        color: @dark-main-color;
+
+#Petlist {
+    .container {
+        background-color: @bottom-main-color;
+        min-height: calc(100vh - 134px);
     }
-}
-.commentary{
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    background-color:@bottom-main-color ;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    .pictureBlock {
-        margin: 20px 0;
+
+    .Commentlist {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: @bottom-color;
+        width: 1200px;
     }
-    .imgBlock {
-        height: 140px;
+
+    .Commentlistrow {
         width: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit:cover;
-            border-radius: 20px;
+        flex-direction: column;
+    }
+
+    .Commenttitle {
+        background-color: @form-background-color;
+        width: 100%;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-weight: 600;
+            font-size: 60px;
+            color: @dark-main-color;
         }
     }
-    .Content{
-        margin: 20px 0;
-        width: 700px;
-        min-height: 140px;
+
+    .commentary {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        background-color: @bottom-main-color ;
         display: flex;
-        flex-direction: column;
-        .Name{
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row;
+
+        .pictureBlock {
+            margin: 20px 0;
+        }
+
+        .imgBlock {
+            height: 140px;
             width: 100%;
-            height: 50px;
-            h2{
-                font-size: 30px;
-                font-weight: 800;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
             }
         }
-       .Data{
-        display: flex;
-        flex-direction: row;
-        .Probably{
-            width: 70%;
+
+        .Content {
+            margin: 20px 0;
+            width: 700px;
+            min-height: 140px;
             display: flex;
             flex-direction: column;
-        .first{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
+
+            .Name {
+                width: 100%;
+                height: 50px;
+
+                h2 {
+                    font-size: 30px;
+                    font-weight: 800;
+                }
             }
-            .second{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 100%;
+
+            .Data {
+                display: flex;
+                flex-direction: row;
+
+                .Probably {
+                    width: 70%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .first {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+
+                    .second {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                }
             }
         }
-       }
     }
 }
-}
-

@@ -49,11 +49,11 @@ function HeaderComponent(props) {
             className="requestMenu"
             items={[
                 {
-                    label: <a href="/">我送出的請求</a>,
+                    label: <a href="sent-request">我送出的請求</a>,
                     key: "send",
                 },
                 {
-                    label: <a href="/">我收到的請求</a>,
+                    label: <a href="Receive-request">我收到的請求</a>,
                     key: "receive",
                 }
             ]}
@@ -110,7 +110,7 @@ function HeaderComponent(props) {
             key: "activity record",
         },
         {
-            label: <a href="Forget">我的評論</a>,
+            label: <a href="comment">我的評論</a>,
             key: "Comment",
         },
         {

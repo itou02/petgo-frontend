@@ -1,12 +1,13 @@
 @import url('../../assets/style/theme.less');
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Microsoft JhengHei', 'Arial';
-    // font-weight: 500;
+    font-weight: 500;
 }
 .containter{
     min-height: calc(100vh - 134px);
@@ -33,170 +34,243 @@
     height: 500px;
 }
 
-.autoblock {
-    height: 550px;
-    width: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
+    .autoblock {
+        height: 550px;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .Carousel button.slick-arrow.slick-prev {
+        display: none !important;
+    }
+
+    .Carousel button.slick-arrow.slick-next {
+        display: none !important;
+    }
+
+    .Chooseall {
+        height: 100%;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .Choosemain {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .Choose {
+        height: 420px;
+        border-radius: 20px;
+        background-color: @bottom-color;
+        // box-shadow: 0 5px	#E0E0E0;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 15px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .Choose .title {
+        width: 80%;
+        height: 50px;
+    }
+
+    .Choose .title h1 {
+        font-weight: 900;
+    }
+
+    .Choose span {
+        width: 80%;
+
+    }
+
+    .Choose span h1 {
+        color: @dark-main-color;
+    }
+
+    .Comment {
+        height: 400px;
+        width: 100%;
+        background-color: @bottom-color;
+        margin-bottom: 50px;
+
+    }
+
+    .Commentcard {
+        border: 5px olive solid;
+        height: 400px;
+
+        .bannerBlock {
+            display: flex;
+            flex-direction: column;
+            border: 5px yellow solid;
+            height: 100%;
+        }
+
+        .pictureBlock {
+            display: flex;
+            justify-content: center;
+            border: 5px black solid;
+            width: 100%;
+            height: 20px;
+            .imgBlock {
+                width: 100%;
+                border: 5px pink solid;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        
+
+        h1 {
+            font-size: 40px;
+            font-weight: 600;
+            text-align: center;
+            color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .Comment .slick-slider.slick-initialized {
+        height: 100%;
+        border: 5px red solid;
+    }
+
+    .Comment .slick-initialized .slick-slide {
+        height: 400px;
+        width: 250px;
+        padding: 0 5px;
+    }
+
+
+    .Idea {
+        height: 100%;
+        width: 100%;
+
+        .title h1 {
+            color: @dark-main-color;
+            font-weight: 633;
+            font-size: 48;
+        }
+        .introduce {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            background-color: @dark-main-color;
+    
+            .bannerBlock {
+                width: 100%;
+                margin: 30px 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .imgBlock {
+                    height: 490px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+        
+                    img {
+                        width: 100% !important;
+                        height: 100% !important;
+                        object-fit: cover !important;
+                    }
+                }
+                .titleBlock span{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    strong{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+            }
+    
+            
+    
+            // .Idea .introduce h1 {
+            //     font-size: 40px;
+            //     font-weight: 600;
+            //     text-align: center;
+            //     color: @bottom-color;
+            //     display: flex;
+            //     justify-content: center;
+            //     align-items: center;
+            // }
+        }
+    
+    }
+
+    
+
+
+
+    .picture {
+        // border: 5px red solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .StepBlock {
+        height: 60px;
+        width: 60px;
+        background-color: #FFF0AC;
+        border-radius: 15px;
+        // border: 5px green solid; 
+    }
+
+    .StepBlockimg {
         width: 100%;
         height: 100%;
-        object-fit:cover;
+        object-fit: cover;
+
     }
-}
 
-.Carousel button.slick-arrow.slick-prev {
-    display: none !important;
-}
-.Carousel button.slick-arrow.slick-next {
-    display: none !important;
-}
-.Chooseall{
-    height: 100%;
-    width: 100%;
-    margin-bottom:50px ;
-}
-.Choosemain{
-    display: flex;
-    justify-content: space-around;
-}
-.Choose{
-    height: 420px;
-    border-radius: 20px;
-    background-color:@bottom-color;
-    // box-shadow: 0 5px	#E0E0E0;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 15px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-.Choose .title{
-    width: 80%;
-    height: 50px;
-}
-.Choose .title h1{
-    font-weight: 900;
-}
-.Choose span{
-    width: 80%;
-
-}
-.Choose span h1{
-    color:@dark-main-color;
-}
-.Comment{
-    height: 340px;
-    width: 100%;
-    background-color:@bottom-color;
-    margin-bottom:50px ;
-}
-.Comment .slick-slider.slick-initialized {
-    height: 100%;
-    border: 5px red solid;
-}
-
-.Comment .slick-initialized .slick-slide {
-   height: 340px;
-   border: 5px red solid;
-}
+    .imgblock {
+        height: 550px;
+        width: 100%;
+        // border: 5px green solid;
 
 
-.Idea{
-    height: 100%;
-    width: 100%;
-}
-.Idea .title h1{
-    color:@dark-main-color;
-    font-weight: 633;
-    font-size: 48;
-}
-.introduce{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    background-color: @dark-main-color;
-}
-.bannerBlock {
-    width: 100%;
-    margin: 30px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.pictureBlock {
-    margin: 48px 0;
-    display: flex;
-    justify-content: center;
-}
-.Idea .introduce .imgBlock {
-    height: 490px;
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
+    }
+
+    .imgblock img {
         width: 100%;
         height: 100%;
-        object-fit:cover;
+        object-fit: cover;
+        // border: 5px red solid;
     }
-}
 
-.Idea .introduce h1{
-    font-size: 40px;
-    font-weight: 600;
-    text-align: center;
-    color: @bottom-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-.picture{
-    // border: 5px red solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.StepBlock{
-    height: 60px;
-    width: 60px;
-    background-color:	#FFF0AC;
-    border-radius: 15px;
-    // border: 5px green solid; 
-}
-.StepBlockimg{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    
-}
-.imgblock{
-    height: 550px;
-    width: 100%;
-    // border: 5px green solid;
-    
-}
-.imgblock img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    // border: 5px red solid;
-}
-.right{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
 
 .tag{
