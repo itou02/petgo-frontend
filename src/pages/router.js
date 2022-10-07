@@ -18,7 +18,6 @@ import Adoption from "./Adoption/adoptionAlready";
 
 import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
-<<<<<<< HEAD
 import Experience from "./Experience/Experience";
 import Illustrate from "./Experience/Illustrate";
 import Member from "./Member/Member";
@@ -35,8 +34,6 @@ import DoingShareList from "./RecordList/DoingShareList";
 import ExperienceList from "./RecordList/ExperienceList";
 import ShareList from "./RecordList/ShareList";
 
-=======
->>>>>>> 0aa8fce0ad80fc79042cecf8de0c1c195e8fbed9
 import Signup from "./signup/index.js";
 import Forget from "./forget/index.js";
 import Revise from "./forget/index2.js";

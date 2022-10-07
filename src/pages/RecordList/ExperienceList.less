@@ -1,18 +1,70 @@
-
-
-.RecordListwarp{
+@import url('../../assets/style/theme.less');
+.RecordListwarp {
     margin-top: 2%;
-    margin-bottom:2%;
-    background: #FFFFFF;
+    margin-bottom: 2%;
+    background: @bottom-color;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
 
-   
+
 }
-.PetCardText{
+
+.PetCardText {
     align-items: flex-start;
 }
-.RecordListTitle{
+
+
+
+.PetListModal{
+
+    width: 700px !important;
+
+    .ant-modal-content{
+      background: @bottom-color;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    
+}
+
+.ant-modal-header{
+    border-radius: 15px;
+}
+
+.ant-btn-primary{
+    display: none !important;
+}
+
+.ant-btn-default{
+    background: @dark-main-color;
+border-radius: 20px;
+color: @drop-down-color;
+}
+.ant-modal-footer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.ant-modal-title{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 22px;
+align-items: center;
+color: @dark-main-color;
+}
+
+.ant-modal-header{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+}
+
+
+
+.RecordListTitle {
     color: rgba(0, 0, 0, 0.5);
     font-weight: 900;
     font-size: 26px;
@@ -21,7 +73,8 @@
     padding: 2% 0;
     margin-bottom: 0;
 }
-.ListWarp{
+
+.ListWarp {
     background: rgba(66, 189, 180, 0.08);
     border-radius: 10px;
     margin-bottom: 3%;
@@ -29,8 +82,9 @@
     height: 480px;
     overflow-y: scroll;
 }
-.PetCardBtn{
-    background-color:#FFFFFF;
+
+.PetCardBtn {
+    background-color: @bottom-color;
     border: none;
     border-radius: 20px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
@@ -40,105 +94,155 @@
     font-size: 15px;
     color: #1A535C;
     margin: 0;
+
     &:hover,
     &:focus {
-        background-color:#1A535C;
+        background-color: @dark-main-color;
     }
 }
 
-.ExperienceList .PetCard{
+.ExperienceList .PetCard {
     width: 95%;
-    
+
 }
 
 ::-webkit-scrollbar {
     display: none;
-    
-    }
+
+}
 
 
-.SeemoreIcon{
+.SeemoreIcon {
     text-decoration: none;
     color: #1A535C;
     font-size: 24px;
 }
-.SeemoreIcon:hover{
+
+.SeemoreIcon:hover {
     text-decoration: none;
     color: #1A535C;
     font-size: 24px;
 }
-.ListPetCard{
+
+.ListPetCard {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    background-color: #F7FFF7;
+    background-color: @drop-down-color;
     margin-bottom: 2%;
     margin: 2% 2%;
 }
-  
-  @media screen and (max-width:576px) {
+.PetCardTextDetailText{
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+margin-bottom: 8%;
+}
+.PetCardTextDetail{
+   margin-top: 5%;
 
-    .PetCardContentList .PetCardContent1{
+}
+
+.PetCardTextDetailBottomTitle{
+
+font-family: 'Roboto';
+font-weight: 700;
+font-size: 20px;
+line-height: 22px;
+color: @dark-main-color;
+
+}
+.PetCardTextDetailbottom{
+
+    margin:3% 0;
+.ant-col {
+
+    margin: 0 2%;
+}
+    
+}
+
+
+.RearingPetJmimgWarp{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width:576px) {
+
+    .PetCardContentList .PetCardContent1 {
         display: flex;
         justify-content: start;
         margin-bottom: 2%;
         margin-top: 1%;
         margin-left: 0%;
-    
+
     }
-    .RearingPetJmimg{
+
+    .RearingPetJmimg {
         width: 80%;
     }
+
     .PetCardContentList .PetCardText {
         font-weight: 800;
         font-size: 14px;
         margin: 0 5px;
     }
-    .PetCardContentList  .PetCardContent1{
+
+    .PetCardContentList .PetCardContent1 {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
-    .PetCardContentList{
+
+    .PetCardContentList {
         margin: 4px 0 6px 0;
     }
-    .ListPetCard:hover{
+
+    .ListPetCard:hover {
         background-color: #e1e9e1d6;
     }
-  }
-  
-  @media screen and (max-width:768px) {
+}
 
-    .PetCardContentList .PetCardContent1{
+@media screen and (max-width:768px) {
+
+    .PetCardContentList .PetCardContent1 {
         display: flex;
         justify-content: start;
         margin-bottom: 2%;
         margin-top: 1%;
         margin-left: 0%;
-    
+
     }
-    .RearingPetJmimg{
+
+    .RearingPetJmimg {
         width: 80%;
     }
+
     .PetCardContentList .PetCardText {
         font-weight: 800;
         font-size: 14px;
         margin: 0 4px;
     }
 
-    .PetCardContentList{
+    .PetCardContentList {
         margin: 4px 0 6px 0;
     }
-    .ListPetCard:hover{
+
+    .ListPetCard:hover {
         background-color: #eef6eed6;
     }
-    
-  }
+   
 
-  @media screen and (max-width:1200px) {
+}
 
- 
-    .ListPetCard:hover{
+@media screen and (max-width:1200px) {
+
+
+    .ListPetCard:hover {
         background-color: #e1e9e1d6;
     }
-    
-  }
+
+}
