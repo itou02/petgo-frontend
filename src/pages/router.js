@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login/index";
 import Counter from "./counter/counter";
 import Home from "./Home/index";
-import NotFound from "./NotFound/index";
+
 import QQLayout from "../Layout/QQLayout";
 
 import Owner from "./Experience/owner";
@@ -18,7 +18,7 @@ import ExPetCheck from "./Experience/exPetCheckPet";
 
 import Adoption from "./Adoption/adoptionAlready";
 
-
+import NotFound from "./NotFound/index";
 
 import Experience from "./Experience/Experience";
 import Illustrate from "./Experience/Illustrate";
@@ -36,9 +36,13 @@ import DoingShareList from "./RecordList/DoingShareList";
 import ExperienceList from "./RecordList/ExperienceList";
 import ShareList from "./RecordList/ShareList";
 
+
 import Signup from "./Signup/index.js";
 import Forget from "./Forget/index.js";
 import Revise from "./Forget/index2.js";
+
+
+
 import Comment from "./Comment/index.js";
 
 import Petlist from "./Petlist/index.js";

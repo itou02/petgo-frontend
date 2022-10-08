@@ -17,7 +17,7 @@ function ExPet() {
     };
 
     return (
-        <div className="container">
+        <div id="adoption">
             <Row>
                 <Col span={24} className="exFilter">
                     
