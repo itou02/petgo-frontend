@@ -1,4 +1,5 @@
 import React, { useState,createContext } from 'react';
+import {FacebookFilled} from '@ant-design/icons';
 import { Col,Row ,message,Space,Modal} from "antd";
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
@@ -20,7 +21,7 @@ const config = {
   };
 
 /*共養專區-查看詳細寵物頁面*/
-function ExPetCheckPet() {
+function AdoptionCheckPet() {
 
     const [modal, contextHolder] = Modal.useModal();
 
@@ -53,7 +54,7 @@ function ExPetCheckPet() {
       };
 
     return (
-        <div className="container">
+        <div id="adoptionCheckPet">
             <Row justify="center">
                 <Col span={16} className="fullPet">
                     <Col span={18} className="checkItem">
@@ -128,11 +129,29 @@ function ExPetCheckPet() {
                     <Col span={5} className="peopleImage">
                         <img src={images.bb} />
                     </Col>
-                    <Row className="trimPeopleComm">
-                        <Col span={22} className="peopleComm">
-                            <h2>白婷鈺</h2>
-                            <hr />
-                            <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                    <Row className="trimSharePeople">
+                        <Col span={22} className="SharePeople">
+                            <div className='leftPart'>
+                                <div className='trimLable'>
+                                    <h2>白婷鈺</h2>
+                                    <div>主要飼主</div>
+                                </div>
+                                <div className='sharePeopleItem'>
+                                    <p>地區：</p>
+                                    <p>年齡：</p>
+                                    <p>性別：</p>
+                                </div>
+                            </div>                            
+                            <div className='rightPart'>
+                                <h2>聯絡資訊</h2>
+                                <hr />
+                                <h3>
+                                    <FacebookFilled />
+                                    <p>ID：a52195219a</p>
+                                </h3>
+                            </div>
+                            
+                            
                         </Col>
                         <Col span={23} className="commDate">
                             <span>2022/06/16</span>
@@ -162,4 +181,4 @@ function ExPetCheckPet() {
     );
 }
 
-export default ExPetCheckPet;
+export default AdoptionCheckPet;

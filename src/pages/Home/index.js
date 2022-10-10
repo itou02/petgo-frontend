@@ -16,7 +16,7 @@ const contentStyle = {
   background: '#364d79',
 };
 
-function Index(props) {
+function Home(props) {
   const [dotPosition, setDotPosition] = useState('top');
 
   const handlePositionChange = ({ target: { value } }) => {
@@ -60,13 +60,13 @@ function Index(props) {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 1
   };
   const { Meta } = Card;
   return (
-    <div>
+    <div id='Home'>
       <Row className='containter'>
-        <Col span={20} >
+        <Col span={16} >
           <div className='Carousel'>
             <div className='Carouselson'>
               <Slider {...autoplay}>
@@ -109,33 +109,50 @@ function Index(props) {
           <div className='Comment'>
             <div className="site-card-wrapper">
               <Slider {...settings}>
-                <div >
-                  <Card title="" bordered={false}>
-                    Card content
-                  </Card>
+                <div className='Commentcard'>
+                  <Row className="bannerBlock">
+                    <Col sm={24} className="pictureBlock">
+                      <div className="imgblock">
+                        {/* <img src={images.gold} /> */}
+                      </div>
+                    </Col>
+                    <Col sm={24} md={12} className="titleBlock">
+                      <span>
+                        <h1 >
+                          <strong>1</strong>
+                        </h1></span>
+                    </Col>
+                  </Row>
                 </div>
-                <div >
-                  <Card title="Card title" bordered={false}>
-                    Card content
-                  </Card>
+                <div className='Commentcard'>
+                  <Row className="bannerBlock">
+                    <Col sm={24} className="pictureBlock">
+                      <div className="imgblock">
+                        {/* <img src={images.gold} /> */}
+                      </div>
+                    </Col>
+                    <Col sm={24} md={12} className="titleBlock">
+                      <span>
+                        <h1 >
+                          <strong>1</strong>
+                        </h1></span>
+                    </Col>
+                  </Row>
                 </div>
-                <div >
-                  <h3>3</h3>
-                </div>
-                <div>
-                  <h3>4</h3>
-                </div>
-                <div>
-                  <h3>5</h3>
-                </div>
-                <div>
-                  <h3>6</h3>
-                </div>
-                <div>
-                  <h3>7</h3>
-                </div>
-                <div>
-                  <h3>8</h3>
+                <div className='Commentcard'>
+                  <Row className="bannerBlock">
+                    <Col sm={24} className="pictureBlock">
+                      <div className="imgblock">
+                        {/* <img src={images.gold} /> */}
+                      </div>
+                    </Col>
+                    <Col sm={24} md={12} className="titleBlock">
+                      <span>
+                        <h1 >
+                          <strong>1</strong>
+                        </h1></span>
+                    </Col>
+                  </Row>
                 </div>
               </Slider>
             </div>
@@ -145,7 +162,7 @@ function Index(props) {
               <Col span={24} className='title'><h1>我們的理念</h1></Col>
               <Col span={24} className='introduce'>
                 <Row className="bannerBlock">
-                  <Col sm={24} md={12} className="pictureBlock">
+                  <Col sm={24} md={12}>
                     <div className="imgBlock">
                       <img src={images.gold} />
                     </div>
@@ -184,7 +201,7 @@ function Index(props) {
 
 }
 
-export default Index;
+export default Home;
 // function Index(props) {
 
 //   const success = () => {

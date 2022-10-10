@@ -1,6 +1,7 @@
 import React from 'react';
 import ButtonComponent from "../../components/button/button";
-import { Row, Col } from 'antd';
+import { Row, Col, Modal, Button } from 'antd';
+import { useState } from 'react';
 import images from '../../config/images';
 import './index.less'
 
@@ -13,8 +14,8 @@ const contentStyle = {
     background: '#364d79',
 };
 
-function Comment() {
 
+function Comment() {
     return (
         <div id='Petlist'>
             <Row align='center' className='container'>

@@ -239,7 +239,7 @@ const handleChange = (value) => {
                     className="RearingPet3Form"
                     
                     wrapperCol={{
-                      span:6,
+                      span:12,
                     }}
                     label="家中可活動範圍"
                     name="HomeRange">

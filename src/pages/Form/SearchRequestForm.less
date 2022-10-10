@@ -1,11 +1,12 @@
-.RequestFormwarp{
+.RequestFormwarp {
     margin-top: 2%;
-    margin-bottom:2%;
+    margin-bottom: 2%;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
 }
-.RequestFormTitle{
+
+.RequestFormTitle {
     color: #FF9458;
     font-weight: 600;
     font-size: 24px;
@@ -13,11 +14,11 @@
     width: 100%;
     padding: 2% 0;
     margin-bottom: 0;
-    
+
 }
 
-.formsubtitle{
-    font-family:'Roboto';
+.formsubtitle {
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
@@ -26,13 +27,13 @@
 
 }
 
-.formContent{
+.formContent {
     display: flex;
     justify-content: flex-start;
     width: 100%;
 }
 
-.formContentText{
+.formContentText {
     font-weight: 900;
     font-size: 16px;
     margin-right: 5%;
@@ -40,54 +41,54 @@
     font-style: normal;
 }
 
-.formContentTextArea .ant-form-item-label > label {
+.formContentTextArea .ant-form-item-label>label {
     font-weight: 700;
     font-size: 16px;
     margin-right: 5%;
     width: 100%;
 }
 
-.formContentTextArea{
+.formContentTextArea {
     display: flex;
-    flex-direction:  column;
-    
-    
+    flex-direction: column;
+
+
 }
 
-.addPetBtn{
-width: 100%;
-height: 55px;
-font-weight: 900;
-font-size: 24px;
-background: #5EBBB4;
-box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-border-radius: 2px;
-color: rgb(255, 255, 255);
+.addPetBtn {
+    width: 100%;
+    height: 55px;
+    font-weight: 900;
+    font-size: 24px;
+    background: #5EBBB4;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
 }
 
-.formHr{
+.formHr {
     color: rgb(53, 53, 53);
     margin: 3% 0;
 }
 
-.formBtnWarp{
+.formBtnWarp {
     display: flex;
     justify-content: center;
 }
 
-.formLineImg{
+.formLineImg {
     width: 8%;
     margin-right: 2%;
 
 }
 
-.LineWrap{
+.LineWrap {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.LineLable{
+.LineLable {
     font-weight: 900;
     font-size: 16px;
     color: #5D5858;
@@ -98,21 +99,21 @@ color: rgb(255, 255, 255);
 
 
 
-.LineInput input{
+.LineInput input {
     margin: 0;
 }
 
-.lineFormItem{
+.lineFormItem {
     margin: 0;
 
 }
 
-.petListSelect{
+.petListSelect {
     display: flex;
     flex-direction: column;
 }
 
-.ListPetCardRadio{
+.ListPetCardRadio {
     height: 100%;
     color: #1A535C;
     background-color: #F7FFF7;
@@ -120,35 +121,44 @@ color: rgb(255, 255, 255);
 }
 
 
-.ListPetCardForm{
+.ListPetCardForm {
     width: 100%;
 
-.PetCardText{
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: 700;
-    font-size: 14px;
-    margin: 0;
-    margin-right: 5px;
-}
-.PetCardBtn{
-    width: 80%;
-}
+    .PetCardText {
+        color: rgba(0, 0, 0, 0.5);
+        font-weight: 700;
+        font-size: 14px;
+        margin: 0;
+        margin-right: 5px;
+    }
+
+    .PetCardBtn {
+        width: 80%;
+    }
 
 
-.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
-    color: #fff;
-    background-color: #F7FFF7 !important;
-    border-color: #F7FFF7; 
-}
-
-.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
-    background-color: #F7FFF7 !important;
-    border-color: #F7FFF7; 
-}
-
-.ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
-    
-}
 
 }
 
+
+.RequestForm {
+
+    .RequestForm .ant-radio-button-wrapper {
+        height: 100%;
+        background-color: #F7FFF7;
+    }
+
+    .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+        color: #fff;
+        background: #eef6eed6;
+        border-color: #eef6eed6;
+        color: rgb(53, 53, 53);
+    }
+
+    .ant-radio-button-wrapper:hover {
+        background: #eef6eed6;
+        border-color: #eef6eed6;
+        color: rgb(53, 53, 53);
+
+    }
+}

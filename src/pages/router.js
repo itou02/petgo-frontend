@@ -5,6 +5,8 @@ import Login from "./Login/index";
 import Counter from "./counter/counter";
 import Home from "./Home/index";
 
+import QQLayout from "../Layout/QQLayout";
+
 import Owner from "./Experience/owner";
 import NoPet from "./Experience/ownerNoPet";
 
@@ -16,6 +18,7 @@ import ExPetCheck from "./Experience/exPetCheckPet";
 
 import Adoption from "./Adoption/adoptionAlready";
 import AdoptionCheck from "./Adoption/adoptionCheckPet";
+import AdoptionNone from "./Adoption/adoptionNotYet";
 
 import ReceiveMemberDetail from "./ReceiveRequest/memberDetail";
 import CheckMembersPet from "./ReceiveRequest/checkMembersPet";
@@ -24,6 +27,7 @@ import CheckMembersPet from "./ReceiveRequest/checkMembersPet";
 
 import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
+
 import Experience from "./Experience/Experience";
 import Illustrate from "./Experience/Illustrate";
 import Member from "./Member/Member";
@@ -40,26 +44,41 @@ import DoingShareList from "./RecordList/DoingShareList";
 import ExperienceList from "./RecordList/ExperienceList";
 import ShareList from "./RecordList/ShareList";
 
-import Signup from "./signup/index.js";
-import Forget from "./forget/index.js";
-import Revise from "./forget/index2.js";
+
+import Signup from "./Signup/index.js";
+import Forget from "./Forget/index.js";
+import Revise from "./Forget/index2.js";
+
+
+
 import Comment from "./Comment/index.js";
+
 import Petlist from "./Petlist/index.js";
 import Norequest from "./sendrequest/norequest.js";
-import Sendrequest from "./sendrequest/sendrequest.js";
+import Sentrequest from "./sendrequest/sendrequest.js";
+import Receiverequest from "./Getrequest/getrequest";
+import Noreceiverequest from "./Getrequest/norequest";
+
 function Router() {
+  console.log('====Router====');
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<GlobalLayout />}>
+        <Route element={<QQLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+
           <Route path="forget" element={<Forget />} />
           <Route path="revise" element={<Revise />} />
           <Route path="comment" element={<Comment />} />
           <Route path="petlist" element={<Petlist />} />
+
+          <Route path="nosent-request" element={<Norequest />} />
+          <Route path="sent-request" element={<Sentrequest />} />
+          <Route path="receive-request" element={<Receiverequest />} />
+          <Route path="noreceive-request" element={<Noreceiverequest />} />
           <Route path="norequest" element={<Norequest />} />
-          <Route path="sendrequest" element={<Sendrequest />} />
+
           <Route path="/" element={<Home />} />
           <Route path="counter" element={<Counter />} />
 
@@ -126,10 +145,13 @@ function Router() {
           <Route path="Experience/experiencer-illustrate/card" element={<ExPet />} />
           {/* 體驗者專區-查看 */}
           <Route path="Experience/experiencer-illustrate/card/ex-pet-detail" element={<ExPetCheck />} />
-          
+
           {/* 已有共養人 */}
           <Route path="Share-already" element={<Adoption />} />
           <Route path="Share-already/share-pet-detail" element={<AdoptionCheck />} />
+
+          {/* 未有共養人 */}
+          <Route path="Share-none" element={<AdoptionNone />} />
 
           {/* 我收到的請求-查看詳細-會員資料 */}
           <Route path="Receive-request/member-detail" element={<ReceiveMemberDetail />} />
@@ -139,10 +161,11 @@ function Router() {
           
           
 
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
+
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

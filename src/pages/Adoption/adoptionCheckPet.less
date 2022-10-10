@@ -9,7 +9,7 @@
     font-family: 'Microsoft JhengHei', 'Arial';
 }
 
-.container{
+#adoptionCheckPet{
     background-color: @bottom-main-color;
 }
 
@@ -139,27 +139,71 @@
             object-fit:fill;
         }
     }
-    .trimPeopleComm{
+    .trimSharePeople{
         display: flex;
         justify-content: center;
         width: 75%;
-        .peopleComm{
+        .SharePeople{
             // border: 1px solid black;
             margin-top: 2%;
-            hr{
-                width: 50%;
-                margin: 1% 0;
+            display: flex;
+            .leftPart{
+                width: 100%;
+                .trimLable{
+                    display: flex;
+                    h2{
+                        color: @dark-main-color;
+                        font-weight: bold;
+                        margin:1% 0;
+                    }
+                    div{
+                        margin:2%;
+                        padding: 1% 1% 0 1%;
+                        background-color: @feature-adoptions-color;
+                        color: @dark-main-color;
+                        border-radius: 20px;
+                        font-weight: 600;
+                        
+                    }
+                    
+                }
+                .sharePeopleItem{
+                    p{
+                        margin: 1%;
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
             }
-            h2{
-                color: @dark-main-color;
-                font-weight: bold;
-                margin:1% 0;
+            
+            .rightPart{
+                width: 100%;
+                h2{
+                    color: @dark-main-color;
+                    font-weight: bold;
+                    margin:1% 0;
+                }
+                hr{
+                    width: 50%;
+                    margin: 1% 0;
+                }
+                h3{
+                    margin-top: 5%;
+                    display: flex;
+                    span{
+                    font-size: 34px;
+                    margin-right: 3%;
+                    }
+                    p{
+                        margin: 1%;
+                    }
+                }
             }
-            p{
-                font-size: 17px;
-                line-height: 25px;
-                font-weight: 600;
-            }
+            // p{
+            //     font-size: 17px;
+            //     line-height: 25px;
+            //     font-weight: 600;
+            // }
             
         }
         .commDate{

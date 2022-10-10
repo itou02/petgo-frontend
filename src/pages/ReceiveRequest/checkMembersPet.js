@@ -27,15 +27,14 @@ function ExPetCheckPet() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
-      setIsModalOpen(true);
+        setIsModalOpen(true);
     };
-  
     const handleOk = () => {
-      setIsModalOpen(false);
+        setIsModalOpen(false);
     };
-  
+
     const handleCancel = () => {
-      setIsModalOpen(false);
+        setIsModalOpen(false);
     };
 
     const info = () => {
@@ -67,21 +66,21 @@ function ExPetCheckPet() {
                                         <Row>姓名：</Row>
                                         <Row>體型：</Row>
                                         <Row>年齡：</Row>
-                                        <Row>來源方：</Row>
+                                        {/* <Row>來源方：</Row> */}
                                     </Col>
                                     <Col span={10} offset={1} className="petDetails">
                                         <Row>品種：</Row>
                                         <Row>性別：</Row>
                                         <Row>絕育狀況：</Row>
-                                        <Row>飼養期間：</Row>
+                                        {/* <Row>飼養期間：</Row> */}
                                     </Col>
                                 </Row>
-                                <Row>
-                                    <Col span={20} offset={2} className="exPeriod">
-                                        <Row>體驗期間：</Row>
-                                    </Col>
-                                </Row>
-                            </Col> 
+                                
+                            </Col>
+                            <Col span={20}  className="feedPeriod">
+                                <Row>飼養期間：</Row>
+                            </Col>
+                            
                         </Row>
                         
                             <Row className="detailIntro">
