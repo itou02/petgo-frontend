@@ -1,13 +1,56 @@
-import React from "react";
-import { Col,Row ,message,Space} from "antd";
+import React, { useState,createContext } from 'react';
+import { Col,Row ,message,Space,Modal} from "antd";
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
 import './exPetCheckPet.less'
 import images from "../../config/images";
 
+const ReachableContext = createContext(null);
+const UnreachableContext = createContext(null);
+
+const config = {
+    title: 'Use Hook!',
+    content: (
+      <>
+        <ReachableContext.Consumer>{(name) => `Reachable: ${name}!`}</ReachableContext.Consumer>
+        <br />
+        <UnreachableContext.Consumer>{(name) => `Unreachable: ${name}!`}</UnreachableContext.Consumer>
+      </>
+    ),
+  };
 
 /*體驗者專區-查看按鈕的詳細寵物頁面*/
 function ExPetCheckPet() {
+
+    const [modal, contextHolder] = Modal.useModal();
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const handleOk = () => {
+      setIsModalOpen(false);
+    };
+  
+    const handleCancel = () => {
+      setIsModalOpen(false);
+    };
+
+    const info = () => {
+        Modal.info({
+          title: 'This is a notification message',
+          content: (
+            <div>
+              <p>some messages...some messages...</p>
+              <p>some messages...some messages...</p>
+            </div>
+          ),
+      
+          onOk() {},
+        });
+      };
 
     return (
         <div id="ExPetCheckPet">
@@ -153,11 +196,19 @@ function ExPetCheckPet() {
             </Row>
             <Row justify="center" style={{marginbottom:'10%' }}>
                 <ButtonComponent
-                    text="前往體驗" 
+                    type="primary"
+                    text="前往體驗"
                     size="large"
                     name="goToEx"
-                    // handleSubmit={add}
+                    handleSubmit={info}
                 />
+                
+                <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                    <p>Some contents...</p>
+                </Modal>
+                
             </Row>
         </div>
     );

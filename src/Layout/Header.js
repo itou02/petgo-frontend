@@ -30,16 +30,16 @@ function HeaderComponent(props) {
             className="activityMenu"
             items={[
                 {
-                    label: <a href="/">體驗紀錄</a>,
+                    label: <a href="Record/Experience/list">體驗紀錄</a>,
                     key: "experiencerecord",
                 },
                 {
-                    label: <a href="/">共養紀錄</a>,
+                    label: <a href="Record/Share/list">共養紀錄</a>,
                     key: "breedrecord",
                 },
                 {
-                    label: "正在共養",
-                    key: "breeding",
+                    label: <a href="Record/DoingShare/list">正在共養</a>,
+                    key: "breeding",    
                 },
             ]}
         />
@@ -93,12 +93,12 @@ function HeaderComponent(props) {
     );
     const items = [
         {
-            label: <a href="Forget">飼主體驗</a>,
+            label: <a href="Experience">飼主體驗</a>,
             key: "breeder",
             
         },
         {
-            label:<a href="Forget">寵物共養</a>,
+            label:<a href="Share-already">寵物共養</a>,
             key: "pettogether",
         },
         {
@@ -149,8 +149,7 @@ function HeaderComponent(props) {
         <div className="header">
             <Header>
                 <a href="/" className="logoBlock">
-                    
-                     <img
+                    <img
                         src={images.logo}
                         alt="logo"
                         width={200}

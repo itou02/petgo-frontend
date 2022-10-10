@@ -16,6 +16,8 @@ import { AiOutlineFileSearch } from "react-icons/ai";
 import "./ExperienceList.less";
 
 function ExperienceListPage() {
+
+  
   return (
     <div className="ExperienceList">
       <Row type="flex" justify="center" align="middle">
@@ -73,7 +75,6 @@ function ExperienceListPage() {
                       </Row>
 
                     </Col>
-                   
                   </Row>
 
                   <Row
