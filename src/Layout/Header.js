@@ -149,8 +149,7 @@ function HeaderComponent(props) {
         <div className="header">
             <Header>
                 <a href="/" className="logoBlock">
-                    
-                     <img
+                    <img
                         src={images.logo}
                         alt="logo"
                         width={200}

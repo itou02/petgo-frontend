@@ -15,10 +15,15 @@ import ExPet from "./Experience/exPet";
 import ExPetCheck from "./Experience/exPetCheckPet";
 
 import Adoption from "./Adoption/adoptionAlready";
+import AdoptionCheck from "./Adoption/adoptionCheckPet";
+
+import ReceiveMemberDetail from "./ReceiveRequest/memberDetail";
+import CheckMembersPet from "./ReceiveRequest/checkMembersPet";
+
+
 
 import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
-<<<<<<< HEAD
 import Experience from "./Experience/Experience";
 import Illustrate from "./Experience/Illustrate";
 import Member from "./Member/Member";
@@ -35,8 +40,6 @@ import DoingShareList from "./RecordList/DoingShareList";
 import ExperienceList from "./RecordList/ExperienceList";
 import ShareList from "./RecordList/ShareList";
 
-=======
->>>>>>> 0aa8fce0ad80fc79042cecf8de0c1c195e8fbed9
 import Signup from "./signup/index.js";
 import Forget from "./forget/index.js";
 import Revise from "./forget/index2.js";
@@ -103,14 +106,14 @@ function Router() {
           />
           <Route path="Record/Share/detailed" element={<ShareDetailed />} />
 
-          <Route path="owner" element={<Owner />} />
+          {/* <Route path="owner" element={<Owner />} />
           <Route path="nopet" element={<NoPet />} />
           <Route path="check-no" element={<CheckPetN />} />
           <Route path="check" element={<CheckPet />} />
           <Route path="expet" element={<ExPet />} />
           <Route path="expet-check" element={<ExPetCheck />} />
+          <Route path="adoption" element={<Adoption />} /> */}
 
-          <Route path="adoption" element={<Adoption />} />
           {/* 飼主專區 */}
           <Route path="Experience/owner-illustrate/post" element={<Owner />} />
           {/* 飼主專區-無寵物 */}
@@ -126,8 +129,15 @@ function Router() {
           
           {/* 已有共養人 */}
           <Route path="Share-already" element={<Adoption />} />
+          <Route path="Share-already/share-pet-detail" element={<AdoptionCheck />} />
 
+          {/* 我收到的請求-查看詳細-會員資料 */}
+          <Route path="Receive-request/member-detail" element={<ReceiveMemberDetail />} />
+          {/* 我收到的請求-查看詳細-會員資料-養寵經歷寵物詳細 */}
+          <Route path="Receive-request/member-detail/request-pet-detail" element={<CheckMembersPet />} />
 
+          
+          
 
         </Route>
         <Route path="*" element={<NotFound />} />

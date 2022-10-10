@@ -4,7 +4,7 @@ import ButtonComponent from "../../components/button/button";
 import CardComponent from "../../components/card/card";
 import {EnvironmentOutlined} from '@ant-design/icons';
 import { GiPlainCircle } from "react-icons/gi";
-import './adoptionAlready.less'
+import './adoptionAlready.less';
 import images from "../../config/images";
 
 const { Meta } = Card;

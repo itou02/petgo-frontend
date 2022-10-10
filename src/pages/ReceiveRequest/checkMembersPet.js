@@ -2,7 +2,7 @@ import React, { useState,createContext } from 'react';
 import { Col,Row ,message,Space,Modal} from "antd";
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
-import './exPetCheckPet.less'
+import './checkMembersPet.less'
 import images from "../../config/images";
 
 const ReachableContext = createContext(null);
@@ -19,7 +19,7 @@ const config = {
     ),
   };
 
-/*體驗者專區-查看按鈕的詳細寵物頁面*/
+/*我收到的請求-查看會員詳細-查看詳細寵物頁面*/
 function ExPetCheckPet() {
 
     const [modal, contextHolder] = Modal.useModal();
@@ -144,9 +144,9 @@ function ExPetCheckPet() {
             <Row justify="center" style={{marginbottom:'10%'}}>
                 <ButtonComponent
                     type="primary"
-                    text="前往體驗"
+                    text="返回"
                     size="large"
-                    name="goToEx"
+                    name="comeBack"
                     handleSubmit={info}
                 />
                 

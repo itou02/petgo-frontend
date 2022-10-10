@@ -22,12 +22,12 @@ function ExPet() {
                     <h2>日期：<input type={"date"}></input></h2>
                     <h2>
                         <select style={{width:"200px"}}>
-                            <option>---</option>                      
+                            <option>縣市</option>                      
                         </select>
                     </h2>
                     <h2>
                         <select style={{width:"200px"}}>
-                            <option>---</option>                      
+                            <option>地區</option>                      
                         </select>
                     </h2>
                     <input type="radio" name="dog" value="dog" /><label>狗</label>
