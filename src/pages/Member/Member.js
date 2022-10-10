@@ -11,6 +11,7 @@ import {
   DatePicker,
   message, 
   Upload, 
+  Link,
  
   
 } from "antd";
@@ -28,10 +29,14 @@ function MemberPage() {
   };
   const { TextArea } = Input;
   const { Option } = Select;
-  const provinceData = ['台中市', '台北市'];
+  const provinceData = [  '嘉義縣', '新北市', '嘉義市', '新竹縣', '新竹市',
+  '臺北市', '臺南市', '宜蘭縣', '苗栗縣', '雲林縣',
+  '花蓮縣', '臺中市', '臺東縣', '桃園市', '南投縣',
+  '高雄市', '金門縣', '屏東縣', '基隆市', '澎湖縣',
+  '彰化縣', '連江縣',];
   const cityData = {
-    台中市: ['大里區', '北區', '南區'],
-    台北市: ['東區', '大安區', '萬華區'],
+    臺中市: ['大里區', '北區', '南區'],
+    臺北市: ['東區', '大安區', '萬華區'],
   };
 
   const [cities, setCities] = useState(cityData[provinceData[0]]);
