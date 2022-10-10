@@ -65,11 +65,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={goPage}
-                            href="{ReceiveMemberDetail}"/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -87,10 +87,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={goPage}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -108,10 +109,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -129,10 +131,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -150,10 +153,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -171,10 +175,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -192,10 +197,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -213,10 +219,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -234,10 +241,11 @@ function AdoptionAlready() {
                                 <h4>性別：女</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="adoptionCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="Share-already/share-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="adoptionCheckBtn"
+                                handleSubmit={goPage}/></a>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
