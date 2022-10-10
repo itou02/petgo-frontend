@@ -39,17 +39,16 @@ function ExPetCheckPet() {
 
     const info = () => {
         Modal.info({
-          title: 'This is a notification message',
-          content: (
-            <div>
-              <p>some messages...some messages...</p>
-              <p>some messages...some messages...</p>
-            </div>
-          ),
-      
-          onOk() {},
+            title: 'This is a notification message',
+            content: (
+                <div>
+                    <p>some messages...some messages...</p>
+                    <p>some messages...some messages...</p>
+                </div>
+            ),
+            onOk() {},
         });
-      };
+    };
 
     return (
         <div className="container">

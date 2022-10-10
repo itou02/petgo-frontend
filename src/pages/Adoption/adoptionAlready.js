@@ -11,7 +11,7 @@ const { Meta } = Card;
 
 
 /*已有共養人-首頁*/
-function ExPet() {
+function AdoptionAlready() {
     const goPage=() =>{
         this.props.history.push("/Share-already/share-pet-detail");
     };
@@ -68,7 +68,8 @@ function ExPet() {
                         btn={<ButtonComponent
                             text="查看"                    
                             name="adoptionCheckBtn"
-                            handleSubmit={goPage}/>
+                            handleSubmit={goPage}
+                            href="{ReceiveMemberDetail}"/>
                         }
                         light={<h1><GiPlainCircle /><GiPlainCircle /><GiPlainCircle /></h1>}
                         
@@ -254,4 +255,4 @@ function ExPet() {
         </div>
     );
 }
-export default ExPet;
+export default AdoptionAlready;

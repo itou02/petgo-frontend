@@ -12,11 +12,11 @@ const UnreachableContext = createContext(null);
 const config = {
     title: 'Use Hook!',
     content: (
-      <>
+        <>
         <ReachableContext.Consumer>{(name) => `Reachable: ${name}!`}</ReachableContext.Consumer>
         <br />
         <UnreachableContext.Consumer>{(name) => `Unreachable: ${name}!`}</UnreachableContext.Consumer>
-      </>
+        </>
     ),
   };
 
