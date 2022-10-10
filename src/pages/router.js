@@ -125,13 +125,6 @@ function Router() {
           />
           <Route path="Record/Share/detailed" element={<ShareDetailed />} />
 
-          {/* <Route path="owner" element={<Owner />} />
-          <Route path="nopet" element={<NoPet />} />
-          <Route path="check-no" element={<CheckPetN />} />
-          <Route path="check" element={<CheckPet />} />
-          <Route path="expet" element={<ExPet />} />
-          <Route path="expet-check" element={<ExPetCheck />} />
-          <Route path="adoption" element={<Adoption />} /> */}
 
           {/* 飼主專區 */}
           <Route path="Experience/owner-illustrate/post" element={<Owner />} />
