@@ -93,12 +93,12 @@ function HeaderComponent(props) {
     );
     const items = [
         {
-            label: <a href="Experience">飼主體驗</a>,
+            label: <a href="/Experience">飼主體驗</a>,
             key: "breeder",
             
         },
         {
-            label:<a href="Share-already">寵物共養</a>,
+            label:<a href="/Share-already">寵物共養</a>,
             key: "pettogether",
         },
         {

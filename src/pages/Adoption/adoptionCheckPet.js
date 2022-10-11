@@ -147,7 +147,7 @@ function AdoptionCheckPet() {
                                 <h2>聯絡資訊</h2>
                                 <hr />
                                 <h3>
-                                    <BsLine />
+                                <img className="formLineImg" src={images.line} />
                                     <p>ID：a52195219a</p>
                                 </h3>
                             </div>

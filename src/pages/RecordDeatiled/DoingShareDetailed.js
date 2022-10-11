@@ -1,8 +1,20 @@
-import React from "react";
-import { Col, Row, message, Space } from "antd";
+import {
+  Form,
+  Col,
+  Row,
+  message,
+  Space,
+  Input,
+  List,
+  Avatar,
+  Comment,
+  Button,
+} from "antd";
+import moment from "moment";
+import React, { useState } from "react";
 
 import ButtonComponent from "../../components/button/button";
-// import './owner.less'
+
 import "./DoingShareDetailed.less";
 import images from "../../config/images";
 import { Route } from "react-router-dom";
@@ -58,6 +70,7 @@ function DoingShareDetailed() {
                       <div className="DetailText">
                         飼養期間：2016/08~2016/08
                       </div>
+                      <div className="DetailText">共養期間：2016/08/20~ </div>
                     </Col>
                   </Row>
                 </Col>
@@ -89,14 +102,14 @@ function DoingShareDetailed() {
                 className="PetCardTextDetailbottom"
               >
                 <Col xl={10} md={10} sm={18} xs={22}>
-                  <div className="DetailTextTitle">尋找體驗者的原因</div>
+                  <div className="DetailTextTitle">尋找共養的原因</div>
                   <hr></hr>
                   <p className="DetailText">
                     那幾天要去玩，希望有個愛狗狗的人可以帶帶
                   </p>
                 </Col>
                 <Col xl={10} md={10} sm={18} xs={22}>
-                  <div className="DetailTextTitle">體驗需求</div>
+                  <div className="DetailTextTitle">共養需求</div>
                   <hr></hr>
                   <p className="DetailText">住附近，有耐心</p>
                 </Col>
@@ -107,61 +120,43 @@ function DoingShareDetailed() {
       </Row>
 
       <Row justify="center">
-        <Col xl={5} md={5} sm={8} xs={10} className="caption">
+        <Col xl={7} md={10} sm={12} xs={14} className="caption">
           <hr />
-          <h1>評論</h1>
+          <h1>共養人員</h1>
           <hr />
         </Col>
       </Row>
       <Row justify="center" className="captionBottom">
         <Col lg={14} md={16} sm={18} xs={20}>
-          <Row  className="commentary">
+          <Row className="commentary">
             <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
               <img src={images.bb} />
             </Col>
 
-            <Col xl={19} md={18} sm={16} xs={16} >
-              <Row className="trimPeopleComm">
-                <Col span={24} className="peopleComm">
-                  <h2>白婷鈺</h2>
-                  <hr />
-                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+            <Col xl={19} md={18} sm={16} xs={16}>
+              <Row justify="center" align="top" className="trimPeopleComm">
+                <Col span={12} className="peopleComm">
+                  <div className="peopleCommShare">
+                    <h2>白婷鈺</h2>
+                    <div>主要飼主</div>
+                  </div>
+                  <div className="leftPart">
+                    <div className="sharePeopleItem">
+                      <p>地區：</p>
+                      <p>年齡：</p>
+                      <p>性別：</p>
+                    </div>
+                  </div>
                 </Col>
-                <Col span={24} className="commDate">
-                  <span>2022/06/16</span>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-          <Row  className="commentary">
-            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.bb} />
-            </Col>
-
-            <Col xl={19} md={18} sm={16} xs={16} >
-              <Row className="trimPeopleComm">
-                <Col span={24} className="peopleComm">
-                  <h2>白婷鈺</h2>
-                  <hr />
-                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
-                </Col>
-                <Col span={24} className="commDate">
-                  <span>2022/06/16</span>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-          <Row  className="commentary">
-            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.bb} />
-            </Col>
-
-            <Col xl={19} md={18} sm={16} xs={16} >
-              <Row className="trimPeopleComm">
-                <Col span={24} className="peopleComm">
-                  <h2>白婷鈺</h2>
-                  <hr />
-                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                <Col span={12} className="peopleComm">
+                  <div className="rightPart">
+                    <h2>聯絡資訊</h2>
+                    <hr />
+                    <h3>
+                      <img className="formLineImg" src={images.line} />
+                      <p>ID：a52195219a</p>
+                    </h3>
+                  </div>
                 </Col>
                 <Col span={24} className="commDate">
                   <span>2022/06/16</span>
@@ -172,15 +167,15 @@ function DoingShareDetailed() {
         </Col>
       </Row>
 
-
-
-      <Row justify="center" style={{ marginbottom: "10%" }}>
-        <ButtonComponent
-          text="返回"
-          size="large"
-          name="goToEx"
-          onClick="/Record/DoingShare/list"
-        />
+      <Row className="BtnWarp">
+        <Col>
+          <ButtonComponent
+            text="退出共養"
+            size="large"
+            name="DetailedDeteleBtn"
+            onClick="/Record/DoingShare/list"
+          />
+        </Col>
       </Row>
     </div>
   );

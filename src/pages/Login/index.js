@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button, Checkbox, Form, Icon, Input, Space} from 'antd';
+import { Row, Col, Button, Checkbox, Form, Icon, Input, Space } from 'antd';
 import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import ButtonComponent from "../../components/button/button";
 import { AiFillLock } from "react-icons/ai";
@@ -15,11 +15,11 @@ function Login() {
     console.log('Failed:', errorInfo);
   };
 
-  
+
 
   return (
     <div id="login">
-      <Row  className="container">
+      <Row className="container">
         <Col xs={22} md={24} className="login">
           <Row className="bannerBlock1" type="flex" justify="center" align="middle">
             <Col xs={0} sm={0} md={14}>
@@ -28,7 +28,7 @@ function Login() {
               </div>
             </Col>
             <Col xs={24} sm={24} md={10} className="titleBlock">
-              <Row className='a' align="center">
+              <Row  align="center">
                 <Col sm={24} md={14} >
                   <Form
                     name="basic"
@@ -50,7 +50,9 @@ function Login() {
                     <hr></hr>
                     <Input size="large" placeholder="輸入帳號" prefix={<UserOutlined />} />
                     <Input.Password size="large" placeholder="輸入密碼" prefix={<AiFillLock />} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
+
                     <Form.Item
+                    className='loginbtndiv'
                       wrapperCol={{
                         span: 24,
                       }}
