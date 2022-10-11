@@ -4,13 +4,13 @@ import ButtonComponent from "../../components/button/button";
 import CardComponent from "../../components/card/card";
 import {EnvironmentOutlined} from '@ant-design/icons';
 import { GiPlainCircle } from "react-icons/gi";
-import './adoptionAlready.less';
+import './adoptionNotYet.less';
 import images from "../../config/images";
 
 const { Meta } = Card;
 
 
-/*已有共養人-首頁*/
+/*未有共養人-首頁*/
 function ExPet() {
     const goPage=() =>{
         this.props.history.push("/Share-already/share-pet-detail");

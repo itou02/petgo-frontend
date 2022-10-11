@@ -158,15 +158,16 @@
     border: none;
 
     &:hover,
-    &:focus {
-        background-color: rgba(251, 214, 52, 0.662);
-        color: rgb(96, 75, 6);
+    &:focus
+    {
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color:rgb(96, 75, 6) !important;
     }
 }
 
-/*前往體驗按鍵*/
-.goToEx {
-    background-color: @dark-main-color ;
+/*前往體驗,請求共養按鍵*/
+.goToEx{
+    background-color:@dark-main-color ;
     border: none;
     border-radius: 20px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
@@ -199,9 +200,10 @@
     border: none;
 
     &:hover,
-    &:focus {
-        background-color: rgba(251, 214, 52, 0.662);
-        color: rgb(96, 75, 6);
+    &:focus
+    {
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color:rgb(96, 75, 6) !important;
     }
 }
 
@@ -218,7 +220,68 @@
     width: 100px;
     color: @dark-main-color;
     background-color: #E6E6E6;
+    border: none;
+}
 
+// 我收到的請求-查看會員詳細的稍後,接受,拒絕鍵
+.memberDetailBtn1{
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    background-color: @bottom-main-color;
+    color: @dark-main-color;
+    border: none;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+    &:hover,
+    &:focus
+    {
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color:rgb(96, 75, 6) !important;
+    }
+}
+
+.memberDetailBtn2{
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    background-color: #5EBBB4;
+    color: @bottom-color;
+    border: none;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+    &:hover,
+    &:focus
+    {
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color:rgb(96, 75, 6) !important;
+    }
+}
+
+.memberDetailBtn3{
+    width: 100px;
+    height: 50px;
+    font-size: 22px;
+    background-color: @feature-experience-color;
+    color: @bottom-color;
+    border: none;    
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+    &:hover,
+    &:focus
+    {
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color:rgb(96, 75, 6) !important;
+    }
+}
+
+// 我收到的請求-查看會員詳細-寵物詳細資料的返回鍵
+.comeBack{
+    background-color: #54c7bf7e;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    width: 315px;
+    height: 60px;
+    font-size: 24px;
+    border: none;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
 }
 
 
