@@ -1,5 +1,6 @@
 import React, { useState,createContext } from 'react';
 import {FacebookFilled} from '@ant-design/icons';
+import { BsLine } from "react-icons/bs";
 import { Col,Row ,message,Space,Modal} from "antd";
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
@@ -28,30 +29,27 @@ function AdoptionCheckPet() {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
-      setIsModalOpen(true);
+        setIsModalOpen(true);
     };
-  
     const handleOk = () => {
-      setIsModalOpen(false);
+        setIsModalOpen(false);
     };
-  
     const handleCancel = () => {
-      setIsModalOpen(false);
+        setIsModalOpen(false);
     };
 
     const info = () => {
         Modal.info({
-          title: 'This is a notification message',
-          content: (
+            title: 'This is a notification message',
+            content: (
             <div>
-              <p>some messages...some messages...</p>
-              <p>some messages...some messages...</p>
+                <p>some messages...some messages...</p>
+                <p>some messages...some messages...</p>
             </div>
-          ),
-      
-          onOk() {},
+            ), 
+            onOk() {},
         });
-      };
+    };
 
     return (
         <div id="adoptionCheckPet">
@@ -126,9 +124,12 @@ function AdoptionCheckPet() {
             </Row>
             <Row justify="center">
                 <Col span={13} className="commentary">
-                    <Col span={5} className="peopleImage">
-                        <img src={images.bb} />
-                    </Col>
+                    <Row>
+                        <Col span={24} className="peopleImage">
+                            <img src={images.bb} />
+                        </Col>
+                    </Row>
+                    
                     <Row className="trimSharePeople">
                         <Col span={22} className="SharePeople">
                             <div className='leftPart'>
@@ -146,28 +147,26 @@ function AdoptionCheckPet() {
                                 <h2>聯絡資訊</h2>
                                 <hr />
                                 <h3>
-                                    <FacebookFilled />
+                                    <BsLine />
                                     <p>ID：a52195219a</p>
                                 </h3>
                             </div>
-                            
-                            
-                        </Col>
-                        <Col span={23} className="commDate">
-                            <span>2022/06/16</span>
                         </Col>
                     </Row>
                     
                 </Col>
             </Row>
             <Row justify="center" style={{marginbottom:'10%'}}>
-                <ButtonComponent
-                    type="primary"
-                    text="請求共養"
-                    size="large"
-                    name="goToEx"
-                    handleSubmit={info}
-                />
+                <a href='/Share-already/Search-sharer-form'>
+                    <ButtonComponent
+                        type="primary"
+                        text="請求共養"
+                        size="large"
+                        name="goToEx"
+                        handleSubmit={info}
+                    />
+                </a>
+                
                 
                 <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>Some contents...</p>

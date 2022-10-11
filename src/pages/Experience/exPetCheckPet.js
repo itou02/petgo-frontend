@@ -63,7 +63,7 @@ function ExPetCheckPet() {
                             >
                               <Col   >
                                 <Row type="flex" justify="center" align="top" >
-                                  <Col xl={10} md={8} sm={24} xs={24} className="DetailedJmimgWarp" >
+                                  <Col xl={8} md={8} sm={24} xs={24} className="DetailedJmimgWarp" >
                                     <div className="DetailedJmimgWarp">
                                     <img
                                       className="DetailedJmimg"
@@ -166,9 +166,6 @@ function ExPetCheckPet() {
             </Row>
 
 
-
-
-
             <Row justify="center">
                 <Col xl={5} md={5} sm={8} xs={10} className="caption">
                     <hr />
@@ -176,32 +173,41 @@ function ExPetCheckPet() {
                     <hr />
                 </Col>
             </Row>
-            <Row justify="center">
-                <Col lg={14} md={16} sm={18} xs={20} className="commentary">
-                    <Col xl={5} md={6} sm={6} xs={8} className="peopleImage">
-                        <img src={images.bb} />
-                    </Col>
-                    <Row className="trimPeopleComm">
-                        <Col span={22} className="peopleComm">
-                            <h2>白婷鈺</h2>
-                            <hr />
-                            <p>牠很好帶又乖乖的，個性溫馴可愛</p>
-                        </Col>
-                        <Col span={23} className="commDate">
-                            <span>2022/06/16</span>
-                        </Col>
-                    </Row>
-                    
+            <Row justify="center"  className="captionBottom">
+        <Col lg={14} md={16} sm={18} xs={20}>
+          <Row  className="commentary">
+            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+              <img src={images.bb} />
+            </Col>
+
+            <Col xl={19} md={18} sm={16} xs={16} >
+              <Row className="trimPeopleComm">
+                <Col span={24} className="peopleComm">
+                  <h2>白婷鈺</h2>
+                  <hr />
+                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
                 </Col>
-            </Row>
+                <Col span={24} className="commDate">
+                  <span>2022/06/16</span>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+
+
             <Row justify="center" style={{marginbottom:'10%' }}>
-                <ButtonComponent
+                <a href='/Experience/experiencer-illustrate/card/ex-pet-detail/ex-form'>
+                  <ButtonComponent
                     type="primary"
                     text="前往體驗"
                     size="large"
                     name="goToEx"
-                    handleSubmit={info}
-                />
+                    // handleSubmit={info}
+                  />
+                </a>
+                
                 
                 <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>Some contents...</p>

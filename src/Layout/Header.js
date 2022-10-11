@@ -30,15 +30,15 @@ function HeaderComponent(props) {
             className="activityMenu"
             items={[
                 {
-                    label: <a href="Record/Experience/list">體驗紀錄</a>,
+                    label: <a href="/Record/Experience/list">體驗紀錄</a>,
                     key: "experiencerecord",
                 },
                 {
-                    label: <a href="Record/Share/list">共養紀錄</a>,
+                    label: <a href="/Record/Share/list">共養紀錄</a>,
                     key: "breedrecord",
                 },
                 {
-                    label: <a href="Record/DoingShare/list">正在共養</a>,
+                    label: <a href="/Record/DoingShare/list">正在共養</a>,
                     key: "breeding",    
                 },
             ]}
@@ -49,11 +49,11 @@ function HeaderComponent(props) {
             className="requestMenu"
             items={[
                 {
-                    label: <a href="sent-request">我送出的請求</a>,
+                    label: <a href="/sent-request">我送出的請求</a>,
                     key: "send",
                 },
                 {
-                    label: <a href="Receive-request">我收到的請求</a>,
+                    label: <a href="/Receive-request">我收到的請求</a>,
                     key: "receive",
                 }
             ]}

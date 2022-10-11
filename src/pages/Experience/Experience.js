@@ -20,7 +20,7 @@ function ExperienceHomePage() {
                 <Row className="block" type="flex" justify="center" align="middle">
                   
                     <Col className="block1" span={12} xl={12} md={12} xs={24} >
-                        <a className="wrap" href="experience/illustrate">
+                        <a className="wrap" href="experience/experiencer-illustrate">
                             <img className="ExHomeimg" src={images.ExHome1}  />
                             <div className="blockTitle">體驗者專區</div>
                             <div className="blockContent">飼主體驗主要分為兩大專區，體驗者專區是讓使用者體驗當期間性的飼主，可以讓猶豫養寵物、或是有其他需求的使用者藉此享受養寵物的樂趣，也能評估往後養寵物的意願</div>
@@ -28,7 +28,7 @@ function ExperienceHomePage() {
                     </Col>
                    
                     <Col className="block1" span={12} xl={12} md={12} xs={24}>
-                        <a className="wrap">
+                        <a className="wrap" href="experience/owner-illustrate">
                             <img className="ExHomeimg" src={images.ExHome2}  />
                             <div className="blockTitle">飼主專區</div>
                             <div className="blockContent">飼主專區則是讓有飼養寵物的使用者提供寵物給其他使用者體驗當飼主，可以讓想暫時放鬆幾天、或是有幾天不在家，怕毛孩沒有人照顧的使用者藉此將毛孩提供給想試試飼育寵物之使用者照顧。</div>

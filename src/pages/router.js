@@ -29,7 +29,8 @@ import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
 
 import Experience from "./Experience/Experience";
-import Illustrate from "./Experience/Illustrate";
+import OIllustrate from "./Experience/ownerIllustrate";
+import ExIllustrate from "./Experience/exIllustrate";
 import Member from "./Member/Member";
 import Pet from "./Member/Pet";
 import RearingPet from "./Member/Rearing-pet";
@@ -84,7 +85,9 @@ function Router() {
 
           {/* 體驗 */}
           <Route path="experience" element={<Experience />} />
-          <Route path="experience/illustrate" element={<Illustrate />} />
+          <Route path="experience/owner-illustrate" element={<OIllustrate />} />
+          <Route path="experience/experiencer-illustrate" element={<ExIllustrate />} />
+          
 
           {/* 會員資料 */}
           <Route path="member" element={<Member />} />
@@ -125,13 +128,6 @@ function Router() {
           />
           <Route path="Record/Share/detailed" element={<ShareDetailed />} />
 
-          {/* <Route path="owner" element={<Owner />} />
-          <Route path="nopet" element={<NoPet />} />
-          <Route path="check-no" element={<CheckPetN />} />
-          <Route path="check" element={<CheckPet />} />
-          <Route path="expet" element={<ExPet />} />
-          <Route path="expet-check" element={<ExPetCheck />} />
-          <Route path="adoption" element={<Adoption />} /> */}
 
           {/* 飼主專區 */}
           <Route path="Experience/owner-illustrate/post" element={<Owner />} />

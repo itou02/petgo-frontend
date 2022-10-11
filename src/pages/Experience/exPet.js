@@ -51,10 +51,12 @@ function ExPet() {
                                 <h4>2022/06/12 - 2022/06/30</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
-                            text="查看"                    
-                            name="exPetCheckBtn"
-                            handleSubmit={check}/>
+                        btn={<a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+                                <ButtonComponent
+                                text="查看"                    
+                                name="exPetCheckBtn"
+                                handleSubmit={check}/>
+                            </a>
                         }
                     />
 
@@ -73,10 +75,12 @@ function ExPet() {
                                 <h4>2022/06/12 - 2022/06/30</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
+                        btn={<a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+                            <ButtonComponent
                             text="查看"                    
                             name="exPetCheckBtn"
                             handleSubmit={check}/>
+                        </a>
                         }
                     />
 
@@ -95,10 +99,12 @@ function ExPet() {
                                 <h4>2022/06/12 - 2022/06/30</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
+                        btn={<a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+                            <ButtonComponent
                             text="查看"                    
                             name="exPetCheckBtn"
                             handleSubmit={check}/>
+                        </a>
                         }
                     />
 
@@ -117,10 +123,12 @@ function ExPet() {
                                 <h4>2022/06/12 - 2022/06/30</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
+                        btn={<a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+                            <ButtonComponent
                             text="查看"                    
                             name="exPetCheckBtn"
                             handleSubmit={check}/>
+                        </a>
                         }
                     />
 
@@ -139,10 +147,12 @@ function ExPet() {
                                 <h4>2022/06/12 - 2022/06/30</h4>
                             </div>
                         }     
-                        btn={<ButtonComponent
+                        btn={<a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+                            <ButtonComponent
                             text="查看"                    
                             name="exPetCheckBtn"
                             handleSubmit={check}/>
+                        </a>
                         }
                     />
                 </Col>

@@ -208,12 +208,36 @@
     }
 }
 
+// 共養專區-尋找共養人
+.searchMemberBtn{
+    width: 100px;
+    height: 30px;
+    background-color: @feature-experience-color;
+    border: none;
+    border-radius: 5px;
+    
+    &:hover,
+    &:focus
+    {
+        background-color: @feature-experience-color;
+        color:@bottom-color;
+    }
+}
+
 // 共養分頁按鍵-已有共養人
 .alreadyBtn {
     width: 100px;
     color: @bottom-color;
     background-color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
 
+    &:hover,
+    &:focus
+    {
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
 }
 
 // 共養分頁按鍵-未有共養人
@@ -222,6 +246,18 @@
     color: @dark-main-color;
     background-color: #E6E6E6;
     border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus
+    {
+        background-color: #E6E6E6;
+        color:@dark-main-color;
+    }
+    &::after{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
 }
 
 // 我收到的請求-查看會員詳細的稍後,接受,拒絕鍵
@@ -432,4 +468,17 @@
     &:focus {
         background-color: #1A535C;
     }
+}
+
+.adoptionReturnBtn{
+    color: #F7FFF7;
+    background-color: #1A535C;
+    width:230px;
+    margin: 20px 0;
+    border-radius: 15px;
+    height: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 0;
 }

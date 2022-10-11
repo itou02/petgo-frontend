@@ -10,8 +10,6 @@ import { Route } from "react-router-dom";
 /*體驗者專區-查看按鈕的詳細寵物頁面*/
 function DoingShareDetailed() {
   return (
-
-    
     <div id="DoingShareDetailed">
       <Row type="flex" justify="center" align="middle">
         <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22}>
@@ -19,7 +17,7 @@ function DoingShareDetailed() {
             <Col>
               <Row type="flex" justify="center" align="top">
                 <Col
-                  xl={10}
+                  xl={8}
                   md={8}
                   sm={24}
                   xs={24}
@@ -115,28 +113,74 @@ function DoingShareDetailed() {
           <hr />
         </Col>
       </Row>
-      <Row justify="center">
-        <Col lg={14} md={16} sm={18} xs={20} className="commentary">
-          <Col xl={5} md={6} sm={6} xs={8} className="peopleImage">
-            <img src={images.bb} />
-          </Col>
-          <Row className="trimPeopleComm">
-            <Col span={22} className="peopleComm">
-              <h2>白婷鈺</h2>
-              <hr />
-              <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+      <Row justify="center" className="captionBottom">
+        <Col lg={14} md={16} sm={18} xs={20}>
+          <Row  className="commentary">
+            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+              <img src={images.bb} />
             </Col>
-            <Col span={23} className="commDate">
-              <span>2022/06/16</span>
+
+            <Col xl={19} md={18} sm={16} xs={16} >
+              <Row className="trimPeopleComm">
+                <Col span={24} className="peopleComm">
+                  <h2>白婷鈺</h2>
+                  <hr />
+                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                </Col>
+                <Col span={24} className="commDate">
+                  <span>2022/06/16</span>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <Row  className="commentary">
+            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+              <img src={images.bb} />
+            </Col>
+
+            <Col xl={19} md={18} sm={16} xs={16} >
+              <Row className="trimPeopleComm">
+                <Col span={24} className="peopleComm">
+                  <h2>白婷鈺</h2>
+                  <hr />
+                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                </Col>
+                <Col span={24} className="commDate">
+                  <span>2022/06/16</span>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          <Row  className="commentary">
+            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+              <img src={images.bb} />
+            </Col>
+
+            <Col xl={19} md={18} sm={16} xs={16} >
+              <Row className="trimPeopleComm">
+                <Col span={24} className="peopleComm">
+                  <h2>白婷鈺</h2>
+                  <hr />
+                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                </Col>
+                <Col span={24} className="commDate">
+                  <span>2022/06/16</span>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Col>
       </Row>
 
+
+
       <Row justify="center" style={{ marginbottom: "10%" }}>
-      
-          <ButtonComponent text="返回" size="large" name="goToEx" HRE />
-        
+        <ButtonComponent
+          text="返回"
+          size="large"
+          name="goToEx"
+          onClick="/Record/DoingShare/list"
+        />
       </Row>
     </div>
   );

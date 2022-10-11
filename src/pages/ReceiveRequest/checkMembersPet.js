@@ -51,7 +51,7 @@ function ExPetCheckPet() {
     };
 
     return (
-        <div className="container">
+        <div id="checkMembersPet">
             <Row justify="center">
                 <Col span={16} className="fullPet">
                     <Row>
@@ -139,14 +139,15 @@ function ExPetCheckPet() {
                 </Col>
             </Row>
             <Row justify="center" style={{marginbottom:'10%'}}>
-                <ButtonComponent
-                    type="primary"
-                    text="返回"
-                    size="large"
-                    name="comeBack"
-                    handleSubmit={info}
-                />
-                
+                <a href='/Receive-request/member-detail'>
+                    <ButtonComponent
+                        type="primary"
+                        text="返回"
+                        size="large"
+                        name="comeBack"
+                        handleSubmit={info}
+                    />
+                </a>
                 <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>Some contents...</p>
                     <p>Some contents...</p>

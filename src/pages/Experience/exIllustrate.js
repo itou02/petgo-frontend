@@ -4,9 +4,9 @@ import ButtonComponent from "../../components/button/button";
 import React from "react";
 import { Col, message, Row,Tag, Steps,Button} from 'antd';
 
-import "./Illustrate.less";
+import "./exIllustrate.less";
 
-function ExperienceIllustratePage() {
+function ExIllustrate() {
     
     return(
         <Row >
@@ -26,9 +26,11 @@ function ExperienceIllustratePage() {
                                 <p>9. 違規要付婷鈺團隊500萬美金</p>
                                 <p>10. 你要看完上面那些 不管怎樣都要同意</p>
                             </div>
-                            <Button  className="Btn1">
-                            前往體驗
-                            </Button>
+                            <a href="/Experience/experiencer-illustrate/card">
+                                <Button  className="Btn1">
+                                    前往體驗
+                                </Button>
+                            </a>
                     </div>
                 
             </Col>
@@ -37,4 +39,4 @@ function ExperienceIllustratePage() {
     );
 }
 
-export default ExperienceIllustratePage;
+export default ExIllustrate;

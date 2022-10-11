@@ -21,10 +21,10 @@ function AdoptionAlready() {
 
     return (
         <div id="adoption">
-            <Row>
+            <Row type="flex">
                 <Col span={24} className="exFilter">
-                    
-                        <Col span={21}>
+                    <Row type="flex">
+                        <Col span={15} className="trimFilter">
                             <h2>
                                 <select style={{width:"200px"}}>
                                     <option>縣市</option>                       
@@ -35,20 +35,39 @@ function AdoptionAlready() {
                                     <option>地區</option>                      
                                 </select>
                             </h2>
-                            <input type="radio" name="dog" value="dog" /><label>狗</label>
-                            <input type="radio" name="cat" value="cat" /><label>貓</label>
+                            <h2>
+                                <select style={{width:"200px"}}>
+                                    <option>品種</option>                      
+                                </select>
+                            </h2>
                         </Col>
-                        <Col span={3} className="shareBtn">
+                    </Row> 
+                    <Row className="trimShareBtn">
+                        <Col span={20} className="trimSearchBtn">
                             <ButtonComponent
-                                text="已有共養人"                    
-                                name="alreadyBtn"
+                                text="尋找共養者"                    
+                                name="searchMemberBtn"
                             />
-                            <ButtonComponent
-                                text="未有共養人"                    
-                                name="notYetBtn"
-                            />
-                        </Col>                                        
+                        </Col>
+                        <Col span={24} className="shareBtn">
+                            <Row>
+                                <ButtonComponent
+                                    text="已有共養人"                    
+                                    name="alreadyBtn"
+                                />
+                            </Row>
+                            
+                            <Row>
+                                <ButtonComponent
+                                    text="未有共養人"                    
+                                    name="notYetBtn"
+                                />
+                            </Row>
+                            
+                        </Col>
+                    </Row>                   
                 </Col>
+                 
             </Row>
             <Row justify="center">
                 <Col span={19} className="exCards">
