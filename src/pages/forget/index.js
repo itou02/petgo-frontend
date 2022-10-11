@@ -1,7 +1,8 @@
 import React from 'react';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Link } from "react-router-dom";
 import ButtonComponent from "../../components/button/button";
-import { Row, Col, Button, Checkbox, Form, Icon, Input, Space, Radio, } from 'antd';
+import { Row, Col, Button, Checkbox, Form, Icon, Input, Space, Modal } from 'antd';
 import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import { AiFillLock } from "react-icons/ai";
 import images from '../../config/images';
@@ -10,6 +11,7 @@ import './index.less'
 
 
 function Forget(props) {
+  // const { confirm } = Modal;
   const onFinish = (values) => {
     console.log('Success:', values);
   };
@@ -17,6 +19,24 @@ function Forget(props) {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
+  // const showDeleteConfirm = () => {
+  //   confirm({
+  //     title: 'Are you sure delete this task?',
+  //     icon: <ExclamationCircleOutlined />,
+  //     content: 'Some descriptions',
+  //     okText: 'Yes',
+  //     okType: 'danger',
+  //     cancelText: 'No',
+
+  //     onOk() {
+  //       console.log('OK');
+  //     },
+
+  //     onCancel() {
+  //       console.log('Cancel');
+  //     },
+  //   });
+  // };
   return (
     <div id="forget">
       <Row justify="center" align="center" className="container">
@@ -68,10 +88,11 @@ function Forget(props) {
                       }}
                     >
                       <ButtonComponent
-                        text="登入"
+                        text="確認修改"
                         size="large"
                         name="loginbtn"
-                      // handleSubmit={()=>}
+                        // handleSubmit={showDeleteConfirm}
+                        type="dashed"
                       />
                     </Form.Item>
 

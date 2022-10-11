@@ -1,4 +1,5 @@
 @import url('../../assets/style/theme.less');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +9,19 @@
 }
 
 #signup {
-    .container{
-        background-color:@member-feature-color;
-        min-height:calc(100vh - 134px);
+    .container {
+        background-color: @member-feature-color;
+        min-height: calc(100vh - 134px);
         display: flex;
         // justify-content: center;
         align-items: center;
     }
-    .login{
+
+    .login {
         display: flex;
         align-items: center;
     }
+
     .bannerBlock {
         margin: 48px 0;
     }
@@ -30,6 +33,7 @@
         justify-content: center;
         align-items: center;
         padding: 10px;
+
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -38,10 +42,12 @@
                 font-weight: bold;
             }
         }
-        .a{
+
+        .a {
             width: 100%;
         }
-        form#basic{
+
+        form#basic {
             height: 800px;
             display: flex;
             flex-direction: column;
@@ -49,43 +55,64 @@
             align-items: center;
             align-content: space-between;
         }
-        hr{
+
+        hr {
             width: 90%;
             border: 1px solid rgba(0, 0, 0, 0.55);
         }
-        .personal{
+
+        .personal {
             width: 100%;
             justify-content: space-between;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-       .sex{
-        display: flex;
-        flex-direction: row;
-       }
-       .date{
-        width: 100%;
-       }
-       .place{
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-       }
-        .link{
+
+        .sex {
+            .choose-sex{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                .ant-radio-group.ant-radio-group-outline {
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+
+        .date {
+            width: 100%;
+        }
+
+        .place {
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .link {
             width: 150px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-around;
         }
+
         .ant-row.ant-form-item {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .ant-form-item-control-input-content {
             display: flex;
             justify-content: space-around;
         }
+
         .alertBlock {
             .ant-alert-info {
                 // background-color: rgba(@secondary-color, 0.1);
@@ -95,7 +122,7 @@
                     // color: @secondary-color;
                 }
             }
-           
+
 
             // .formtitle{
             //     display: flex;
@@ -153,12 +180,6 @@
             .ant-steps-item-content {
                 text-align: center;
             }
-
-            .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-icon {
-                // background-color: @secondary-color;
-                // border-color: @secondary-color;
-            }
-
             svg {
                 // background-color: @brown-color;
                 color: #ffffff;
@@ -174,11 +195,11 @@
         }
     }
 }
-.btn{
-display: flex;
-align-items: center;
-justify-content: center;
+
+.btn {
+    width: 100%;
 }
+
 @media screen and (max-width:576px) {
     #index {
         .titleBlock {

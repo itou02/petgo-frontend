@@ -47,6 +47,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
         border-radius: 20px;
+        padding: 10px;
         background-color: @bottom-main-color ;
         display: flex;
         align-items: center;
@@ -111,6 +112,34 @@
                         justify-content: space-between;
                         width: 100%;
                     }
+                }
+                .Detailed{
+                    width: 30%;
+                    padding: 40px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:1210px) {
+
+
+        .Commentlistshow {
+            display: flex;
+            flex-wrap: wrap !important;
+            .commentary {
+                margin-left: 4px;
+                margin-right: 4px;
+                width: auto;
+                :hover{
+                    cursor: pointer;
+                    img{
+                        padding: 5px;
+
+                    }
+                
+                }
+                .right {
+                    display: none;
                 }
             }
         }
