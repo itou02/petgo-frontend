@@ -45,6 +45,9 @@
             flex-direction: column;
             justify-content: space-around;
             align-items: center;
+            .loginbtndiv{
+                width: 100%;
+            }
         }
         hr{
             width: 90%;
@@ -66,51 +69,8 @@
         .ant-form-item-control-input-content {
             display: flex;
             justify-content: space-around;
-        }
-        .alertBlock {
-            .ant-alert-info {
-                // background-color: rgba(@secondary-color, 0.1);
-                // border: 1px solid rgba(@secondary-color, 0.1);
-
-                .ant-alert-icon {
-                    // color: @secondary-color;
-                }
-            }
-           
-
-            // .formtitle{
-            //     display: flex;
-            //     flex-direction: column;
-            //     justify-content: center;
-            //     align-items: center;
-            // }
-        }
-
-        .buttonBlock {
-            display: flex;
+            justify-content: center;
             align-items: center;
-            position: relative;
-            .inputBlock {
-                position: relative;
-                width: 100%;
-                svg {
-                    // color: @secondary-color;
-                    position: absolute;
-                    z-index: 1;
-                    top: 50%;
-                    left: 24px;
-                    transform: translate(-50%, -50%);
-                }
-
-                .ant-input {
-                    padding-left: 40px;
-                    height: 48px;
-                }
-
-                .ant-btn {
-                    height: 48px;
-                }
-            }
         }
     }
 
@@ -123,34 +83,7 @@
         }
     }
 
-    .processBlock {
-        .iconBlock {
-            width: 100%;
-            margin: 2rem 0;
 
-            .ant-steps-item-content {
-                text-align: center;
-            }
-
-            .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-icon {
-                // background-color: @secondary-color;
-                // border-color: @secondary-color;
-            }
-
-            svg {
-                // background-color: @brown-color;
-                color: #ffffff;
-                padding: 16px;
-                border-radius: 16px;
-                font-size: 4rem;
-                margin: 1rem 0;
-            }
-
-            p {
-                font-size: 1.25rem;
-            }
-        }
-    }
     
 }
 

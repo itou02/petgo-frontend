@@ -46,13 +46,12 @@ function Comment() {
                                             <p>飼養期間：</p>
                                         </div>
                                     </div>
-                                    <ButtonComponent
-                                        text="查看詳細"
-                                        size="large"
-                                        name="more-detail"
-                                    />
                                     <div className='Detailed'>
-
+                                        <ButtonComponent
+                                            text="查看詳細"
+                                            size="large"
+                                            name="more-detail"
+                                        />
                                     </div>
                                 </div>
                             </div>

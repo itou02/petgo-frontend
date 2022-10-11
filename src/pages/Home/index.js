@@ -1,9 +1,11 @@
 import React from 'react';
 import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
+import CardComponent from "../../components/card/card";
 import { Row, Col, message, Card } from 'antd';
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
+import { EnvironmentOutlined } from '@ant-design/icons';
 import images from '../../config/images';
 import './index.less'
 
@@ -87,22 +89,26 @@ function Home(props) {
               <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: '#FF6B6B' }}>飼主體驗</h1></div>
                 <span><h1>飼主體驗是一個基於......</h1></span>
-                <ButtonComponent
-                  text="前往體驗"
-                  size="large"
-                  name="pet"
-                  handleSubmit={petGo}
-                />
+                <a href="Experience">
+                  <ButtonComponent
+                    text="前往體驗"
+                    size="large"
+                    name="pet"
+                  />
+                </a>
+
               </Col>
               <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: 'rgba(251, 213, 52, 0.94)' }}>寵物供養</h1></div>
                 <span><h1>寵物供養是一個基於......</h1></span>
-                <ButtonComponent
-                  text="前往體驗"
-                  size="large"
-                  name="together"
-                  handleSubmit={petGo}
-                />
+                <a href="Share-already">
+                  <ButtonComponent
+                    text="前往供養"
+                    size="large"
+                    name="together"
+                  />
+                </a>
+
               </Col>
             </Row>
           </div>
@@ -111,46 +117,101 @@ function Home(props) {
               <Slider {...settings}>
                 <div className='Commentcard'>
                   <Row className="bannerBlock">
-                    <Col sm={24} className="pictureBlock">
-                      <div className="imgblock">
-                        {/* <img src={images.gold} /> */}
+                    <Col span={16} className="pictureBlock">
+                      <div className="imgBlock">
+                        <img src={images.jm} />
                       </div>
                     </Col>
-                    <Col sm={24} md={12} className="titleBlock">
-                      <span>
-                        <h1 >
-                          <strong>1</strong>
-                        </h1></span>
+                    <Col span={16} className="titleBlock">
+                      <span className='nametotal'>
+                        <h1 className='master'>
+                          <strong>幼幼</strong>
+                        </h1>
+                        <h1 className='petname'>
+                          <strong>寵物名：吉米</strong>
+                        </h1>
+                      </span>
+                      <span className='introduce'>
+                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                      </span>
+                    </Col>
+                    <Col span={16} className="area">
+                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
                 </div>
                 <div className='Commentcard'>
                   <Row className="bannerBlock">
-                    <Col sm={24} className="pictureBlock">
-                      <div className="imgblock">
-                        {/* <img src={images.gold} /> */}
+                    <Col span={16} className="pictureBlock">
+                      <div className="imgBlock">
+                        <img src={images.jm} />
                       </div>
                     </Col>
-                    <Col sm={24} md={12} className="titleBlock">
-                      <span>
-                        <h1 >
-                          <strong>1</strong>
-                        </h1></span>
+                    <Col span={16} className="titleBlock">
+                      <span className='nametotal'>
+                        <h1 className='master'>
+                          <strong>幼幼</strong>
+                        </h1>
+                        <h1 className='petname'>
+                          <strong>寵物名：吉米</strong>
+                        </h1>
+                      </span>
+                      <span className='introduce'>
+                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                      </span>
+                    </Col>
+                    <Col span={16} className="area">
+                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
                 </div>
                 <div className='Commentcard'>
                   <Row className="bannerBlock">
-                    <Col sm={24} className="pictureBlock">
-                      <div className="imgblock">
-                        {/* <img src={images.gold} /> */}
+                    <Col span={16} className="pictureBlock">
+                      <div className="imgBlock">
+                        <img src={images.jm} />
                       </div>
                     </Col>
-                    <Col sm={24} md={12} className="titleBlock">
-                      <span>
-                        <h1 >
-                          <strong>1</strong>
-                        </h1></span>
+                    <Col span={16} className="titleBlock">
+                      <span className='nametotal'>
+                        <h1 className='master'>
+                          <strong>幼幼</strong>
+                        </h1>
+                        <h1 className='petname'>
+                          <strong>寵物名：吉米</strong>
+                        </h1>
+                      </span>
+                      <span className='introduce'>
+                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                      </span>
+                    </Col>
+                    <Col span={16} className="area">
+                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                    </Col>
+                  </Row>
+                </div>
+                <div className='Commentcard'>
+                  <Row className="bannerBlock">
+                    <Col span={16} className="pictureBlock">
+                      <div className="imgBlock">
+                        <img src={images.jm} />
+                      </div>
+                    </Col>
+                    <Col span={16} className="titleBlock">
+                      <span className='nametotal'>
+                        <h1 className='master'>
+                          <strong>幼幼</strong>
+                        </h1>
+                        <h1 className='petname'>
+                          <strong>寵物名：吉米</strong>
+                        </h1>
+                      </span>
+                      <span className='introduce'>
+                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                      </span>
+                    </Col>
+                    <Col span={16} className="area">
+                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
                 </div>
@@ -175,19 +236,6 @@ function Home(props) {
                       </h1></span>
                   </Col>
                 </Row>
-                {/* <Row className='introduce'>
-                  <Col sm={18} md={10}>
-                    <div className="imgBlock">
-                      <img src={images.gold} />
-                    </div>
-                  </Col>
-                  <Col sm={20} md={10}><h1 >以其他形式給牠們一個家，...............................
-                    ............................................
-                    ............................................
-                    ............................................
-                    領養代替購買<br></br>
-                    減少寵物拋棄率</h1></Col>
-                </Row> */}
               </Col>
 
             </Row>

@@ -1,4 +1,4 @@
-
+@import url('../../assets/style/theme.less');
 .RearingPetwarp{
     background-color: rgb(255, 255, 255);
     margin-top: 2%;
@@ -6,7 +6,7 @@
 }
 
 .RearingPetTitle{
-    color: #1A535C;
+    color: @dark-main-color;
     font-weight: 900;
     font-size: 28px;
     text-align: center;
@@ -23,7 +23,7 @@
 }
 
 .RearingPetCheckboxWarp{
-    background: rgba(172, 209, 207, 0.35);
+    background:@form-background-color;
     padding: 2% 8%;
     
 }
@@ -32,7 +32,7 @@
     width: 100%;
 }
 .RearingPet3{
-    background: rgba(172, 209, 207, 0.35);
+    background: @form-background-color;
 border-radius: 5px;
 padding-top: 5%;
 }
@@ -59,8 +59,8 @@ padding-top: 5%;
 
 
 .ant-checkbox-checked .ant-checkbox-inner {
-    background-color: #1A535C;
-    border-color: #1A535C;
+    background-color:@dark-main-color;
+    border-color: @dark-main-color;
 }
 
 .RearingPet3FormTextArea  .ant-form-item-label > label{
@@ -72,7 +72,7 @@ padding-top: 5%;
 .PetCard{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 25px;
-    background-color: #F7FFF7;
+    background-color:@drop-down-color;
     margin-bottom: 2%;
 }
 
@@ -85,14 +85,14 @@ padding-top: 5%;
 
 .PetCardName{
     font-size: 20px;
-    color: #1A535C;
+    color: @dark-main-color;
     font-weight: 900;
     margin: 0;
 }
 
 .PetCardLabel1{
-    color: #F7FFF7;
-    background: #4ECDC4;
+    color: @drop-down-color;
+    background: @main-color;
     border-radius: 20px;
     width: 100px;
     text-align: center;
@@ -100,8 +100,8 @@ padding-top: 5%;
 }
 
 .PetCardLabel2{
-    color: #F7FFF7;
-    background: #FF6B6B;
+    color: @drop-down-color;
+    background:@feature-experience-color;
     border-radius: 20px;
     width: 100px;
     text-align: center;
@@ -109,7 +109,7 @@ padding-top: 5%;
 }
 
 .PetCardLabel3{
-    color: #F7FFF7;
+    color: @drop-down-color;
     background: #FBD534F0;
     border-radius: 20px;
     width: 100px;
