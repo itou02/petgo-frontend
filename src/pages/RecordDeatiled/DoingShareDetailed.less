@@ -25,14 +25,16 @@
 
     }
 
-.PetListDetail{
-    margin-top: 3%;
-}
-.DetailTextRight{
+    .PetListDetail {
+        margin-top: 3%;
+    }
 
-    margin-top: 4%;
-    
-}
+    .DetailTextRight {
+
+        margin-top: 4%;
+
+    }
+
     .DetailedJmimgWarp {
         // border: 2px solid aqua;
         width: 85%;
@@ -40,10 +42,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
 
-        img {   
-             border-radius: 20px;
+
+        img {
+            border-radius: 20px;
             width: 100%;
             height: 100%;
 
@@ -51,26 +53,27 @@
         }
     }
 
-    .DetailTextWarp .DetailText{
+    .DetailTextWarp .DetailText {
         font-weight: 700;
         font-size: 24px;
         line-height: 35px;
         color: @dark-main-color;
-        margin-bottom: 10%;
+        margin-bottom: 20px;
     }
-.DetailText{
 
-    font-size: 22px;
-    font-weight: 500;
-}
+    .DetailText {
 
-.DetailTextTitle{
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 30px;
-    color: @dark-main-color;
-   margin-top: 5%;
-}
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .DetailTextTitle {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 30px;
+        color: @dark-main-color;
+        margin-top: 5%;
+    }
 
     .caption {
         // border: 1px solid red;
@@ -79,7 +82,7 @@
         align-items: center;
 
         hr {
-            width: 70%;
+            width: 50%;
             border: 2px solid @main-color;
         }
 
@@ -104,10 +107,10 @@
     }
 
 
-.captionBottom{
-    height: 500px;
-    overflow-y: scroll;
-}
+    .captionBottom {
+        margin-bottom: 3%;
+
+    }
 
     .commentary {
         // border: 1px solid black;
@@ -116,12 +119,13 @@
         margin: 1.5%;
         background-color: @drop-down-color;
         display: flex;
-      // justify-content: flex-end;
+
+        // justify-content: flex-end;
         .peopleImage {
             // border: 2px solid aqua;
             width: 100%;
             height: auto;
-         
+
 
             display: flex;
             justify-content: center;
@@ -139,10 +143,13 @@
         .trimPeopleComm {
             width: 95%;
 
-            .peopleComm {
+            .peopleCommShare {
                 // border: 1px solid black;
                 margin-top: 2%;
-               
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
 
                 hr {
                     width: 75%;
@@ -161,6 +168,60 @@
                     font-weight: 600;
                 }
 
+                div {
+                    margin: 2%;
+                    padding: 1% 1% 0 1%;
+                    background-color: @feature-adoptions-color;
+                    color: @dark-main-color;
+                    border-radius: 20px;
+                    font-weight: 600;
+
+                }
+            }
+
+            .sharePeopleItem {
+                p {
+                    margin: 1%;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+
+
+            .rightPart {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 900;
+
+                width: 100%;
+
+                h2 {
+                    color: @dark-main-color;
+                    font-weight: bold;
+                }
+
+                hr {
+                    width: 50%;
+                    margin: 1% 0;
+                }
+
+                h3 {
+                    margin-top: 5%;
+                    display: flex;
+
+                    span {
+                        font-size: 34px;
+                        margin-right: 3%;
+                    }
+
+                    p {
+                        margin: 1%;
+                    }
+                }
+
+                img {
+                    width: 10%;
+                }
             }
 
             .commDate {
@@ -174,6 +235,16 @@
             }
         }
     }
+
+    .BtnWarp {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2%;
+
+    }
+
 }
 
 
@@ -182,13 +253,45 @@
 @media screen and (max-width:576px) {
 
     #DoingShareDetailed {
-    .DetailTextWarp .DetailText{
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 24px;
-        color: @dark-main-color;
-        margin-bottom: 5%;
-    }
+        .DetailTextWarp .DetailText {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: @dark-main-color;
+            margin-bottom: 5%;
+        }
+
+        .commentary .trimPeopleComm  .sharePeopleItem {
+            p {
+                margin: 1%;
+                font-size: 10px;
+                font-weight: 600;
+            }
+        }
+
+        .rightPart , .peopleCommShare {
+        
+
+            h2 {
+                color: @dark-main-color;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            div{
+                font-size: 12px;
+            }
+
+            p{
+                font-size: 10px;
+            }
+            
+          
+        }
+
+        .commentary .trimPeopleComm .rightPart img {
+            width: 20%;
+        }
 
     }
 
@@ -198,47 +301,84 @@
 @media screen and (max-width:768px) {
 
     #DoingShareDetailed {
-        .DetailTextWarp .DetailText{
+        .DetailTextWarp .DetailText {
             font-weight: 700;
             font-size: 24px;
             line-height: 24px;
             color: @dark-main-color;
             margin-bottom: 8%;
         }
-    
+        .commentary .trimPeopleComm .sharePeopleItem {
+            p {
+                margin: 1%;
+                font-size: 10px;
+                font-weight: 600;
+            }
         }
-    
-    
+
+        .rightPart , .peopleCommShare {
+        
+
+            h2 {
+                color: @dark-main-color;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            div{
+                font-size: 12px;
+            }
+
+            p{
+                font-size: 10px;
+            }
+           
+        }
+
+        .commentary .trimPeopleComm .rightPart img {
+            width: 20%;
+        }
+
+        .commDate{
+
+            span{
+                font-size: 12px;
+            }
+        }
+
+    }
+
+
 }
 
 @media screen and (min-width:768px) {
 
     #DoingShareDetailed {
-        .DetailTextWarp .DetailText{
+        .DetailTextWarp .DetailText {
             font-weight: 700;
             font-size: 20px;
             line-height: 20px;
             color: @dark-main-color;
-            margin-bottom: 10%;
+            margin-bottom: 20px;
         }
-    
-        }
-    
-    
+
+    }
+
+
 }
 
 @media screen and (min-width:992px) {
 
     #DoingShareDetailed {
-        .DetailTextWarp .DetailText{
+        .DetailTextWarp .DetailText {
             font-weight: 700;
             font-size: 24px;
             line-height: 30px;
             color: @dark-main-color;
-            margin-bottom: 10%;
+            margin-bottom: 25px;
         }
-    
-        }
-    
-    
+
+    }
+
+
 }
