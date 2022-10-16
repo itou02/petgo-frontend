@@ -24,9 +24,6 @@ function Home(props) {
   const handlePositionChange = ({ target: { value } }) => {
     setDotPosition(value);
   };
-  const petGo = () => {
-    message.petGo("預約成功");
-  };
   const [windowSize, setWindowSize] = useState({
     width: undefined,
     height: undefined,
@@ -53,14 +50,14 @@ function Home(props) {
     slidesToScroll: 1,
     autoplay: true,
     speed: 100,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     cssEase: "linear"
   };
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1
   };
@@ -115,7 +112,84 @@ function Home(props) {
           <div className='Comment'>
             <div className="site-card-wrapper">
               <Slider {...settings}>
-                <div className='Commentcard'>
+                {/* <Row className='Commentall'>
+                  <Col xs={20} sm={10} md={7} className='Commentcard'>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={images.jm} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className='nametotal'>
+                          <h1 className='master'>
+                            <strong>幼幼</strong>
+                          </h1>
+                          <h1 className='petname'>
+                            <strong>寵物名：吉米</strong>
+                          </h1>
+                        </span>
+                        <span className='introduce'>
+                          我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        </span>
+                      </Col>
+                      <Col span={16} className="area">
+                        <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={20} sm={10} md={7} className='Commentcard'>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={images.jm} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className='nametotal'>
+                          <h1 className='master'>
+                            <strong>幼幼</strong>
+                          </h1>
+                          <h1 className='petname'>
+                            <strong>寵物名：吉米</strong>
+                          </h1>
+                        </span>
+                        <span className='introduce'>
+                          我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        </span>
+                      </Col>
+                      <Col span={16} className="area">
+                        <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={20} sm={10} md={7} className='Commentcard'>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={images.jm} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className='nametotal'>
+                          <h1 className='master'>
+                            <strong>幼幼</strong>
+                          </h1>
+                          <h1 className='petname'>
+                            <strong>寵物名：吉米</strong>
+                          </h1>
+                        </span>
+                        <span className='introduce'>
+                          我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        </span>
+                      </Col>
+                      <Col span={16} className="area">
+                        <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row> */}
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -139,8 +213,8 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
-                <div className='Commentcard'>
+                </Col>
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -164,8 +238,8 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
-                <div className='Commentcard'>
+                </Col>
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -189,8 +263,8 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
-                <div className='Commentcard'>
+                </Col>
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -214,7 +288,7 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
+                </Col>
               </Slider>
             </div>
           </div>

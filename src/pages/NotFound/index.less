@@ -1,31 +1,46 @@
-.NotFoundContainer {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft JhengHei', 'Arial';
+    font-weight: 500;
+}
+
+#NotFoundContainer {
     background-image: url("../../assets/images/NotFoundBG.png");
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-}
+    // height: 100vh;
+    // width: 100vw;
+    // position: fixed;
 
-.imgBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .container {
+        min-height: calc(100vh - 134px);
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+    }
 
-.NotFoundImage {
-    height: 80%;
-}
+    .imgBlock {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.globalButton {
-    margin: 0 1rem;
-    width: 100%;
-}
+    .NotFoundImage {
+        height: 80%;
+    }
 
-.buttonBlock {
-    display: flex;
-    justify-content: center;
-    margin: 8px;
+    .globalButton {
+        margin: 0 1rem;
+        width: 100%;
+    }
+
+    .buttonBlock {
+        display: flex;
+        justify-content: center;
+        margin: 8px;
+    }
 }
