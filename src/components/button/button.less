@@ -196,6 +196,7 @@
     // display: inline;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
     color: @bottom-color;
+    // color: #000;
     background-color: @feature-adoptions-color;
     border: none;
 
@@ -253,10 +254,50 @@
         background-color: #E6E6E6;
         color:@dark-main-color;
     }
-    &::after{
+    
+    &:active{
         background-color: @dark-main-color;
         color:@bottom-main-color;
     }
+    &:visited{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+}
+
+// 未有共養人分頁按鍵-已有共養人
+.alreadyBtn2 {
+    width: 100px;
+    background-color: #E6E6E6;
+    color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus
+    {
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+    
+    &:active{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+    &:visited{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+}
+
+// 未有共養人分頁按鍵-未有共養人
+.notYetBtn2 {
+    width: 100px;
+    color: @bottom-main-color;
+    background-color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
+
 }
 
 // 我收到的請求-查看會員詳細的稍後,接受,拒絕鍵
