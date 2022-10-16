@@ -289,18 +289,26 @@ function memberDetail() {
                         </Row>
                         <Row justify="center">
                             <Col span={10} className="trimBtn">
-                                <ButtonComponent
-                                    text="稍後"                    
-                                    name="memberDetailBtn1"
-                                />
-                                <ButtonComponent
-                                    text="接受"                    
-                                    name="memberDetailBtn2"
-                                />
-                                <ButtonComponent
-                                    text="拒絕"                    
-                                    name="memberDetailBtn3"
-                                />
+                                <a href='/Receive-request'>
+                                    <ButtonComponent
+                                        text="稍後"                    
+                                        name="memberDetailBtn1"
+                                    />
+                                </a>
+                                <a href='/Receive-request'>
+                                    <ButtonComponent
+                                        text="接受"                    
+                                        name="memberDetailBtn2"
+                                    />
+                                </a>
+                                <a href='/Receive-request'>
+                                    <ButtonComponent
+                                        text="拒絕"                    
+                                        name="memberDetailBtn3"
+                                    />
+                                </a>
+
+                                
                             </Col>
                         </Row>
                     </Col>  

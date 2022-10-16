@@ -53,7 +53,7 @@ function SearchRequestFormPage() {
         <Col lg={16} md={18} sm={20} xs={22} className="RequestFormwarp">
           <Row type="flex" justify="center">
             <Col md={24} xs={24}>
-              <p className="SharerFormTitle">尋找共養者</p>
+              <p className="SharerFormTitle">請求共養</p>
             </Col>
 
             <Col md={16} xs={22}>
@@ -253,7 +253,6 @@ function SearchRequestFormPage() {
                     <Col md={10} sm={24} xs={12} >
                     <Form.Item 
                     className="RearingPet3Form"
-                   
                     wrapperCol={{
                       span:14,
                     }}
@@ -346,7 +345,10 @@ function SearchRequestFormPage() {
                 </Row>
                 <Row>
                   <Col md={24} className="formBtnWarp">
-                    <Button className="Btn1">返回</Button>
+                    <a href="/Share-already/share-pet-detail">
+                      <Button className="adoptionReturnBtn">送出</Button>
+                    </a>
+                    
                   </Col>
                 </Row>
               </Form>

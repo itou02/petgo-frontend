@@ -64,11 +64,14 @@ function Owner() {
                                         </Row>
                                         <Row>
                                             <Col span={10} className="petBtnTrim">
-                                                <ButtonComponent
-                                                    text="查看詳細"
-                                                    name="check"
-                                                    handleSubmit={check}
-                                                />
+                                                <a href="/Experience/owner-illustrate/post/ex-pet-detail">
+                                                    <ButtonComponent
+                                                        text="查看詳細"
+                                                        name="check"
+                                                        handleSubmit={check}
+                                                    />
+                                                </a>
+                                                
                                             </Col>
                                         </Row>
                                     </Col>

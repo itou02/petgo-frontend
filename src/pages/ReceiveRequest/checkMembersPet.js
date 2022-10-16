@@ -39,50 +39,49 @@ function ExPetCheckPet() {
 
     const info = () => {
         Modal.info({
-          title: 'This is a notification message',
-          content: (
-            <div>
-              <p>some messages...some messages...</p>
-              <p>some messages...some messages...</p>
-            </div>
-          ),
-      
-          onOk() {},
+            title: 'This is a notification message',
+            content: (
+                <div>
+                    <p>some messages...some messages...</p>
+                    <p>some messages...some messages...</p>
+                </div>
+            ),
+            onOk() {},
         });
-      };
+    };
 
     return (
-        <div className="container">
+        <div id="checkMembersPet">
             <Row justify="center">
                 <Col span={16} className="fullPet">
-                    <Col span={18} className="checkItem">
-                        <Row>
-                            <Col span={6} className="petImage">
-                                <img src={images.expet} />
-                            </Col>
-                            <Col span={18} className="trimSpace">
-                                <Row>
-                                    <Col span={10} offset={2} className="petDetails">
-                                        <Row>姓名：</Row>
-                                        <Row>體型：</Row>
-                                        <Row>年齡：</Row>
-                                        {/* <Row>來源方：</Row> */}
-                                    </Col>
-                                    <Col span={10} offset={1} className="petDetails">
-                                        <Row>品種：</Row>
-                                        <Row>性別：</Row>
-                                        <Row>絕育狀況：</Row>
-                                        {/* <Row>飼養期間：</Row> */}
-                                    </Col>
-                                </Row>
-                                
-                            </Col>
-                            <Col span={20}  className="feedPeriod">
-                                <Row>飼養期間：</Row>
-                            </Col>
+                    <Row>
+                        <Col span={18} className="checkItem">
+                            <Row>
+                                <Col span={6} className="petImage">
+                                    <img src={images.expet} />
+                                </Col>
+                                <Col span={18} className="trimSpace">
+                                    <Row>
+                                        <Col span={10} offset={2} className="petDetails">
+                                            <Row>姓名：</Row>
+                                            <Row>體型：</Row>
+                                            <Row>年齡：</Row>
+                                            {/* <Row>來源方：</Row> */}
+                                        </Col>
+                                        <Col span={10} offset={1} className="petDetails">
+                                            <Row>品種：</Row>
+                                            <Row>性別：</Row>
+                                            <Row>絕育狀況：</Row>
+                                            {/* <Row>飼養期間：</Row> */}
+                                        </Col>
+                                    </Row>
+                                    
+                                </Col>
+                                <Col span={20}  className="feedPeriod">
+                                    <Row>飼養期間：</Row>
+                                </Col>
+                            </Row>
                             
-                        </Row>
-                        
                             <Row className="detailIntro">
                                 <Col span={9} className="intro">
                                     <h2>個性</h2>
@@ -109,9 +108,8 @@ function ExPetCheckPet() {
                                     <p>住附近，有耐心</p>
                                 </Col>
                             </Row>
-                        
-                        
-                    </Col>
+                        </Col>
+                    </Row>
                     
                 </Col>
             </Row>
@@ -141,14 +139,15 @@ function ExPetCheckPet() {
                 </Col>
             </Row>
             <Row justify="center" style={{marginbottom:'10%'}}>
-                <ButtonComponent
-                    type="primary"
-                    text="返回"
-                    size="large"
-                    name="comeBack"
-                    handleSubmit={info}
-                />
-                
+                <a href='/Receive-request/member-detail'>
+                    <ButtonComponent
+                        type="primary"
+                        text="返回"
+                        size="large"
+                        name="comeBack"
+                        handleSubmit={info}
+                    />
+                </a>
                 <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>Some contents...</p>
                     <p>Some contents...</p>

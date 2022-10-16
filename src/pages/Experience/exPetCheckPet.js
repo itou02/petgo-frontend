@@ -198,13 +198,16 @@ function ExPetCheckPet() {
 
 
             <Row justify="center" style={{marginbottom:'10%' }}>
-                <ButtonComponent
+                <a href='/Experience/experiencer-illustrate/card/ex-pet-detail/ex-form'>
+                  <ButtonComponent
                     type="primary"
                     text="前往體驗"
                     size="large"
                     name="goToEx"
-                    handleSubmit={info}
-                />
+                    // handleSubmit={info}
+                  />
+                </a>
+                
                 
                 <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
                     <p>Some contents...</p>
