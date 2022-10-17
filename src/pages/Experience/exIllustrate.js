@@ -7,8 +7,8 @@ import { Col, message, Row, Tag, Steps, Button } from 'antd';
 import "./exIllustrate.less";
 
 function ExIllustrate() {
-
-    return (
+    
+    return(
         <Row >
             <Col span={24} align="middle" >
 
