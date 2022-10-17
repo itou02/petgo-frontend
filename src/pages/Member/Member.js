@@ -1,5 +1,6 @@
 import images from "../../config/images";
 import React, { useState } from 'react';
+import ButtonComponent from "../../components/button/button";
 import {
   Select,
   Col,
@@ -9,12 +10,12 @@ import {
   Input,
   Radio,
   DatePicker,
-  message, 
-  Upload, 
+  message,
+  Upload,
 
-  
+
 } from "antd";
-import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';  
+import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
 
 import "./Member.less";
 
@@ -28,9 +29,9 @@ function MemberPage() {
   };
   const { TextArea } = Input;
   const { Option } = Select;
-  
-  const provinceData = [  
-  '臺北市','臺中市'];
+
+  const provinceData = [
+    '臺北市', '臺中市'];
 
   // const provinceData = [  '嘉義縣', '新北市', '嘉義市', '新竹縣', '新竹市',
   // '臺北市', '臺南市', '宜蘭縣', '苗栗縣', '雲林縣',
@@ -58,20 +59,20 @@ function MemberPage() {
     reader.addEventListener('load', () => callback(reader.result));
     reader.readAsDataURL(img);
   };
-  
+
   const beforeUpload = (file) => {
     const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-  
+
     if (!isJpgOrPng) {
       message.error('You can only upload JPG/PNG file!');
     }
-  
+
     const isLt2M = file.size / 1024 / 1024 < 2;
-  
+
     if (!isLt2M) {
       message.error('Image must smaller than 2MB!');
     }
-  
+
     return isJpgOrPng && isLt2M;
   };
 
@@ -116,7 +117,7 @@ function MemberPage() {
         <hr></hr>
       </Col>
 
-      <Col md={10} xs={22}  className="MemberFormWarp" type="flex" justify="center" align="center">
+      <Col md={10} xs={22} className="MemberFormWarp" type="flex" justify="center" align="center">
         <Form
           name="basic"
           initialValues={{
@@ -127,130 +128,130 @@ function MemberPage() {
           autoComplete="off"
         >
 
-        <Row span={24} type="flex" justify="space-between" align="middle">
-          <Col  md={8} xs={24} type="flex" justify="center" >
-          <Upload
+          <Row span={24} type="flex" justify="space-between" align="middle">
+            <Col md={8} xs={24} type="flex" justify="center" >
+              <Upload
 
-            name="avatar"
-            listType="picture-card"
-            className="avatar-uploader"
-            showUploadList={false}
-            action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-            beforeUpload={beforeUpload}
-            onChange={handleChange}
-          >
-            {imageUrl ? (
-              <img
-                src={imageUrl}
-                alt="avatar"
-                style={{
-                  width: '100%',
-                }}
-            />
-      ) : (
-        uploadButton
-      )}
-    </Upload>
-          </Col >
-          <Col md={16} xs={24}>
-          <Row md={24}  type="flex"  align="middle">
-            <Col md={16} xs={16}>
-              <Form.Item
-                 wrapperCol={{
-                  span: 22,
-                }}
-                label="姓名"
-                name="username"
-                rules={[
-                  {
-                    required: true,
-                    message: "請輸入姓名",
-                  },
-                ]}
+                name="avatar"
+                listType="picture-card"
+                className="avatar-uploader"
+                showUploadList={false}
+                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                beforeUpload={beforeUpload}
+                onChange={handleChange}
               >
-                <Input />
-              </Form.Item>
-            </Col>
-            <Col span={8}>
-              <Form.Item
-                label="性別"
-                name="sex"
-                rules={[
-                  {
-                    required: true,
-                  },
-                ]}
-              >
-                <Radio.Group>
-                  <Radio value="apple"> 女生 </Radio>
-                  <Radio value="pear"> 男生 </Radio>
-                </Radio.Group>
-              </Form.Item>
-            </Col>
-          </Row>
-
-            <Row type="flex"  align="center">
-                <Col span={16}>
-                    <Form.Item   
+                {imageUrl ? (
+                  <img
+                    src={imageUrl}
+                    alt="avatar"
+                    style={{
+                      width: '100%',
+                    }}
+                  />
+                ) : (
+                  uploadButton
+                )}
+              </Upload>
+            </Col >
+            <Col md={16} xs={24}>
+              <Row md={24} type="flex" align="middle">
+                <Col md={16} xs={16}>
+                  <Form.Item
                     wrapperCol={{
-                  span: 22,
-                }} name="date-picker" label="生日" >
-                                <DatePicker type="text"
-                disabled="disabled" placeholder="請選擇日期" />
-                            </Form.Item>
-                            `
+                      span: 22,
+                    }}
+                    label="姓名"
+                    name="username"
+                    rules={[
+                      {
+                        required: true,
+                        message: "請輸入姓名",
+                      },
+                    ]}
+                  >
+                    <Input />
+                  </Form.Item>
                 </Col>
                 <Col span={8}>
-                <Form.Item
-                label="年齡"
-                name="old"
-                
-                
-            >
-                <Input  type="text"
-                disabled="disabled"/>
-            </Form.Item>
-                    </Col>
+                  <Form.Item
+                    label="性別"
+                    name="sex"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Radio.Group>
+                      <Radio value="apple"> 女生 </Radio>
+                      <Radio value="pear"> 男生 </Radio>
+                    </Radio.Group>
+                  </Form.Item>
+                </Col>
+              </Row>
 
-            </Row>
-          </Col>
-      </Row>
+              <Row type="flex" align="center">
+                <Col span={16}>
+                  <Form.Item
+                    wrapperCol={{
+                      span: 22,
+                    }} name="date-picker" label="生日" >
+                    <DatePicker type="text"
+                      disabled="disabled" placeholder="請選擇日期" />
+                  </Form.Item>
+                  `
+                </Col>
+                <Col span={8}>
+                  <Form.Item
+                    label="年齡"
+                    name="old"
+
+
+                  >
+                    <Input type="text"
+                      disabled="disabled" />
+                  </Form.Item>
+                </Col>
+
+              </Row>
+            </Col>
+          </Row>
           <Row>
-              <Col md={10} xs={24} >
-                <Form.Item
-                  wrapperCol={{
-                    md: 22,
-                    xs:24,
-                  }}
-                  label="行動電話"
-                  name="phone"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Please input your username!",
-                    },
-                  ]}
-                >
-                  <Input placeholder="09XX-XXX-XXX" />
-                </Form.Item>
-
-              </Col>
-              <Col md={14} xs={24}>
+            <Col md={10} xs={24} >
               <Form.Item
-                
+                wrapperCol={{
+                  md: 22,
+                  xs: 24,
+                }}
+                label="行動電話"
+                name="phone"
+                rules={[
+                  {
+                    required: true,
+                    message: "Please input your username!",
+                  },
+                ]}
+              >
+                <Input placeholder="09XX-XXX-XXX" />
+              </Form.Item>
+
+            </Col>
+            <Col md={14} xs={24}>
+              <Form.Item
+
                 label="居住地區"
                 name="Area"
                 rules={[
                   {
                     required: true,
-                    
+
                   },
                 ]}
-          >
-                <Select 
+              >
+                <Select
                   className="AreaSelect"
                   defaultValue={provinceData[0]}
-                  
+
                   onChange={handleProvinceChange}
                 >
                   {provinceData.map((province) => (
@@ -258,7 +259,7 @@ function MemberPage() {
                   ))}
                 </Select>
                 <Select
-                 
+
                   value={secondCity}
                   onChange={onSecondCityChange}
                 >
@@ -266,77 +267,85 @@ function MemberPage() {
                     <Option key={city}>{city}</Option>
                   ))}
                 </Select>
-                </Form.Item>
-              </Col>
+              </Form.Item>
+            </Col>
           </Row>
-          
+
 
 
           <Row>
-          <Col span={24}>
-            <Form.Item
-              wrapperCol={{
-                span: 24,
-              }}
-              label="電子郵件"
-              name="Email"
-              rules={[
-                {
-                  required: true,
-                
-                },
-              ]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-          </Row>
-         <Row type="flex" justify="space-between" align="bottom">
-          <Col span={18}>
-          <Form.Item
-          wrapperCol={{
-            md: 22,
-            xs:22,
-          }}
-            label="密碼"
-            name="password"
-            rules={[
-              {
-                required: true,
-              
-              },
-            ]}
-          >
-            <Input.Password />
+            <Col span={24}>
+              <Form.Item
+                wrapperCol={{
+                  span: 24,
+                }}
+                label="電子郵件"
+                name="Email"
+                rules={[
+                  {
+                    required: true,
 
-            
-          </Form.Item>
-          </Col>
-          <Col span={6}>
-          <Form.Item>
-                <Button className="password_btn">更改密碼</Button>
-          </Form.Item>
+                  },
+                ]}
+              >
+                <Input />
+              </Form.Item>
             </Col>
-            
-         </Row>
-         <Row>
-         <Col span={24}>
-          <Form.Item
-            wrapperCol={{
-              span: 24,
-            }}
-            label="自我介紹"
-          >
-            <TextArea rows={4} />
-          </Form.Item>
-          </Col>
+          </Row>
+          <Row type="flex" justify="space-between" align="bottom">
+            <Col span={18}>
+              <Form.Item
+                wrapperCol={{
+                  md: 22,
+                  xs: 22,
+                }}
+                label="密碼"
+                name="password"
+                rules={[
+                  {
+                    required: true,
+
+                  },
+                ]}
+              >
+                <Input.Password />
+
+
+              </Form.Item>
+            </Col>
+            <Col span={6}>
+              <Form.Item>
+                <Button className="password_btn">更改密碼</Button>
+              </Form.Item>
+            </Col>
+
+          </Row>
+          <Row>
+            <Col span={24}>
+              <Form.Item
+                wrapperCol={{
+                  span: 24,
+                }}
+                label="自我介紹"
+              >
+                <TextArea rows={4} />
+              </Form.Item>
+            </Col>
           </Row>
           <Row span={24} type="flex" justify="space-between" align="middle">
             <Col span={11} >
-              <Button    style={{ height: 30  }}   className="FormCancel">取消</Button>
+              <ButtonComponent
+                text="取消"
+                size="large"
+                name="FormCancel "
+              />
             </Col>
             <Col span={11}>
-              <Button    style={{ height: 30 }}  className="FormSave">儲存</Button>
+              <ButtonComponent
+                text="儲存"
+                size="large"
+                name="FormSave"
+              />
             </Col>
 
             <Col span={24} type="flex" justify="center" align="center">
@@ -344,16 +353,20 @@ function MemberPage() {
             </Col>
 
             <Col span={24} type="flex" justify="center" align="center">
-            <Button   style={{ height: 40 }}  className="FormSave"> 編輯寵物經歷</Button>
+            <ButtonComponent
+                text="編輯寵物經歷"
+                size="large"
+                name="Edit-Petexperience"
+              />
             </Col>
           </Row>
         </Form>
 
-        
+
       </Col>
-      
-     
-     
+
+
+
     </Row>
   );
 }

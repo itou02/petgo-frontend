@@ -252,52 +252,52 @@ function SearchRequestFormPage() {
                         </Row>
                       </Radio.Button>
                       <Radio.Button value="b"> <Row
-                          className="ListPetCardForm"
-                          type="flex"
-                          justify="center"
-                          align="middle"
-                        >
-                          <Col md={6} sm={8} xs={10}>
-                            <img className="RearingPetJmimg" src={images.jm} />
-                          </Col>
-                          <Col md={13} sm={11} xs={9}>
-                            <Row type="flex" align="middle">
-                              <Col>
-                                <p className="PetCardName">吉米</p>
-                              </Col>
-                            </Row>
-                            <Row type="flex" align="middle">
-                              <Col
-                                xl={22}
-                                md={24}
-                                sm={24}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                品種：傑克羅素耿
-                              </Col>
-                              <Col
-                                xl={6}
-                                md={8}
-                                sm={8}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                年齡：5
-                              </Col>
-                              <Col
-                                xl={6}
-                                md={8}
-                                sm={8}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                性別：男
-                              </Col>
-                            </Row>
-                          </Col>
+                        className="ListPetCardForm"
+                        type="flex"
+                        justify="center"
+                        align="middle"
+                      >
+                        <Col md={6} sm={8} xs={10}>
+                          <img className="RearingPetJmimg" src={images.jm} />
+                        </Col>
+                        <Col md={13} sm={11} xs={9}>
+                          <Row type="flex" align="middle">
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                          </Row>
+                          <Row type="flex" align="middle">
+                            <Col
+                              xl={22}
+                              md={24}
+                              sm={24}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              品種：傑克羅素耿
+                            </Col>
+                            <Col
+                              xl={6}
+                              md={8}
+                              sm={8}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              年齡：5
+                            </Col>
+                            <Col
+                              xl={6}
+                              md={8}
+                              sm={8}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              性別：男
+                            </Col>
+                          </Row>
+                        </Col>
 
-                          <Col xl={5} md={5} sm={5} xs={5}>
+                        <Col xl={5} md={5} sm={5} xs={5}>
                           <Button
                             className="PetCardBtn"
                             type="primary"
@@ -371,23 +371,23 @@ function SearchRequestFormPage() {
                                     </Row>
                                   </Col>
                                 </Row>
-                                <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
+                                <Row type="flex" align="top" justify="center" className="PetCardTextDetailbottom">
                                   <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
-                                      <div className="PetCardTextDetailBottomTitle">個性</div>
-                                      <hr></hr>
-                                      <p className="PetCardTextDetailText">羞，內向。是個小公主
-                                        同時也是個吃貨，每次吃完都嫌不夠</p>
+                                    md={11}
+                                    sm={11}
+                                    xs={24} >
+                                    <div className="PetCardTextDetailBottomTitle">個性</div>
+                                    <hr></hr>
+                                    <p className="PetCardTextDetailText">羞，內向。是個小公主
+                                      同時也是個吃貨，每次吃完都嫌不夠</p>
                                   </Col>
                                   <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
-                                      <div className="PetCardTextDetailBottomTitle">提醒</div>
-                                      <hr></hr>
-                                      <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
+                                    md={11}
+                                    sm={11}
+                                    xs={24} >
+                                    <div className="PetCardTextDetailBottomTitle">提醒</div>
+                                    <hr></hr>
+                                    <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
                                   </Col>
 
 
@@ -397,55 +397,55 @@ function SearchRequestFormPage() {
                               </Col>
                             </Row>
                           </Modal>
-                          </Col>
-                        </Row></Radio.Button>
+                        </Col>
+                      </Row></Radio.Button>
                       <Radio.Button value="c"> <Row
-                          className="ListPetCardForm"
-                          type="flex"
-                          justify="center"
-                          align="middle"
-                        >
-                          <Col md={6} sm={8} xs={10}>
-                            <img className="RearingPetJmimg" src={images.jm} />
-                          </Col>
-                          <Col md={13} sm={11} xs={9}>
-                            <Row type="flex" align="middle">
-                              <Col>
-                                <p className="PetCardName">吉米</p>
-                              </Col>
-                            </Row>
-                            <Row type="flex" align="middle">
-                              <Col
-                                xl={22}
-                                md={24}
-                                sm={24}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                品種：傑克羅素耿
-                              </Col>
-                              <Col
-                                xl={6}
-                                md={8}
-                                sm={8}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                年齡：5
-                              </Col>
-                              <Col
-                                xl={6}
-                                md={8}
-                                sm={8}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                性別：男
-                              </Col>
-                            </Row>
-                          </Col>
+                        className="ListPetCardForm"
+                        type="flex"
+                        justify="center"
+                        align="middle"
+                      >
+                        <Col md={6} sm={8} xs={10}>
+                          <img className="RearingPetJmimg" src={images.jm} />
+                        </Col>
+                        <Col md={13} sm={11} xs={9}>
+                          <Row type="flex" align="middle">
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                          </Row>
+                          <Row type="flex" align="middle">
+                            <Col
+                              xl={22}
+                              md={24}
+                              sm={24}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              品種：傑克羅素耿
+                            </Col>
+                            <Col
+                              xl={6}
+                              md={8}
+                              sm={8}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              年齡：5
+                            </Col>
+                            <Col
+                              xl={6}
+                              md={8}
+                              sm={8}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              性別：男
+                            </Col>
+                          </Row>
+                        </Col>
 
-                          <Col xl={5} md={5} sm={5} xs={5}>
+                        <Col xl={5} md={5} sm={5} xs={5}>
                           <Button
                             className="PetCardBtn"
                             type="primary"
@@ -519,23 +519,23 @@ function SearchRequestFormPage() {
                                     </Row>
                                   </Col>
                                 </Row>
-                                <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
+                                <Row type="flex" align="top" justify="center" className="PetCardTextDetailbottom">
                                   <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
-                                      <div className="PetCardTextDetailBottomTitle">個性</div>
-                                      <hr></hr>
-                                      <p className="PetCardTextDetailText">羞，內向。是個小公主
-                                        同時也是個吃貨，每次吃完都嫌不夠</p>
+                                    md={11}
+                                    sm={11}
+                                    xs={24} >
+                                    <div className="PetCardTextDetailBottomTitle">個性</div>
+                                    <hr></hr>
+                                    <p className="PetCardTextDetailText">羞，內向。是個小公主
+                                      同時也是個吃貨，每次吃完都嫌不夠</p>
                                   </Col>
                                   <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
-                                      <div className="PetCardTextDetailBottomTitle">提醒</div>
-                                      <hr></hr>
-                                      <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
+                                    md={11}
+                                    sm={11}
+                                    xs={24} >
+                                    <div className="PetCardTextDetailBottomTitle">提醒</div>
+                                    <hr></hr>
+                                    <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
                                   </Col>
 
 
@@ -545,55 +545,55 @@ function SearchRequestFormPage() {
                               </Col>
                             </Row>
                           </Modal>
-                          </Col>
-                        </Row></Radio.Button>
+                        </Col>
+                      </Row></Radio.Button>
                       <Radio.Button value="d"> <Row
-                          className="ListPetCardForm"
-                          type="flex"
-                          justify="center"
-                          align="middle"
-                        >
-                          <Col md={6} sm={8} xs={10}>
-                            <img className="RearingPetJmimg" src={images.jm} />
-                          </Col>
-                          <Col md={13} sm={11} xs={9}>
-                            <Row type="flex" align="middle">
-                              <Col>
-                                <p className="PetCardName">吉米</p>
-                              </Col>
-                            </Row>
-                            <Row type="flex" align="middle">
-                              <Col
-                                xl={22}
-                                md={24}
-                                sm={24}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                品種：傑克羅素耿
-                              </Col>
-                              <Col
-                                xl={6}
-                                md={8}
-                                sm={8}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                年齡：5
-                              </Col>
-                              <Col
-                                xl={6}
-                                md={8}
-                                sm={8}
-                                xs={24}
-                                className="PetCardText"
-                              >
-                                性別：男
-                              </Col>
-                            </Row>
-                          </Col>
+                        className="ListPetCardForm"
+                        type="flex"
+                        justify="center"
+                        align="middle"
+                      >
+                        <Col md={6} sm={8} xs={10}>
+                          <img className="RearingPetJmimg" src={images.jm} />
+                        </Col>
+                        <Col md={13} sm={11} xs={9}>
+                          <Row type="flex" align="middle">
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                          </Row>
+                          <Row type="flex" align="middle">
+                            <Col
+                              xl={22}
+                              md={24}
+                              sm={24}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              品種：傑克羅素耿
+                            </Col>
+                            <Col
+                              xl={6}
+                              md={8}
+                              sm={8}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              年齡：5
+                            </Col>
+                            <Col
+                              xl={6}
+                              md={8}
+                              sm={8}
+                              xs={24}
+                              className="PetCardText"
+                            >
+                              性別：男
+                            </Col>
+                          </Row>
+                        </Col>
 
-                          <Col xl={5} md={5} sm={5} xs={5}>
+                        <Col xl={5} md={5} sm={5} xs={5}>
                           <Button
                             className="PetCardBtn"
                             type="primary"
@@ -667,23 +667,23 @@ function SearchRequestFormPage() {
                                     </Row>
                                   </Col>
                                 </Row>
-                                <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
+                                <Row type="flex" align="top" justify="center" className="PetCardTextDetailbottom">
                                   <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
-                                      <div className="PetCardTextDetailBottomTitle">個性</div>
-                                      <hr></hr>
-                                      <p className="PetCardTextDetailText">羞，內向。是個小公主
-                                        同時也是個吃貨，每次吃完都嫌不夠</p>
+                                    md={11}
+                                    sm={11}
+                                    xs={24} >
+                                    <div className="PetCardTextDetailBottomTitle">個性</div>
+                                    <hr></hr>
+                                    <p className="PetCardTextDetailText">羞，內向。是個小公主
+                                      同時也是個吃貨，每次吃完都嫌不夠</p>
                                   </Col>
                                   <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
-                                      <div className="PetCardTextDetailBottomTitle">提醒</div>
-                                      <hr></hr>
-                                      <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
+                                    md={11}
+                                    sm={11}
+                                    xs={24} >
+                                    <div className="PetCardTextDetailBottomTitle">提醒</div>
+                                    <hr></hr>
+                                    <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
                                   </Col>
 
 
@@ -693,8 +693,8 @@ function SearchRequestFormPage() {
                               </Col>
                             </Row>
                           </Modal>
-                          </Col>
-                        </Row></Radio.Button>
+                        </Col>
+                      </Row></Radio.Button>
                     </Radio.Group>
                     <ButtonComponent
                       text="新增寵物"
@@ -732,9 +732,8 @@ function SearchRequestFormPage() {
                     <ButtonComponent
                       text="送出"
                       size="middle"
-                      name="return"
+                      name="send"
                     />
-                    {/* <Button className="return">返回</Button> */}
                   </Col>
                 </Row>
               </Form>
