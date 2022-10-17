@@ -1,13 +1,18 @@
-import React from 'react';
+
+import React ,{useEffect,useState} from 'react';
+import axios from 'axios';
 import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
 import CardComponent from "../../components/card/card";
 import { Row, Col, message, Card } from 'antd';
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { EnvironmentOutlined } from '@ant-design/icons';
 import images from '../../config/images';
-import './index.less'
+import './index.less';
+
+import _ from "lodash";
+
 
 
 const contentStyle = {
@@ -19,13 +24,33 @@ const contentStyle = {
 };
 
 function Home(props) {
+
+  // useEffect(() =>{
+  //   axios.get('http://127.0.0.1:8000/')    
+  //   .then(res=>{
+  //     console.log(res)
+  //     setPosts(res.data)
+  //   })
+  //   .catch(err=>{
+  //     console.log(err)
+  //   })
+  //   // axios({
+  //   //   method: 'get',
+  //   //   headers: { 'Content-Type': 'application/json'},
+  //   //   url: 'http://127.0.0.1:8000/api/',
+  //   // }).then(function (response) {
+  //   //   console.log(response);
+  //   //   setPosts(response.data)
+  //   // });
+  // })
+
+
+
+
   const [dotPosition, setDotPosition] = useState('top');
 
   const handlePositionChange = ({ target: { value } }) => {
     setDotPosition(value);
-  };
-  const petGo = () => {
-    message.petGo("預約成功");
   };
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -53,19 +78,124 @@ function Home(props) {
     slidesToScroll: 1,
     autoplay: true,
     speed: 100,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
     cssEase: "linear"
   };
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1
   };
   const { Meta } = Card;
+  
+  // React.useEffect(() => {
+  //   // axios.get('http://127.0.0.1:8000/api/')
+  //   //     .set('Access-Control-Allow-Origin','*',
+  //   //         'Access-Control-Allow-Headers', '*',
+  //   //         'X-Requested-With','XMLHttpRequest',
+  //   //         'Access-Control-Allow-Methods', '*')
+  //   //     .then(function (response) {
+  //   //         console.log(response);
+  //   //     })
+  //   //     .catch(function (error) {
+  //   //         console.log(error);
+  //   //     });
+  //   const config = {
+  //     url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
+  //     method: 'get', // 大小寫皆可
+  //     headers: { 
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin':'*',
+  //       'Access-Control-Allow-Headers':'*',
+  //       'X-Requested-With':'XMLHttpRequest',
+  //     },
+  //     responseType: 'json', // 伺服器回應的數據類型
+  //   }
+  
+  //   axios(config);
+  // });
+  
+  
+  // async function fetch_data() {
+  //   const config = {
+  //     url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
+  //     method: 'get', // 大小寫皆可
+  //     headers: { 
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin':'*',
+  //       'Access-Control-Allow-Headers':'*',
+  //       'X-Requested-With':'XMLHttpRequest',
+  //     },
+  //     responseType: 'json', // 伺服器回應的數據類型
+  //   }
+  //   try {
+  //     axios(config)
+  //     .then(res =>{
+  //       console.log(res)
+  //       setPosts(res.data)
+  //     },[]);   
+  //   }
+  //   catch (error) {
+  //     throw error;
+  //     // Do  with error
+  //   }
+  // }
+  const [posts,setPosts]=useState([])
+
+  React.useEffect(() => {
+    // fetch_data()
+    const config = {
+      url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+      .then(res =>{
+        console.log(res)
+        setPosts(res.data)
+      },[]);   
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  },[]);
+
+
+
+// useEffect(()=>{
+//   console.log("123");
+//   fetch('http://127.0.0.1:8000/api/',
+//   {
+//     headers: {
+//       'Access-Control-Allow-Origin': '*',
+//       'Access-Control-Allow-Headers': '*',
+//       'Access-Control-Allow-Methods': '*'}
+//   }, {mode:'cors'})
+//   .then(res =>{
+//     console.log(res)
+//     setPosts(res.data)
+//   },[])
+// })
+
   return (
+
+    
+    // <div>
+      
+      
+      
+    // </div>
     <div id='Home'>
       <Row className='containter'>
         <Col span={16} >
@@ -115,7 +245,115 @@ function Home(props) {
           <div className='Comment'>
             <div className="site-card-wrapper">
               <Slider {...settings}>
-                <div className='Commentcard'>
+                {/* <Row className='Commentall'>
+                  <Col xs={20} sm={10} md={7} className='Commentcard'>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={images.jm} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className='nametotal'>
+                          <h1 className='master'>
+                            <strong>幼幼</strong>
+                          </h1>
+                          <h1 className='petname'>
+                            <strong>寵物名：吉米</strong>
+                          </h1>
+                        </span>
+                        <span className='introduce'>
+                          我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        </span>
+                      </Col>
+                      <Col span={16} className="area">
+                        <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={20} sm={10} md={7} className='Commentcard'>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={images.jm} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className='nametotal'>
+                          <h1 className='master'>
+                            <strong>幼幼</strong>
+                          </h1>
+                          <h1 className='petname'>
+                            <strong>寵物名：吉米</strong>
+                          </h1>
+                        </span>
+                        <span className='introduce'>
+                          我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        </span>
+                      </Col>
+                      <Col span={16} className="area">
+                        <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col xs={20} sm={10} md={7} className='Commentcard'>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={images.jm} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className='nametotal'>
+                          <h1 className='master'>
+                            <strong>幼幼</strong>
+                          </h1>
+                          <h1 className='petname'>
+                            <strong>寵物名：吉米</strong>
+                          </h1>
+                        </span>
+                        <span className='introduce'>
+                          我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        </span>
+                      </Col>
+                      <Col span={16} className="area">
+                        <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row> */}
+                <Col className='Commentcard'>
+                  <Row className="bannerBlock">
+                    <Col span={16} className="pictureBlock">
+                      <div className="imgBlock">
+                        <img src={images.jm} />
+                      </div>
+                    </Col>
+                    <Col span={16} className="titleBlock">
+                      <span className='nametotal'>
+                        <h1 className='master'>
+                          <strong>幼幼</strong>
+                        </h1>
+                        <h1 className='petname'>
+                          <strong>寵物名：吉米</strong>
+                        </h1>
+                      </span>
+                      <span className='introduce'>
+                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
+                        <ul>
+                          {_.map(post=>(
+                            <li key={post.comment}>{post.comment}</li>
+                          ))}
+                        </ul>
+                        
+                      </span>
+                    </Col>
+                    <Col span={16} className="area">
+                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -139,8 +377,8 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
-                <div className='Commentcard'>
+                </Col>
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -164,8 +402,8 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
-                <div className='Commentcard'>
+                </Col>
+                <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
                       <div className="imgBlock">
@@ -189,32 +427,7 @@ function Home(props) {
                       <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
                     </Col>
                   </Row>
-                </div>
-                <div className='Commentcard'>
-                  <Row className="bannerBlock">
-                    <Col span={16} className="pictureBlock">
-                      <div className="imgBlock">
-                        <img src={images.jm} />
-                      </div>
-                    </Col>
-                    <Col span={16} className="titleBlock">
-                      <span className='nametotal'>
-                        <h1 className='master'>
-                          <strong>幼幼</strong>
-                        </h1>
-                        <h1 className='petname'>
-                          <strong>寵物名：吉米</strong>
-                        </h1>
-                      </span>
-                      <span className='introduce'>
-                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
-                      </span>
-                    </Col>
-                    <Col span={16} className="area">
-                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
-                    </Col>
-                  </Row>
-                </div>
+                </Col>
               </Slider>
             </div>
           </div>
@@ -274,5 +487,4 @@ export default Home;
 
 //   )
 // }
-
 

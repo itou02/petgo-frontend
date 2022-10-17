@@ -8,8 +8,8 @@ function NotFoundPage() {
   let navigate = useNavigate();
   return (
     <div id="NotFoundContainer">
-      <Row justify="center">
-        <Col xs={24} className="imgBlock">
+      <Row className="container" justify="center">
+        <Col span={24} className="imgBlock">
           <div className="title">
             <h1>404</h1>
             <p>ERROR</p>
@@ -37,7 +37,7 @@ function NotFoundPage() {
           >
             回首頁
           </Button>
-        </Col>
+        </Col> 
       </Row>
     </div>
   );

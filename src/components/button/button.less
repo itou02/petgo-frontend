@@ -21,6 +21,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+
     &:hover,
     &:focus {
         background-color: @feature-experience-color  !important;
@@ -158,16 +159,15 @@
     border: none;
 
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662) !important;
-        color:rgb(96, 75, 6) !important;
+        color: rgb(96, 75, 6) !important;
     }
 }
 
 /*前往體驗,請求共養按鍵*/
-.goToEx{
-    background-color:@dark-main-color ;
+.goToEx {
+    background-color: @dark-main-color ;
     border: none;
     border-radius: 20px;
     box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
@@ -196,14 +196,14 @@
     // display: inline;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
     color: @bottom-color;
+    // color: #000;
     background-color: @feature-adoptions-color;
     border: none;
 
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662) !important;
-        color:rgb(96, 75, 6) !important;
+        color: rgb(96, 75, 6) !important;
     }
 }
 
@@ -218,8 +218,8 @@
     &:hover,
     &:focus
     {
-        background-color: @feature-experience-color;
-        color:@bottom-color;
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color:rgb(96, 75, 6) !important;
     }
 }
 
@@ -253,14 +253,54 @@
         background-color: #E6E6E6;
         color:@dark-main-color;
     }
-    &::after{
+    
+    &:active{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+    &:visited{
         background-color: @dark-main-color;
         color:@bottom-main-color;
     }
 }
 
+// 未有共養人分頁按鍵-已有共養人
+.alreadyBtn2 {
+    width: 100px;
+    background-color: #E6E6E6;
+    color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus
+    {
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+    
+    &:active{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+    &:visited{
+        background-color: @dark-main-color;
+        color:@bottom-main-color;
+    }
+}
+
+// 未有共養人分頁按鍵-未有共養人
+.notYetBtn2 {
+    width: 100px;
+    color: @bottom-main-color;
+    background-color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
+
+}
+
 // 我收到的請求-查看會員詳細的稍後,接受,拒絕鍵
-.memberDetailBtn1{
+.memberDetailBtn1 {
     width: 100px;
     height: 50px;
     font-size: 22px;
@@ -268,15 +308,15 @@
     color: @dark-main-color;
     border: none;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662) !important;
-        color:rgb(96, 75, 6) !important;
+        color: rgb(96, 75, 6) !important;
     }
 }
 
-.memberDetailBtn2{
+.memberDetailBtn2 {
     width: 100px;
     height: 50px;
     font-size: 22px;
@@ -284,32 +324,32 @@
     color: @bottom-color;
     border: none;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662) !important;
-        color:rgb(96, 75, 6) !important;
+        color: rgb(96, 75, 6) !important;
     }
 }
 
-.memberDetailBtn3{
+.memberDetailBtn3 {
     width: 100px;
     height: 50px;
     font-size: 22px;
     background-color: @feature-experience-color;
     color: @bottom-color;
-    border: none;    
+    border: none;
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
+
     &:hover,
-    &:focus
-    {
+    &:focus {
         background-color: rgba(251, 214, 52, 0.662) !important;
-        color:rgb(96, 75, 6) !important;
+        color: rgb(96, 75, 6) !important;
     }
 }
 
 // 我收到的請求-查看會員詳細-寵物詳細資料的返回鍵
-.comeBack{
+.comeBack {
     background-color: #54c7bf7e;
     margin-top: 3%;
     margin-bottom: 1%;
@@ -466,36 +506,5 @@
     &:hover,
     &:focus {
         background-color: #1A535C;
-    }
-}
-
-.adoptionReturnBtn{
-    color: #F7FFF7;
-    background-color: #1A535C;
-    width:230px;
-    margin: 20px 0;
-    border-radius: 15px;
-    height: 40px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 18px;
-    padding: 0;
-    }
-
-.DetailedDeteleBtn {
-    background-color: @feature-experience-color;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 2px 1px 1px rgba(0, 0, 0, 0.2);
-    width: 110px;
-    height: 35px;
-    font-weight: bolder;
-    font-size: 15px;
-    color: #FFFFFF;
-    margin: 2% 0;
-
-    &:hover,
-    &:focus {
-        background-color: #df5858;
     }
 }

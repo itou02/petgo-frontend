@@ -24,6 +24,7 @@ function CardComponent(props) {
       {text}
       {btn}
       {light}
+      
     </Card>
   );
 }

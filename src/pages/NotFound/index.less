@@ -5,9 +5,10 @@
 }
 
 #NotFoundContainer {
+    .container {
 
     background-color: #ffffff !important;
-    height: calc(100vh - 134px);
+    min-height: calc(100vh - 134px);}
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
@@ -43,39 +44,69 @@
         }
     }
 
-
+    .imgBlock {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2%;
+        height: 500px;
+    }
+    
+    .NotFoundImage {
+        height: 100%;
+    }
+    
+    .globalButton {
+    
+    
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+    
+        font-weight: 900;
+        background-color: #89a4ac;
+        color: rgb(255, 255, 255);
+    }
+    
+    .buttonBlock {
+    
+        display: flex;
+        justify-content: center;
+        margin: 8px;
+    
+        // height: 100vh;
+        // width: 100vw;
+        // position: fixed;
+    
+        .container {
+            min-height: calc(100vh - 134px);
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+        }
+    
+        .imgBlock {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .NotFoundImage {
+            height: 80%;
+        }
+    
+        .globalButton {
+            margin: 0 1rem;
+            width: 100%;
+        }
+    
+        .buttonBlock {
+            display: flex;
+            justify-content: center;
+            margin: 8px;
+        }
+    }
 }
 
-.imgBlock {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2%;
-    height: 500px;
-}
-
-.NotFoundImage {
-    height: 100%;
-}
-
-.globalButton {
-
-
-    height: 100%;
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
-
-    font-weight: 900;
-    background-color: #89a4ac;
-    color: rgb(255, 255, 255);
-}
-
-.buttonBlock {
-
-    display: flex;
-    justify-content: center;
-    margin: 8px;
-
-}
