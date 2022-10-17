@@ -39,7 +39,7 @@ function SearchRequestFormPage() {
   const { TextArea } = Input;
 
   return (
-    <div className="RequestForm">
+    <div id="RequestForm">
 
       <Row type="flex" justify="center">
         <Col lg={16} md={18} sm={20} xs={22} className="RequestFormwarp">
