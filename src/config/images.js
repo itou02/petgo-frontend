@@ -5,7 +5,7 @@
 const images = {
   // NotFound
   NotFound: require(`../assets/images/NotFound2.png`),
-  NotFoundBG: require(`../assets/images/NotFoundBG.png`),
+  NotFoundBG: require(`../assets/images/NotFoundBG1.gif`),
   /* background */
   /* logo */
   bg1: require("../assets/images/image-1.png"),

@@ -110,7 +110,7 @@ function HeaderComponent(props) {
             key: "activity record",
         },
         {
-            label: <a href="comment">我的評論</a>,
+            label: <a href="/comment">我的評論</a>,
             key: "Comment",
         },
         {

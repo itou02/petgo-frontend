@@ -7,18 +7,21 @@ import { useNavigate } from "react-router-dom";
 function NotFoundPage() {
   let navigate = useNavigate();
   return (
-    <div className="NotFoundContainer">
+    <div id="NotFoundContainer">
       <Row justify="center">
         <Col xs={24} className="imgBlock">
+          <div className="title">
+            <h1>404</h1>
+            <p>ERROR</p>
+          </div>
           <img
-            src={images.NotFound}
+            src={images.NotFoundBG}
             className="NotFoundImage"
             alt="NotFoundImage"
           />
         </Col>
-        <Col xs={18} sm={6} className="buttonBlock">
+        <Col  lg={5} md={6} xs={18} sm={8} className="buttonBlock">
           <Button
-            ghost
             className="globalButton"
             size="large"
             onClick={() => navigate(-1)}
@@ -26,9 +29,8 @@ function NotFoundPage() {
             回上一頁
           </Button>
         </Col>
-        <Col xs={18} sm={6} className="buttonBlock">
+        <Col lg={5} md={6} xs={18} sm={8} className="buttonBlock">
           <Button
-            ghost
             className="globalButton"
             size="large"
             onClick={() => navigate("/")}
