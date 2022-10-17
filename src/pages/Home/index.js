@@ -338,7 +338,7 @@ function Home(props) {
                         </h1>
                       </span>
                       <span className='introduce'>
-                        {/* 我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論 */}
+                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
                         <ul>
                           {_.map(post=>(
                             <li key={post.comment}>{post.comment}</li>
