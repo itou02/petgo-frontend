@@ -1,4 +1,5 @@
 import { Divider } from "antd";
+import ButtonComponent from "../../components/button/button";
 import images from "../../config/images";
 import React from "react";
 import { Col, message, Row,Tag, Steps} from 'antd';

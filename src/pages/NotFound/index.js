@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 function NotFoundPage() {
   let navigate = useNavigate();
   return (
-    <div className="NotFoundContainer">
-      <Row justify="center">
+    <div id="NotFoundContainer">
+      <Row className="container" justify="center">
         <Col xs={24} className="imgBlock">
           <img
             src={images.NotFound}
@@ -16,7 +16,7 @@ function NotFoundPage() {
             alt="NotFoundImage"
           />
         </Col>
-        <Col xs={18} sm={6} className="buttonBlock">
+        {/* <Col xs={18} sm={6} className="buttonBlock">
           <Button
             ghost
             className="globalButton"
@@ -35,7 +35,7 @@ function NotFoundPage() {
           >
             回首頁
           </Button>
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );

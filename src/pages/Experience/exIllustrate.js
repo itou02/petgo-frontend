@@ -2,7 +2,7 @@ import { Divider } from "antd";
 import images from "../../config/images";
 import ButtonComponent from "../../components/button/button";
 import React from "react";
-import { Col, message, Row,Tag, Steps,Button} from 'antd';
+import { Col, message, Row, Tag, Steps, Button } from 'antd';
 
 import "./exIllustrate.less";
 
@@ -26,16 +26,14 @@ function ExIllustrate() {
                                 <p>9. 違規要付婷鈺團隊500萬美金</p>
                                 <p>10. 你要看完上面那些 不管怎樣都要同意</p>
                             </div>
-                            <a href="/Experience/experiencer-illustrate/card">
-                                <Button  className="Btn1">
-                                    前往體驗
-                                </Button>
-                            </a>
+                            <Button  className="Btn1">
+                            前往體驗
+                            </Button>
                     </div>
                 
             </Col>
         </Row>
-    
+
     );
 }
 

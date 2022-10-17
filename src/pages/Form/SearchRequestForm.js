@@ -1,5 +1,6 @@
 import images from "../../config/images";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
+import ButtonComponent from "../../components/button/button";
 
 import React, { useState } from "react";
 import {
@@ -142,105 +143,111 @@ function SearchRequestFormPage() {
                           </Col>
 
                           <Col xl={5} md={5} sm={5} xs={5}>
-                          <Button
-                            className="PetCardBtn"
-                            type="primary"
-                            onClick={showModal}
-                          >
-                            查看詳細
-                          </Button>
-                          <Modal
-                            title="寵物資訊"
-                            className="PetListModal"
-                            open={isModalOpen}
-                            onCancel={handleCancel}
-                            cancelText="返回"
-                          >
-                            <Row
-                              className="PetListDetail"
-                              type="flex"
-                              justify="center"
+                            {/* <ButtonComponent
+                              text=" 查看詳細"
+                              size="large"
+                              name="PetCardBtn"
+                              onClick={showModal}
+                            /> */}
+                            <Button
+                              className="PetCardBtn"
+                              type="primary"
+                              onClick={showModal}
                             >
-                              <Col>
-                                <Row type="flex" justify="center" align="top">
-                                  <Col xl={8} md={8} sm={8} xs={24} className="RearingPetJmimgWarp">
-                                    <img
-                                      className="RearingPetJmimg"
-                                      src={images.jm}
-                                    />
-                                  </Col>
+                              查看詳細
+                            </Button>
+                            <Modal
+                              title="寵物資訊"
+                              className="PetListModal"
+                              open={isModalOpen}
+                              onCancel={handleCancel}
+                              cancelText="返回"
+                            >
+                              <Row
+                                className="PetListDetail"
+                                type="flex"
+                                justify="center"
+                              >
+                                <Col>
+                                  <Row type="flex" justify="center" align="top">
+                                    <Col xl={8} md={8} sm={8} xs={24} className="RearingPetJmimgWarp">
+                                      <img
+                                        className="RearingPetJmimg"
+                                        src={images.jm}
+                                      />
+                                    </Col>
 
-                                  <Col xl={14} md={14} sm={16} xs={22}>
-                                    <Row type="flex" align="middle">
-                                      <Col
-                                        xl={12}
-                                        md={12}
-                                        sm={12}
-                                        xs={12}
-                                        className="PetCardTextDetail"
-                                      >
-                                        <div className="PetCardTextDetailText">
-                                          姓名：阿金
-                                        </div>
-                                        <div className="PetCardTextDetailText">
-                                          體型：大
-                                        </div>
-                                        <div className="PetCardTextDetailText">
-                                          年齡：5
-                                        </div>
-                                      </Col>
-                                      <Col
-                                        xl={12}
-                                        md={12}
-                                        sm={12}
-                                        xs={12}
-                                        className="PetCardTextDetail"
-                                      >
-                                        <div className="PetCardTextDetailText">
-                                          品種：拉不拉多
-                                        </div>
-                                        <div className="PetCardTextDetailText">
-                                          性別：女
-                                        </div>
-                                        <div className="PetCardTextDetailText">
-                                          絕育狀況：已結紮
-                                        </div>
-                                      </Col>
+                                    <Col xl={14} md={14} sm={16} xs={22}>
+                                      <Row type="flex" align="middle">
+                                        <Col
+                                          xl={12}
+                                          md={12}
+                                          sm={12}
+                                          xs={12}
+                                          className="PetCardTextDetail"
+                                        >
+                                          <div className="PetCardTextDetailText">
+                                            姓名：阿金
+                                          </div>
+                                          <div className="PetCardTextDetailText">
+                                            體型：大
+                                          </div>
+                                          <div className="PetCardTextDetailText">
+                                            年齡：5
+                                          </div>
+                                        </Col>
+                                        <Col
+                                          xl={12}
+                                          md={12}
+                                          sm={12}
+                                          xs={12}
+                                          className="PetCardTextDetail"
+                                        >
+                                          <div className="PetCardTextDetailText">
+                                            品種：拉不拉多
+                                          </div>
+                                          <div className="PetCardTextDetailText">
+                                            性別：女
+                                          </div>
+                                          <div className="PetCardTextDetailText">
+                                            絕育狀況：已結紮
+                                          </div>
+                                        </Col>
 
-                                      <Col span={24}>
-                                        <div className="PetCardTextDetailText">
-                                          飼養期間：2016/08~2016/08
-                                        </div>
-                                      </Col>
-                                    </Row>
-                                  </Col>
-                                </Row>
-                                <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
-                                  <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
+                                        <Col span={24}>
+                                          <div className="PetCardTextDetailText">
+                                            飼養期間：2016/08~2016/08
+                                          </div>
+                                        </Col>
+                                      </Row>
+                                    </Col>
+                                  </Row>
+                                  <Row type="flex" align="top" justify="center" className="PetCardTextDetailbottom">
+                                    <Col xl={11}
+                                      md={11}
+                                      sm={11}
+                                      xs={24} >
                                       <div className="PetCardTextDetailBottomTitle">個性</div>
                                       <hr></hr>
                                       <p className="PetCardTextDetailText">羞，內向。是個小公主
                                         同時也是個吃貨，每次吃完都嫌不夠</p>
-                                  </Col>
-                                  <Col xl={11}
-                                        md={11}
-                                        sm={11}
-                                        xs={24} >
+                                    </Col>
+                                    <Col xl={11}
+                                      md={11}
+                                      sm={11}
+                                      xs={24} >
                                       <div className="PetCardTextDetailBottomTitle">提醒</div>
                                       <hr></hr>
                                       <p className="PetCardTextDetailText">運動量很大也需要大量的運動</p>
-                                  </Col>
+                                    </Col>
 
 
-                                </Row>
+                                  </Row>
 
 
-                              </Col>
-                            </Row>
-                          </Modal>
+                                </Col>
+                              </Row>
+                            </Modal>
                           </Col>
                         </Row>
                       </Radio.Button>
@@ -689,7 +696,12 @@ function SearchRequestFormPage() {
                           </Col>
                         </Row></Radio.Button>
                     </Radio.Group>
-                    <Button className="addPetBtn">新增寵物</Button>
+                    <ButtonComponent
+                      text="新增寵物"
+                      size="large"
+                      name="addPetBtn"
+                    />
+                    {/* <Button className="addPetBtn">新增寵物</Button> */}
                   </Col>
                   <Col md={24}>
                     <hr className="formHr"></hr>
@@ -717,7 +729,12 @@ function SearchRequestFormPage() {
                 </Row>
                 <Row>
                   <Col md={24} className="formBtnWarp">
-                    <Button className="Btn1">返回</Button>
+                    <ButtonComponent
+                      text="送出"
+                      size="middle"
+                      name="return"
+                    />
+                    {/* <Button className="return">返回</Button> */}
                   </Col>
                 </Row>
               </Form>
