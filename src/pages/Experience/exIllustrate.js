@@ -6,7 +6,7 @@ import { Col, message, Row, Tag, Steps, Button } from 'antd';
 
 import "./exIllustrate.less";
 
-function ExperienceIllustratePage() {
+function ExIllustrate() {
     
     return(
         <Row >

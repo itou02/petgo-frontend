@@ -44,10 +44,12 @@ function AdoptionAlready() {
                     </Row> 
                     <Row className="trimShareBtn">
                         <Col span={20} className="trimSearchBtn">
-                            <ButtonComponent
-                                text="尋找共養者"                    
-                                name="searchMemberBtn"
-                            />
+                            <a href="/Share-already/Search-request-form">
+                                <ButtonComponent
+                                    text="尋找共養者"                    
+                                    name="searchMemberBtn"
+                                />
+                            </a>
                         </Col>
                         <Col span={24} className="shareBtn">
                             <Row>
@@ -58,10 +60,13 @@ function AdoptionAlready() {
                             </Row>
                             
                             <Row>
-                                <ButtonComponent
-                                    text="未有共養人"                    
-                                    name="notYetBtn"
-                                />
+                                <a href="/Share-none">
+                                    <ButtonComponent
+                                        text="未有共養人"                    
+                                        name="notYetBtn"
+                                    />
+                                </a>
+                                
                             </Row>
                             
                         </Col>
@@ -83,7 +88,7 @@ function AdoptionAlready() {
                                 <h4>體型：大型</h4>
                                 <h4>性別：女</h4>
                             </div>
-                        }     
+                        }    
                         btn={<a href="Share-already/share-pet-detail">
                                 <ButtonComponent
                                 text="查看"                    

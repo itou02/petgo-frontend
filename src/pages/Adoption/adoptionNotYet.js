@@ -51,16 +51,19 @@ function AdoptionNotYet() {
                         </Col>
                         <Col span={24} className="shareBtn">
                             <Row>
-                                <ButtonComponent
-                                    text="已有共養人"                    
-                                    name="alreadyBtn"
-                                />
+                                <a href="Share-already">
+                                    <ButtonComponent
+                                        text="已有共養人"                    
+                                        name="alreadyBtn2"
+                                    />
+                                </a>
+                                
                             </Row>
                             
                             <Row>
                                 <ButtonComponent
                                     text="未有共養人"                    
-                                    name="notYetBtn"
+                                    name="notYetBtn2"
                                 />
                             </Row>
                             

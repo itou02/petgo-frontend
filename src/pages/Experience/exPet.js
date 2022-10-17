@@ -30,8 +30,11 @@ function ExPet() {
                             <option>地區</option>                      
                         </select>
                     </h2>
-                    <input type="radio" name="dog" value="dog" /><label>狗</label>
-                    <input type="radio" name="cat" value="cat" /><label>貓</label>
+                    <h2>
+                        <select style={{width:"200px"}}>
+                            <option>品種</option>                      
+                        </select>
+                    </h2>
                 </Col>
             </Row>
             <Row justify="center">
