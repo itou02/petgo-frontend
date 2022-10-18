@@ -37,4 +37,4 @@ function ExIllustrate() {
     );
 }
 
-export default ExperienceIllustratePage;
+export default ExIllustrate;
