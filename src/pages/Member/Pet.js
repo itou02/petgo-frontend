@@ -1,5 +1,6 @@
 import images from "../../config/images";
 import React, { useState } from "react";
+import ButtonComponent from "../../components/button/button";
 import {
   Select,
   Col,
@@ -381,14 +382,18 @@ function MemberPage() {
 
           <Row span={24} type="flex" justify="space-between" align="middle">
             <Col span={11}>
-              <Button style={{ height: 30 }} className="FormCancel">
-                取消
-              </Button>
+            <ButtonComponent
+                text="取消"
+                size="large"
+                name="FormCancel "
+              />
             </Col>
             <Col span={11}>
-              <Button style={{ height: 30 }} className="FormSave">
-                儲存
-              </Button>
+            <ButtonComponent
+                text="儲存"
+                size="large"
+                name="FormSave"
+              />
             </Col>
           </Row>
         </Form>
