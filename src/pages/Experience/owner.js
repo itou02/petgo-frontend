@@ -1,5 +1,5 @@
 import React from "react";
-import { Col,Row ,message} from "antd";
+import { Col, Row, message } from "antd";
 import ButtonComponent from "../../components/button/button";
 import './owner.less'
 import images from "../../config/images";
@@ -22,19 +22,19 @@ function Owner() {
             <Row justify="center">
                 <Col span={20} className="havePet">
                     <Col span={22} className="title">
-                        <div style={{width:"100px"}}></div>
+                        <div style={{ width: "100px" }}></div>
                         <h1>現有的體驗寵物</h1>
                         <ButtonComponent
                             text="新增寵物"
                             size="large"
                             name="addExPet"
-                            handleSubmit={add}
+
                         />
                     </Col>
                     <Row justify="center">
                         <Col span={12} className="exPet">
                             <Row align="center">
-                                <Col span={23}  className="exPetItem">
+                                <Col span={23} className="exPetItem">
                                     <Col span={5} className="petImage">
                                         <img src={images.gimmy} />
                                     </Col>
@@ -71,14 +71,14 @@ function Owner() {
                                                         handleSubmit={check}
                                                     />
                                                 </a>
-                                                
+
                                             </Col>
                                         </Row>
                                     </Col>
-                                
+
                                 </Col>
                             </Row>
-                            
+
                         </Col>
                     </Row>
                 </Col>
