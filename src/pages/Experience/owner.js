@@ -18,7 +18,7 @@ function Owner() {
     };
 
     return (
-        <div className="container">
+        <div id="owner">
             <Row justify="center">
                 <Col span={20} className="havePet">
                     <Col span={22} className="title">
