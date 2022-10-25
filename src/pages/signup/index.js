@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState ,useEffect} from 'react';
 import { Link } from "react-router-dom";
 import ButtonComponent from "../../components/button/button";
 import { Row, Col, Button, Checkbox, Form, Icon, Input, Space, Radio, DatePicker, Select } from 'antd';
@@ -6,6 +6,7 @@ import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone, PhoneOutlined, Calendar
 import { AiFillLock } from "react-icons/ai";
 import images from '../../config/images';
 import './index.less'
+import axios from 'axios';
 
 
 
@@ -40,6 +41,34 @@ const Signup = (props) => {
   const onSecondCityChange = (value) => {
     setSecondCity(value);
   };
+
+  const [posts,setPosts]=useState([])
+  React.useEffect(() => {
+    // fetch_data()
+    const config = {
+      url: 'http://127.0.0.1:8000/register',  // 只有此為必需
+      method: '*', // 大小寫皆可
+      headers: { 
+        // 'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+      .then(res =>{
+        console.log(res.data)
+        setPosts(res.data)
+      },[]);   
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  },[]);
+  console.log('posts=>',posts);
 
   return (
     <div id="signup">

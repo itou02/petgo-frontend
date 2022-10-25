@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./Login/index";
 import Counter from "./counter/counter";
 import Home from "./Home/index";
+import HomeLogin from "./Home/index";
 
 import QQLayout from "../Layout/QQLayout";
 
@@ -70,7 +71,7 @@ function Router() {
           <Route path="signup" element={<Signup />} />
 
           <Route path="forget" element={<Forget />} />
-          <Route path="revise" element={<Revise />} />
+          <Route path="forget/revise" element={<Revise />} />
           <Route path="comment" element={<Comment />} />
           <Route path="petlist" element={<Petlist />} />
 
@@ -81,6 +82,9 @@ function Router() {
           <Route path="norequest" element={<Norequest />} />
 
           <Route path="/" element={<Home />} />
+          {/* 登入後首頁 */}
+          <Route path="/Home" element={<HomeLogin />} />
+
           <Route path="counter" element={<Counter />} />
 
           {/* 體驗 */}
