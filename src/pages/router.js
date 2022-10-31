@@ -70,9 +70,9 @@ function Router() {
           <Route path="signup" element={<Signup />} />
 
           <Route path="forget" element={<Forget />} />
-          <Route path="revise" element={<Revise />} />
+          <Route path="forget/revise" element={<Revise />} />
           <Route path="comment" element={<Comment />} />
-          <Route path="petlist" element={<Petlist />} />
+          <Route path="Pet-List" element={<Petlist />} />
 
           <Route path="nosent-request" element={<Norequest />} />
           <Route path="sent-request" element={<Sentrequest />} />

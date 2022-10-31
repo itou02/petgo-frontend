@@ -1,9 +1,9 @@
-import React from 'react';
+import React ,{ useState,useEffect }from 'react';
 import ButtonComponent from "../../components/button/button";
 import { Row, Col, Modal, Button } from 'antd';
-import { useState } from 'react';
+import axios from 'axios';
 import images from '../../config/images';
-import './index.less'
+import './index.less';
 
 
 const contentStyle = {
@@ -15,7 +15,35 @@ const contentStyle = {
 };
 
 
+
 function Comment() {
+    const [posts,setPosts]=useState([])
+
+    React.useEffect(() => {
+      // fetch_data()
+      const config = {
+        url: 'http://127.0.0.1:8000/api/pets',  // 只有此為必需
+        method: 'get', // 大小寫皆可
+        headers: { 
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin':'*',
+          'Access-Control-Allow-Headers':'*',
+          'X-Requested-With':'XMLHttpRequest',
+        },
+        responseType: 'json', // 伺服器回應的數據類型
+      }
+      try {
+        axios(config)
+        .then(res =>{
+          console.log(res)
+          setPosts(res.data)
+        },[]);   
+      }
+      catch (error) {
+        throw error;
+        // Do  with error
+      }
+    },[]);
     return (
         <div id='Petlist'>
             <Row align='center' className='container'>
