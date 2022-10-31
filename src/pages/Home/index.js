@@ -142,10 +142,19 @@ function Home(props) {
   //     // Do  with error
   //   }
   // }
-  const [posts,setPosts]=useState([])
+  
+    
+
+    // this.state = {
+    //     posts: [],
+    //     DataisLoaded: false
+    // };
+    const [posts,setPosts]=useState([])
+
 
   React.useEffect(() => {
     // fetch_data()
+
     const config = {
       url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
       method: 'get', // 大小寫皆可
@@ -160,8 +169,8 @@ function Home(props) {
     try {
       axios(config)
       .then(res =>{
-        console.log(res)
-        setPosts(res.data)
+        console.log(res.data.req)
+        setPosts(res.data.req)
       },[]);   
     }
     catch (error) {
@@ -169,7 +178,7 @@ function Home(props) {
       // Do  with error
     }
   },[]);
-
+  console.log('posts=>',posts);
 
 
 // useEffect(()=>{
@@ -188,7 +197,7 @@ function Home(props) {
 // })
 
   return (
-
+    
     
     // <div>
       
@@ -321,6 +330,38 @@ function Home(props) {
                     </Row>
                   </Col>
                 </Row> */}
+                {posts.map((post, index) => {
+                  return (
+                    <Col className='Commentcard' key={index}>
+                      <Row className="bannerBlock">
+                        <Col span={16} className="pictureBlock">
+                          <div className="imgBlock">
+                            <img src={images.jm} />
+                          </div>
+                        </Col>
+                        <Col span={16} className="titleBlock">
+                          <span className='nametotal'>
+                            <h1 className='master'>
+                              {/* <strong>{post.userName}</strong> */}
+                            </h1>
+                            <h1 className='petname'>
+                              <strong>
+                                {post.petName}
+                              </strong>
+                            </h1>
+                          </span>
+                          <span className='introduce'>                                                        
+                            <div>{post.comment}</div>
+                            <div className='userName'>--{post.userName}</div>
+                          </span>
+                        </Col>
+                        <Col span={16} className="area">
+                          <span className='icon'><EnvironmentOutlined /></span><span>{post.locations}</span>
+                        </Col>
+                      </Row>
+                    </Col>
+                  );
+                })}
                 <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
@@ -338,12 +379,9 @@ function Home(props) {
                         </h1>
                       </span>
                       <span className='introduce'>
-                        我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論
-                        <ul>
-                          {_.map(post=>(
-                            <li key={post.comment}>{post.comment}</li>
-                          ))}
-                        </ul>
+                        {/* 我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論 */}
+                        
+                        {posts.name}
                         
                       </span>
                     </Col>

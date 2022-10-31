@@ -2,7 +2,7 @@
 
 .ant-btn {
     height: 30px;
-    
+
     // padding: 10px;
 }
 
@@ -24,7 +24,7 @@
 
     &:hover,
     &:focus {
-        background-color: @feature-experience-color  !important;
+        background-color: @feature-experience-color !important;
         border-color: @feature-experience-color;
     }
 }
@@ -47,7 +47,7 @@
 
     &:hover,
     &:focus {
-        background-color: @feature-adoptions-color  !important;
+        background-color: @feature-adoptions-color !important;
         border-color: @feature-adoptions-color;
     }
 }
@@ -152,7 +152,8 @@
     height: 50px;
     margin-top: 3%;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 900;
+    text-shadow:0 2px 3px   rgba(0, 0, 0, 0.799);
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
     color: @bottom-color;
     background-color: @feature-adoptions-color;
@@ -160,6 +161,7 @@
 
     &:hover,
     &:focus {
+        text-shadow:none;
         background-color: rgba(251, 214, 52, 0.662) !important;
         color: rgb(96, 75, 6) !important;
     }
@@ -206,12 +208,32 @@
     }
 }
 
+// 共養專區-尋找共養人
+.searchMemberBtn {
+    width: 100px;
+    height: 30px;
+    background-color: @feature-experience-color;
+    border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus {
+        background-color: rgba(251, 214, 52, 0.662) !important;
+        color: rgb(96, 75, 6) !important;
+    }
+}
+
 // 共養分頁按鍵-已有共養人
 .alreadyBtn {
     width: 100px;
     color: @bottom-color;
     background-color: @dark-main-color;
 
+    &:hover,
+    &:focus {
+        background-color: @dark-main-color;
+        color: @bottom-main-color;
+    }
 }
 
 // 共養分頁按鍵-未有共養人
@@ -220,6 +242,58 @@
     color: @dark-main-color;
     background-color: #E6E6E6;
     border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus {
+        background-color: #E6E6E6;
+        color: @dark-main-color;
+    }
+
+    &:active {
+        background-color: @dark-main-color;
+        color: @bottom-main-color;
+    }
+
+    &:visited {
+        background-color: @dark-main-color;
+        color: @bottom-main-color;
+    }
+}
+
+// 未有共養人分頁按鍵-已有共養人
+.alreadyBtn2 {
+    width: 100px;
+    background-color: #E6E6E6;
+    color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
+
+    &:hover,
+    &:focus {
+        background-color: @dark-main-color;
+        color: @bottom-main-color;
+    }
+
+    &:active {
+        background-color: @dark-main-color;
+        color: @bottom-main-color;
+    }
+
+    &:visited {
+        background-color: @dark-main-color;
+        color: @bottom-main-color;
+    }
+}
+
+// 未有共養人分頁按鍵-未有共養人
+.notYetBtn2 {
+    width: 100px;
+    color: @bottom-main-color;
+    background-color: @dark-main-color;
+    border: none;
+    border-radius: 5px;
+
 }
 
 // 我收到的請求-查看會員詳細的稍後,接受,拒絕鍵
@@ -435,6 +509,7 @@
     }
 }
 
+
 .gotoexperence {
     color: @drop-down-color;
     background-color: @dark-main-color;
@@ -543,5 +618,21 @@
         box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
         border-radius: 15px;
         color: rgb(255, 255, 255);
+    }
+}
+
+
+.search{
+ 
+     background: @dark-main-color ;
+        border-color: @dark-main-color ;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+        color: rgb(255, 255, 255);  
+        
+        &:hover,&:focus{
+            background: @dark-main-color ;
+            border-color: @dark-main-color ;
+            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+            color: rgb(255, 255, 255);  
     }
 }
