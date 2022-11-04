@@ -336,7 +336,7 @@ function Home(props) {
                       <Row className="bannerBlock">
                         <Col span={16} className="pictureBlock">
                           <div className="imgBlock">
-                            <img src={images.jm} />
+                            <img src={post.img} />
                           </div>
                         </Col>
                         <Col span={16} className="titleBlock">
