@@ -4,7 +4,7 @@ import "./button.less";
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 
 function ButtonComponent(props) {
-    const { text, size, name, handleSubmit } = props;
+    const { text, size, name, handleSubmit ,htmlType} = props;
     const { confirm } = Modal;
     const success = () => {
         Modal.success({
@@ -32,7 +32,7 @@ function ButtonComponent(props) {
     };
 
     return (
-        <Button type="primary" size={size} className={name} onClick={handleSubmit} >
+        <Button type="primary" size={size} className={name} onClick={handleSubmit} htmlType={htmlType} >
             {text}
         </Button>
 

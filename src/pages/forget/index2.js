@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Row, Col, Button, Checkbox, Form, Icon, Input, Space, Modal } from 'antd';
 import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import ButtonComponent from "../../components/button/button";
 import { AiFillLock } from "react-icons/ai";
 import images from '../../config/images';
+import axios from 'axios';
 import './index.less'
 
 function Revise() {
@@ -24,6 +25,35 @@ function Revise() {
         setVisible(false);
     };
 
+    const [posts,setPosts]=useState([])
+    // fetch_data()
+    const config = {
+      url: 'http://127.0.0.1:8000/api/forget/revise',  // 只有此為必需
+      method: 'patch', // 大小寫皆可
+      headers: { 
+        'Accept': 'text/html',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        // 'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')        
+    },
+    
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+      .then(res =>{
+        console.log(res.data.req)
+        setPosts(res.data.req)
+      },[]);   
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  console.log('posts=>',posts);
 
     return (
         <div id="login">

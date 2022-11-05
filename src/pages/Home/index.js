@@ -21,9 +21,10 @@ const contentStyle = {
   textAlign: 'center',
   background: '#364d79',
 };
+console.log('Home.index進入');
 
 function Home(props) {
-
+  console.log('Home.index進入內部');
   // useEffect(() =>{
   //   axios.get('http://127.0.0.1:8000/')    
   //   .then(res=>{
@@ -68,7 +69,7 @@ function Home(props) {
   }, []);
 
 
-  console.log("111", windowSize);
+  // console.log("111", windowSize);
 
   const autoplay = {
     dots: true,
@@ -169,7 +170,7 @@ function Home(props) {
     try {
       axios(config)
       .then(res =>{
-        console.log(res.data.req)
+        // console.log(res.data.req)
         setPosts(res.data.req)
       },[]);   
     }
@@ -178,8 +179,8 @@ function Home(props) {
       // Do  with error
     }
   },[]);
-  console.log('posts=>',posts);
-
+  console.log('posts=>',posts,);
+  console.log('-------------------');
 
 // useEffect(()=>{
 //   console.log("123");
@@ -500,6 +501,7 @@ function Home(props) {
 }
 
 export default Home;
+
 // function Index(props) {
 
 //   const success = () => {
