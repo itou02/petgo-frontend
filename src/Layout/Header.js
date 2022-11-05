@@ -15,8 +15,9 @@ import {
 } from "react-icons/fa";
 
 const { Header } = Layout;
-
+console.log('Header進入');
 function HeaderComponent(props) {
+    console.log('Header內部進入');
     const { windowSize } = props;
     const [visible, setVisible] = useState(false);
     const showDrawer = () => {

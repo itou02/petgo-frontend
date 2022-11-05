@@ -163,7 +163,7 @@ function MemberPage() {
                 <Row type="flex" align="middle" className="inputWarp">
                   <Col lg={14} md={14} sm={16} xs={16}>
                     <Form.Item
-               wrapperCol={{
+                wrapperCol={{
                 md: 16,
                 sm:18,
                 xs:2,
@@ -241,7 +241,7 @@ function MemberPage() {
             <Row>
               <Col lg={10}  md={10} xs={10}>
                 <Form.Item
-                   wrapperCol={{
+                    wrapperCol={{
                     md: 14,
                     sm:18,
                     xs:2,
@@ -263,7 +263,7 @@ function MemberPage() {
                     md: 22,
                     xs: 24,
                   }}
-                  label="居住地區"
+                  label="Area"
                   name="Area"
                   rules={[
                     {
@@ -273,6 +273,7 @@ function MemberPage() {
                 >
                   <Select
                     className="AreaSelect"
+                    name="city"
                     defaultValue={provinceData[0]}
                     onChange={handleProvinceChange}
                   >
@@ -280,7 +281,7 @@ function MemberPage() {
                       <Option key={province}>{province}</Option>
                     ))}
                   </Select>
-                  <Select value={secondCity} onChange={onSecondCityChange}>
+                  <Select value={secondCity} onChange={onSecondCityChange} name="district">
                     {cities.map((city) => (
                       <Option key={city}>{city}</Option>
                     ))}
@@ -292,8 +293,8 @@ function MemberPage() {
             <Row className="FormItemWarp">
               <Col span={24}>
                 <Form.Item
-                  label="電子郵件"
-                  name="Email"
+                  label="email"
+                  name="email"
                   rules={[
                     {
                       required: true,
@@ -308,7 +309,7 @@ function MemberPage() {
               <Col span={18}>
                 <Form.Item
                   wrapperCol={{ md: 22 }}
-                  label="密碼"
+                  label="password"
                   name="password"
                   rules={[
                     {
@@ -332,6 +333,7 @@ function MemberPage() {
                     span: 24,
                   }}
                   label="自我介紹"
+                  name="intro"
                 >
                   <TextArea rows={4} />
                 </Form.Item>

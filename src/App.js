@@ -6,29 +6,32 @@ import Test from "./components/test";
 import Router from "./pages/router";
 import Home from "./pages/Home";
 
+console.log('App進入');
 function App() {
-  async function fetch_data() {
-    const config = {
-      url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
-      method: 'get', // 大小寫皆可
-      headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
-      },
-      responseType: 'json', // 伺服器回應的數據類型
-    }
-    try {
-      axios(config);
-    }
-    catch (error) {
-      throw error;
-      // Do  with error
-    }
-  }
-  React.useEffect(() => {
-    fetch_data()
+  console.log('App內部進入');
+  // async function fetch_data() {
+  //   const config = {
+  //     url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
+  //     method: 'get', // 大小寫皆可
+  //     headers: { 
+  //       'Content-Type': 'application/json',
+  //       'Access-Control-Allow-Origin':'*',
+  //       'Access-Control-Allow-Headers':'*',
+  //       'X-Requested-With':'XMLHttpRequest',
+  //     },
+  //     responseType: 'json', // 伺服器回應的數據類型
+  //   }
+  //   try {
+  //     axios(config);
+  //   }
+  //   catch (error) {
+  //     throw error;
+  //     // Do  with error
+  //   }
+  // }
+
+  // React.useEffect(() => {
+  //   fetch_data()
     // axios
     //     .get('http://127.0.0.1:8000/api/')
     //     .set('Access-Control-Allow-Origin','*',
@@ -41,7 +44,7 @@ function App() {
     //     .catch(function (error) {
     //         console.log(error);
     //     });
-  });
+  // });
 
   // useEffect(()=>{
   //   console.log("123");

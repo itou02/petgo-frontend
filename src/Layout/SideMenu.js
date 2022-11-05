@@ -11,6 +11,8 @@ import { Link, useLocation } from "react-router-dom";
 
 const { Sider } = Layout;
 
+console.log('SideMenu進入');
+
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
