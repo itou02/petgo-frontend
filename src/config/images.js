@@ -23,6 +23,8 @@ const images = {
   Member1: require("../assets/images/Member-1.jpg"),
   pet1: require("../assets/images/pet-1.jpg"),
   pet2: require("../assets/images/pet2.jpg"),
+  pet3: require("../assets/images/pet3.jpg"),
+  pet4: require("../assets/images/pet4.jpg"),
   jm: require("../assets/images/jm.jpg"),
 
   //Form

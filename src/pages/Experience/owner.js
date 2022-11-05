@@ -1,90 +1,141 @@
 import React from "react";
 import { Col, Row, message } from "antd";
 import ButtonComponent from "../../components/button/button";
-import './owner.less'
+import "./owner.less";
 import images from "../../config/images";
 
-
-
 function Owner() {
-    const add = () => {
-        message.add("新增寵物成功");
-    };
-    const del = () => {
-        message.del("確定移除寵物？");
-    };
-    const check = () => {
-        message.check("確定移除寵物？");
-    };
+  const add = () => {
+    message.add("新增寵物成功");
+  };
+  const del = () => {
+    message.del("確定移除寵物？");
+  };
+  const check = () => {
+    message.check("確定移除寵物？");
+  };
 
-    return (
-        <div id="owner">
-            <Row justify="center">
-                <Col span={20} className="havePet">
-                    <Col span={22} className="title">
-                        <div style={{ width: "100px" }}></div>
-                        <h1>現有的體驗寵物</h1>
-                        <ButtonComponent
-                            text="新增寵物"
-                            size="large"
-                            name="addExPet"
+  return (
+    <div id="owner">
+      <Row type="flex" justify="center" align="middle">
+        <Col
+          xxl={14}
+          xl={16}
+          lg={18}
+          md={18}
+          sm={20}
+          xs={22}
+          className="RecordListwarp"
+        >
+          <Row type="flex" justify="center">
+            <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+              <div className="topWarp">
+                <p className="RecordListTitle">現有的體驗寵物</p>
 
-                        />
-                    </Col>
-                    <Row justify="center">
-                        <Col span={12} className="exPet">
-                            <Row align="center">
-                                <Col span={23} className="exPetItem">
-                                    <Col span={5} className="petImage">
-                                        <img src={images.gimmy} />
-                                    </Col>
-                                    <Col span={15} className="petIntro">
-                                        <Row className="trimIntroTitle">
-                                            <Col offset={1}><h3>吉米</h3></Col>
-                                        </Row>
-                                        <Row className="trimIntroItem">
-                                            <Col span={8} offset={2}>品種：</Col>
-                                            <Col span={5}>年齡：</Col>
-                                            <Col span={5}>性別：</Col>
-                                        </Row>
-                                        <Row className="trimIntroItem">
-                                            <Col span={8} offset={2}>體型：</Col>
-                                            <Col span={10}>飼養期間：</Col>
-                                        </Row>
-                                    </Col>
-                                    <Col span={4} className="petBtn">
-                                        <Row>
-                                            <Col span={10} className="petBtnTrim">
-                                                <ButtonComponent
-                                                    text="移除"
-                                                    name="del"
-                                                    handleSubmit={del}
-                                                />
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col span={10} className="petBtnTrim">
-                                                <a href="/Experience/owner-illustrate/post/ex-pet-detail">
-                                                    <ButtonComponent
-                                                        text="查看詳細"
-                                                        name="check"
-                                                        handleSubmit={check}
-                                                    />
-                                                </a>
-
-                                            </Col>
-                                        </Row>
-                                    </Col>
-
-                                </Col>
-                            </Row>
-
+                <div className="addExPetWarp">
+                  <a href="/Experience/owner-illustrate/post/add-form">
+                    <ButtonComponent
+                      text="新增寵物"
+                      size="large"
+                      name="addExPet"
+                    />
+                  </a>
+                </div>
+              </div>
+              <Row type="flex" justify="center">
+                <Col
+                  xl={18}
+                  lg={19}
+                  md={20}
+                  sm={20}
+                  xs={22}
+                  className="ListWarp"
+                >
+                  <Row className="ListPetCard" justify="center" align="end">
+                    <Col xl={19} lg={19} md={24} sm={24} xs={24}>
+                      <Row type="flex" align="strat">
+                        <Col
+                          xxl={6}
+                          xl={7}
+                          lg={8}
+                          md={8}
+                          sm={8}
+                          xs={10}
+                          className="listPetJmimgWarp"
+                        >
+                          <img className="listPetJmimg" src={images.jm} />
                         </Col>
-                    </Row>
+                        <Col
+                          xxl={18}
+                          xl={16}
+                          lg={16}
+                          md={16}
+                          sm={16}
+                          xs={14}
+                          className="PetCardCenter"
+                        >
+                          <Row>
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                          </Row>
+                          <Row type="flex" align="bottom">
+                            <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                              <Row align="middle">
+                                <span className="PetCardText">
+                                  品種：傑克羅素耿
+                                </span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：5</span>
+
+                                <span className="PetCardText">
+                                  體驗日期：2022/06/12-2022/06/30
+                                </span>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Col>
+
+                    <Col
+                      xl={5}
+                      lg={5}
+                      md={24}
+                      sm={24}
+                      xs={24}
+                      className="ListButtonWarp"
+                    >
+                      <Row align="end" className="ButtonWarp">
+                        <Col className="ListButton">
+                          <a href="/Record/Experience/detailed">
+                            <ButtonComponent
+                              text="取消請求"
+                              size="large"
+                              name="cancel-request"
+                            />
+                          </a>
+                        </Col>
+                        <Col className="ListButton">
+                          <a href="/Record/Experience/detailed">
+                            <ButtonComponent
+                              text="查看詳細"
+                              size="large"
+                              name="more-detail"
+                            />
+                          </a>
+                        </Col>
+                      </Row>
+                    </Col>
+                  </Row>
                 </Col>
-            </Row>
-        </div>
-    );
+              </Row>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </div>
+  );
 }
 
 export default Owner;

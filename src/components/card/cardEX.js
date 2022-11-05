@@ -1,11 +1,11 @@
-import { Card, Col,Row } from "antd";
+import { Card, Col, Row } from "antd";
 import React from "react";
 import "./card.less";
 import images from "../../config/images";
 
 // const { Meta } = Card;
 
-function CardComponent(props) {
+function CardComponent2(props) {
   const { img, title, icon, text, name, btn, handleSubmit, light } = props;
   return (
     <Card
@@ -23,11 +23,9 @@ function CardComponent(props) {
       </div>
 
       {text}
-      <Row>
-        <Col span={12}> {btn}</Col>
-        <Col  span={12} className="lightWarp"> {light}</Col>
-      </Row>
+
+      {btn}
     </Card>
   );
 }
-export default CardComponent;
+export default CardComponent2;

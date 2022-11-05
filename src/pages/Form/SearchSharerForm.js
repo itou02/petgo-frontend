@@ -1,7 +1,7 @@
 import images from "../../config/images";
+import ButtonComponent from "../../components/button/button";
 import React, { useState } from "react";
 import {
-  
   Col,
   Row,
   Button,
@@ -14,14 +14,15 @@ import {
   TextArea,
   Modal,
   Checkbox,
-  Collapse,InputNumber,Select
+  Collapse,
+  InputNumber,
+  Select,
 } from "antd";
 
 import "./SearchSharerForm.less";
 
 function SearchRequestFormPage() {
   const { Panel } = Collapse;
-
 
   const onChange1 = (key) => {
     console.log(key);
@@ -48,28 +49,75 @@ function SearchRequestFormPage() {
   };
 
   return (
-    <div className="SharerForm">
+    <div id="SharerForm">
       <Row type="flex" justify="center">
-        <Col lg={16} md={18} sm={20} xs={22} className="RequestFormwarp">
+        <Col
+          xl={16}
+          lg={16}
+          md={18}
+          sm={22}
+          xs={24}
+          className="RequestFormwarp"
+        >
           <Row type="flex" justify="center">
-            <Col md={24} xs={24}>
+            <Col span={24}>
               <p className="SharerFormTitle">請求共養</p>
             </Col>
 
-            <Col md={16} xs={22}>
+            <Col xl={16} lg={18} md={20} xs={22}>
               <Form>
                 <Row type="flex" justify="center">
-                  <Col md={24}>
+                  <Col lg={24} md={24} sm={24} xs={24}>
                     <p className="formsubtitle">基本資料</p>
                   </Col>
 
-                  <Col md={22}>
-                    <div className="formContent">
-                      <p className="formContentText">姓名：黃婷鈺</p>
-                      <p className="formContentText">性別：女</p>
-                      <p className="formContentText">年齡：19</p>
-                      <p className="formContentText">地區：台中市大里區</p>
-                    </div>
+                  <Col md={22} sm={22} xs={22}>
+                    <Row className="formContent">
+                      <Col
+
+                        xl={24}
+                        lg={24}
+                        md={24}
+                        sm={24}
+                        xs={24}
+                        className="formContentText"
+                      >
+                        姓名：黃婷鈺
+                      </Col>
+                      <Col
+                        xxl={3}
+                        xl={4}
+                        lg={5}
+                        md={5}
+                        sm={5}
+                        xs={4}
+                        className="formContentText"
+                      >
+                        性別：女
+                      </Col>
+                      <Col
+                       xxl={3}
+                        xl={4}
+                        lg={5}
+                        md={5}
+                        sm={5}
+                        xs={4}
+                        className="formContentText"
+                      >
+                        年齡：19
+                      </Col>
+                      <Col
+                       xxl={6}
+                        xl={8}
+                        lg={10}
+                        md={10}
+                        sm={10}
+                        xs={10}
+                        className="formContentText"
+                      >
+                        地區：台中市大里區
+                      </Col>
+                    </Row>
 
                     <Form.Item
                       className="formContentTextArea"
@@ -93,7 +141,7 @@ function SearchRequestFormPage() {
                       </Form.Item>
                     </div>
                   </Col>
-                  <Col md={24}>
+                  <Col span={24}>
                     <hr className="formHr"></hr>
                     <p className="formsubtitle">養寵經歷</p>
                   </Col>
@@ -101,240 +149,336 @@ function SearchRequestFormPage() {
                   <Col md={22} className="articleMoreWarp">
                     <Collapse defaultActiveKey={["1"]} onChange={onChange}>
                       <Panel header="點擊查看更多經歷" key="1">
-                      <Form>
-          <h2 className="RearingPetSubheader">基本寵物資訊</h2>
-            <Form.Item
-            name="Basic-Pet-Information">
-              
-              <Checkbox.Group
-              
-                style={{
-                  width: '100%',
-                }}
-                onChange={onChange}
-              >
-                <Row  className="RearingPetCheckboxWarp">
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="A">住處允許養寵</Checkbox>
-                  </Col>
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="B">有照顧寵物的時間</Checkbox>
-                  </Col>
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="C">有養寵經濟基礎</Checkbox>
-                  </Col>
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="D">願意陪伴寵物</Checkbox>
-                  </Col>
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="E">有責任感及耐心</Checkbox>
-                  </Col>
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="F">同居者同意且支持</Checkbox>
-                  </Col>
-                  <Col md={8} sm={12} xs={12}>
-                    <Checkbox disabled value="G">住處穩定</Checkbox>
-                  </Col>
-                  
-                </Row>
-                </Checkbox.Group>
-            </Form.Item>
-              <hr className="RearingPetHr"></hr>
-              <Row>
-              
-              <h2 className="RearingPetSubheader">養寵經歷</h2>
-              <Col  md={24}>
-                <Row className="PetCard" md={22} xs={22} type="flex" justify="center" align="middle">
-                  <Col span={6}>
-                  <img className="RearingPetJmimg" src={images.jm}  /> 
-                  </Col>
-                  <Col span={18}>
-                    <Row type="flex"  align="middle">
-                      <Col >
-                        <p className="PetCardName">吉米</p>
-                      </Col>
-                      <Col>
-                        <div className="PetCardLabel1">自家寵物</div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                          <div className="PetCardContent">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">品種：傑克羅素耿</div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">飼養期間：2016/08~</div>
-                            </div>
-                          </div>
-                          
-                      </Col>
+                        <Form>
+                          <h2 className="RearingPetSubheader">基本寵物資訊</h2>
+                          <Form.Item name="Basic-Pet-Information">
+                            <Checkbox.Group
+                              style={{
+                                width: "100%",
+                              }}
+                              onChange={onChange}
+                            >
+                              <Row className="RearingPetCheckboxWarp">
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="A">
+                                    住處允許養寵
+                                  </Checkbox>
+                                </Col>
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="B">
+                                    有照顧寵物的時間
+                                  </Checkbox>
+                                </Col>
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="C">
+                                    有養寵經濟基礎
+                                  </Checkbox>
+                                </Col>
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="D">
+                                    願意陪伴寵物
+                                  </Checkbox>
+                                </Col>
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="E">
+                                    有責任感及耐心
+                                  </Checkbox>
+                                </Col>
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="F">
+                                    同居者同意且支持
+                                  </Checkbox>
+                                </Col>
+                                <Col md={8} sm={12} xs={12}>
+                                  <Checkbox disabled value="G">
+                                    住處穩定
+                                  </Checkbox>
+                                </Col>
+                              </Row>
+                            </Checkbox.Group>
+                          </Form.Item>
+                          <hr className="RearingPetHr"></hr>
+                          <Row>
+                            <h2 className="RearingPetSubheader">養寵經歷</h2>
+                            <Col md={24}>
+                              <Row
+                                className="ListPetCard"
+                                justify="center"
+                                align="end"
+                              >
+                                <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+                                  <Row type="flex" align="strat">
+                                    <Col
+                                      xxl={5}
+                                      xl={6}
+                                      lg={8}
+                                      md={10}
+                                      sm={10}
+                                      xs={10}
+                                      className="listPetJmimgWarp"
+                                    >
+                                      <img
+                                        className="listPetJmimg"
+                                        src={images.jm}
+                                      />
+                                    </Col>
+                                    <Col
+                                      xxl={16}
+                                      xl={16}
+                                      lg={16}
+                                      md={14}
+                                      sm={14}
+                                      xs={14}
+                                      className="PetCardCenter"
+                                    >
+                                      <Row type="flex" align="middle">
+                                        <Col>
+                                          <p className="PetCardName">吉米</p>
+                                        </Col>
+                                        <Col>
+                                          <div className="PetCardLabel1">
+                                            自家寵物
+                                          </div>
+                                        </Col>
+                                      </Row>
+                                      <Row type="flex" align="bottom">
+                                        <Col
+                                          xl={24}
+                                          lg={24}
+                                          md={24}
+                                          sm={22}
+                                          xs={22}
+                                        >
+                                          <Row align="middle">
+                                            <span className="PetCardText">
+                                              品種：傑克羅素耿
+                                            </span>
+                                            <span className="PetCardText">
+                                              性別：男
+                                            </span>
+                                            <span className="PetCardText">
+                                              年齡：5
+                                            </span>
 
-                    </Row>
-                  </Col>
-                </Row>
+                                            <span className="PetCardText">
+                                              體驗日期：2022/06/12-2022/06/30
+                                            </span>
+                                          </Row>
+                                        </Col>
+                                      </Row>
+                                    </Col>
+                                  </Row>
+                                </Col>
+                              </Row>
+                              <Row
+                                className="ListPetCard"
+                                justify="center"
+                                align="end"
+                              >
+                                <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+                                  <Row type="flex" align="strat">
+                                    <Col
+                                      xxl={5}
+                                      xl={6}
+                                      lg={8}
+                                      md={10}
+                                      sm={10}
+                                      xs={10}
+                                      className="listPetJmimgWarp"
+                                    >
+                                      <img
+                                        className="listPetJmimg"
+                                        src={images.jm}
+                                      />
+                                    </Col>
+                                    <Col
+                                      xxl={16}
+                                      xl={16}
+                                      lg={16}
+                                      md={14}
+                                      sm={14}
+                                      xs={14}
+                                      className="PetCardCenter"
+                                    >
+                                      <Row type="flex" align="middle">
+                                        <Col>
+                                          <p className="PetCardName">吉米</p>
+                                        </Col>
+                                        <Col>
+                                          <div className="PetCardLabel2">
+                                            共養寵物
+                                          </div>
+                                        </Col>
+                                      </Row>
+                                      <Row type="flex" align="bottom">
+                                        <Col
+                                          xl={24}
+                                          lg={24}
+                                          md={24}
+                                          sm={22}
+                                          xs={22}
+                                        >
+                                          <Row align="middle">
+                                            <span className="PetCardText">
+                                              品種：傑克羅素耿
+                                            </span>
+                                            <span className="PetCardText">
+                                              性別：男
+                                            </span>
+                                            <span className="PetCardText">
+                                              年齡：5
+                                            </span>
 
-                <Row className="PetCard" md={22} type="flex" justify="center" align="middle">
-                  <Col span={6}>
-                  <img className="RearingPetJmimg" src={images.jm}  /> 
-                  </Col>
-                  <Col span={18}>
-                    <Row type="flex"  align="middle">
-                      <Col >
-                        <p className="PetCardName">吉米</p>
-                      </Col>
-                      <Col>
-                        <div className="PetCardLabel2">共養寵物</div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                          <div className="PetCardContent">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">品種：傑克羅素耿</div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">飼養期間：2016/08~</div>
-                            </div>
-                          </div>
-                          
-                      </Col>
+                                            <span className="PetCardText">
+                                              體驗日期：2022/06/12-2022/06/30
+                                            </span>
+                                          </Row>
+                                        </Col>
+                                      </Row>
+                                    </Col>
+                                  </Row>
+                                </Col>
+                              </Row>
 
-                    </Row>
-                  </Col>
-                </Row>
+                              <Row
+                                className="ListPetCard"
+                                justify="center"
+                                align="end"
+                              >
+                                <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+                                  <Row type="flex" align="strat">
+                                    <Col
+                                      xxl={5}
+                                      xl={6}
+                                      lg={8}
+                                      md={10}
+                                      sm={10}
+                                      xs={10}
+                                      className="listPetJmimgWarp"
+                                    >
+                                      <img
+                                        className="listPetJmimg"
+                                        src={images.jm}
+                                      />
+                                    </Col>
+                                    <Col
+                                      xxl={16}
+                                      xl={16}
+                                      lg={16}
+                                      md={14}
+                                      sm={14}
+                                      xs={14}
+                                      className="PetCardCenter"
+                                    >
+                                      <Row type="flex" align="middle">
+                                        <Col>
+                                          <p className="PetCardName">吉米</p>
+                                        </Col>
+                                        <Col>
+                                          <div className="PetCardLabel3">
+                                            體驗寵物
+                                          </div>
+                                        </Col>
+                                      </Row>
+                                      <Row type="flex" align="bottom">
+                                        <Col
+                                          xl={24}
+                                          lg={24}
+                                          md={24}
+                                          sm={22}
+                                          xs={22}
+                                        >
+                                          <Row align="middle">
+                                            <span className="PetCardText">
+                                              品種：傑克羅素耿
+                                            </span>
+                                            <span className="PetCardText">
+                                              性別：男
+                                            </span>
+                                            <span className="PetCardText">
+                                              年齡：5
+                                            </span>
 
-                <Row className="PetCard" md={22} type="flex" justify="center" align="middle">
-                  <Col span={6}>
-                  <img className="RearingPetJmimg" src={images.jm}  /> 
-                  </Col>
-                  <Col span={18}>
-                    <Row type="flex"  align="middle">
-                      <Col >
-                        <p className="PetCardName">吉米</p>
-                      </Col>
-                      <Col>
-                        <div className="PetCardLabel3">體驗寵物</div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col span={24}>
-                          <div className="PetCardContent">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">品種：傑克羅素耿</div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">飼養期間：2016/08~</div>
-                            </div>
-                          </div>
-                          
-                      </Col>
+                                            <span className="PetCardText">
+                                              體驗日期：2022/06/12-2022/06/30
+                                            </span>
+                                          </Row>
+                                        </Col>
+                                      </Row>
+                                    </Col>
+                                  </Row>
+                                </Col>
+                              </Row>
+                            </Col>
 
-                    </Row>
-                  </Col>
-                </Row>
-              </Col>
-            
-              <hr className="RearingPetHr"></hr>
-              </Row>
+                            <hr className="RearingPetHr"></hr>
+                          </Row>
 
-              <Row  className="RearingPet3" type="flex" justify="center" align="middle">
-                <Col md={24} sm={21} xs={21}>
-                  <Row  type="flex" justify="center" align="middle"> 
-                    <Col md={10} sm={24} xs={12} >
-                    <Form.Item 
-                    className="RearingPet3Form"
-                    wrapperCol={{
-                      span:14,
-                    }}
-                    label="飼養資歷"
-                    name="BreedingSeniorityYear">
-                  
-                    </Form.Item>
-                    </Col>
+                          <Row
+                            className="RearingPet3"
+                            type="flex"
+                            justify="center"
+                            align="middle"
+                          >
+                            <Col
+                              md={10}
+                              sm={21}
+                              xs={21}
+                              type="flex"
+                              justify="center"
+                            >
+                              <h3>飼養資歷:</h3>
+                            </Col>
 
-                    <Col md={10}  sm={24} xs={12} >
-                      <Form.Item 
-                      className="RearingPet3Form"
+                            <Col
+                              md={10}
+                              sm={21}
+                              xs={21}
+                              type="flex"
+                              justify="center"
+                            >
+                              <h3>飼養過寵物數量:</h3>
+                            </Col>
 
-                      wrapperCol={{
-                        span:22,
-                      }}
-                      label="飼養過寵物數量"
-                      name="FeedingQuantity">
-                    
-                    </Form.Item>
-                    </Col>
-                  </Row>
-                </Col>
-          
-                <Col md={20}  sm={21} xs={21} type="flex" justify="center" >
-                  <Form.Item 
-                    className="RearingPet3Form"
-                    
-                    wrapperCol={{
-                      span:14,
-                    }}
-                    label="飼養過哪些動物"
-                    name="WhichPets">
-                    
-                    
-                  </Form.Item>
-                </Col>
-                <Col md={20} sm={21} xs={21} type="flex" justify="center" >
-                  <Form.Item 
-                    className="RearingPet3Form"
-                    
-                    wrapperCol={{
-                      span:6,
-                    }}
-                    label="家中可活動範圍"
-                    name="HomeRange">
-                    
-                    
-                  </Form.Item>
-                </Col>
+                            <Col
+                              md={20}
+                              sm={21}
+                              xs={21}
+                              type="flex"
+                              justify="center"
+                            >
+                              <h3>飼養過哪些動物:</h3>
+                            </Col>
+                            <Col
+                              md={20}
+                              sm={21}
+                              xs={21}
+                              type="flex"
+                              justify="center"
+                            >
+                              <h3>家中可活動範圍:</h3>
+                            </Col>
 
-                <Col md={20} sm={21} xs={21} type="flex" justify="center" >
-                <Form.Item
-                className="RearingPet3FormTextArea"
-                  wrapperCol={{
-                    span: 24,
-                  }}
-                  label="自我介紹"
-                >
-                  
-                </Form.Item>
-                  
-                </Col>
-
-                
-                
-              </Row>
-          
-       
-                  
-        </Form>
+                            <Col
+                              md={20}
+                              sm={21}
+                              xs={21}
+                              type="flex"
+                              justify="center"
+                            >
+                              <h3>自我介紹:</h3>
+                            </Col>
+                          </Row>
+                        </Form>
                       </Panel>
-                        
-
                     </Collapse>
                   </Col>
 
-                  <Col md={24}>
+                  <Col span={24}>
                     <hr className="formHr"></hr>
                     <p className="formsubtitle">申請要共養人的原因</p>
                   </Col>
-                  <Col md={22}>
+                  <Col span={22}>
                     <Form.Item
                       name="ReasonApplication"
                       className="formContentTextArea"
@@ -343,12 +487,13 @@ function SearchRequestFormPage() {
                     </Form.Item>
                   </Col>
                 </Row>
-                <Row>
-                  <Col md={24} className="formBtnWarp">
-                    <a href="/Share-already/share-pet-detail">
-                      <Button className="adoptionReturnBtn">送出</Button>
-                    </a>
-                    
+                <Row justify="center">
+                  <Col lg={6} md={8} sm={10} xs={10} className="formBtnWarp">
+                    <ButtonComponent
+                      text="送出"
+                      size="large"
+                      name="gotoexperence "
+                    />
                   </Col>
                 </Row>
               </Form>

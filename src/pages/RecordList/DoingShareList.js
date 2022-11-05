@@ -1,5 +1,6 @@
 import images from "../../config/images";
 import React, { useState } from "react";
+import ButtonComponent from "../../components/button/button";
 import {
   Select,
   Col,
@@ -20,187 +21,85 @@ function ExperienceListPage() {
   
   return (
     <div className="ExperienceList">
-      <Row type="flex" justify="center" align="middle">
-        <Col lg={16} md={18} sm={20} xs={22} className="RecordListwarp">
+        <Row type="flex" justify="center" align="middle">
+        <Col xxl={14} xl={16} lg={18} md={18} sm={20} xs={22} className="RecordListwarp">
           <Row type="flex" justify="center">
-            <Col md={24} sm={24} xs={24}>
+            <Col xl={24} lg={24} md={24} sm={24} xs={24}>
               <p className="RecordListTitle">正在共養</p>
 
               <Row type="flex" justify="center">
                 <Col
-                  md={18}
+                
+                  xl={18}
+                  lg={19}
+                  md={20}
                   sm={20}
                   xs={22}
                   className="ListWarp"
-                  type="flex"
-                  justify="center"
-                  align="middle"
                 >
-                  <Row
-                    className="ListPetCard"
-                    type="flex"
-                    justify="center"
-                    align="middle"
-                  >
-                    <Col md={6} sm={8} xs={10}>
-                      <img className="RearingPetJmimg" src={images.jm} />
-                    </Col>
-                    <Col md={18} sm={16} xs={14}>
-                      <Row type="flex" align="middle">
-                        <Col>
-                          <p className="PetCardName">吉米</p>
+                  <Row className="ListPetCard" justify="center" align="end">
+                    <Col xl={19} lg={19} md={24} sm={24} xs={24}>
+                      <Row type="flex" align="strat">
+                        <Col
+                          xxl={6}
+                          xl={7}
+                          lg={8}
+                          md={8}
+                          sm={8}
+                          xs={10}
+                          className="listPetJmimgWarp"
+                        >
+                          <img className="listPetJmimg" src={images.jm} />
                         </Col>
-                      </Row>
-                      <Row type="flex" align="bottom">
-                        <Col xl={14} md={24} sm={22} xs={22}>
-                          <div className="PetCardContentList">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">
-                                品種：傑克羅素耿
-                              </div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">
-                                飼養期間：2016/08~
-                              </div>
-                            </div>
-                          </div>
-                        </Col>
-                        <Col xl={10} md={0} sm={0} xs={0}>
-                          <Button className="PetCardBtn">查看詳細</Button>
-                        </Col>
-                      </Row>
+                        <Col
+                          xxl={18}
+                          xl={16}
+                          lg={16}
+                          md={16}
+                          sm={16}
+                          xs={14}
+                          className="PetCardCenter"
+                        >
+                          <Row>
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                          </Row>
+                          <Row type="flex" align="bottom">
+                            <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                              <Row align="middle">
+                                <span className="PetCardText">
+                                  品種：傑克羅素耿
+                                </span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：5</span>
 
-                    </Col>
-                  </Row>
-
-                  <Row
-                    className="ListPetCard"
-                    type="flex"
-                    justify="center"
-                    align="middle"
-                  >
-                    <Col md={6} sm={8} xs={10}>
-                      <img className="RearingPetJmimg" src={images.jm} />
-                    </Col>
-                    <Col md={18} sm={16} xs={14}>
-                      <Row type="flex" align="middle">
-                        <Col>
-                          <p className="PetCardName">吉米</p>
+                                <span className="PetCardText">
+                                  體驗日期：2022/06/12-2022/06/30
+                                </span>
+                              </Row>
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
-                      <Row type="flex" align="bottom">
-                        <Col xl={14} md={24} sm={22} xs={22}>
-                          <div className="PetCardContentList">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">
-                                品種：傑克羅素耿
-                              </div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">
-                                飼養期間：2016/08~
-                              </div>
-                            </div>
-                          </div>
-                        </Col>
-                        <Col xl={10} md={0} sm={0} xs={0}>
-                          <Button className="PetCardBtn">查看詳細</Button>
-                        </Col>
-                      </Row>
-
                     </Col>
-                   
-                  </Row>
 
-                  <Row
-                    className="ListPetCard"
-                    type="flex"
-                    justify="center"
-                    align="middle"
-                  >
-                    <Col md={6} sm={8} xs={10}>
-                      <img className="RearingPetJmimg" src={images.jm} />
+                    <Col
+                      xl={5}
+                      lg={5}
+                      md={24}
+                      sm={24}
+                      xs={24}
+                      className="ListButtonWarp"
+                    >
+                     <a  href="/Record/DoingShare/detailed">
+                        <ButtonComponent
+                          text="查看詳細"
+                          size="large"
+                          name="more-detail"
+                        />
+                      </a>
                     </Col>
-                    <Col md={18} sm={16} xs={14}>
-                      <Row type="flex" align="middle">
-                        <Col>
-                          <p className="PetCardName">吉米</p>
-                        </Col>
-                      </Row>
-                      <Row type="flex" align="bottom">
-                        <Col xl={14} md={24} sm={22} xs={22}>
-                          <div className="PetCardContentList">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">
-                                品種：傑克羅素耿
-                              </div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">
-                                飼養期間：2016/08~
-                              </div>
-                            </div>
-                          </div>
-                        </Col>
-                        <Col xl={10} md={0} sm={0} xs={0}>
-                          <Button className="PetCardBtn">查看詳細</Button>
-                        </Col>
-                      </Row>
-
-                    </Col>
-                   
-                  </Row>
-
-                  <Row
-                    className="ListPetCard"
-                    type="flex"
-                    justify="center"
-                    align="middle"
-                  >
-                    <Col md={6} sm={8} xs={10}>
-                      <img className="RearingPetJmimg" src={images.jm} />
-                    </Col>
-                    <Col md={18} sm={16} xs={14}>
-                      <Row type="flex" align="middle">
-                        <Col>
-                          <p className="PetCardName">吉米</p>
-                        </Col>
-                      </Row>
-                      <Row type="flex" align="bottom">
-                        <Col xl={14} md={24} sm={22} xs={22}>
-                          <div className="PetCardContentList">
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">
-                                品種：傑克羅素耿
-                              </div>
-                              <div className="PetCardText">年齡：5</div>
-                              <div className="PetCardText">性別：男</div>
-                            </div>
-                            <div className="PetCardContent1">
-                              <div className="PetCardText">體型：中型</div>
-                              <div className="PetCardText">
-                                飼養期間：2016/08~
-                              </div>
-                            </div>
-                          </div>
-                        </Col>
-                        <Col xl={10} md={0} sm={0} xs={0}>
-                          <Button className="PetCardBtn">查看詳細</Button>
-                        </Col>
-                      </Row>
-
-                    </Col>
-                   
                   </Row>
                 </Col>
               </Row>

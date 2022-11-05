@@ -1,6 +1,7 @@
 @import url('../../assets/style/theme.less');
-@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
 * {
     margin: 0;
     padding: 0;
@@ -9,87 +10,161 @@
     // font-weight: 500;
 }
 
-#owner{
+#owner {
+
+
     background-color: @bottom-main-color;
+
     /*現有體驗寵物*/
-    .havePet{
+    .topWarp {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .addExPetWarp {
+        position: absolute;
+        left: 85%;
+    }
+
+    .havePet {
         width: 100%;
         height: 700px;
         margin: 2% 0;
         border-radius: 10px;
-        background-color:@bottom-color;
-        .title{
+        background-color: @bottom-color;
+
+        .title {
             // background-color: aqua;
-            padding-top:2%;
+            padding-top: 2%;
             display: flex;
             justify-content: space-between;
             margin: 0 auto;
-            h1{
+
+            h1 {
                 font-weight: 900 !important;
                 color: rgba(0, 0, 0, 0.5);
             }
         }
-        .noPet{
+
+        .noPet {
             margin: 15% auto;
+
             // border: 1px solid red;
-            p{
+            p {
                 font-size: 48px;
                 font-weight: bold;
                 margin: 0;
                 display: flex;
                 justify-content: center;
-                color:#75757580;
+                color: #75757580;
             }
         }
     }
 
-    .exPet{
+    .exPet {
         background-color: @drop-down-color;
         width: 100%;
         height: 170px;
         margin-top: 5%;
         border-radius: 25px;
         box-shadow: 0 2px 3px 1px rgba(0, 0, 0, 0.2);
-        .exPetItem{
+
+        .exPetItem {
             width: 100%;
             display: flex;
             margin: 10px 0;
+
             // border: 2px solid gold;
-            .petImage{
+            .petImage {
                 width: 100%;
                 height: 150px;
+
                 // border: 2px solid red;
-                img{
+                img {
                     border-radius: 20px;
                     width: 100%;
                     height: 100%;
-                    object-fit:fill;
+                    object-fit: fill;
                 }
             }
-            .petIntro{
-                .trimIntroTitle{
+
+            .petIntro {
+                .trimIntroTitle {
                     margin-top: 1%;
-                    h3{
-                    font-weight: 900 !important;
-                    color: @dark-main-color;
+
+                    h3 {
+                        font-weight: 900 !important;
+                        color: @dark-main-color;
                     }
                 }
-                .trimIntroItem{
+
+                .trimIntroItem {
                     margin: 2% 2% 6% 2%;
                 }
             }
-            .petBtn{
+
+            .petBtn {
                 display: flex;
                 flex-direction: column;
                 align-self: flex-end;
                 margin: 1%;
-                .petBtnTrim{
+
+                .petBtnTrim {
                     margin-top: 5%;
                 }
             }
         }
+
+    }
+
+    @media screen and (max-width:992px) {
+        .addExPetWarp {
+            position: absolute;
+            left: 80%;
+        }
         
     }
 
+    @media screen and (max-width:768px) {
+
+  
+        .addExPetWarp {
+            position: absolute;
+            left: 78%;
+        }
+        
+    }
+    @media screen and (max-width:576px) {
+
+        .addExPetWarp {
+            position: absolute;
+            left: 75%;
+        }
+        
+    
+    }
+
+    @media screen and (max-width:990px) {
+
+        .ListButtonWarp {
+            margin-top: 0;
+
+        }
+
+        .ButtonWarp {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+      
+        .ListButton {
+            width: 45%;
+            padding: 0 10px;
+        }
+    }
+
 }
+
 

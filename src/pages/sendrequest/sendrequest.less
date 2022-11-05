@@ -9,6 +9,11 @@
 }
 
 #Sendrequest {
+
+    .ListButtonWarp {
+        margin-top: 55px;
+    }
+
     .container {
         background-color: @bottom-main-color;
         min-height: calc(100vh - 134px);
@@ -46,6 +51,7 @@
     .Commentlistshow {
         display: flex;
         justify-content: center;
+
         .commentary {
             margin-top: 20px;
             margin-bottom: 20px;
@@ -127,7 +133,7 @@
                             }
                         }
 
-                        .Detailed {}
+                        
                     }
                 }
 
@@ -137,28 +143,27 @@
     }
 
 
-    @media screen and (max-width:1210px) {
+    @media screen and (max-width:990px) {
 
+        .ListButtonWarp {
+            margin-top: 0;
 
-        .Commentlistshow {
+        }
+
+        .ButtonWarp {
+            width: 100%;
             display: flex;
-            flex-wrap: wrap !important;
-            .commentary {
-                margin-left: 4px;
-                margin-right: 4px;
-                width: auto;
-                :hover{
-                    cursor: pointer;
-                    img{
-                        padding: 5px;
-
-                    }
-                
-                }
-                .right {
-                    display: none;
-                }
-            }
+            justify-content: center;
         }
+
+        .ListButton {
+            width: 45%;
+        }
+
+
+      
     }
+
+
+   
 }

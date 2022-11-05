@@ -153,7 +153,7 @@
     margin-top: 3%;
     font-size: 24px;
     font-weight: 900;
-    text-shadow:0 2px 3px   rgba(0, 0, 0, 0.799);
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.799);
     box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.25);
     color: @bottom-color;
     background-color: @feature-adoptions-color;
@@ -161,7 +161,7 @@
 
     &:hover,
     &:focus {
-        text-shadow:none;
+        text-shadow: none;
         background-color: rgba(251, 214, 52, 0.662) !important;
         color: rgb(96, 75, 6) !important;
     }
@@ -471,7 +471,7 @@
     align-items: center;
     justify-content: center;
     background-color: @bottom-color;
-    border-color: @bottom-color;
+    border-color: #dadada;
     color: @dark-main-color;
     border-radius: 40px;
     margin-top: auto;
@@ -514,29 +514,32 @@
     color: @drop-down-color;
     background-color: @dark-main-color;
     border-color: @dark-main-color;
-    width: 25%;
+    width: 100%;
     margin: 20px 0;
     border-radius: 20px;
     height: 30px;
     text-align: center;
     font-weight: 700;
     font-size: 18px;
-    padding: 0;
+    padding: 2px 15px;
 
     &:hover,
     &:focus {
         background-color: @dark-main-color;
         border-color: @dark-main-color;
         color: @drop-down-color;
+        box-shadow: 1px 2px 3px rgba(26, 26, 26, 0.25);
     }
 }
 
 .FormCancel {
     width: 100%;
+    height: 40px;
+    font-size: 18px;
     border-radius: 0px;
     background-color: #f9f9f9;
     color: @dark-main-color;
-    border-color: #f9f9f9 1px solid !important;
+    border: #c9c9c9 1px solid !important;
 
     &:hover {
         background-color: #e9e9e9;
@@ -547,10 +550,13 @@
 
 .FormSave {
     width: 100%;
+    height: 40px;
+    font-size: 18px;
     border-radius: 0px;
     background-color: @dark-main-color;
     border-color: @dark-main-color ;
     color: @drop-down-color;
+
 
     &:hover {
         background-color: @dark-main-color;
@@ -561,12 +567,15 @@
 
 .Edit-Petexperience {
     width: 100%;
+    height: 40px;
+    font-size: 18px;
     background-color: @dark-main-color;
     border-color: @dark-main-color ;
     color: @drop-down-color;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2%;
 
     &:hover {
         background-color: @dark-main-color;
@@ -581,8 +590,8 @@
     height: 55px;
     font-weight: 900;
     font-size: 24px;
-    background: @main-color  !important;
-    border-color: @main-color  !important;
+    background: @main-color !important;
+    border-color: @main-color !important;
     // background: #5EBBB4;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
     border-radius: 2px;
@@ -605,8 +614,8 @@
     height: 35px;
     font-weight: 900;
     font-size: 20px;
-    background: @dark-main-color  !important;
-    border-color: @dark-main-color  !important;
+    background: @dark-main-color !important;
+    border-color: @dark-main-color !important;
     // background: #5EBBB4;
     box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
     border-radius: 15px;
@@ -622,17 +631,34 @@
 }
 
 
-.search{
- 
-     background: @dark-main-color ;
+.search {
+
+    background: @dark-main-color ;
+    border-color: @dark-main-color ;
+    box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+    color: rgb(255, 255, 255);
+
+    &:hover,
+    &:focus {
+        background: @dark-main-color ;
         border-color: @dark-main-color ;
         box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-        color: rgb(255, 255, 255);  
-        
-        &:hover,&:focus{
-            background: @dark-main-color ;
-            border-color: @dark-main-color ;
-            box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
-            color: rgb(255, 255, 255);  
+        color: rgb(255, 255, 255);
+    }
+}
+
+
+.DetailedDeteleBtn {
+    background: @feature-experience-color ;
+    border-radius: 10px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+
+    &:hover,
+    &:focus {
+        background: @feature-experience-color ;
+        border-color: @dark-main-color ;
+        box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+        color: rgb(255, 255, 255);
     }
 }

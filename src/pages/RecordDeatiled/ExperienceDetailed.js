@@ -185,7 +185,7 @@ import {
           </Col>
         </Row>
         <Row justify="center" className="captionBottom">
-          <Col lg={14} md={16} sm={18} xs={20}>
+        <Col lg={14} md={18} sm={20} xs={22}>
             <Row className="commentary">
               <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
                 <img src={images.bb} />

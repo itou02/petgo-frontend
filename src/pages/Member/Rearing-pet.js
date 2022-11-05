@@ -87,104 +87,167 @@ function RearingPetpage() {
 
                   <h2 className="RearingPetSubheader">養寵經歷</h2>
                   <Col md={24}>
-                    <Row className="PetCard" md={22} xs={22} type="flex" justify="center" align="middle">
-                      <Col span={6}>
-                        <img className="RearingPetJmimg" src={images.jm} />
-                      </Col>
-                      <Col span={18}>
-                        <Row type="flex" align="middle">
-                          <Col >
-                            <p className="PetCardName">吉米</p>
-                          </Col>
-                          <Col>
+
+                  <Row className="ListPetCard" justify="center" align="end">
+                    <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+                      <Row type="flex" align="strat">
+                        <Col
+                          xxl={5}
+                          xl={6}
+                          lg={8}
+                          md={10}
+                          sm={10}
+                          xs={10}
+                          className="listPetJmimgWarp"
+                        >
+                          <img className="listPetJmimg" src={images.jm} />
+                        </Col>
+                        <Col
+                          xxl={16}
+                          xl={16}
+                          lg={16}
+                          md={14}
+                          sm={14}
+                          xs={14}
+                          className="PetCardCenter"
+                        >
+                          <Row type="flex" align="middle">
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                            <Col>
                             <div className="PetCardLabel1">自家寵物</div>
                           </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <div className="PetCardContent">
-                              <div className="PetCardContent1">
-                                <div className="PetCardText">品種：傑克羅素耿</div>
-                                <div className="PetCardText">年齡：5</div>
-                                <div className="PetCardText">性別：男</div>
-                              </div>
-                              <div className="PetCardContent1">
-                                <div className="PetCardText">體型：中型</div>
-                                <div className="PetCardText">飼養期間：2016/08~</div>
-                              </div>
-                            </div>
+                          </Row>
+                          <Row type="flex" align="bottom">
+                            <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                              <Row align="middle">
+                                <span className="PetCardText">
+                                  品種：傑克羅素耿
+                                </span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：5</span>
 
-                          </Col>
+                                <span className="PetCardText">
+                                  體驗日期：2022/06/12-2022/06/30
+                                </span>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Col>
 
-                        </Row>
-                      </Col>
-                    </Row>
-
-                    <Row className="PetCard" md={22} type="flex" justify="center" align="middle">
-                      <Col span={6}>
-                        <img className="RearingPetJmimg" src={images.jm} />
-                      </Col>
-                      <Col span={18}>
-                        <Row type="flex" align="middle">
-                          <Col >
-                            <p className="PetCardName">吉米</p>
-                          </Col>
-                          <Col>
+              
+                  </Row>
+                  <Row className="ListPetCard" justify="center" align="end">
+                    <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+                      <Row type="flex" align="strat">
+                        <Col
+                          xxl={5}
+                          xl={6}
+                          lg={8}
+                          md={10}
+                          sm={10}
+                          xs={10}
+                          className="listPetJmimgWarp"
+                        >
+                          <img className="listPetJmimg" src={images.jm} />
+                        </Col>
+                        <Col
+                          xxl={16}
+                          xl={16}
+                          lg={16}
+                          md={14}
+                          sm={14}
+                          xs={14}
+                          className="PetCardCenter"
+                        >
+                          <Row type="flex" align="middle">
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                            <Col>
                             <div className="PetCardLabel2">共養寵物</div>
                           </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <div className="PetCardContent">
-                              <div className="PetCardContent1">
-                                <div className="PetCardText">品種：傑克羅素耿</div>
-                                <div className="PetCardText">年齡：5</div>
-                                <div className="PetCardText">性別：男</div>
-                              </div>
-                              <div className="PetCardContent1">
-                                <div className="PetCardText">體型：中型</div>
-                                <div className="PetCardText">飼養期間：2016/08~</div>
-                              </div>
-                            </div>
+                          </Row>
+                          <Row type="flex" align="bottom">
+                            <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                              <Row align="middle">
+                                <span className="PetCardText">
+                                  品種：傑克羅素耿
+                                </span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：5</span>
 
-                          </Col>
+                                <span className="PetCardText">
+                                  體驗日期：2022/06/12-2022/06/30
+                                </span>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Col>
 
-                        </Row>
-                      </Col>
-                    </Row>
+              
+                  </Row>
 
-                    <Row className="PetCard" md={22} type="flex" justify="center" align="middle">
-                      <Col span={6}>
-                        <img className="RearingPetJmimg" src={images.jm} />
-                      </Col>
-                      <Col span={18}>
-                        <Row type="flex" align="middle">
-                          <Col >
-                            <p className="PetCardName">吉米</p>
-                          </Col>
-                          <Col>
+                  <Row className="ListPetCard" justify="center" align="end">
+                    <Col xl={24} lg={24} md={24} sm={24} xs={24}>
+                      <Row type="flex" align="strat">
+                        <Col
+                          xxl={5}
+                          xl={6}
+                          lg={8}
+                          md={10}
+                          sm={10}
+                          xs={10}
+                          className="listPetJmimgWarp"
+                        >
+                          <img className="listPetJmimg" src={images.jm} />
+                        </Col>
+                        <Col
+                          xxl={16}
+                          xl={16}
+                          lg={16}
+                          md={14}
+                          sm={14}
+                          xs={14}
+                          className="PetCardCenter"
+                        >
+                          <Row type="flex" align="middle">
+                            <Col>
+                              <p className="PetCardName">吉米</p>
+                            </Col>
+                            <Col>
                             <div className="PetCardLabel3">體驗寵物</div>
                           </Col>
-                        </Row>
-                        <Row>
-                          <Col span={24}>
-                            <div className="PetCardContent">
-                              <div className="PetCardContent1">
-                                <div className="PetCardText">品種：傑克羅素耿</div>
-                                <div className="PetCardText">年齡：5</div>
-                                <div className="PetCardText">性別：男</div>
-                              </div>
-                              <div className="PetCardContent1">
-                                <div className="PetCardText">體型：中型</div>
-                                <div className="PetCardText">飼養期間：2016/08~</div>
-                              </div>
-                            </div>
+                          </Row>
+                          <Row type="flex" align="bottom">
+                            <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                              <Row align="middle">
+                                <span className="PetCardText">
+                                  品種：傑克羅素耿
+                                </span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：5</span>
 
-                          </Col>
+                                <span className="PetCardText">
+                                  體驗日期：2022/06/12-2022/06/30
+                                </span>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Col>
 
-                        </Row>
-                      </Col>
-                    </Row>
+              
+                  </Row>
+
+
+  
                   </Col>
 
                   <hr className="RearingPetHr"></hr>
@@ -276,7 +339,7 @@ function RearingPetpage() {
 
                 </Row>
 
-                <Row md={24} type="flex" justify="space-between" align="middle">
+                <Row md={24} type="flex" justify="space-between" align="middle" className="buttonwarp">
                   <Col span={11} >
                     <ButtonComponent
                       text="取消"
