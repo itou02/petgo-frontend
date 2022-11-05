@@ -3,8 +3,7 @@ import React ,{useEffect,useState} from 'react';
 import axios from 'axios';
 import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
-import CardComponent from "../../components/card/card";
-import { Row, Col, message, Card } from 'antd';
+import { Row, Col,  Card } from 'antd';
 // import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { EnvironmentOutlined } from '@ant-design/icons';
@@ -338,7 +337,7 @@ function Home(props) {
                       <Row className="bannerBlock">
                         <Col span={16} className="pictureBlock">
                           <div className="imgBlock">
-                            <img src={images.jm} />
+                            <img src={post.img} />
                           </div>
                         </Col>
                         <Col span={16} className="titleBlock">

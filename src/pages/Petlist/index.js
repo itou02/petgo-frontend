@@ -1,7 +1,6 @@
-import React from 'react';
+import React ,{ useState,useEffect }from 'react';
 import ButtonComponent from "../../components/button/button";
 import { Row, Col, Modal, Button } from 'antd';
-import { useState,useEffect } from 'react';
 import images from '../../config/images';
 import axios from 'axios';
 import './index.less'

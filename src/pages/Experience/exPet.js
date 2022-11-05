@@ -5,7 +5,8 @@ import { EnvironmentOutlined } from "@ant-design/icons";
 import "./exPet.less";
 import images from "../../config/images";
 import React, { useState } from "react";
-
+import _ from "lodash";
+import axios from 'axios';
 const { Meta } = Card;
 
 /*體驗者專區-首頁-有狗狗*/
@@ -39,33 +40,62 @@ function ExPet() {
   const onSecondCityChange = (value) => {
     setSecondCity(value);
   };
+  const [posts, setPosts] = useState([])
 
+
+  React.useEffect(() => {
+    // fetch_data()
+
+    const config = {
+      url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res.data.req)
+          setPosts(res.data.req)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('posts=>', posts);
   return (
     <div id="ExPet">
       <Row className="exFilter">
-        <Col md={24} > 
-                <h2>篩選：</h2>
-             
+        <Col md={24} >
+          <h2>篩選：</h2>
+
           <Form className="searchFrom">
             <Row type="flex" justify="start" align="middle">
-             
-              <Col className="searchFromItem"  xl={4} lg={5} md={7} sm={12} xs={12}>
+
+              <Col className="searchFromItem" xl={4} lg={5} md={7} sm={12} xs={12}>
                 <Row>
                   <Col xl={6} md={6}  >
                     <p>日期</p>
                   </Col>
-                  <Col  xl={18} md={18}>
+                  <Col xl={18} md={18}>
                     <DatePicker type={"date"} placeholder="請選擇日期" />
                   </Col>
                 </Row>
               </Col>
 
-              <Col  className="searchFromItem" xl={4}  lg={5} md={7} sm={12}  xs={12}>
+              <Col className="searchFromItem" xl={4} lg={5} md={7} sm={12} xs={12}>
                 <Row>
                   <Col xl={6} md={6}>
                     <p>地區</p>
                   </Col>
-                  <Col  xl={18} md={18}>
+                  <Col xl={18} md={18}>
                     <Select
                       className="AreaSelect"
                       defaultValue={provinceData[0]}
@@ -85,9 +115,9 @@ function ExPet() {
                 </Row>
               </Col>
 
-              <Col  className="searchFromItem" xl={4} lg={5} md={7} sm={12}  xs={12}>
+              <Col className="searchFromItem" xl={4} lg={5} md={7} sm={12} xs={12}>
                 <Row>
-                  <Col md={6 }>
+                  <Col md={6}>
                     <p>品種</p>
                   </Col>
                   <Col md={18} xs={18}>
@@ -119,10 +149,10 @@ function ExPet() {
                 </Row>
               </Col>
 
-              <Col  className="searchFromItem" xl={1} lg={2} md={2} sm={24}  xs={24}>
+              <Col className="searchFromItem" xl={1} lg={2} md={2} sm={24} xs={24}>
                 <Row justify="start">
                   <Col md={24}>
-                    <ButtonComponent text="查詢"   name="search" />
+                    <ButtonComponent text="查詢" name="search" />
                   </Col>
                 </Row>
               </Col>
@@ -131,6 +161,43 @@ function ExPet() {
         </Col>
       </Row>
       <Row justify="start">
+        {posts.map((post, index) => {
+          return (
+            <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
+              <CardComponent
+                name="card .ant-card-body"
+                img={<img alt="pet" src={images.jm} />}
+                // img={<img alt="pet" src={images.expet}}
+                title={<h1>{post.variety}</h1>}
+                icon={
+                  <h1>
+                    <EnvironmentOutlined />
+                    {post.location}
+                  </h1>
+                }
+                text={
+                  <div>
+                    <h4>品種：拉不拉多</h4>
+                    <h4>年齡：5</h4>
+                    <h4>體型：大型</h4>
+                    <h4>性別：女</h4>
+                    <h4>體驗日期:</h4>
+                    <h4>2022/06/12 - 2022/06/30</h4>
+                  </div>
+                }
+                btn={
+                  <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+                    <ButtonComponent
+                      text="查看"
+                      name="exPetCheckBtn"
+                      handleSubmit={check}
+                    />
+                  </a>
+                }
+              />
+            </Col>
+          );
+        })}
         <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
           <CardComponent
             name="card .ant-card-body"
