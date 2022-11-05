@@ -16,9 +16,9 @@ import {
   Checkbox,
   Collapse,InputNumber,Select
 } from "antd";
-
+import axios from 'axios';
 import "./EXForm.less";
-
+import _ from "lodash";
 function EXFormPage() {
   const { Panel } = Collapse;
 
@@ -46,7 +46,34 @@ function EXFormPage() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  const [posts,setPosts]=useState([])
+  React.useEffect(() => {
+    // fetch_data()
 
+    const config = {
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/ex-form',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+      .then(res =>{
+        console.log(res)
+        setPosts(res)
+      },[]);   
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  },[]);
+  console.log('posts=>',posts);
   return (
     <div className="SharerForm">
       <Row type="flex" justify="center">

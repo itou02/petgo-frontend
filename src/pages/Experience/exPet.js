@@ -4,7 +4,7 @@ import CardComponent from "../../components/card/card";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import "./exPet.less";
 import images from "../../config/images";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import _ from "lodash";
 import axios from 'axios';
 const { Meta } = Card;
@@ -40,14 +40,14 @@ function ExPet() {
   const onSecondCityChange = (value) => {
     setSecondCity(value);
   };
+
   const [posts, setPosts] = useState([])
-
-
+  const [post, setPost] = useState([])
   React.useEffect(() => {
     // fetch_data()
 
     const config = {
-      url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card',  // 只有此為必需
       method: 'get', // 大小寫皆可
       headers: {
         'Content-Type': 'application/json',
@@ -57,11 +57,14 @@ function ExPet() {
       },
       responseType: 'json', // 伺服器回應的數據類型
     }
+
     try {
       axios(config)
         .then(res => {
-          console.log(res.data.req)
-          setPosts(res.data.req)
+          console.log(res.data.experiences)
+          setPosts(res.data.experiences)
+          console.log(res.data.varieties)
+          setPost(res.data.varieties)
         }, []);
     }
     catch (error) {
@@ -70,6 +73,7 @@ function ExPet() {
     }
   }, []);
   console.log('posts=>', posts);
+  console.log('post=>', post);
   return (
     <div id="ExPet">
       <Row className="exFilter">
@@ -138,12 +142,11 @@ function ExPet() {
                           .localeCompare(optionB.children.toLowerCase())
                       }
                     >
-                      <Option value="1">Not Identified</Option>
-                      <Option value="2">Closed</Option>
-                      <Option value="3">Communicated</Option>
-                      <Option value="4">Identified</Option>
-                      <Option value="5">Resolved</Option>
-                      <Option value="6">Cancelled</Option>
+                      {post.map((post, index) => {
+                        return (
+                          <Option value="1" key={index}>{post.variety}</Option>
+                        );
+                      })}
                     </Select>
                   </Col>
                 </Row>
@@ -166,9 +169,9 @@ function ExPet() {
             <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
               <CardComponent
                 name="card .ant-card-body"
-                img={<img alt="pet" src={images.jm} />}
+                img={<img alt="pet" src={post.img} />}
                 // img={<img alt="pet" src={images.expet}}
-                title={<h1>{post.variety}</h1>}
+                title={<h1>{post.name}</h1>}
                 icon={
                   <h1>
                     <EnvironmentOutlined />
@@ -177,12 +180,12 @@ function ExPet() {
                 }
                 text={
                   <div>
-                    <h4>品種：拉不拉多</h4>
-                    <h4>年齡：5</h4>
-                    <h4>體型：大型</h4>
-                    <h4>性別：女</h4>
+                    <h4>品種：{post.variety}</h4>
+                    <h4>年齡：{post.age}</h4>
+                    <h4>體型：{post.size}</h4>
+                    <h4>性別：{post.sex}</h4>
                     <h4>體驗日期:</h4>
-                    <h4>2022/06/12 - 2022/06/30</h4>
+                    <h4>{post.start_date} - {post.end_date}</h4>
                   </div>
                 }
                 btn={
@@ -198,7 +201,7 @@ function ExPet() {
             </Col>
           );
         })}
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
+        {/* <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
           <CardComponent
             name="card .ant-card-body"
             img={<img alt="pet" src={images.jm} />}
@@ -329,7 +332,7 @@ function ExPet() {
               </a>
             }
           />
-        </Col>
+        </Col> */}
       </Row>
     </div>
   );

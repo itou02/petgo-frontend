@@ -87,7 +87,7 @@ function Router() {
           <Route path="experience" element={<Experience />} />
           <Route path="experience/owner-illustrate" element={<OIllustrate />} />
           <Route path="experience/experiencer-illustrate" element={<ExIllustrate />} />
-          
+
 
           {/* 會員資料 */}
           <Route path="member" element={<Member />} />
@@ -139,6 +139,7 @@ function Router() {
           <Route path="Experience/owner-illustrate/post/ex-pet-detail-no" element={<CheckPetN />} />
           {/* 體驗者專區首頁 */}
           <Route path="Experience/experiencer-illustrate/card" element={<ExPet />} />
+          <Route path="Experience/experiencer-illustrate/card/search" element={<ExPet />} />
           {/* 體驗者專區-查看 */}
           <Route path="Experience/experiencer-illustrate/card/ex-pet-detail" element={<ExPetCheck />} />
 
@@ -154,8 +155,8 @@ function Router() {
           {/* 我收到的請求-查看詳細-會員資料-養寵經歷寵物詳細 */}
           <Route path="Receive-request/member-detail/request-pet-detail" element={<CheckMembersPet />} />
 
-          
-          
+
+
 
           <Route path="*" element={<NotFound />} />
         </Route>

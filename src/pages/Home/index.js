@@ -238,10 +238,10 @@ function Home(props) {
               </Col>
               <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: 'rgba(251, 213, 52, 0.94)' }}>寵物供養</h1></div>
-                <span><h1>寵物供養是一個基於......</h1></span>
+                <span><h1>寵物共養是一個基於......</h1></span>
                 <a href="Share-already">
                   <ButtonComponent
-                    text="前往供養"
+                    text="前往共養"
                     size="large"
                     name="together"
                   />

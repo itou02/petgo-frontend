@@ -14,7 +14,8 @@ import {
   Upload,
 } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-
+import axios from 'axios';
+import _ from "lodash";
 import "./Member.less";
 
 function MemberPage() {
@@ -103,11 +104,41 @@ function MemberPage() {
       </div>
     </div>
   );
+  const [posts, setPosts] = useState([])
 
+
+  React.useEffect(() => {
+    // fetch_data()
+
+    const config = {
+      url: 'http://127.0.0.1:8000/api/member',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res)
+          setPosts(res)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('posts=>', posts);
   return (
+
     <div id="Member">
       <Row type="flex" justify="center" align="middle">
-        <Col  lg={16} md={18} sm={20} xs={22} type="flex" justify="center" align="middle">
+        <Col lg={16} md={18} sm={20} xs={22} type="flex" justify="center" align="middle">
           <img className="Member1" src={images.Member1} />
           <p className="M-title">會員資料</p>
         </Col>
@@ -159,15 +190,15 @@ function MemberPage() {
                   )}
                 </Upload>
               </Col>
-              <Col  lg={14}  md={24} sm={24} xs={24}>
+              <Col lg={14} md={24} sm={24} xs={24}>
                 <Row type="flex" align="middle" className="inputWarp">
                   <Col lg={14} md={14} sm={16} xs={16}>
                     <Form.Item
-               wrapperCol={{
-                md: 16,
-                sm:18,
-                xs:2,
-              }}
+                      wrapperCol={{
+                        md: 16,
+                        sm: 18,
+                        xs: 2,
+                      }}
                       label="姓名"
                       name="username"
                       rules={[
@@ -203,8 +234,8 @@ function MemberPage() {
                     <Form.Item
                       wrapperCol={{
                         md: 16,
-                        sm:18,
-                        xs:2,
+                        sm: 18,
+                        xs: 2,
                       }}
                       name="date-picker"
                       label="生日"
@@ -222,7 +253,7 @@ function MemberPage() {
                     </Form.Item>
                     `
                   </Col>
-                  <Col  lg={10} md={10} sm={8} xs={8}>
+                  <Col lg={10} md={10} sm={8} xs={8}>
                     <Form.Item
                       label="年齡"
                       name="old"
@@ -239,12 +270,12 @@ function MemberPage() {
               </Col>
             </Row>
             <Row>
-              <Col lg={10}  md={10} xs={10}>
+              <Col lg={10} md={10} xs={10}>
                 <Form.Item
-                   wrapperCol={{
+                  wrapperCol={{
                     md: 14,
-                    sm:18,
-                    xs:2,
+                    sm: 18,
+                    xs: 2,
                   }}
                   label="行動電話"
                   name="phone"
