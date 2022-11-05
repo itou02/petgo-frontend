@@ -1,7 +1,6 @@
 import { Card, Col,Row } from "antd";
 import React from "react";
 import "./card.less";
-import images from "../../config/images";
 
 // const { Meta } = Card;
 

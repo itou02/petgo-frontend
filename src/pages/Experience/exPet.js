@@ -4,9 +4,12 @@ import CardComponent from "../../components/card/card";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import "./exPet.less";
 import images from "../../config/images";
-import React, { useState } from "react";
+
 import CardComponent2 from "../../components/card/cardEX";
 
+import React, { useEffect, useState } from "react";
+import _ from "lodash";
+import axios from 'axios';
 const { Meta } = Card;
 
 /*體驗者專區-首頁-有狗狗*/
@@ -445,6 +448,39 @@ function ExPet() {
     setSecondCity(value);
   };
 
+  const [posts, setPosts] = useState([])
+  const [post, setPost] = useState([])
+  React.useEffect(() => {
+    // fetch_data()
+
+    const config = {
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res.data.experiences)
+          setPosts(res.data.experiences)
+          console.log(res.data.varieties)
+          setPost(res.data.varieties)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('posts=>', posts);
+  console.log('post=>', post);
   return (
     <div id="ExPet">
         <Row className="exFilter">
@@ -685,7 +721,7 @@ function ExPet() {
               </a>
             }
           />
-        </Col>
+        </Col> 
       </Row>
     </div>
   );

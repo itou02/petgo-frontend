@@ -19,7 +19,7 @@ import {
 } from "react-icons/fa";
 
 const { Header } = Layout;
-
+console.log('Header進入');
 function HeaderComponent(props) {
   const { windowSize } = props;
   const [visible, setVisible] = useState(false);

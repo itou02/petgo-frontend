@@ -14,7 +14,8 @@ import {
   Upload,
 } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-
+import axios from 'axios';
+import _ from "lodash";
 import "./Member.less";
 
 function MemberPage() {
@@ -507,8 +508,38 @@ function MemberPage() {
       </div>
     </div>
   );
+  const [posts, setPosts] = useState([])
 
+
+  React.useEffect(() => {
+    // fetch_data()
+
+    const config = {
+      url: 'http://127.0.0.1:8000/api/member',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res)
+          setPosts(res)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('posts=>', posts);
   return (
+
     <div id="Member">
       <Row type="flex" justify="center" align="middle">
         <Col
@@ -685,7 +716,7 @@ function MemberPage() {
                     md: 22,
                     xs: 24,
                   }}
-                  label="居住地區"
+                  label="Area"
                   name="Area"
                   rules={[
                     {
@@ -695,6 +726,7 @@ function MemberPage() {
                 >
                   <Select
                     className="AreaSelect"
+                    name="city"
                     defaultValue={provinceData[0]}
                     onChange={handleProvinceChange}
                   >
@@ -702,7 +734,7 @@ function MemberPage() {
                       <Option key={province}>{province}</Option>
                     ))}
                   </Select>
-                  <Select value={secondCity} onChange={onSecondCityChange}>
+                  <Select value={secondCity} onChange={onSecondCityChange} name="district">
                     {cities.map((city) => (
                       <Option key={city}>{city}</Option>
                     ))}
@@ -714,8 +746,8 @@ function MemberPage() {
             <Row className="FormItemWarp">
               <Col span={24}>
                 <Form.Item
-                  label="電子郵件"
-                  name="Email"
+                  label="email"
+                  name="email"
                   rules={[
                     {
                       required: true,
@@ -730,7 +762,7 @@ function MemberPage() {
               <Col span={18}>
                 <Form.Item
                   wrapperCol={{ md: 22 }}
-                  label="密碼"
+                  label="password"
                   name="password"
                   rules={[
                     {
@@ -757,6 +789,7 @@ function MemberPage() {
                     span: 24,
                   }}
                   label="自我介紹"
+                  name="intro"
                 >
                   <TextArea rows={4} />
                 </Form.Item>

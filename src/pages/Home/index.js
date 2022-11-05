@@ -3,8 +3,7 @@ import React ,{useEffect,useState} from 'react';
 import axios from 'axios';
 import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
-import CardComponent from "../../components/card/card";
-import { Row, Col, message, Card } from 'antd';
+import { Row, Col,  Card } from 'antd';
 // import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { EnvironmentOutlined } from '@ant-design/icons';
@@ -22,9 +21,10 @@ const contentStyle = {
   textAlign: 'center',
   background: '#364d79',
 };
+console.log('Home.index進入');
 
 function Home(props) {
-
+  console.log('Home.index進入內部');
   // useEffect(() =>{
   //   axios.get('http://127.0.0.1:8000/')    
   //   .then(res=>{
@@ -69,7 +69,7 @@ function Home(props) {
   }, []);
 
 
-  console.log("111", windowSize);
+  // console.log("111", windowSize);
 
   const autoplay = {
     dots: true,
@@ -170,7 +170,7 @@ function Home(props) {
     try {
       axios(config)
       .then(res =>{
-        console.log(res.data.req)
+        // console.log(res.data.req)
         setPosts(res.data.req)
       },[]);   
     }
@@ -179,8 +179,8 @@ function Home(props) {
       // Do  with error
     }
   },[]);
-  console.log('posts=>',posts);
-
+  console.log('posts=>',posts,);
+  console.log('-------------------');
 
 // useEffect(()=>{
 //   console.log("123");
@@ -239,10 +239,10 @@ function Home(props) {
               </Col>
               <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: 'rgba(251, 213, 52, 0.94)' }}>寵物供養</h1></div>
-                <span><h1>寵物供養是一個基於......</h1></span>
+                <span><h1>寵物共養是一個基於......</h1></span>
                 <a href="Share-already">
                   <ButtonComponent
-                    text="前往供養"
+                    text="前往共養"
                     size="large"
                     name="together"
                   />
@@ -337,7 +337,7 @@ function Home(props) {
                       <Row className="bannerBlock">
                         <Col span={16} className="pictureBlock">
                           <div className="imgBlock">
-                            <img src={images.jm} />
+                            <img src={post.img} />
                           </div>
                         </Col>
                         <Col span={16} className="titleBlock">
@@ -501,6 +501,7 @@ function Home(props) {
 }
 
 export default Home;
+
 // function Index(props) {
 
 //   const success = () => {
