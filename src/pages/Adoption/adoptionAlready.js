@@ -583,7 +583,7 @@ function AdoptionAlready() {
               </div>
             }
             btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+              <a href="/share-already/share-pet-detail">
                 <ButtonComponent
                   text="查看"
                   name="exPetCheckBtn"
@@ -623,48 +623,7 @@ function AdoptionAlready() {
               </div>
             }
             btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-            light={
-              <div>
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-              </div>
-            }
-          />
-        </Col>
-
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+              <a href="/share-already/share-pet-detail">
                 <ButtonComponent
                   text="查看"
                   name="exPetCheckBtn"
@@ -705,7 +664,48 @@ function AdoptionAlready() {
               </div>
             }
             btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
+              <a href="/share-already/share-pet-detail">
+                <ButtonComponent
+                  text="查看"
+                  name="exPetCheckBtn"
+                  handleSubmit={check}
+                />
+              </a>
+            }
+            light={
+              <div>
+                <GiPlainCircle className="lightUp" />
+                <GiPlainCircle className="lightUp" />
+                <GiPlainCircle className="lightUp" />
+              </div>
+            }
+          />
+        </Col>
+
+        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
+          <CardComponent
+            name="card .ant-card-body"
+            img={<img alt="pet" src={images.jm} />}
+            // img={<img alt="pet" src={images.expet}}
+            title={<h1>阿金</h1>}
+            icon={
+              <h1>
+                <EnvironmentOutlined />
+                台中市，大里區
+              </h1>
+            }
+            text={
+              <div>
+                <h4>品種：拉不拉多</h4>
+                <h4>年齡：5</h4>
+                <h4>體型：大型</h4>
+                <h4>性別：女</h4>
+                <h4>體驗日期:</h4>
+                <h4>2022/06/12 - 2022/06/30</h4>
+              </div>
+            }
+            btn={
+              <a href="/share-already/share-pet-detail">
                 <ButtonComponent
                   text="查看"
                   name="exPetCheckBtn"

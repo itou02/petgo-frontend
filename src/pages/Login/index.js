@@ -30,6 +30,7 @@ import './index.less';
 
 
 function Login() {
+  var csrftokenid = "";
   // let navigate = useNavigate();
 
 
@@ -41,7 +42,12 @@ function Login() {
   // const handleLogin = (payload) => {
   //   dispatch({ type: "POST_UserLogin", payload });
   // };
+
+
+ 
+  
   const navigate = useNavigate();
+
   const onFinish = (values) => {
     console.log('Success:', values);
     const config = {
@@ -54,7 +60,7 @@ function Login() {
         'Access-Control-Allow-Origin':'*',
         'Access-Control-Allow-Headers':'*',
         'X-Requested-With':'XMLHttpRequest',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+        'X-CSRF-TOKEN': csrftokenid
       },
       data: values,
       // responseType: 'json' // 伺服器回應的數據類型
@@ -62,7 +68,7 @@ function Login() {
     try {
       axios(config)
       .then(res =>{
-        console.log(res,"測試格線",res.data.csrftoken)
+        console.log(res,"6666666666666666666",res.data.csrftoken,csrftokenid)
         if(res.data.csrftoken!=null)
           navigate('/');
         // setPosts(values)
@@ -201,8 +207,8 @@ function Login() {
                       }}
                     >
                       <Checkbox>記住我</Checkbox>
-                      <div className="link"><a href="Signup">前往註冊</a><h3>/</h3>
-                        <a href="Forget">忘記密碼</a>
+                      <div className="link"><a href="/Signup">前往註冊</a><h3>/</h3>
+                        <a href="/forget">忘記密碼</a>
                       </div>
                     </Form.Item>
                   </Form>

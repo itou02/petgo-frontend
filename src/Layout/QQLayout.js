@@ -8,33 +8,34 @@ import { FaFacebookSquare, FaInstagram, FaPhone } from "react-icons/fa";
 const { Content, Footer } = Layout;
 
 const QQLayout = () => {
-    console.log('6666666666666666');
-    const [windowSize, setWindowSize] = useState({
-        width: undefined,
-        height: undefined,
-    });
-    useEffect(() => {
-        function handleResize() {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-        }
-        window.addEventListener("resize", handleResize);
-        handleResize();
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-    return (
-        <Layout id="global">
-            <HeaderComponent windowSize={windowSize} />
-            <Content>
-                <Outlet />
-            </Content>
-            <Footer style={{ textAlign: "center" }}>
-                &copy; 2022 - 2023 PET GO  <FaPhone className="communityicon" /><FaInstagram className="communityicon" /><FaFacebookSquare className="communityicon" />
-            </Footer>
-        </Layout>
-    );
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return (
+    <Layout id="global">
+      <HeaderComponent windowSize={windowSize} />
+      <Content>
+        <Outlet />
+      </Content>
+      <Footer style={{ textAlign: "center" }}>
+        &copy; 2022 - 2023 PET GO <FaPhone className="communityicon" />
+        <FaInstagram className="communityicon" />
+        <FaFacebookSquare className="communityicon" />
+      </Footer>
+    </Layout>
+  );
 };
 
 export default QQLayout;

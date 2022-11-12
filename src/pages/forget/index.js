@@ -38,39 +38,39 @@ function Forget(props) {
   //     },
   //   });
   // };
- const[posts,setPosts]=useState([])
-  React.useEffect(() => {
-    // fetch_data()
+//  const[posts,setPosts]=useState([])
+//   React.useEffect(() => {
+//     // fetch_data()
 
-    const config = {
-      url: 'http://127.0.0.1:8000/forgot-password',  // 只有此為必需
-      method: 'post', // 大小寫皆可
-      headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-      },
-      data: {
-          email: "bruce@gmail.com",
-          password: "vul t/6u.4"
-      },
-      responseType: 'json', // 伺服器回應的數據類型
-    }
-    try {
-      axios(config)
-      .then(res =>{
-        console.log(res.data.req)
-        setPosts(res.data.req)
-      },[]);   
-    }
-    catch (error) {
-      throw error;
-      // Do  with error
-    }
-  },[]);
-  console.log('posts=>',posts);
+//     const config = {
+//       url: 'http://127.0.0.1:8000/forgot-password',  // 只有此為必需
+//       method: 'post', // 大小寫皆可
+//       headers: { 
+//         'Content-Type': 'application/json',
+//         'Access-Control-Allow-Origin':'*',
+//         'Access-Control-Allow-Headers':'*',
+//         'X-Requested-With':'XMLHttpRequest',
+//         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+//       },
+//       data: {
+//           email: "bruce@gmail.com",
+//           password: "vul t/6u.4"
+//       },
+//       responseType: 'json', // 伺服器回應的數據類型
+//     }
+//     try {
+//       axios(config)
+//       .then(res =>{
+//         console.log(res.data.req)
+//         setPosts(res.data.req)
+//       },[]);   
+//     }
+//     catch (error) {
+//       throw error;
+//       // Do  with error
+//     }
+//   },[]);
+//   console.log('posts=>',posts);
 
   return (
     <div id="forget">

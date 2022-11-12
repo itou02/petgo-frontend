@@ -17,18 +17,19 @@ import CheckPet from "./Experience/ownerCheckPet";
 import ExPet from "./Experience/exPet";
 import ExPetLogin from "./Experience/exPet";
 import ExPetCheck from "./Experience/exPetCheckPet";
+import RequestExPetCheck from "./Experience/exPetCheckPet";
+import ownerExPetCheck from "./Experience/exPetCheckPet";
 
 import Adoption from "./Adoption/adoptionAlready";
 import AdoptionLogin from "./Adoption/adoptionAlready";
 
 import AdoptionCheck from "./Adoption/adoptionCheckPet";
+import RequestAdoptionCheck from "./Adoption/adoptionCheckPet";
 import AdoptionNone from "./Adoption/adoptionNotYet";
 import AdoptionNoneLogin from "./Adoption/adoptionNotYet";
 
 import ReceiveMemberDetail from "./ReceiveRequest/memberDetail";
 import CheckMembersPet from "./ReceiveRequest/checkMembersPet";
-
-
 
 import NotFound from "./NotFound/index";
 import GlobalLayout from "../Layout/QQLayout";
@@ -39,6 +40,8 @@ import ExIllustrate from "./Experience/exIllustrate";
 import Member from "./Member/Member";
 import Pet from "./Member/Pet";
 import RearingPet from "./Member/Rearing-pet";
+import ResetPassword from "./Member/resetPassword";
+
 import EXAddForm from "./Form/EXAddForm";
 import EXForm from "./Form/EXForm";
 import SearchRequestForm from "./Form/SearchRequestForm";
@@ -50,12 +53,9 @@ import DoingShareList from "./RecordList/DoingShareList";
 import ExperienceList from "./RecordList/ExperienceList";
 import ShareList from "./RecordList/ShareList";
 
-
 import Signup from "./Signup/index.js";
 import Forget from "./Forget/index.js";
 import Revise from "./Forget/index2.js";
-
-
 
 import Comment from "./Comment/index.js";
 
@@ -67,9 +67,9 @@ import Noreceiverequest from "./Getrequest/norequest";
 
 import Test from "./test";
 
-console.log('Router進入');
+console.log("Router進入");
 function Router() {
-  console.log('Router內部進入');
+  console.log("Router內部進入");
   return (
     <BrowserRouter>
       <Routes>
@@ -99,13 +99,16 @@ function Router() {
           {/* 體驗 */}
           <Route path="experience" element={<Experience />} />
           <Route path="experience/owner-illustrate" element={<OIllustrate />} />
-          <Route path="experience/experiencer-illustrate" element={<ExIllustrate />} />
-
+          <Route
+            path="experience/experiencer-illustrate"
+            element={<ExIllustrate />}
+          />
 
           {/* 會員資料 */}
           <Route path="member" element={<Member />} />
           <Route path="pet-list/pet" element={<Pet />} />
           <Route path="rearing-pet" element={<RearingPet />} />
+          <Route path="member/reset-password" element={<ResetPassword />} />
 
           {/* 表單 */}
           <Route
@@ -141,43 +144,74 @@ function Router() {
           />
           <Route path="record/share/detailed" element={<ShareDetailed />} />
 
-
           {/* 飼主專區 */}
           <Route path="experience/owner-illustrate/post" element={<Owner />} />
           {/* 飼主專區-無寵物 */}
-          <Route path="experience/owner-illustrate/nopost" element={<NoPet />} />
+          <Route
+            path="experience/owner-illustrate/nopost"
+            element={<NoPet />}
+          />
           {/* 飼主專區-查看詳細 */}
-          <Route path="experience/owner-illustrate/post/ex-pet-detail" element={<CheckPet />} />
+          <Route
+            path="experience/owner-illustrate/post/ex-pet-detail"
+            element={<CheckPet />}
+          />
           {/* 飼主專區-查看詳細-無評論 */}
-          <Route path="experience/owner-illustrate/post/ex-pet-detail-no" element={<CheckPetN />} />
+          <Route
+            path="experience/owner-illustrate/post/ex-pet-detail-no"
+            element={<CheckPetN />}
+          />
           {/* 體驗者專區首頁 */}
-          <Route path="Experience/experiencer-illustrate/card" element={<ExPet />} />
-          <Route path="experience/experiencer-illustrate/card-login" element={<ExPetLogin />} />
+          <Route
+            path="Experience/experiencer-illustrate/card"
+            element={<ExPet />}
+          />
+          <Route
+            path="experience/experiencer-illustrate/card-login"
+            element={<ExPetLogin />}
+          />
           {/* 體驗者專區-查看 */}
-          <Route path="experience/experiencer-illustrate/card/ex-pet-detail" element={<ExPetCheck />} />
+          <Route
+            path="experience/experiencer-illustrate/card/ex-pet-detail"
+            element={<ExPetCheck />}
+          />
+          <Route
+            path="sent-request/ex-pet-detail"
+            element={<RequestExPetCheck />}
+          />
+          <Route path="owner/ex-pet-detail" element={<ownerExPetCheck />} />
 
           {/* 已有共養人 */}
           <Route path="share-already" element={<Adoption />} />
           <Route path="share-already-login" element={<AdoptionLogin />} />
-          <Route path="share-already/share-pet-detail" element={<AdoptionCheck />} />
+          <Route
+            path="share-already/share-pet-detail"
+            element={<AdoptionCheck />}
+          />
+          <Route
+            path="sent-request/share-pet-detail"
+            element={<RequestAdoptionCheck />}
+          />
 
           {/* 未有共養人 */}
           <Route path="share-none" element={<AdoptionNone />} />
           <Route path="share-none-login" element={<AdoptionNoneLogin />} />
 
           {/* 我收到的請求-查看詳細-會員資料 */}
-          <Route path="receive-request/member-detail" element={<ReceiveMemberDetail />} />
+          <Route
+            path="receive-request/member-detail"
+            element={<ReceiveMemberDetail />}
+          />
           {/* 我收到的請求-查看詳細-會員資料-養寵經歷寵物詳細 */}
-          <Route path="receive-request/member-detail/request-pet-detail" element={<CheckMembersPet />} />
-
-
-
+          <Route
+            path="receive-request/member-detail/request-pet-detail"
+            element={<CheckMembersPet />}
+          />
 
           <Route path="*" element={<NotFound />} />
         </Route>
-
       </Routes>
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
 
