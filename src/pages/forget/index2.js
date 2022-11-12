@@ -28,7 +28,7 @@ function Revise() {
     const [posts,setPosts]=useState([])
     // fetch_data()
     const config = {
-      url: 'http://127.0.0.1:8000/api/forget/revise',  // 只有此為必需
+      url: 'http://127.0.0.1:8000/api/member/reset-password',  // 只有此為必需
       method: 'patch', // 大小寫皆可
       headers: { 
         'Accept': 'text/html',
