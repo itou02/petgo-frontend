@@ -1,9 +1,9 @@
 
-import React ,{useEffect,useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Carousel } from 'antd';
 import ButtonComponent from "../../components/button/button";
-import { Row, Col,  Card } from 'antd';
+import { Row, Col, Card } from 'antd';
 // import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { EnvironmentOutlined } from '@ant-design/icons';
@@ -90,7 +90,7 @@ function Home(props) {
     slidesToScroll: 1
   };
   const { Meta } = Card;
-  
+
   // React.useEffect(() => {
   //   // axios.get('http://127.0.0.1:8000/api/')
   //   //     .set('Access-Control-Allow-Origin','*',
@@ -114,11 +114,11 @@ function Home(props) {
   //     },
   //     responseType: 'json', // 伺服器回應的數據類型
   //   }
-  
+
   //   axios(config);
   // });
-  
-  
+
+
   // async function fetch_data() {
   //   const config = {
   //     url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
@@ -143,14 +143,14 @@ function Home(props) {
   //     // Do  with error
   //   }
   // }
-  
-    
 
-    // this.state = {
-    //     posts: [],
-    //     DataisLoaded: false
-    // };
-    const [posts,setPosts]=useState([])
+
+
+  // this.state = {
+  //     posts: [],
+  //     DataisLoaded: false
+  // };
+  const [posts, setPosts] = useState([])
 
 
   React.useEffect(() => {
@@ -159,51 +159,51 @@ function Home(props) {
     const config = {
       url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
       method: 'get', // 大小寫皆可
-      headers: { 
+      headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
       },
       responseType: 'json', // 伺服器回應的數據類型
     }
     try {
       axios(config)
-      .then(res =>{
-        // console.log(res.data.req)
-        setPosts(res.data.req)
-      },[]);   
+        .then(res => {
+          // console.log(res.data.req)
+          setPosts(res.data.req)
+        }, []);
     }
     catch (error) {
       throw error;
       // Do  with error
     }
-  },[]);
-  console.log('posts=>',posts,);
+  }, []);
+  console.log('posts=>', posts,);
   console.log('-------------------');
 
-// useEffect(()=>{
-//   console.log("123");
-//   fetch('http://127.0.0.1:8000/api/',
-//   {
-//     headers: {
-//       'Access-Control-Allow-Origin': '*',
-//       'Access-Control-Allow-Headers': '*',
-//       'Access-Control-Allow-Methods': '*'}
-//   }, {mode:'cors'})
-//   .then(res =>{
-//     console.log(res)
-//     setPosts(res.data)
-//   },[])
-// })
+  // useEffect(()=>{
+  //   console.log("123");
+  //   fetch('http://127.0.0.1:8000/api/',
+  //   {
+  //     headers: {
+  //       'Access-Control-Allow-Origin': '*',
+  //       'Access-Control-Allow-Headers': '*',
+  //       'Access-Control-Allow-Methods': '*'}
+  //   }, {mode:'cors'})
+  //   .then(res =>{
+  //     console.log(res)
+  //     setPosts(res.data)
+  //   },[])
+  // })
 
   return (
-    
-    
+
+
     // <div>
-      
-      
-      
+
+
+
     // </div>
     <div id='Home'>
       <Row className='containter'>
@@ -351,7 +351,7 @@ function Home(props) {
                               </strong>
                             </h1>
                           </span>
-                          <span className='introduce'>                                                        
+                          <span className='introduce'>
                             <div>{post.comment}</div>
                             <div className='userName'>--{post.userName}</div>
                           </span>
@@ -363,34 +363,7 @@ function Home(props) {
                     </Col>
                   );
                 })}
-                <Col className='Commentcard'>
-                  <Row className="bannerBlock">
-                    <Col span={16} className="pictureBlock">
-                      <div className="imgBlock">
-                        <img src={images.jm} />
-                      </div>
-                    </Col>
-                    <Col span={16} className="titleBlock">
-                      <span className='nametotal'>
-                        <h1 className='master'>
-                          <strong>幼幼</strong>
-                        </h1>
-                        <h1 className='petname'>
-                          <strong>寵物名：吉米</strong>
-                        </h1>
-                      </span>
-                      <span className='introduce'>
-                        {/* 我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論 */}
-                        
-                        {posts.name}
-                        
-                      </span>
-                    </Col>
-                    <Col span={16} className="area">
-                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
-                    </Col>
-                  </Row>
-                </Col>
+
                 <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
