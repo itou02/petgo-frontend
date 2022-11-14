@@ -58,7 +58,7 @@ function Comment() {
               <h1>寵物清單</h1>
 
               <div className="addiconWarp">
-                <a href="/Rearing-pet">
+                <a href="/pet-list/pet">
                   <MdAddBox className="addicon" />
                 </a>
               </div>

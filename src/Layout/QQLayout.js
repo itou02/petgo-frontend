@@ -8,7 +8,6 @@ import { FaFacebookSquare, FaInstagram, FaPhone } from "react-icons/fa";
 const { Content, Footer } = Layout;
 
 const QQLayout = () => {
-    
     const [windowSize, setWindowSize] = useState({
         width: undefined,
         height: undefined,

@@ -30,6 +30,7 @@ import './index.less';
 
 
 function Login() {
+  var csrftokenid = "";
   // let navigate = useNavigate();
 
 
@@ -41,7 +42,34 @@ function Login() {
   // const handleLogin = (payload) => {
   //   dispatch({ type: "POST_UserLogin", payload });
   // };
+  const config = {
+    url: 'http://127.0.0.1:8000/api/csrf_token',  // 只有此為必需
+    method: 'get', // 大小寫皆可
+    headers: {
+      'Accept': 'text/html',
+      // 'Content-Type': 'text/html; charset=utf-8',
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Headers':'*',
+      'X-Requested-With':'XMLHttpRequest',
+      'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+    },
+    responseType: 'json', // 伺服器回應的數據類型
+
+  }
+  try {
+    axios(config)
+    .then(res =>{
+      console.log(res,"測試",res.data.csrftoken)
+    },[]);   
+  }
+  catch (error) {
+    throw error;
+    // Do  with error
+  }
+
   const navigate = useNavigate();
+
   const onFinish = (values) => {
     console.log('Success:', values);
     const config = {
@@ -49,24 +77,24 @@ function Login() {
       method: 'post', // 大小寫皆可
       headers: {
         'Accept': 'text/html',
-        'Content-Type': 'text/html; charset=utf-8',
-        // 'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+        // 'Content-Type': 'text/html; charset=utf-8',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+        'X-CSRF-TOKEN': csrftokenid
       },
       data: values,
       // responseType: 'json' // 伺服器回應的數據類型
     }
     try {
       axios(config)
-        .then(res => {
-          console.log(res, "測試格線", res.data.csrftoken)
-          if (res.data.csrftoken != null)
-            navigate('/');
-          // setPosts(values)
-        }, []);
+      .then(res =>{
+        console.log(res,"測試格線",res.status)
+        if(res.status!=false)
+          navigate('/');
+        // setPosts(values)
+      },[]);   
     }
     catch (error) {
       throw error;
@@ -201,8 +229,8 @@ function Login() {
                       }}
                     >
                       <Checkbox>記住我</Checkbox>
-                      <div className="link"><a href="Signup">前往註冊</a><h3>/</h3>
-                        <a href="Forget">忘記密碼</a>
+                      <div className="link"><a href="/Signup">前往註冊</a><h3>/</h3>
+                        <a href="/forget">忘記密碼</a>
                       </div>
                     </Form.Item>
                   </Form>

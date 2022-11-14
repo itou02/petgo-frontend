@@ -168,7 +168,7 @@ function AdoptionCheckPet() {
                 <Col span={12} className="peopleComm">
                   <div className="peopleCommShare">
                     <h2>白婷鈺</h2>
-                    <div>主要飼主</div>
+                    <div className='PetCardLabel3'>主要飼主</div>
                   </div>
                   <div className="leftPart">
                     <div className="sharePeopleItem">
