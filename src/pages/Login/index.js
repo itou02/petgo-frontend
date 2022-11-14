@@ -1,9 +1,9 @@
-import React ,{useState,useEffect}from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 // import createRoot from 'react-dom';
 import { Provider } from "react-redux";
 // import { Link, useNavigate } from "react-router-dom";
-import { HashRouter,redirect,Route } from "react-router-dom";
+import { HashRouter, redirect, Route } from "react-router-dom";
 import { Row, Col, Button, Checkbox, Form, Icon, Input, Space } from 'antd';
 import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import ButtonComponent from "../../components/button/button";
@@ -37,7 +37,7 @@ function Login() {
   //   e.preventDefault(); 
   //   navigate('/home')
   // }
-  
+
   // const handleLogin = (payload) => {
   //   dispatch({ type: "POST_UserLogin", payload });
   // };
@@ -49,11 +49,11 @@ function Login() {
       method: 'post', // 大小寫皆可
       headers: {
         'Accept': 'text/html',
-        // 'Content-Type': 'text/html; charset=utf-8',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
+        'Content-Type': 'text/html; charset=utf-8',
+        // 'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
       },
       data: values,
@@ -61,12 +61,12 @@ function Login() {
     }
     try {
       axios(config)
-      .then(res =>{
-        console.log(res,"測試格線",res.data.csrftoken)
-        if(res.data.csrftoken!=null)
-          navigate('/');
-        // setPosts(values)
-      },[]);   
+        .then(res => {
+          console.log(res, "測試格線", res.data.csrftoken)
+          if (res.data.csrftoken != null)
+            navigate('/');
+          // setPosts(values)
+        }, []);
     }
     catch (error) {
       throw error;
@@ -80,46 +80,46 @@ function Login() {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
-  
+
   const [posts, setPosts] = useState([]);
   console.log(setPosts);
-    // const [password, setPassword] = useState([]);
-  
-    // const handleLogin = (e) => {
-    //   Login(useremail,password).then((data) => {
-    //     if (data.token ==null) {
-    //       return console(data.status);
-    //     }
-    //   });
-    // };
-  
-    // const handleUseremail = (e) => {
-    //   setUseremail(e.target.value);
-    // };
-  
-    // const handlePassword = (e) => {
-    //   setPassword(e.target.value);
-    // };
+  // const [password, setPassword] = useState([]);
 
-    // let navigate = useNavigate();
-    // const csrf = () => axios.get('/sanctum/csrf-cookie')
-    // const login = async ({setSuccessResponse }) => {
-      
-    //     await csrf()
-    //     axios
-    //       .post('http://127.0.0.1:8000/login')
-    //       try {
-    //         setSuccessResponse()
-    //         .then(res =>{
-    //           console.log(res.data)
-    //         });
-    //         navigate('/');
-    //       } catch (error) {
-    //         console.log(error);
-    //       }
-            
-    // }
-       
+  // const handleLogin = (e) => {
+  //   Login(useremail,password).then((data) => {
+  //     if (data.token ==null) {
+  //       return console(data.status);
+  //     }
+  //   });
+  // };
+
+  // const handleUseremail = (e) => {
+  //   setUseremail(e.target.value);
+  // };
+
+  // const handlePassword = (e) => {
+  //   setPassword(e.target.value);
+  // };
+
+  // let navigate = useNavigate();
+  // const csrf = () => axios.get('/sanctum/csrf-cookie')
+  // const login = async ({setSuccessResponse }) => {
+
+  //     await csrf()
+  //     axios
+  //       .post('http://127.0.0.1:8000/login')
+  //       try {
+  //         setSuccessResponse()
+  //         .then(res =>{
+  //           console.log(res.data)
+  //         });
+  //         navigate('/');
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+
+  // }
+
   // console.log('posts=>',posts);
 
   return (
@@ -130,11 +130,11 @@ function Login() {
             <Col xs={0} sm={0} md={14}>
               <div className="imgBlock">
                 <img src={images.bg1} alt="bg-1" />
-                
+
               </div>
             </Col>
             <Col xs={24} sm={24} md={10} className="titleBlock">
-              <Row  align="center">
+              <Row align="center">
                 <Col sm={24} md={14} >
                   <Form
                     name="basic"
@@ -157,33 +157,33 @@ function Login() {
                     <hr></hr>
 
                     <Form.Item
-                        label="email"
-                        name="email"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your username!',
-                          },
-                        ]}
-                      >
+                      label="email"
+                      name="email"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Please input your username!',
+                        },
+                      ]}
+                    >
                       <Input size="large" placeholder="輸入帳號" prefix={<UserOutlined />} />
                     </Form.Item>
                     <Form.Item
-                        label="password"
-                        name="password"
-                        rules={[
-                          {
-                            required: true,
-                            message: 'Please input your username!',
-                          },
-                        ]}
-                      >
-                      <Input.Password size="large" placeholder="輸入密碼" prefix={<AiFillLock />} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}/>
+                      label="password"
+                      name="password"
+                      rules={[
+                        {
+                          required: true,
+                          message: 'Please input your username!',
+                        },
+                      ]}
+                    >
+                      <Input.Password size="large" placeholder="輸入密碼" prefix={<AiFillLock />} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
                     </Form.Item>
                     <Form.Item
                       className='loginbtndiv'
-                      wrapperCol={{span: 24,}}
-                      // onClick={submit}
+                      wrapperCol={{ span: 24, }}
+                    // onClick={submit}
                     >
                       <ButtonComponent
                         text="登入"
