@@ -1,5 +1,5 @@
 import images from "../../config/images";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ButtonComponent from "../../components/button/button";
 import {
   Select,
@@ -15,11 +15,67 @@ import {
   Space,
 } from "antd";
 import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
-
+import axios from "axios";
 import "./Pet.less";
 
 function MemberPage() {
   const { RangePicker } = DatePicker;
+
+  const [posts,setPosts]=useState([])
+  useEffect(() => {
+    // fetch_data()
+
+    const csrftoken = {
+      url: 'http://127.0.0.1:8000/api/csrf_token',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Accept': 'text/html',
+        // 'Content-Type': 'text/html; charset=utf-8',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+  
+    }
+    try {
+      axios(csrftoken)
+      .then(res =>{
+        console.log(res,"測試",res.data.csrftoken)
+      },[]);   
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+    const config = {
+      url: 'http://127.0.0.1:8000/api/pet-list/pet-filled/1',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+      },
+      // responseType: 'json', // 伺服器回應的數據類型
+    }
+    try {
+      axios(config)
+      .then(res =>{
+        console.log(res.data.req)
+        setPosts(res.data.req)
+      },[]);   
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  },[]);
+  console.log('posts=>',posts,);
+  console.log('-------------------');
 
   const onFinish = (values) => {
     console.log("Success:", values);

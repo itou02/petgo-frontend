@@ -150,6 +150,8 @@ function Home(props) {
     //     posts: [],
     //     DataisLoaded: false
     // };
+  const baseURL='http://127.0.0.1:8000/';
+
     const [posts,setPosts]=useState([])
 
 
@@ -239,10 +241,10 @@ function Home(props) {
               </Col>
               <Col xs={24} md={11} className='Choose'>
                 <div className='title'><h1 style={{ color: 'rgba(251, 213, 52, 0.94)' }}>寵物供養</h1></div>
-                <span><h1>寵物共養是一個基於......</h1></span>
+                <span><h1>寵物供養是一個基於......</h1></span>
                 <a href="Share-already">
                   <ButtonComponent
-                    text="前往共養"
+                    text="前往供養"
                     size="large"
                     name="together"
                   />
@@ -337,7 +339,7 @@ function Home(props) {
                       <Row className="bannerBlock">
                         <Col span={16} className="pictureBlock">
                           <div className="imgBlock">
-                            <img src={post.img} />
+                            <img src={baseURL+post.img} />
                           </div>
                         </Col>
                         <Col span={16} className="titleBlock">
