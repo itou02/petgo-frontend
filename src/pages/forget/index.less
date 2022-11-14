@@ -1,4 +1,5 @@
 @import url('../../assets/style/theme.less');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +9,72 @@
 }
 
 #forget {
-    .container{
-        background-color: @feature-adoptions-color;
-        min-height:calc(100vh - 134px);
-    }
-    .login{
+
+
+
+    .container {
+        background-color: @member-feature-color !important;
+        min-height: calc(100vh - 134px);
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .bannerBlock {
-        margin: 48px 0;
+
+    .login {
+        display: flex;
+        align-items: center;
+    }
+
+    .bannerBlock1 {
         width: 100%;
     }
 
+    .formWarp {
+
+        input {
+            height: 30px;
+        }
+
+    }
+
+    .FormBottom {}
+
+    .FormContent {
+        height: 150px;
+    }
+
+
+    .verify{
+        input{
+            height: 40px;
+        }
+    }
     .titleBlock {
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+
+
+
+        .title {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            h1 {
+                color: @dark-main-color;
+                font-weight: 900;
+
+                text-align: center;
+            }
+
+            hr {
+                width: 60%;
+                border: 1px solid rgba(0, 0, 0, 0.55);
+            }
+        }
+
+
+
+
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -36,96 +83,54 @@
                 font-weight: bold;
             }
         }
-        .a{
-            width: 100%;
+
+        form#basic {
+
+
+
+            .loginbtndiv {
+                width: 100%;
+            }
         }
-        form#basic{
-            height: 600px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
+
+        .remberCheck .ant-checkbox + span{
+            font-weight: 900;
+            color: @dark-main-color;
         }
-        hr{
-            width: 90%;
-            border: 1px solid rgba(0, 0, 0, 0.55);
-        }
-        .verification{
-            width: 100%;
-        }
-        .verify{
-            display: flex;
-            align-items: center;
-            justify-content:right;
-        }
-        .link{
+        .link {
             width: 150px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-around;
+            font-weight: 900;
+
+            a:nth-child(1){
+                color: rgb(230, 42, 42);
+            }
+            a {
+                color: @dark-main-color;
+                font-weight: 900;
+            }
         }
+
         .ant-row.ant-form-item {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .ant-form-item-control-input-content {
             display: flex;
             justify-content: space-around;
-        }
-        .alertBlock {
-            .ant-alert-info {
-                // background-color: rgba(@secondary-color, 0.1);
-                // border: 1px solid rgba(@secondary-color, 0.1);
-
-                .ant-alert-icon {
-                    // color: @secondary-color;
-                }
-            }
-           
-
-            // .formtitle{
-            //     display: flex;
-            //     flex-direction: column;
-            //     justify-content: center;
-            //     align-items: center;
-            // }
-        }
-
-        .buttonBlock {
-            display: flex;
+            justify-content: center;
             align-items: center;
-            position: relative;
-
-            .inputBlock {
-                position: relative;
-                width: 100%;
-
-                svg {
-                    // color: @secondary-color;
-                    position: absolute;
-                    z-index: 1;
-                    top: 50%;
-                    left: 24px;
-                    transform: translate(-50%, -50%);
-                }
-
-                .ant-input {
-                    padding-left: 40px;
-                    height: 48px;
-                }
-
-                .ant-btn {
-                    height: 48px;
-                }
-            }
         }
     }
 
     .imgBlock {
-        height: 600px;
+        height: 780px;
 
         img {
             width: 100%;
@@ -134,43 +139,49 @@
         }
     }
 
-    .processBlock {
-        .iconBlock {
-            width: 100%;
-            margin: 2rem 0;
 
-            .ant-steps-item-content {
-                text-align: center;
-            }
 
-            .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-icon {
-                // background-color: @secondary-color;
-                // border-color: @secondary-color;
-            }
-
-            svg {
-                // background-color: @brown-color;
-                color: #ffffff;
-                padding: 16px;
-                border-radius: 16px;
-                font-size: 4rem;
-                margin: 1rem 0;
-            }
-
-            p {
-                font-size: 1.25rem;
-            }
-        }
-    }
 }
 
-@media screen and (max-width:576px) {
-    #index {
+@media screen and (max-width:786px) {
+    #forget {
+        h1 {
+            color: @dark-main-color;
+            font-weight: 900;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        hr {
+           
+            border: 1px solid rgba(0, 0, 0, 0.55);
+        }
+
         .titleBlock {
-            .ant-typography {
-                span {
-                    font-size: 2.25rem;
-                }
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.712);
+            padding: 30px;
+        }
+
+        .imgBlock {
+            height: 780px;
+
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+
+            }
+
+            .imgTop {
+                width: 100%;
+                height: 780px;
+                margin: auto;
+
+                position: absolute;
+                top: 0;
             }
         }
     }

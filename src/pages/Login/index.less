@@ -1,4 +1,5 @@
 @import url('../../assets/style/theme.less');
+
 * {
     margin: 0;
     padding: 0;
@@ -9,33 +10,65 @@
 
 #login {
 
-  
 
-    .container{
+
+    .container {
         background-color: @member-feature-color !important;
-        min-height:calc(100vh - 134px);
+        min-height: calc(100vh - 134px);
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .login{
+
+    .login {
         display: flex;
         align-items: center;
     }
 
-    .bannerBlock1{
+    .bannerBlock1 {
         width: 100%;
     }
- 
-    h1{
-        color: @dark-main-color;
-        font-weight: 900;
+
+    .formWarp {
+
+        input {
+            height: 30px;
+        }
+
     }
+
+    .FormBottom {}
+
+    .FormContent {
+        height: 150px;
+    }
+
     .titleBlock {
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+
+
+
+        .title {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            h1 {
+                color: @dark-main-color;
+                font-weight: 900;
+
+                text-align: center;
+            }
+
+            hr {
+                width: 60%;
+                border: 1px solid rgba(0, 0, 0, 0.55);
+            }
+        }
+
+
+
+
         .ant-typography {
             span {
                 font-size: 2.875rem;
@@ -44,33 +77,44 @@
                 font-weight: bold;
             }
         }
-        form#basic{
-            height: 600px;
-            display: flex;
-            flex-direction: column;
-          
-            align-items: center;
-            .loginbtndiv{
+
+        form#basic {
+
+
+
+            .loginbtndiv {
                 width: 100%;
             }
         }
-        hr{
-            width: 100%;
-            border: 1px solid rgba(0, 0, 0, 0.55);
+
+        .remberCheck .ant-checkbox + span{
+            font-weight: 900;
+            color: @dark-main-color;
         }
-        .link{
+        .link {
             width: 150px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-around;
+            font-weight: 900;
+
+            a:nth-child(1){
+                color: rgb(230, 42, 42);
+            }
+            a {
+                color: @dark-main-color;
+                font-weight: 900;
+            }
         }
+
         .ant-row.ant-form-item {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .ant-form-item-control-input-content {
             display: flex;
             justify-content: space-around;
@@ -81,6 +125,7 @@
 
     .imgBlock {
         height: 780px;
+
         img {
             width: 100%;
             height: 100%;
@@ -89,16 +134,48 @@
     }
 
 
-    
+
 }
 
-@media screen and (max-width:576px) {
+@media screen and (max-width:786px) {
     #login {
+        h1 {
+            color: @dark-main-color;
+            font-weight: 900;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        hr {
+
+            border: 1px solid rgba(0, 0, 0, 0.55);
+        }
+
         .titleBlock {
-            .ant-typography {
-                span {
-                    font-size: 2.25rem;
-                }
+            position: absolute;
+            background-color: rgba(250, 250, 250, 0.712);
+            padding: 30px;
+        }
+
+        .imgBlock {
+            height: 780px;
+
+            img {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+
+            }
+
+            .imgTop {
+                width: 100%;
+                height: 780px;
+                margin: auto;
+
+                position: absolute;
+                top: 0;
             }
         }
     }
