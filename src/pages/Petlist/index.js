@@ -132,7 +132,7 @@ function Comment() {
                       xs={24}
                       className="ListButtonWarp"
                     >
-                      <a href="/Record/Experience/detailed">
+                      <a href="/pet-list/pet">
                         <ButtonComponent
                           text="查看詳細"
                           size="large"

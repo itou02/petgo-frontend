@@ -436,6 +436,9 @@ function ExPet() {
     連江縣: ["南竿鄉", "北竿鄉", "莒光鄉", "東引鄉"],
   };
 
+
+  const baseURL='http://127.0.0.1:8000/';
+  
   const [cities, setCities] = useState(cityData[provinceData[0]]);
   const [secondCity, setSecondCity] = useState(cityData[provinceData[0]][0]);
 
@@ -448,8 +451,8 @@ function ExPet() {
     setSecondCity(value);
   };
 
-  const [posts, setPosts] = useState([])
-  const [post, setPost] = useState([])
+  const [exs, setExs] = useState([])
+  const [varieties, setVarieties] = useState([])
   React.useEffect(() => {
     // fetch_data()
 
@@ -469,9 +472,9 @@ function ExPet() {
       axios(config)
         .then(res => {
           console.log(res.data.experiences)
-          setPosts(res.data.experiences)
+          setExs(res.data.experiences)
           console.log(res.data.varieties)
-          setPost(res.data.varieties)
+          setVarieties(res.data.varieties)
         }, []);
     }
     catch (error) {
@@ -479,8 +482,9 @@ function ExPet() {
       // Do  with error
     }
   }, []);
-  console.log('posts=>', posts);
-  console.log('post=>', post);
+  // console.log('posts=>', posts);
+  // console.log('post=>', post);
+  
   return (
     <div id="ExPet">
         <Row className="exFilter">
@@ -547,22 +551,19 @@ function ExPet() {
                     className="varietyWarp"
                     value="品種"
                     placeholder="品種"
-                    optionFilterProp="children"
-                    filterOption={(input, option) =>
-                      option.children.includes(input)
-                    }
-                    filterSort={(optionA, optionB) =>
-                      optionA.children
-                        .toLowerCase()
-                        .localeCompare(optionB.children.toLowerCase())
-                    }
+                    // optionFilterProp="children"
+                    // filterOption={(input, option) =>
+                    //   option.children.includes(input)
+                    // }
+                    // filterSort={(optionA, optionB) =>
+                    //   optionA.children
+                    //     .toLowerCase()
+                    //     .localeCompare(optionB.children.toLowerCase())
+                    // }
                   >
-                    <Option value="1">Not Identified</Option>
-                    <Option value="2">Closed</Option>
-                    <Option value="3">Communicated</Option>
-                    <Option value="4">Identified</Option>
-                    <Option value="5">Resolved</Option>
-                    <Option value="6">Cancelled</Option>
+                    {varieties.map((variety,index) => (
+                      <Option key={index}>{variety.variety}</Option>
+                    ))}
                   </Select>
                 </Form.Item>
               </Col>
@@ -590,138 +591,44 @@ function ExPet() {
         </Col>
       </Row>
       <Row justify="start">
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent2
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-          />
-        </Col>
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent2
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-          />
-        </Col>
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent2
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-          />
-        </Col>
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent2
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/Experience/experiencer-illustrate/card/ex-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-          />
-        </Col> 
+        {exs.map((ex,index)=>{
+          return(
+            <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
+              <CardComponent2
+                name="card .ant-card-body"
+                img={<img alt="pet" src={baseURL+ex.img} />}
+                // img={<img alt="pet" src={images.expet}}
+                title={<h1>{ex.name}</h1>}
+                icon={
+                  <h1>
+                    <EnvironmentOutlined />
+                    {ex.locations}
+                  </h1>
+                }
+                text={
+                  <div>
+                    <h4>品種：{ex.variety}</h4>
+                    <h4>年齡：{ex.age}</h4>
+                    <h4>體型：{ex.size}</h4>
+                    <h4>性別：{ex.sex}</h4>
+                    <h4>體驗日期:</h4>
+                    <h4>{ex.start_date} ～ {ex.end_date}</h4>
+                  </div>
+                }
+                btn={
+                  <a href="/Experience/experiencer-illustrate/card/ex-pet-detail/{{post.id}}">
+                    <ButtonComponent
+                      text="查看"
+                      name="exPetCheckBtn"
+                      handleSubmit={check}
+                    />
+                  </a>
+                }
+              />
+            </Col>
+          );
+        })}
+        
       </Row>
     </div>
   );

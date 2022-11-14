@@ -1,5 +1,6 @@
 import React, { useState,createContext } from 'react';
 import { Col,Row ,message,Space,Modal} from "antd";
+import axios from 'axios';
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
 import './exPetCheckPet.less'
@@ -22,147 +23,174 @@ const config = {
 /*體驗者專區-查看按鈕的詳細寵物頁面*/
 function ExPetCheckPet() {
 
-    const [modal, contextHolder] = Modal.useModal();
+  const baseURL='http://127.0.0.1:8000/';
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modal, contextHolder] = Modal.useModal();
 
-    const showModal = () => {
-      setIsModalOpen(true);
-    };
-  
-    const handleOk = () => {
-      setIsModalOpen(false);
-    };
-  
-    const handleCancel = () => {
-      setIsModalOpen(false);
-    };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const info = () => {
-        Modal.info({
-          title: 'This is a notification message',
-          content: (
-            <div>
-              <p>some messages...some messages...</p>
-              <p>some messages...some messages...</p>
-            </div>
-          ),
-      
-          onOk() {},
-        });
-      };
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const info = () => {
+      Modal.info({
+        title: 'This is a notification message',
+        content: (
+          <div>
+            <p>some messages...some messages...</p>
+            <p>some messages...some messages...</p>
+          </div>
+        ),
+    
+        onOk() {},
+      });
+  };
+
+
+  const [details, setDetails] = useState([])
+  const [comments, setComments] = useState([])
+  React.useEffect(() => {
+    // fetch_data()
+
+    const config = {
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/6',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+
+    try {
+      axios(config)
+        .then(res => {
+          setDetails(res.data.detail)
+          setComments(res.data.comments)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('details=>', details);
+  // console.log('comments=>', comments);
 
     return (
         <div id="ExPetCheckPet">
-       <Row  type="flex" justify="center" align="middle">
-               <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22} >
-               <Row
-                              className="PetListDetail"
-                              type="flex"
-                              justify="center"
+        <Row  type="flex" justify="center" align="middle">
+            <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22} >
+                <Row className="PetListDetail" type="flex" justify="center">
+                    <Col>
+                      <Row type="flex" justify="center" align="top" >
+                        <Col xl={8} md={8} sm={24} xs={24} className="DetailedJmimgWarp" >
+                          <div className="DetailedJmimgWarp">
+                          <img
+                            className="DetailedJmimg"
+                            src={baseURL+details.img}
+                          /></div>
+                        </Col>
+
+                        <Col xl={14} md={14} sm={18} xs={22} >
+                          <Row type="flex" align="top" className="DetailTextRight">
+                            <Col
+                              xl={12}
+                              md={12}
+                              sm={24}
+                              xs={24}
+                              className="DetailTextWarp"
                             >
-                              <Col   >
-                                <Row type="flex" justify="center" align="top" >
-                                  <Col xl={8} md={8} sm={24} xs={24} className="DetailedJmimgWarp" >
-                                    <div className="DetailedJmimgWarp">
-                                    <img
-                                      className="DetailedJmimg"
-                                      src={images.jm}
-                                    /></div>
-                                  </Col>
+                              <div className="DetailText">
+                                姓名：{details.name}
+                              </div>
+                              <div className="DetailText">
+                                品種：拉不拉多
+                              </div>
+                              <div className="DetailText">
+                                體型：{details.size}
+                              </div>
+                              
+                            </Col>
+                            <Col
+                              xl={12}
+                              md={12}
+                              sm={24}
+                              xs={24}
+                              className="DetailTextWarp"
+                            >
+                                <div className="DetailText">
+                                年齡：5
+                              </div>
+                          
+                              <div className="DetailText">
+                                性別：女
+                              </div>
+                              <div className="DetailText">
+                                絕育狀況：已結紮
+                              </div>
+                            </Col>
 
-                                  <Col xl={14} md={14} sm={18} xs={22} >
-                                    <Row type="flex" align="top" className="DetailTextRight">
-                                      <Col
-                                        xl={12}
-                                        md={12}
-                                        sm={24}
-                                        xs={24}
-                                        className="DetailTextWarp"
-                                      >
-                                        <div className="DetailText">
-                                          姓名：阿金
-                                        </div>
-                                        <div className="DetailText">
-                                          品種：拉不拉多
-                                        </div>
-                                        <div className="DetailText">
-                                          體型：大
-                                        </div>
-                                       
-                                      </Col>
-                                      <Col
-                                        xl={12}
-                                        md={12}
-                                        sm={24}
-                                        xs={24}
-                                        className="DetailTextWarp"
-                                      >
-                                         <div className="DetailText">
-                                          年齡：5
-                                        </div>
-                                   
-                                        <div className="DetailText">
-                                          性別：女
-                                        </div>
-                                        <div className="DetailText">
-                                          絕育狀況：已結紮
-                                        </div>
-                                      </Col>
+                            <Col span={24}   className="DetailTextWarp">
+                              <div className="DetailText">
+                                飼養期間：2016/08~2016/08
+                              </div>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+                      <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
+                        <Col xl={10}
+                              md={10}
+                              sm={18}
+                              xs={22} >
+                            <div className="DetailTextTitle">個性</div>
+                            <hr></hr>
+                            <p className="DetailText">害羞，內向。是個小公主
+                              同時也是個吃貨，每次吃完都嫌不夠</p>
+                        </Col>
+                        <Col xl={10}
+                              md={10}
+                              sm={18}
+                              xs={22} >
+                            <div className="DetailTextTitle">提醒</div>
+                            <hr></hr>
+                            <p className="DetailText">運動量很大也需要大量的運動</p>
+                        </Col>
+                      </Row>
 
-                                      <Col span={24}   className="DetailTextWarp">
-                                        <div className="DetailText">
-                                          飼養期間：2016/08~2016/08
-                                        </div>
-                                      </Col>
-                                    </Row>
-                                  </Col>
-                                </Row>
-                                <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
-                                  <Col xl={10}
-                                        md={10}
-                                        sm={18}
-                                        xs={22} >
-                                      <div className="DetailTextTitle">個性</div>
-                                      <hr></hr>
-                                      <p className="DetailText">害羞，內向。是個小公主
-                                        同時也是個吃貨，每次吃完都嫌不夠</p>
-                                  </Col>
-                                  <Col xl={10}
-                                        md={10}
-                                        sm={18}
-                                        xs={22} >
-                                      <div className="DetailTextTitle">提醒</div>
-                                      <hr></hr>
-                                      <p className="DetailText">運動量很大也需要大量的運動</p>
-                                  </Col>
-
-
-                                </Row>
-
-                                <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
-                                  <Col xl={10}
-                                        md={10}
-                                        sm={18}
-                                        xs={22} >
-                                      <div className="DetailTextTitle">尋找體驗者的原因</div>
-                                      <hr></hr>
-                                      <p className="DetailText">那幾天要去玩，希望有個愛狗狗的人可以帶帶</p>
-                                  </Col>
-                                  <Col xl={10}
-                                        md={10}
-                                        sm={18}
-                                        xs={22} >
-                                      <div className="DetailTextTitle">體驗需求</div>
-                                      <hr></hr>
-                                      <p className="DetailText">住附近，有耐心</p>
-                                  </Col>
-
-
-                                </Row>
-                              </Col>
-                            </Row>
-               </Col>
+                      <Row type="flex" align="top"  justify="center" className="PetCardTextDetailbottom">
+                        <Col xl={10}
+                              md={10}
+                              sm={18}
+                              xs={22} >
+                            <div className="DetailTextTitle">尋找體驗者的原因</div>
+                            <hr></hr>
+                            <p className="DetailText">那幾天要去玩，希望有個愛狗狗的人可以帶帶</p>
+                        </Col>
+                        <Col xl={10}
+                              md={10}
+                              sm={18}
+                              xs={22} >
+                            <div className="DetailTextTitle">體驗需求</div>
+                            <hr></hr>
+                            <p className="DetailText">住附近，有耐心</p>
+                        </Col>
+                      </Row>
+                    </Col>
+                </Row>
+              </Col>
             </Row>
 
 
