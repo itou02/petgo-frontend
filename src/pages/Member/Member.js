@@ -716,7 +716,7 @@ function MemberPage() {
                     md: 22,
                     xs: 24,
                   }}
-                  label="Area"
+                  label="地區"
                   name="Area"
                   rules={[
                     {
@@ -746,7 +746,7 @@ function MemberPage() {
             <Row className="FormItemWarp">
               <Col span={24}>
                 <Form.Item
-                  label="email"
+                  label="電子郵件"
                   name="email"
                   rules={[
                     {
@@ -762,7 +762,7 @@ function MemberPage() {
               <Col span={18}>
                 <Form.Item
                   wrapperCol={{ md: 22 }}
-                  label="password"
+                  label="密碼"
                   name="password"
                   rules={[
                     {
