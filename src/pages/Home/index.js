@@ -21,8 +21,8 @@ const contentStyle = {
   textAlign: 'center',
   background: '#364d79',
 };
-console.log('Home.index進入');
 
+console.log('Home.index進入');
 function Home(props) {
   console.log('Home.index進入內部');
   // useEffect(() =>{
@@ -157,8 +157,9 @@ function Home(props) {
 
   React.useEffect(() => {
     // fetch_data()
-
+    const token=localStorage.getItem('token');
     const config = {
+      
       url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
       method: 'get', // 大小寫皆可
       headers: { 
@@ -166,6 +167,7 @@ function Home(props) {
         'Access-Control-Allow-Origin':'*',
         'Access-Control-Allow-Headers':'*',
         'X-Requested-With':'XMLHttpRequest',
+        'userToken':`${token}`
       },
       responseType: 'json', // 伺服器回應的數據類型
     }

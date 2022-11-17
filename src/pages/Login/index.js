@@ -11,6 +11,7 @@ import { AiFillLock } from "react-icons/ai";
 import images from '../../config/images';
 import { useNavigate } from "react-router-dom";
 import './index.less';
+import { useRef } from 'react';
 // const userRequest = axios.create({
 //   baseURL: 'http://localhost:8000/login',
 //   headers: { 'Content-Type': 'application/json',
@@ -28,9 +29,9 @@ import './index.less';
 //       ).then((res) => res.data).catch((err)=>console.log(err));
 // };
 
-
 function Login() {
   var csrftokenid = "";
+  
   // let navigate = useNavigate();
 
 
@@ -72,7 +73,10 @@ function Login() {
 
   const onFinish = (values) => {
     console.log('Success:', values);
+    // localStorage.setItem('userToken');
+
     const config = {
+
       url: 'http://127.0.0.1:8000/login',  // 只有此為必需
       method: 'post', // 大小寫皆可
       headers: {
@@ -82,6 +86,7 @@ function Login() {
         'Access-Control-Allow-Origin':'*',
         'Access-Control-Allow-Headers':'*',
         'X-Requested-With':'XMLHttpRequest',
+        // 'Authorization':`bearer ${token}`,
         'X-CSRF-TOKEN': csrftokenid
       },
       data: values,
@@ -91,6 +96,9 @@ function Login() {
       axios(config)
       .then(res =>{
         console.log(res,"測試格線",res.status)
+        localStorage.setItem('token',res.data.userToken);
+        // const token=localStorage.getItem('token');
+
         if(res.status!=false)
           navigate('/');
         // setPosts(values)

@@ -513,7 +513,21 @@ function MemberPage() {
 
   React.useEffect(() => {
     // fetch_data()
-
+    // const token='userToken';
+    // axios.interceptors.request.use(
+    //   (config) => {
+    //     // 從 localStorage 將 token 取出
+    //     const token = localStorage.getItem('userToken');
+    
+    //     // 如果 token 存在的話，則帶入到 headers 當中
+    //     if (token) {
+    //       config.headers['Authorization'] = `Bearer ${token}`;
+    //     }
+    //     return config;
+    //   },
+    //   (err) => Promise.reject(err),
+    // );
+    
     const config = {
       url: 'http://127.0.0.1:8000/api/member',  // 只有此為必需
       method: 'get', // 大小寫皆可
