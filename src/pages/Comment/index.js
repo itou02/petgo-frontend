@@ -23,13 +23,15 @@ function Comment() {
     // fetch_data()
 
     const config = {
-      url: "http://127.0.0.1:8000/api/mycomment", // 只有此為必需
+      url: "http://127.0.0.1:8000/api/comment", // 只有此為必需
       method: "get", // 大小寫皆可
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "*",
         "X-Requested-With": "XMLHttpRequest",
+        'Accept': 'application/json',
+        // 'Authorization': 'Bearer <token_here>',
       },
       responseType: "json", // 伺服器回應的數據類型
     };

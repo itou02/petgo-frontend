@@ -6,6 +6,8 @@ import Test from "./components/test";
 import Router from "./pages/router";
 import Home from "./pages/Home";
 
+var cookies = document.cookie;
+console.log(cookies);
 console.log('App進入');
 function App() {
   console.log('App內部進入');

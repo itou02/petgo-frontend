@@ -244,7 +244,7 @@ function Home(props) {
                 <span><h1>寵物供養是一個基於......</h1></span>
                 <a href="Share-already">
                   <ButtonComponent
-                    text="前往供養"
+                    text="前往共養"
                     size="large"
                     name="together"
                   />
