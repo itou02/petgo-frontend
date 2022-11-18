@@ -447,11 +447,7 @@ function EXAddFormPage() {
 
                    
                     </Radio.Group>
-                    <ButtonComponent
-                      text="新增寵物"
-                      size="large"
-                      name="addPetBtn"
-                    />
+                   
                     {/* <Button className="addPetBtn">新增寵物</Button> */}
                   </Col>
 

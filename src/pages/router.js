@@ -172,7 +172,7 @@ function Router() {
           />
           {/* 體驗者專區-查看 */}
           <Route
-            path="experience/experiencer-illustrate/card/ex-pet-detail"
+            path="experience/experiencer-illustrate/card/ex-pet-detail/:id"
             element={<ExPetCheck />}
           />
           <Route

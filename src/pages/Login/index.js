@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React ,{useState,useEffect}from 'react';
 import axios from 'axios';
 // import createRoot from 'react-dom';
 import { Provider } from "react-redux";
 // import { Link, useNavigate } from "react-router-dom";
-import { HashRouter, redirect, Route } from "react-router-dom";
+import { HashRouter,redirect,Route } from "react-router-dom";
 import { Row, Col, Button, Checkbox, Form, Icon, Input, Space } from 'antd';
 import { UserOutlined, EyeInvisibleOutlined, EyeTwoTone } from '@ant-design/icons';
 import ButtonComponent from "../../components/button/button";
 import { AiFillLock } from "react-icons/ai";
-import images from '../../config/images';
+import images from "../../config/images";
 import { useNavigate } from "react-router-dom";
-import './index.less';
+import "./index.less";
 // const userRequest = axios.create({
 //   baseURL: 'http://localhost:8000/login',
 //   headers: { 'Content-Type': 'application/json',
@@ -28,14 +28,12 @@ import './index.less';
 //       ).then((res) => res.data).catch((err)=>console.log(err));
 // };
 
-
 function Login() {
   var csrftokenid = "";
   // let navigate = useNavigate();
 
-
   // const submit=(e)=>{
-  //   e.preventDefault(); 
+  //   e.preventDefault();
   //   navigate('/home')
   // }
 
@@ -43,27 +41,24 @@ function Login() {
   //   dispatch({ type: "POST_UserLogin", payload });
   // };
   const config = {
-    url: 'http://127.0.0.1:8000/api/csrf_token',  // 只有此為必需
-    method: 'get', // 大小寫皆可
+    url: "http://127.0.0.1:8000/api/csrf_token", // 只有此為必需
+    method: "get", // 大小寫皆可
     headers: {
-      'Accept': 'text/html',
+      Accept: "text/html",
       // 'Content-Type': 'text/html; charset=utf-8',
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin':'*',
-      'Access-Control-Allow-Headers':'*',
-      'X-Requested-With':'XMLHttpRequest',
-      'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "*",
+      "X-Requested-With": "XMLHttpRequest",
+      "X-CSRF-TOKEN": document.querySelector('meta[name="csrftoken"]'),
     },
-    responseType: 'json', // 伺服器回應的數據類型
-
-  }
+    responseType: "json", // 伺服器回應的數據類型
+  };
   try {
-    axios(config)
-    .then(res =>{
-      console.log(res,"測試",res.data.csrftoken)
-    },[]);   
-  }
-  catch (error) {
+    axios(config).then((res) => {
+      console.log(res, "測試", res.data.csrftoken);
+    }, []);
+  } catch (error) {
     throw error;
     // Do  with error
   }
@@ -71,32 +66,29 @@ function Login() {
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    console.log('Success:', values);
+    console.log("Success:", values);
     const config = {
-      url: 'http://127.0.0.1:8000/login',  // 只有此為必需
-      method: 'post', // 大小寫皆可
+      url: "http://127.0.0.1:8000/login", // 只有此為必需
+      method: "post", // 大小寫皆可
       headers: {
-        'Accept': 'text/html',
+        Accept: "text/html",
         // 'Content-Type': 'text/html; charset=utf-8',
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
-        'X-CSRF-TOKEN': csrftokenid
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRF-TOKEN": csrftokenid,
       },
       data: values,
       // responseType: 'json' // 伺服器回應的數據類型
-    }
+    };
     try {
-      axios(config)
-      .then(res =>{
-        console.log(res,"測試格線",res.status)
-        if(res.status!=false)
-          navigate('/');
+      axios(config).then((res) => {
+        console.log(res, "測試格線", res.status);
+        if (res.status != false) navigate("/");
         // setPosts(values)
-      },[]);   
-    }
-    catch (error) {
+      }, []);
+    } catch (error) {
       throw error;
       // Do  with error
     }
@@ -106,7 +98,7 @@ function Login() {
   // );
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
 
   const [posts, setPosts] = useState([]);
@@ -153,16 +145,22 @@ function Login() {
   return (
     <div id="login">
       <Row className="container">
-        <Col xs={22} md={24} className="login">
-          <Row className="bannerBlock1" type="flex" justify="center" align="middle">
-            <Col xs={0} sm={0} md={14}>
-              <div className="imgBlock">
+        <Col xl={24} lg={24} md={24} sm={24} xs={24} className="login">
+          <Row
+            className="bannerBlock1"
+            type="flex"
+            justify="center"
+            align="middle"
+          >
+            <Col xl={14} md={12} sm={24} xs={24} >
+              <div className="imgBlock">  
+                <div className="imgTop"></div>
                 <img src={images.bg1} alt="bg-1" />
-
+                
               </div>
             </Col>
             <Col xs={24} sm={24} md={10} className="titleBlock">
-              <Row align="center">
+              <Row  align="center">
                 <Col sm={24} md={14} >
                   <Form
                     name="basic"
@@ -185,33 +183,33 @@ function Login() {
                     <hr></hr>
 
                     <Form.Item
-                      label="email"
-                      name="email"
-                      rules={[
-                        {
-                          required: true,
-                          message: 'Please input your username!',
-                        },
-                      ]}
-                    >
+                        label="email"
+                        name="email"
+                        rules={[
+                          {
+                            required: true,
+                            message: 'Please input your username!',
+                          },
+                        ]}
+                      >
                       <Input size="large" placeholder="輸入帳號" prefix={<UserOutlined />} />
                     </Form.Item>
                     <Form.Item
-                      label="password"
-                      name="password"
-                      rules={[
-                        {
-                          required: true,
-                          message: 'Please input your username!',
-                        },
-                      ]}
-                    >
-                      <Input.Password size="large" placeholder="輸入密碼" prefix={<AiFillLock />} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)} />
+                        label="password"
+                        name="password"
+                        rules={[
+                          {
+                            required: true,
+                            message: 'Please input your username!',
+                          },
+                        ]}
+                      >
+                      <Input.Password size="large" placeholder="輸入密碼" prefix={<AiFillLock />} iconRender={(visible) => (visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />)}/>
                     </Form.Item>
                     <Form.Item
                       className='loginbtndiv'
-                      wrapperCol={{ span: 24, }}
-                    // onClick={submit}
+                      wrapperCol={{span: 24,}}
+                      // onClick={submit}
                     >
                       <ButtonComponent
                         text="登入"

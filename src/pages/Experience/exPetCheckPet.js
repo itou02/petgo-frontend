@@ -62,7 +62,7 @@ function ExPetCheckPet() {
     // fetch_data()
 
     const config = {
-      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/6',  // 只有此為必需
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/{id}',  // 只有此為必需
       method: 'get', // 大小寫皆可
       headers: {
         'Content-Type': 'application/json',
@@ -76,6 +76,7 @@ function ExPetCheckPet() {
     try {
       axios(config)
         .then(res => {
+          console.log(res.data)
           setDetails(res.data.detail)
           setComments(res.data.comments)
         }, []);
@@ -144,7 +145,7 @@ function ExPetCheckPet() {
 
                             <Col span={24}   className="DetailTextWarp">
                               <div className="DetailText">
-                                飼養期間：2016/08~2016/08
+                                體驗期間：2016/08~2016/08
                               </div>
                             </Col>
                           </Row>

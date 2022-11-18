@@ -462,18 +462,7 @@ function AdoptionAlready() {
 
           <Form className="searchFrom">
             <Row type="flex" justify="start" align="middle">
-              <Col
-                className="searchFromItem"
-                xl={4}
-                lg={5}
-                md={7}
-                sm={12}
-                xs={12}
-              >
-                <Form.Item label="日期" name="date" colon={false}>
-                  <DatePicker type={"date"} placeholder="請選擇日期" />
-                </Form.Item>
-              </Col>
+          
 
               <Col
                 className="searchFromItem"

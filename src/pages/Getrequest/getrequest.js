@@ -1,5 +1,7 @@
 import React from "react";
 import ButtonComponent from "../../components/button/button";
+import ButtonDelete from "../../components/button/ButtonDelete";
+import ButtonAdd from "../../components/button/ButtonAdd";
 import { Row, Col } from "antd";
 import images from "../../config/images";
 import "./getrequest.less";
@@ -85,22 +87,22 @@ function Comment() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                          <a href="/Record/Experience/detailed">
-                            <ButtonComponent
+                         
+                            <ButtonAdd
                               text="接受請求"
                               size="large"
                               name="accept-request"
                             />
-                          </a>
+                         
                         </Col>
                         <Col className="ListButton">
-                          <a href="/Record/Experience/detailed">
-                            <ButtonComponent
+                          
+                            <ButtonDelete
                               text="取消請求"
                               size="large"
                               name="cancel-request"
                             />
-                          </a>
+                          
                         </Col>
                         <Col className="ListButton">
                           <a href="/Record/Experience/detailed">
