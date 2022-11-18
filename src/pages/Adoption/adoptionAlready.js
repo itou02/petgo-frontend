@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Col, Row, message, Space, Card, DatePicker, Select, Form } from "antd";
 import ButtonComponent from "../../components/button/button";
 import CardComponent from "../../components/card/card";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import { GiPlainCircle } from "react-icons/gi";
+import axios from 'axios';
 import "./adoptionAlready.less";
 import images from "../../config/images";
 
@@ -444,6 +445,42 @@ function AdoptionAlready() {
   const onSecondCityChange = (value) => {
     setSecondCity(value);
   };
+
+  const baseURL='http://127.0.0.1:8000/';
+
+  const [sharecards, setSharecards] = useState([])
+  useEffect(() => {
+    const config = {
+      url: 'http://127.0.0.1:8000/api/share-already-login',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res.data.shared)
+          setSharecards(res.data.shared)
+          // console.log(res.data.varieties)
+          // setVarieties(res.data.varieties)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+
+
+
+
+
   return (
     <div id="adoption">
       <Row className="exFilter">
@@ -549,46 +586,49 @@ function AdoptionAlready() {
       </Row>
 
       <Row justify="start">
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/share-already/share-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-            light={
-              <div>
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-              </div>
-            }
-          />
-        </Col>
+        {sharecards.map((sharecard,index)=>{
+          <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
+            <CardComponent
+              name="card .ant-card-body"
+              img={<img alt="pet" src={baseURL+sharecard.img} />}
+              // img={<img alt="pet" src={images.expet}}
+              title={<h1>{sharecard.name}</h1>}
+              icon={
+                <h1>
+                  <EnvironmentOutlined />
+                  台中市，大里區
+                </h1>
+              }
+              text={
+                <div>
+                  <h4>品種：{sharecard.variety}</h4>
+                  <h4>年齡：{sharecard.age}</h4>
+                  <h4>體型：大型</h4>
+                  <h4>性別：{sharecard.sex}</h4>
+                  <h4>體驗日期:</h4>
+                  <h4>2022/06/12 - 2022/06/30</h4>
+                </div>
+              }
+              btn={
+                <a href="/share-already/share-pet-detail">
+                  <ButtonComponent
+                    text="查看"
+                    name="exPetCheckBtn"
+                    handleSubmit={check}
+                  />
+                </a>
+              }
+              light={
+                <div>
+                  <GiPlainCircle className="lightUp" />
+                  <GiPlainCircle className="lightUp" />
+                  <GiPlainCircle className="lightUp" />
+                </div>
+              }
+            />
+          </Col>
+        })}
+        
         <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
           <CardComponent
             name="card .ant-card-body"

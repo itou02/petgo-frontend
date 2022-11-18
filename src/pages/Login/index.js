@@ -14,7 +14,8 @@ import ButtonComponent from "../../components/button/button";
 import { AiFillLock } from "react-icons/ai";
 import images from "../../config/images";
 import { useNavigate } from "react-router-dom";
-import "./index.less";
+import './index.less';
+import { useRef } from 'react';
 // const userRequest = axios.create({
 //   baseURL: 'http://localhost:8000/login',
 //   headers: { 'Content-Type': 'application/json',
@@ -34,6 +35,7 @@ import "./index.less";
 
 function Login() {
   var csrftokenid = "";
+  
   // let navigate = useNavigate();
 
   // const submit=(e)=>{
@@ -70,26 +72,35 @@ function Login() {
   const navigate = useNavigate();
 
   const onFinish = (values) => {
-    console.log("Success:", values);
+    console.log('Success:', values);
+    // localStorage.setItem('userToken');
+
     const config = {
-      url: "http://127.0.0.1:8000/api/login", // 只有此為必需
-      method: "post", // 大小寫皆可
+
+      url: 'http://127.0.0.1:8000/api/login',  // 只有此為必需
+      method: 'post', // 大小寫皆可
       headers: {
         Accept: "text/html",
         // 'Content-Type': 'text/html; charset=utf-8',
-        "Content-Type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
-        "X-Requested-With": "XMLHttpRequest",
-        "X-CSRF-TOKEN": csrftokenid,
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Headers':'*',
+        'X-Requested-With':'XMLHttpRequest',
+        // 'Authorization':`bearer ${token}`,
+        'X-CSRF-TOKEN': csrftokenid
       },
       data: values,
       // responseType: 'json' // 伺服器回應的數據類型
     };
     try {
-      axios(config).then((res) => {
-        console.log(res, "測試格線", res.status);
-        if (res.status != false) navigate("/");
+      axios(config)
+      .then(res =>{
+        console.log(res,"測試格線",res.status)
+        localStorage.setItem('token',res.data.userToken);
+        // const token=localStorage.getItem('token');
+
+        if(res.status!=false)
+          navigate('/');
         // setPosts(values)
       }, []);
     } catch (error) {
