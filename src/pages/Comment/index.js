@@ -18,32 +18,33 @@ const contentStyle = {
 };
 
 function Comment() {
-  const [posts, setPosts] = useState([]);
+  const [comments, setComments] = useState([]);
   React.useEffect(() => {
     // fetch_data()
-
+    const token=localStorage.getItem('token');
     const config = {
-      url: "http://127.0.0.1:8000/api/mycomment", // 只有此為必需
+      url: "http://127.0.0.1:8000/api/comment", // 只有此為必需
       method: "get", // 大小寫皆可
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "*",
         "X-Requested-With": "XMLHttpRequest",
+        'userToken':`${token}`
       },
       responseType: "json", // 伺服器回應的數據類型
     };
     try {
       axios(config).then((res) => {
-        console.log(res);
-        setPosts(res);
+        console.log(res.data.comment);
+        setComments(res.data.comment);
       }, []);
     } catch (error) {
       throw error;
       // Do  with error
     }
   }, []);
-  console.log("posts=>", posts);
+  console.log("comments=>", comments);
   return (
     <div id="Comment">
       <Row justify="center" align="center" className="container">
@@ -53,50 +54,32 @@ function Comment() {
           </div>
           <Row className="CommentlistrowWarp">
             <Col lg={24} md={24} sm={24} xs={24}>
-              <Row className="Commentlistshow">
-                <Col lg={18} md={20} sm={22} xs={24}>
-                  <Row className="commentary">
-                    <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                      <img src={images.bb} />
-                    </Col>
-
-                    <Col xl={19} md={18} sm={16} xs={16}>
-                      <Row className="trimPeopleComm">
-                        <Col span={24} className="peopleComm">
-                          <h2>白婷鈺</h2>
-                          <hr />
-                          <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+              {comments.map((comment,index)=>{
+                return(
+                  <Row className="Commentlistshow" key={index}>
+                    <Col lg={18} md={20} sm={22} xs={24}>
+                      <Row className="commentary">
+                        <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+                          <img src={comment.img} />
                         </Col>
-                        <Col span={24} className="commDate">
-                          <span>2022/06/16</span>
+
+                        <Col xl={19} md={18} sm={16} xs={16}>
+                          <Row className="trimPeopleComm">
+                            <Col span={24} className="peopleComm">
+                              <h2>{comment.name}</h2>
+                              <hr />
+                              <p>{comment.comment}</p>
+                            </Col>
+                            <Col span={24} className="commDate">
+                              <span>{comment.updated_at}</span>
+                            </Col>
+                          </Row>
                         </Col>
                       </Row>
                     </Col>
                   </Row>
-                </Col>
-              </Row>
-              <Row className="Commentlistshow">
-                <Col lg={18} md={20} sm={22} xs={24}>
-                  <Row className="commentary">
-                    <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                      <img src={images.bb} />
-                    </Col>
-
-                    <Col xl={19} md={18} sm={16} xs={16}>
-                      <Row className="trimPeopleComm">
-                        <Col span={24} className="peopleComm">
-                          <h2>白婷鈺</h2>
-                          <hr />
-                          <p>牠很好帶又乖乖的，個性溫馴可愛</p>
-                        </Col>
-                        <Col span={24} className="commDate">
-                          <span>2022/06/16</span>
-                        </Col>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
+                );
+              })}
             </Col>
           </Row>
         </Col>

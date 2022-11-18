@@ -527,7 +527,7 @@ function MemberPage() {
     //   },
     //   (err) => Promise.reject(err),
     // );
-    
+    const token=localStorage.getItem('token');
     const config = {
       url: 'http://127.0.0.1:8000/api/member',  // 只有此為必需
       method: 'get', // 大小寫皆可
@@ -536,12 +536,14 @@ function MemberPage() {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
         'X-Requested-With': 'XMLHttpRequest',
+        'userToken':`${token}`
       },
       responseType: 'json', // 伺服器回應的數據類型
     }
     try {
       axios(config)
         .then(res => {
+          
           console.log(res)
           setPosts(res)
         }, []);
@@ -730,7 +732,7 @@ function MemberPage() {
                     md: 22,
                     xs: 24,
                   }}
-                  label="Area"
+                  label="地區"
                   name="Area"
                   rules={[
                     {
@@ -760,7 +762,7 @@ function MemberPage() {
             <Row className="FormItemWarp">
               <Col span={24}>
                 <Form.Item
-                  label="email"
+                  label="電子郵件"
                   name="email"
                   rules={[
                     {
@@ -776,7 +778,7 @@ function MemberPage() {
               <Col span={18}>
                 <Form.Item
                   wrapperCol={{ md: 22 }}
-                  label="password"
+                  label="密碼"
                   name="password"
                   rules={[
                     {

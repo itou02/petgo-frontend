@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Row, message } from "antd";
 import ButtonComponent from "../../components/button/button";
+import ButtonDelete from "../../components/button/ButtonDelete";
 import "./owner.less";
 import images from "../../config/images";
 
@@ -108,13 +109,13 @@ function Owner() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                          <a href="/Record/Experience/detailed">
-                            <ButtonComponent
+                          
+                            <ButtonDelete
                               text="取消請求"
                               size="large"
                               name="cancel-request"
                             />
-                          </a>
+                          
                         </Col>
                         <Col className="ListButton">
                           <a href="/Record/Experience/detailed">

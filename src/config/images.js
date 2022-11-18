@@ -37,4 +37,5 @@ const images = {
   bb: require("../assets/images/bb.png"),
 };
 
+
 export default images;

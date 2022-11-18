@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonComponent from "../../components/button/button";
+import ButtonDelete from "../../components/button/ButtonDelete";
 import { Row, Col } from "antd";
 import images from "../../config/images";
 import "./sendrequest.less";
@@ -92,13 +93,14 @@ function Comment() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                          <a href="">
-                            <ButtonComponent
+                          
+                            <ButtonDelete
                               text="取消請求"
                               size="large"
                               name="cancel-request"
+                              
                             />
-                          </a>
+                          
                         </Col>
                         <Col className="ListButton">
                           <a href="sent-request/share-pet-detail">
@@ -177,7 +179,7 @@ function Comment() {
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
                           <a href="">
-                            <ButtonComponent
+                            <ButtonDelete
                               text="取消請求"
                               size="large"
                               name="cancel-request"

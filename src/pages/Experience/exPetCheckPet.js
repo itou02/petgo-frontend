@@ -1,4 +1,5 @@
-import React, { useState,createContext } from 'react';
+import React, { useState, createContext } from 'react';
+import { useParams } from 'react-router-dom'; //使用useParam傳參數
 import { Col,Row ,message,Space,Modal} from "antd";
 import axios from 'axios';
 import ButtonComponent from "../../components/button/button";
@@ -54,21 +55,23 @@ function ExPetCheckPet() {
         onOk() {},
       });
   };
-
+  let { id } = useParams();
 
   const [details, setDetails] = useState([])
   const [comments, setComments] = useState([])
   React.useEffect(() => {
     // fetch_data()
-
+    const token=localStorage.getItem('token');
     const config = {
-      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/6',  // 只有此為必需
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/'+ id,  // 只有此為必需
       method: 'get', // 大小寫皆可
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
         'X-Requested-With': 'XMLHttpRequest',
+        'userToken':`${token}`
+
       },
       responseType: 'json', // 伺服器回應的數據類型
     }
@@ -76,6 +79,7 @@ function ExPetCheckPet() {
     try {
       axios(config)
         .then(res => {
+          console.log(res.data)
           setDetails(res.data.detail)
           setComments(res.data.comments)
         }, []);
@@ -90,8 +94,11 @@ function ExPetCheckPet() {
 
     return (
         <div id="ExPetCheckPet">
-        <Row  type="flex" justify="center" align="middle">
-            <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22} >
+          
+            <Row  type="flex" justify="center" align="middle">
+            {details.map((detail,index)=>{
+              return(
+            <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22} key={index}>
                 <Row className="PetListDetail" type="flex" justify="center">
                     <Col>
                       <Row type="flex" justify="center" align="top" >
@@ -99,7 +106,7 @@ function ExPetCheckPet() {
                           <div className="DetailedJmimgWarp">
                           <img
                             className="DetailedJmimg"
-                            src={baseURL+details.img}
+                            src={baseURL+detail.img}
                           /></div>
                         </Col>
 
@@ -113,13 +120,13 @@ function ExPetCheckPet() {
                               className="DetailTextWarp"
                             >
                               <div className="DetailText">
-                                姓名：{details.name}
+                                姓名：{detail.name}
                               </div>
                               <div className="DetailText">
-                                品種：拉不拉多
+                                品種：{detail.variety}
                               </div>
                               <div className="DetailText">
-                                體型：{details.size}
+                                體型：{detail.size}
                               </div>
                               
                             </Col>
@@ -131,20 +138,20 @@ function ExPetCheckPet() {
                               className="DetailTextWarp"
                             >
                                 <div className="DetailText">
-                                年齡：5
+                                年齡：{detail.age}
                               </div>
                           
                               <div className="DetailText">
-                                性別：女
+                                性別：{detail.sex}
                               </div>
                               <div className="DetailText">
-                                絕育狀況：已結紮
+                                絕育狀況：{detail.ligation}
                               </div>
                             </Col>
 
                             <Col span={24}   className="DetailTextWarp">
                               <div className="DetailText">
-                                飼養期間：2016/08~2016/08
+                                體驗期間：{detail.start_date}~{detail.end_date}
                               </div>
                             </Col>
                           </Row>
@@ -157,8 +164,7 @@ function ExPetCheckPet() {
                               xs={22} >
                             <div className="DetailTextTitle">個性</div>
                             <hr></hr>
-                            <p className="DetailText">害羞，內向。是個小公主
-                              同時也是個吃貨，每次吃完都嫌不夠</p>
+                            <p className="DetailText">{detail.intro}</p>
                         </Col>
                         <Col xl={10}
                               md={10}
@@ -166,7 +172,7 @@ function ExPetCheckPet() {
                               xs={22} >
                             <div className="DetailTextTitle">提醒</div>
                             <hr></hr>
-                            <p className="DetailText">運動量很大也需要大量的運動</p>
+                            <p className="DetailText">{detail.remind}</p>
                         </Col>
                       </Row>
 
@@ -177,7 +183,7 @@ function ExPetCheckPet() {
                               xs={22} >
                             <div className="DetailTextTitle">尋找體驗者的原因</div>
                             <hr></hr>
-                            <p className="DetailText">那幾天要去玩，希望有個愛狗狗的人可以帶帶</p>
+                            <p className="DetailText">{detail.reason}</p>
                         </Col>
                         <Col xl={10}
                               md={10}
@@ -185,13 +191,16 @@ function ExPetCheckPet() {
                               xs={22} >
                             <div className="DetailTextTitle">體驗需求</div>
                             <hr></hr>
-                            <p className="DetailText">住附近，有耐心</p>
+                            <p className="DetailText">{detail.need}</p>
                         </Col>
                       </Row>
                     </Col>
                 </Row>
               </Col>
+              );
+              })}
             </Row>
+          
 
 
             <Row justify="center">

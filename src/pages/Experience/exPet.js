@@ -616,7 +616,7 @@ function ExPet() {
                   </div>
                 }
                 btn={
-                  <a href="/Experience/experiencer-illustrate/card/ex-pet-detail/{{post.id}}">
+                  <a href={"/experience/experiencer-illustrate/card/ex-pet-detail/"+ex.id}>
                     <ButtonComponent
                       text="查看"
                       name="exPetCheckBtn"
