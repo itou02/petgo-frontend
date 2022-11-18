@@ -16,28 +16,31 @@ function ExperienceIllustratePage() {
               <p className="title">體驗者說明</p>
               <Row type="flex" justify="center">
                 <Col md={18} sm={22} xs={22} className="ContentBody">
-                  <p>1. 邊邊是漢堡神偷</p>
-                  <p>2. 芋頭好可愛</p>
-                  <p>3. 阿金也很可愛</p>
-                  <p>4. 不要亂抓小孩</p>
-                  <p>5. 不要騙人</p>
-                  <p>6. 不可以打人</p>
-                  <p>7. 不可以打狗狗</p>
-                  <p>8. 不可以強迫貓咪做不喜歡的事</p>
-                  <p>9. 違規要付婷鈺團隊500萬美金</p>
-                  <p>10. 你要看完上面那些 不管怎樣都要同意</p>
+                  <p>請詳細查閱以下內容</p>
+                  <p>
+                    一、媒合過程中任何人都不得對他人進行騷擾、還有言語不雅等情況
+                  </p>
+                  <p>　　發生，若遭到檢舉則直接封鎖。</p>
+                  <p>二、本人需年滿18歲以上才能進入</p>
+                  <p>三、體驗期間不能對寵物進行暴力、毆打之行為</p>
+                  <p>四、體驗期間只能餵食飼主提供的飼料、點心等</p>
+                  <p>五、體驗期間如果寵物要洗澡，需使用飼主提供的盥洗用具</p>
+                  <p>六、體驗期間寵物如有不適，請立刻通知飼主</p>
+                  <p>
+                    七、體驗期間寵物如有什麼意外請私下處理，本平台不提供任何責任
+                  </p>
                 </Col>
               </Row>
             </Col>
           </Row>
           <Row type="flex" justify="center">
-          <a href="/Experience/experiencer-illustrate/card">
-                        <ButtonComponent
-                            text="前往體驗"
-                            size="large"
-                            name="gotoexperence "
-                        />
-                    </a>
+            <a href="/Experience/experiencer-illustrate/card">
+              <ButtonComponent
+                text="前往體驗"
+                size="large"
+                name="gotoexperence "
+              />
+            </a>
           </Row>
         </Col>
       </Row>

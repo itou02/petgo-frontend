@@ -72,7 +72,7 @@ function Login() {
   const onFinish = (values) => {
     console.log("Success:", values);
     const config = {
-      url: "http://127.0.0.1:8000/login", // 只有此為必需
+      url: "http://127.0.0.1:8000/api/login", // 只有此為必需
       method: "post", // 大小寫皆可
       headers: {
         Accept: "text/html",
