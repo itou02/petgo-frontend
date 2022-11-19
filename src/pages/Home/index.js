@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Carousel } from 'antd';
@@ -21,8 +20,8 @@ const contentStyle = {
   textAlign: 'center',
   background: '#364d79',
 };
-console.log('Home.index進入');
 
+console.log('Home.index進入');
 function Home(props) {
   console.log('Home.index進入內部');
   // useEffect(() =>{
@@ -143,22 +142,23 @@ function Home(props) {
   //     // Do  with error
   //   }
   // }
-  
-    
+
+
 
   // this.state = {
   //     posts: [],
   //     DataisLoaded: false
   // };
-  const baseURL='http://127.0.0.1:8000/';
+  const baseURL = 'http://127.0.0.1:8000/';
 
   const [posts, setPosts] = useState([])
 
 
   React.useEffect(() => {
     // fetch_data()
-
+    const token = localStorage.getItem('token');
     const config = {
+
       url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
       method: 'get', // 大小寫皆可
       headers: {
@@ -166,6 +166,7 @@ function Home(props) {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
         'X-Requested-With': 'XMLHttpRequest',
+        'userToken': `${token}`
       },
       responseType: 'json', // 伺服器回應的數據類型
     }
@@ -244,7 +245,7 @@ function Home(props) {
                 <span><h1>寵物供養是一個基於......</h1></span>
                 <a href="Share-already">
                   <ButtonComponent
-                    text="前往共養"
+                    text="前往供養"
                     size="large"
                     name="together"
                   />
@@ -339,7 +340,7 @@ function Home(props) {
                       <Row className="bannerBlock">
                         <Col span={16} className="pictureBlock">
                           <div className="imgBlock">
-                            <img src={baseURL+post.img} />
+                            <img src={baseURL + post.img} />
                           </div>
                         </Col>
                         <Col span={16} className="titleBlock">
@@ -365,7 +366,34 @@ function Home(props) {
                     </Col>
                   );
                 })}
+                <Col className='Commentcard'>
+                  <Row className="bannerBlock">
+                    <Col span={16} className="pictureBlock">
+                      <div className="imgBlock">
+                        <img src={images.jm} />
+                      </div>
+                    </Col>
+                    <Col span={16} className="titleBlock">
+                      <span className='nametotal'>
+                        <h1 className='master'>
+                          <strong>幼幼</strong>
+                        </h1>
+                        <h1 className='petname'>
+                          <strong>寵物名：吉米</strong>
+                        </h1>
+                      </span>
+                      <span className='introduce'>
+                        {/* 我是評論我是評論我是評論我是評論我是評論我是評論我是評論我是評論 */}
 
+                        {posts.name}
+
+                      </span>
+                    </Col>
+                    <Col span={16} className="area">
+                      <span className='icon'><EnvironmentOutlined /></span><span>台中，大里</span>
+                    </Col>
+                  </Row>
+                </Col>
                 <Col className='Commentcard'>
                   <Row className="bannerBlock">
                     <Col span={16} className="pictureBlock">
@@ -501,4 +529,3 @@ export default Home;
 
 //   )
 // }
-
