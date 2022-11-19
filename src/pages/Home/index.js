@@ -18,8 +18,8 @@ const contentStyle = {
   textAlign: "center",
   background: "#364d79",
 };
+console.log("Home.index進入");
 
-console.log('Home.index進入');
 function Home(props) {
   console.log("Home.index進入內部");
   // useEffect(() =>{
@@ -146,17 +146,16 @@ function Home(props) {
 
   React.useEffect(() => {
     // fetch_data()
-    const token=localStorage.getItem('token');
+    const token = localStorage.getItem("token");
     const config = {
-      
-      url: 'http://127.0.0.1:8000/api/',  // 只有此為必需
-      method: 'get', // 大小寫皆可
-      headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
-        'userToken':`${token}`
+      url: "http://127.0.0.1:8000/api/", // 只有此為必需
+      method: "get", // 大小寫皆可
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "X-Requested-With": "XMLHttpRequest",
+        userToken: `${token}`,
       },
       responseType: "json", // 伺服器回應的數據類型
     };
@@ -218,9 +217,7 @@ function Home(props) {
                 </div>
                 <span>
                   <h2>
-                    
-                    飼主體驗主要分為兩大專區，體驗者專區是讓使用者體驗當期間性的飼主，可以讓
-                    猶豫養寵物、或是有其他需求的使用者藉此享受養寵物的樂趣，也能評估往後養寵物的意願
+                    飼主體驗主要分為兩大專區，體驗者專區是讓使用者體驗當期間性的飼主，可以讓猶豫養寵物、或是有其他需求的使用者藉此享受養寵物的樂趣，也能評估往後養寵物的意願。
                   </h2>
                 </span>
                 <a href="Experience">
@@ -234,12 +231,13 @@ function Home(props) {
                   </h1>
                 </div>
                 <span>
-                  <h2>寵物共養是專為想飼養寵物的人，但一個人飼養上可能會有金錢或時間的負擔時，透過
-                    共養可以找到也有興趣人一起飼養一隻寵物，這樣下就可以一起分擔，且寵物在任何時間都可被照顧到</h2>
+                  <h2>
+                    寵物共養提供給想繼續飼養寵物，但一個人飼養上可能會有金錢或時間的負擔時，可以找到也有興趣的人一起飼養一隻寵物，這樣就可以一起分擔，且寵物在任何時間都可被照顧到。
+                  </h2>
                 </span>
                 <a href="Share-already">
                   <ButtonComponent
-                    text="前往供養"
+                    text="前往共養"
                     size="large"
                     name="together"
                   />
@@ -247,46 +245,43 @@ function Home(props) {
               </Col>
             </Row>
           </div>
+          <Col span={24} className="title">
+            <h1>飼主體驗評論</h1>
+          </Col>
           <div className="Comment">
-            <div className="site-card-wrapper">
-              <Slider {...settings}>
-             
-                {posts.map((post, index) => {
-                  return (
-                    <Col className="Commentcard" key={index}>
-                      <Row className="bannerBlock">
-                        <Col span={16} className="pictureBlock">
-                          <div className="imgBlock">
-                            <img src={baseURL + post.img} />
-                          </div>
-                        </Col>
-                        <Col span={16} className="titleBlock">
-                          <span className="nametotal">
-                            <h1 className="master">
-                              {/* <strong>{post.userName}</strong> */}
-                            </h1>
-                            <h1 className="petname">
-                              <strong>{post.petName}</strong>
-                            </h1>
-                          </span>
-                          <span className="introduce">
-                            <div>{post.comment}</div>
-                            <div className="userName">--{post.userName}</div>
-                          </span>
-                        </Col>
-                        <Col span={16} className="area">
-                          <span className="icon">
+            <Slider {...settings}>
+              {posts.map((post, index) => {
+                return (
+                  <Col className="Commentcard" key={index}>
+                    <Row className="bannerBlock">
+                      <Col span={16} className="pictureBlock">
+                        <div className="imgBlock">
+                          <img src={baseURL + post.img} />
+                        </div>
+                      </Col>
+                      <Col span={16} className="titleBlock">
+                        <span className="nametotal">
+                          <h1 className="petname">
+                            <strong>{post.petName}</strong>
+                          </h1>
+                          <div className="area icon">
                             <EnvironmentOutlined />
-                          </span>
-                          <span>{post.locations}</span>
-                        </Col>
-                      </Row>
-                    </Col>
-                  );
-                })}
-           
-              </Slider>
-            </div>
+                            <span>{post.locations}</span>
+                          </div>
+                        </span>
+                        <span className="introduce">
+                          <div style={{ textAlign: "justify" }}>
+                            {post.comment}
+                          </div>
+                          <div className="userName">— {post.userName}</div>
+                        </span>
+                      </Col>
+                      <Col span={16} className="area"></Col>
+                    </Row>
+                  </Col>
+                );
+              })}
+            </Slider>
           </div>
           <div className="Idea">
             <Row>
@@ -304,9 +299,9 @@ function Home(props) {
                     <span level={windowSize.width < 576 ? 4 : 2}>
                       <h1>
                         <strong>
-                        本平台提供飼主體驗與寵物共養兩大功能，
-                        幫助想養寵物的人提供完善的媒合，達成雙方的
-                        進而達到降低棄養的機率
+                          本平台提供飼主體驗與寵物共養兩大功能，
+                          幫助想養寵物的人提供完善的媒合，達成雙方的
+                          進而達到降低棄養的機率
                         </strong>
                       </h1>
                     </span>
