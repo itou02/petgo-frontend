@@ -508,10 +508,11 @@ function MemberPage() {
       </div>
     </div>
   );
+
   const [posts, setPosts] = useState([])
 
-
   React.useEffect(() => {
+
     // fetch_data()
     // const token='userToken';
     // axios.interceptors.request.use(
@@ -646,8 +647,8 @@ function MemberPage() {
                         },
                       ]}
                     >
-                      <Input />
-                    </Form.Item>
+                      <Input value={posts.name}/>
+                    </Form.Item >
                   </Col>
                   <Col lg={10} md={10} sm={8} xs={8}>
                     <Form.Item
