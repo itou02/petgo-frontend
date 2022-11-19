@@ -210,28 +210,32 @@ function ExPetCheckPet() {
                     <hr />
                 </Col>
             </Row>
-            <Row justify="center"  className="captionBottom">
-            <Col lg={14} md={18} sm={20} xs={22}>
-          <Row  className="commentary">
-            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.bb} />
-            </Col>
-
-            <Col xl={19} md={18} sm={16} xs={16} >
-              <Row className="trimPeopleComm">
-                <Col span={24} className="peopleComm">
-                  <h2>白婷鈺</h2>
-                  <hr />
-                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
-                </Col>
-                <Col span={24} className="commDate">
-                  <span>2022/06/16</span>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
+            {(comments.type)==undefined?<div className='undefined'><h1>目前尚無評論</h1></div>:(comments).map((comment, index) => {
+              return (
+                <Row justify="center"  className="captionBottom">
+                  <Col lg={14} md={18} sm={20} xs={22}>
+                    <Row  className="commentary">
+                      <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+                        <img src={images.bb} />
+                      </Col>
+                      <Col xl={19} md={18} sm={16} xs={16} >
+                        <Row className="trimPeopleComm">
+                          <Col span={24} className="peopleComm">
+                            <h2>白婷鈺</h2>
+                            <hr />
+                            <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                          </Col>
+                          <Col span={24} className="commDate">
+                            <span>2022/06/16</span>
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              );
+            })}
+            
 
 
             <Row justify="center" style={{marginbottom:'10%' }}>
