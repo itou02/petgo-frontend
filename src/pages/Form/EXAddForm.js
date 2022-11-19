@@ -477,11 +477,13 @@ function EXAddFormPage() {
                 </Row>
                 <Row justify="center">
                   <Col lg={6} md={8} sm={10} xs={10} className="formBtnWarp">
+                  <a href="/experience/owner-illustrate/post">
                     <ButtonComponent
                       text="送出"
                       size="large"
-                      name="gotoexperence "
+                      name="gotoexperence"
                     />
+                    </a>
                   </Col>
                 </Row>
               </Form>

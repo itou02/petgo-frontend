@@ -123,9 +123,7 @@ import {
                       </Col>
   
                       <Col span={24} className="DetailTextWarp">
-                        <div className="DetailText">
-                          飼養期間：2016/08~2016/08
-                        </div>
+                      
                         <div className="DetailText">
                         體驗期間：2016/08/20~2016/08/31
                         </div>
