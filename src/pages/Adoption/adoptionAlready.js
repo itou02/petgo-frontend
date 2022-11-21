@@ -604,7 +604,7 @@ function AdoptionAlready() {
                   </div>
                 }
                 btn={
-                  <a href={"/share-already/share-pet-detail/"+sharecard.pet_id}>
+                  <a href={"/share-already/share-pet-detail/"+sharecard.id}>
                     <ButtonComponent
                       text="查看"
                       name="exPetCheckBtn"

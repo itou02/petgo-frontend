@@ -57,6 +57,7 @@ function AdoptionCheckPet() {
     const [pets, setPets] = useState([])
     const [shareds, setShareds] = useState([])
     const [owners, setOwners] = useState([])
+    const [sharers, setSharers] = useState([])
 
     React.useEffect(() => {
       // fetch_data()
@@ -82,7 +83,7 @@ function AdoptionCheckPet() {
             setPets(res.data.pets)
             setShareds(res.data.shared)
             setOwners(res.data.main_sharer)
-
+            setSharers(res.data.sharer)
           }, []);
       }
       catch (error) {
@@ -93,6 +94,7 @@ function AdoptionCheckPet() {
     console.log('pets=>', pets);
     console.log('shareds=>', shareds);
     console.log('owners=>', owners);
+    console.log('sharers=>', sharers);
     
 
     return (
@@ -100,7 +102,7 @@ function AdoptionCheckPet() {
           <Row type="flex" justify="center" align="middle">
             {pets.map((pet,index)=>{
               return(
-                <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22} key="index">
+                <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22} key={index}>
                   <Row className="PetListDetail" type="flex" justify="center">
                     <Col>
                       <Row type="flex" justify="center" align="top">
@@ -220,7 +222,7 @@ function AdoptionCheckPet() {
                           </div>
                           <div className="leftPart">
                             <div className="sharePeopleItem">
-                              <p>地區：</p>
+                              <p>地區：{owner.location}</p>
                               <p>年齡：{owner.age}</p>
                               <p>性別：{owner.sex}</p>
                             </div>
@@ -240,6 +242,42 @@ function AdoptionCheckPet() {
                     </Col>
                   </Row>
                   );
+                  })}
+                  {(sharers.type)==undefined?"":(sharers).map((sharer, index) => {
+                    return (
+                      <Row className="commentary" key={index}>
+                        <Col xl={5} md={6} sm={8} xs={8} className="peopleImage" >
+                          <img src={baseURL+sharer.img} />
+                        </Col>
+                        <Col xl={19} md={18} sm={16} xs={16}>
+                          <Row justify="center" align="top" className="trimPeopleComm">
+                            <Col span={12} className="peopleComm">
+                              <div className="peopleCommShare">
+                                <h2>{sharer.name}</h2>
+                                <div className='PetCardLabel3'>{sharer.identity}</div>
+                              </div>
+                              <div className="leftPart">
+                                <div className="sharePeopleItem">
+                                  <p>地區：{sharer.location}</p>
+                                  <p>年齡：{sharer.age}</p>
+                                  <p>性別：{sharer.sex}</p>
+                                </div>
+                              </div>
+                            </Col>
+                            <Col span={12} className="peopleComm">
+                              <div className="rightPart">
+                                <h2>聯絡資訊</h2>
+                                <hr />
+                                <h3>
+                                  <img className="formLineImg" src={images.line} />
+                                  <p>ID：{sharer.line}</p>
+                                </h3>
+                              </div>
+                            </Col>                       
+                          </Row>
+                        </Col>
+                      </Row>
+                    );
                   })}
                 </Col>
               </Row>

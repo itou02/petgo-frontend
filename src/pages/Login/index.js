@@ -99,7 +99,7 @@ function Login() {
         localStorage.setItem('token',res.data.userToken);
         // const token=localStorage.getItem('token');
 
-        if(res.status!=false)
+        if(res.data.status!=false)
           navigate('/');
         // setPosts(values)
       }, []);
