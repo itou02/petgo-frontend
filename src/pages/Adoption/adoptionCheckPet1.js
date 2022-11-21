@@ -96,12 +96,6 @@ function AdoptionCheckPet() {
                       <div className="DetailText">絕育狀況：已結紮</div>
                     </Col>
 
-                    <Col span={24} className="DetailTextWarp">
-                      <div className="DetailText">
-                        飼養期間：2016/08~
-                      </div>
-                   
-                    </Col>
                   </Row>
                 </Col>
               </Row>
@@ -160,7 +154,7 @@ function AdoptionCheckPet() {
         <Col lg={14} md={18} sm={20} xs={22}>
           <Row className="commentary">
             <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.pepole1} />
+              <img src={images.pepole9} />
             </Col>
 
             <Col xl={19} md={18} sm={16} xs={16}>

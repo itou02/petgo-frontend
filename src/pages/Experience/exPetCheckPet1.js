@@ -1,10 +1,10 @@
-import React, { useState,createContext } from 'react';
-import {FacebookFilled} from '@ant-design/icons';
-import { BsLine } from "react-icons/bs";
+import React, { useState, createContext } from 'react';
+import { useParams } from 'react-router-dom'; //使用useParam傳參數
 import { Col,Row ,message,Space,Modal} from "antd";
+import axios from 'axios';
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
-import './adoptionCheckPet.less'
+import './exPetCheckPet.less'
 import images from "../../config/images";
 
 const ReachableContext = createContext(null);
@@ -13,47 +13,89 @@ const UnreachableContext = createContext(null);
 const config = {
     title: 'Use Hook!',
     content: (
-        <>
+      <>
         <ReachableContext.Consumer>{(name) => `Reachable: ${name}!`}</ReachableContext.Consumer>
         <br />
         <UnreachableContext.Consumer>{(name) => `Unreachable: ${name}!`}</UnreachableContext.Consumer>
-        </>
+      </>
     ),
   };
 
-/*共養專區-查看詳細寵物頁面*/
-function AdoptionCheckPet() {
+/*體驗者專區-查看按鈕的詳細寵物頁面*/
+function ExPetCheckPet() {
 
-    const [modal, contextHolder] = Modal.useModal();
+  const baseURL='http://127.0.0.1:8000/';
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modal, contextHolder] = Modal.useModal();
 
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const info = () => {
-        Modal.info({
-            title: 'This is a notification message',
-            content: (
-            <div>
-                <p>some messages...some messages...</p>
-                <p>some messages...some messages...</p>
-            </div>
-            ), 
-            onOk() {},
-        });
-    };
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const info = () => {
+      Modal.info({
+        title: 'This is a notification message',
+        content: (
+          <div>
+            <p>some messages...some messages...</p>
+            <p>some messages...some messages...</p>
+          </div>
+        ),
+    
+        onOk() {},
+      });
+  };
+  let { id } = useParams();
+
+  const [details, setDetails] = useState([])
+  const [comments, setComments] = useState([])
+  React.useEffect(() => {
+    // fetch_data()
+    const token=localStorage.getItem('token');
+    const config = {
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+        'userToken':`${token}`
+
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res.data)
+          setDetails(res.data.detail)
+          setComments(res.data.comments)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('details=>', details);
+  // console.log('comments=>', comments);
 
     return (
-        <div id="adoptionCheckPet">
-              <Row type="flex" justify="center" align="middle">
+        <div id="ExPetCheckPet">
+          
+          <Row type="flex" justify="center" align="middle">
         <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22}>
           <Row className="PetListDetail" type="flex" justify="center">
             <Col>
@@ -66,7 +108,7 @@ function AdoptionCheckPet() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.ex} />
+                    <img className="DetailedJmimg" src={images.jm} />
                   </div>
                 </Col>
 
@@ -79,9 +121,9 @@ function AdoptionCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：地瓜</div>
-                      <div className="DetailText">品種：貴賓狗</div>
-                      <div className="DetailText">體型：小型犬</div>
+                      <div className="DetailText">姓名：吉米</div>
+                      <div className="DetailText">品種：傑克羅素耿</div>
+                      <div className="DetailText">體型：中小型</div>
                     </Col>
                     <Col
                       xl={12}
@@ -91,16 +133,14 @@ function AdoptionCheckPet() {
                       className="DetailTextWarp"
                     >
                       <div className="DetailText">年齡：5</div>
-
-                      <div className="DetailText">性別：女</div>
-                      <div className="DetailText">絕育狀況：已結紮</div>
+                      <div className="DetailText">性別：男</div>
+                      <div className="DetailText">絕育狀況：未結紮</div>
                     </Col>
 
                     <Col span={24} className="DetailTextWarp">
                       <div className="DetailText">
-                        飼養期間：2016/08~
+                        體驗期間：2022/12/20~2022/12/27
                       </div>
-                   
                     </Col>
                   </Row>
                 </Col>
@@ -132,14 +172,14 @@ function AdoptionCheckPet() {
                 className="PetCardTextDetailbottom"
               >
                 <Col xl={10} md={10} sm={18} xs={22}>
-                  <div className="DetailTextTitle">尋找共養的原因</div>
+                  <div className="DetailTextTitle">尋找體驗者的原因</div>
                   <hr></hr>
                   <p className="DetailText">
                     那幾天要去玩，希望有個愛狗狗的人可以帶帶
                   </p>
                 </Col>
                 <Col xl={10} md={10} sm={18} xs={22}>
-                  <div className="DetailTextTitle">共養需求</div>
+                  <div className="DetailTextTitle">體驗需求</div>
                   <hr></hr>
                   <p className="DetailText">住附近，有耐心</p>
                 </Col>
@@ -150,9 +190,9 @@ function AdoptionCheckPet() {
       </Row>
 
       <Row justify="center">
-        <Col xl={7} md={10} sm={12} xs={14} className="caption">
+        <Col xl={5} md={5} sm={8} xs={10} className="caption">
           <hr />
-          <h1>共養人員</h1>
+          <h1>評論</h1>
           <hr />
         </Col>
       </Row>
@@ -160,58 +200,36 @@ function AdoptionCheckPet() {
         <Col lg={14} md={18} sm={20} xs={22}>
           <Row className="commentary">
             <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.pepole1} />
+              <img src={images.pepole9} />
             </Col>
 
             <Col xl={19} md={18} sm={16} xs={16}>
-              <Row justify="center" align="top" className="trimPeopleComm">
-                <Col span={12} className="peopleComm">
-                  <div className="peopleCommShare">
-                    <h2>蕭承佑</h2>
-                    <div className='PetCardLabel3'>主要飼主</div>
-                  </div>
-                  <div className="leftPart">
-                    <div className="sharePeopleItem">
-                      <p>地區：台中市大里區</p>
-                      <p>年齡：19</p>
-                      <p>性別：男</p>
-                    </div>
-                  </div>
+              <Row className="trimPeopleComm">
+                <Col span={24} className="peopleComm">
+                  <h2>蕭承佑</h2>
+                  <hr />
+                  <p>牠很好帶又乖乖的，個性溫馴可愛</p>
                 </Col>
-                <Col span={12} className="peopleComm">
-                  <div className="rightPart">
-                    <h2>聯絡資訊</h2>
-                    <hr />
-                    <h3>
-                      <img className="formLineImg" src={images.line} />
-                      <p>ID：098752666</p>
-                    </h3>
-                  </div>
+                <Col span={24} className="commDate">
+                  <span>2022/06/16</span> 
                 </Col>
-              
               </Row>
             </Col>
           </Row>
         </Col>
       </Row>
-      <Row justify="center">
-                <a href='/share-already/search-sharer-form'>
-                  <ButtonComponent
-                    type="primary"
-                    text="前往體驗"
-                    size="large"
-                    name="goToEx"
-                    // handleSubmit={info}
-                  />
-                </a>
-                
-                
-               
-                
-            </Row>
-      
+
+      <Row justify="center" style={{ marginbottom: "10%" }}>
+        <a href="/sent-request">
+        <ButtonComponent
+          text="返回"
+          size="large"
+          name="goToEx"
+          onClick="/Record/DoingShare/list"
+        /></a>
+      </Row>
         </div>
     );
 }
 
-export default AdoptionCheckPet;
+export default ExPetCheckPet;

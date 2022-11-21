@@ -43,7 +43,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.jm} />
+                          <img className="listPetJmimg" src={images.ex} />
                         </Col>
                         <Col
                           xxl={18}
@@ -56,7 +56,7 @@ function Comment() {
                         >
                           <Row align="middle">
                             <Col>
-                              <p className="PetCardName">吉米</p>
+                              <p className="PetCardName">地瓜</p>
                             </Col>
                             <Col>
                               <div className="PetCardLabel2">共養寵物</div>
@@ -103,7 +103,7 @@ function Comment() {
                           
                         </Col>
                         <Col className="ListButton">
-                          <a href="sent-request/share-pet-detail">
+                          <a href="sent-request/share-pet-detaii">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"
@@ -187,7 +187,7 @@ function Comment() {
                           </a>
                         </Col>
                         <Col className="ListButton">
-                          <a href="sent-request/ex-pet-detail">
+                          <a href="/sent-request/ex-pet-detaii">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"

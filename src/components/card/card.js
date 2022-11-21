@@ -9,9 +9,6 @@ function CardComponent(props) {
   return (
     <Card
       hoverable
-      // cover={<img alt="pet" src={images.expet} />}
-      // title={title}
-      // description={text}
       className={name}
       onClick={handleSubmit}
     >

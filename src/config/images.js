@@ -27,6 +27,7 @@ const images = {
   pet3: require("../assets/images/pet3.jpg"),
   pet4: require("../assets/images/pet4.jpg"),
   jm: require("../assets/images/jm.jpg"),
+  ex: require("../assets/images/ex-pet.jpg"),
 
   //Form
   line:require("../assets/images/line.png"),
@@ -36,6 +37,16 @@ const images = {
 
   /*人類頭貼*/
   bb: require("../assets/images/bb.png"),
+  pepole1: require("../assets/images/pepole1.jpg"),
+  pepole2: require("../assets/images/pepole2.jpg"),
+  pepole3: require("../assets/images/pepole3.jpg"),
+  pepole4: require("../assets/images/pepole4.jpg"),
+  pepole5: require("../assets/images/pepole5.jpg"),
+  pepole6: require("../assets/images/pepole6.jpg"),
+  pepole7: require("../assets/images/pepole7.jpg"),
+  pepole8: require("../assets/images/pepole8.jpg"),
+  pepole9: require("../assets/images/pepole9.jpg"),
+
 };
 
 
