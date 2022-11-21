@@ -108,7 +108,7 @@ function ExPetCheckPet() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.jm} />
+                    <img className="DetailedJmimg" src={images.ex1} />
                   </div>
                 </Col>
 
@@ -121,9 +121,9 @@ function ExPetCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：吉米</div>
-                      <div className="DetailText">品種：傑克羅素耿</div>
-                      <div className="DetailText">體型：中小型</div>
+                      <div className="DetailText">姓名：多多</div>
+                      <div className="DetailText">品種：哈瓦帝犬</div>
+                      <div className="DetailText">體型：小型</div>
                     </Col>
                     <Col
                       xl={12}
@@ -132,14 +132,14 @@ function ExPetCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">年齡：5</div>
+                      <div className="DetailText">年齡：3</div>
                       <div className="DetailText">性別：男</div>
                       <div className="DetailText">絕育狀況：未結紮</div>
                     </Col>
 
                     <Col span={24} className="DetailTextWarp">
                       <div className="DetailText">
-                        體驗期間：2022/12/20~2022/12/27
+                        體驗期間：2022-12-09 ～ 2022-12-12
                       </div>
                     </Col>
                   </Row>

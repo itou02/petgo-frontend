@@ -44,7 +44,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.bb} />
+                          <img className="listPetJmimg" src={images.pepole1} />
                         </Col>
                         <Col
                           xxl={18}
@@ -57,19 +57,27 @@ function Comment() {
                         >
                           <Row>
                             <Col>
-                              <p className="PetCardName">白白</p>
+                              <p className="PetCardName">Chocobo</p>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
-                                <span className="PetCardText">
-                                地區:台中市大里區
-                                </span>
-                                <span className="PetCardText">年齡:19</span>
-                                <span className="PetCardText">性別女</span>
-
-                              
+                                <Col span={24}>
+                                  <span className="PetCardText">
+                                    地區：台中市西屯區
+                                  </span>
+                                </Col>
+                                <Col span={24}>
+                             
+                                  <span className="PetCardText">年齡：19</span>
+                                </Col>
+                                <Col span={24}>
+                                
+                                  <span className="PetCardText">
+                                    性別：女
+                                  </span>
+                                </Col>
                               </Row>
                             </Col>
                           </Row>
@@ -87,22 +95,18 @@ function Comment() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                         
-                            <ButtonAdd
-                              text="接受請求"
-                              size="large"
-                              name="accept-request"
-                            />
-                         
+                          <ButtonAdd
+                            text="接受請求"
+                            size="large"
+                            name="accept-request"
+                          />
                         </Col>
                         <Col className="ListButton">
-                          
-                            <ButtonDelete
-                              text="取消請求"
-                              size="large"
-                              name="cancel-request"
-                            />
-                          
+                          <ButtonDelete
+                            text="取消請求"
+                            size="large"
+                            name="cancel-request"
+                          />
                         </Col>
                         <Col className="ListButton">
                           <a href="/receive-request/member-detail">

@@ -36,7 +36,7 @@ function DoingShareDetailed() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.jm} />
+                    <img className="DetailedJmimg" src={images.ex6} />
                   </div>
                 </Col>
 
@@ -49,9 +49,9 @@ function DoingShareDetailed() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：阿金</div>
-                      <div className="DetailText">品種：拉不拉多</div>
-                      <div className="DetailText">體型：大</div>
+                      <div className="DetailText">姓名：圓圓</div>
+                      <div className="DetailText">品種：荷蘭兔</div>
+                      <div className="DetailText">體型：小型</div>
                     </Col>
                     <Col
                       xl={12}
@@ -60,7 +60,7 @@ function DoingShareDetailed() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">年齡：5</div>
+                      <div className="DetailText">年齡：2</div>
 
                       <div className="DetailText">性別：女</div>
                       <div className="DetailText">絕育狀況：已結紮</div>
@@ -68,7 +68,7 @@ function DoingShareDetailed() {
 
                     <Col span={24} className="DetailTextWarp">
                       <div className="DetailText">
-                        飼養期間：2016/08~2016/08
+                        飼養期間：2022-12-25 ～ 2022-12-26
                       </div>
                       <div className="DetailText">共養期間：2016/08/20~ </div>
                     </Col>
@@ -130,6 +130,44 @@ function DoingShareDetailed() {
       <Col lg={14} md={18} sm={20} xs={22}>
           <Row className="commentary">
             <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+              <img src={images.pepole3} />
+            </Col>
+
+            <Col xl={19} md={18} sm={16} xs={16}>
+              <Row justify="center" align="top" className="trimPeopleComm">
+                <Col span={12} className="peopleComm">
+                  <div className="peopleCommShare">
+                    <h2>黃鼎佑</h2>
+                    <div className="PetCardLabel2">主要飼主</div>
+                  </div>
+                  <div className="leftPart">
+                    <div className="sharePeopleItem">
+                      <p>地區：台中市霧峰區</p>
+                      <p>年齡：20</p>
+                      <p>性別：男</p>
+                    </div>
+                  </div>
+                </Col>
+                <Col span={12} className="peopleComm">
+                  <div className="rightPart">
+                    <h2>聯絡資訊</h2>
+                    <hr />
+                    <h3>
+                      <img className="formLineImg" src={images.line} />
+                      <p>ID：651354364</p>
+                    </h3>
+                  </div>
+                </Col>
+               
+              </Row>
+              
+            </Col>
+
+            
+          </Row>
+
+          <Row className="commentary">
+            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
               <img src={images.bb} />
             </Col>
 
@@ -137,14 +175,16 @@ function DoingShareDetailed() {
               <Row justify="center" align="top" className="trimPeopleComm">
                 <Col span={12} className="peopleComm">
                   <div className="peopleCommShare">
-                    <h2>白婷鈺</h2>
-                    <div>主要飼主</div>
+                    <h2>白白</h2>
+                    
+                      <div className="PetCardLabel2">飼主體驗</div>
+                            
                   </div>
                   <div className="leftPart">
                     <div className="sharePeopleItem">
-                      <p>地區：</p>
-                      <p>年齡：</p>
-                      <p>性別：</p>
+                      <p>地區：台中市大里區</p>
+                      <p>年齡：19</p>
+                      <p>性別：女</p>
                     </div>
                   </div>
                 </Col>
@@ -158,11 +198,12 @@ function DoingShareDetailed() {
                     </h3>
                   </div>
                 </Col>
-                <Col span={24} className="commDate">
-                  <span>2022/06/16</span>
-                </Col>
+               
               </Row>
+              
             </Col>
+
+            
           </Row>
         </Col>
       </Row>

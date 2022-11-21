@@ -189,10 +189,10 @@ function AdoptionCheckPet() {
         </Col>
       </Row>
       <Row justify="center">
-                <a href='/share-already/search-sharer-form'>
+                <a href='/sent-request'>
                   <ButtonComponent
                     type="primary"
-                    text="前往體驗"
+                    text="返回"
                     size="large"
                     name="goToEx"
                     // handleSubmit={info}

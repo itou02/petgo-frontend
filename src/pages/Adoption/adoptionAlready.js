@@ -582,7 +582,6 @@ function AdoptionAlready() {
 
       <Row justify="start">
         {sharecards.map((sharecard,index)=>{
-          
           return(    
             <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
               <CardComponent
@@ -605,7 +604,7 @@ function AdoptionAlready() {
                   </div>
                 }
                 btn={
-                  <a href="/share-already/share-pet-detail">
+                  <a href={"/share-already/share-pet-detail/"+sharecard.id}>
                     <ButtonComponent
                       text="查看"
                       name="exPetCheckBtn"
@@ -614,13 +613,24 @@ function AdoptionAlready() {
                   </a>
                 }
                 light={
+                  ((sharecard.headcount)==1?
                       <div>
                         <GiPlainCircle className="lightOff" />
                         <GiPlainCircle className="lightOff" />
+                        <GiPlainCircle className="lightUp" />
+                      </div>:(sharecard.headcount)==2?
+                      <div>
                         <GiPlainCircle className="lightOff" />
+                        <GiPlainCircle className="lightUp" />
+                        <GiPlainCircle className="lightUp" />
+                      </div>:
+                      <div>
+                        <GiPlainCircle className="lightUp" />
+                        <GiPlainCircle className="lightUp" />
+                        <GiPlainCircle className="lightUp" />
                       </div>
                     
-                  
+                  )
                 }
               />
             </Col>

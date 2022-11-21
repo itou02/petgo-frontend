@@ -73,7 +73,7 @@ function memberDetail() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.bb} />
+                    <img className="DetailedJmimg" src={images.pepole1} />
                   </div>
                 </Col>
 
@@ -86,8 +86,8 @@ function memberDetail() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：黃婷鈺</div>
-                      <div className="DetailText">年齡：5</div>
+                      <div className="DetailText">姓名：Chocobo</div>
+                      <div className="DetailText">年齡：19</div>
                     </Col>
                     <Col
                       xl={12}
@@ -97,7 +97,7 @@ function memberDetail() {
                       className="DetailTextWarp"
                     >
                       <div className="DetailText">性別：女</div>
-                      <div className="DetailText">地區：台中市大里區</div>
+                      <div className="DetailText">地區：台中市西屯區</div>
                     </Col>
                     <Col
                       xl={12}
@@ -106,11 +106,11 @@ function memberDetail() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">聯絡方式：0910288299</div>
+                      <div className="DetailText">聯絡方式：0926289869</div>
                       <div className="DetailText">
                         <div className="LineWarp">
                           <img className="formLineImg" src={images.line} />
-                          <p>ID：a52195219a</p>
+                          <p>ID：0926289869</p>
                         </div>
                       </div>
                     </Col>
@@ -229,27 +229,27 @@ function memberDetail() {
                           >
                             <Row className="RearingPetCheckboxWarp">
                               <Col md={8} sm={12} xs={12}>
-                                <Checkbox disabled value="A">
+                                <Checkbox  value="A">
                                   住處允許養寵
                                 </Checkbox>
                               </Col>
                               <Col md={8} sm={12} xs={12}>
-                                <Checkbox disabled value="B">
+                                <Checkbox  value="B">
                                   有照顧寵物的時間
                                 </Checkbox>
                               </Col>
                               <Col md={8} sm={12} xs={12}>
-                                <Checkbox disabled value="C">
+                                <Checkbox  value="C">
                                   有養寵經濟基礎
                                 </Checkbox>
                               </Col>
                               <Col md={8} sm={12} xs={12}>
-                                <Checkbox disabled value="D">
+                                <Checkbox  value="D">
                                   願意陪伴寵物
                                 </Checkbox>
                               </Col>
                               <Col md={8} sm={12} xs={12}>
-                                <Checkbox disabled value="E">
+                                <Checkbox  value="E">
                                   有責任感及耐心
                                 </Checkbox>
                               </Col>
@@ -259,7 +259,7 @@ function memberDetail() {
                                 </Checkbox>
                               </Col>
                               <Col md={8} sm={12} xs={12}>
-                                <Checkbox disabled value="G">
+                                <Checkbox  value="G">
                                   住處穩定
                                 </Checkbox>
                               </Col>
@@ -281,13 +281,13 @@ function memberDetail() {
                               <Col span={6}>
                                 <img
                                   className="RearingPetJmimg"
-                                  src={images.jm}
+                                  src={images.ex5}
                                 />
                               </Col>
                               <Col span={18}>
                                 <Row type="flex" align="middle">
                                   <Col>
-                                    <p className="PetCardName">吉米</p>
+                                    <p className="PetCardName">尼可</p>
                                   </Col>
                                   <Col>
                                     <div className="PetCardLabel1">
@@ -300,61 +300,10 @@ function memberDetail() {
                                     <div className="PetCardContent">
                                       <div className="PetCardContent1">
                                         <div className="PetCardText">
-                                          品種：傑克羅素耿
+                                          品種：米克斯
                                         </div>
                                         <div className="PetCardText">
-                                          年齡：5
-                                        </div>
-                                        <div className="PetCardText">
-                                          性別：男
-                                        </div>
-                                      </div>
-                                      <div className="PetCardContent1">
-                                        <div className="PetCardText">
-                                          體型：中型
-                                        </div>
-                                        <div className="PetCardText">
-                                          飼養期間：2016/08~
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </Col>
-                            </Row>
-                            <Row
-                              className="PetCard"
-                              md={22}
-                              type="flex"
-                              justify="center"
-                              align="middle"
-                            >
-                              <Col span={6}>
-                                <img
-                                  className="RearingPetJmimg"
-                                  src={images.jm}
-                                />
-                              </Col>
-                              <Col span={18}>
-                                <Row type="flex" align="middle">
-                                  <Col>
-                                    <p className="PetCardName">吉米</p>
-                                  </Col>
-                                  <Col>
-                                    <div className="PetCardLabel2">
-                                      共養寵物
-                                    </div>
-                                  </Col>
-                                </Row>
-                                <Row>
-                                  <Col span={24}>
-                                    <div className="PetCardContent">
-                                      <div className="PetCardContent1">
-                                        <div className="PetCardText">
-                                          品種：傑克羅素耿
-                                        </div>
-                                        <div className="PetCardText">
-                                          年齡：5
+                                          年齡：3
                                         </div>
                                         <div className="PetCardText">
                                           性別：男
@@ -365,7 +314,7 @@ function memberDetail() {
                                           體型：中型
                                         </div>
                                         <div className="PetCardText">
-                                          飼養期間：2016/08~
+                                          飼養期間：2022-12-28 ～ 2022-12-30
                                         </div>
                                       </div>
                                     </div>
@@ -373,6 +322,7 @@ function memberDetail() {
                                 </Row>
                               </Col>
                             </Row>
+                      
 
                             <Row
                               className="PetCard"
@@ -384,13 +334,13 @@ function memberDetail() {
                               <Col span={6}>
                                 <img
                                   className="RearingPetJmimg"
-                                  src={images.jm}
+                                  src={images.ex4}
                                 />
                               </Col>
                               <Col span={18}>
                                 <Row type="flex" align="middle">
                                   <Col>
-                                    <p className="PetCardName">吉米</p>
+                                    <p className="PetCardName">餅乾</p>
                                   </Col>
                                   <Col>
                                     <div className="PetCardLabel3">
@@ -403,13 +353,13 @@ function memberDetail() {
                                     <div className="PetCardContent">
                                       <div className="PetCardContent1">
                                         <div className="PetCardText">
-                                          品種：傑克羅素耿
+                                          品種：米克斯
                                         </div>
                                         <div className="PetCardText">
-                                          年齡：5
+                                          年齡：4
                                         </div>
                                         <div className="PetCardText">
-                                          性別：男
+                                          性別：女
                                         </div>
                                       </div>
                                       <div className="PetCardContent1">

@@ -128,7 +128,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.jm} />
+                          <img className="listPetJmimg" src={images.ex1} />
                         </Col>
                         <Col
                           xxl={18}
@@ -141,7 +141,7 @@ function Comment() {
                         >
                           <Row align="middle">
                             <Col>
-                              <p className="PetCardName">吉米</p>
+                              <p className="PetCardName">多多</p>
                             </Col>
                             <Col>
                               <div className="PetCardLabel3">飼主體驗</div>
@@ -151,13 +151,13 @@ function Comment() {
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
                                 <span className="PetCardText">
-                                  品種：傑克羅素耿
+                                  品種：哈瓦帝犬
                                 </span>
                                 <span className="PetCardText">性別：男</span>
-                                <span className="PetCardText">年齡：5</span>
+                                <span className="PetCardText">年齡：3</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022/06/12-2022/06/30
+                                  體驗日期：2022-12-09 ～ 2022-12-12
                                 </span>
                               </Row>
                             </Col>

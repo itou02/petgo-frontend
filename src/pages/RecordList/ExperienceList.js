@@ -62,7 +62,7 @@ function ExperienceListPage() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.jm} />
+                          <img className="listPetJmimg" src={images.knock} />
                         </Col>
                         <Col
                           xxl={18}
@@ -75,27 +75,99 @@ function ExperienceListPage() {
                         >
                           <Row>
                             <Col>
-                              <p className="PetCardName">吉米</p>
+                              <p className="PetCardName">芋頭</p>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
                                 <span className="PetCardText">
-                                  品種：傑克羅素耿
+                                  品種：米克斯
                                 </span>
-                                <span className="PetCardText">性別：男</span>
-                                <span className="PetCardText">年齡：5</span>
+                                <span className="PetCardText">性別：女</span>
+                                <span className="PetCardText">年齡：6</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022/06/12-2022/06/30
+                                  體驗日期：2022-12-15 ～ 2022-12-18
                                 </span>
                               </Row>
                             </Col>
                           </Row>
                         </Col>
                       </Row>
+
+                      
                     </Col>
+
+
+                    <Col
+                      xl={5}
+                      lg={5}
+                      md={24}
+                      sm={24}
+                      xs={24}
+                      className="ListButtonWarp"
+                    >
+                    <a href="/Record/Experience/detailed">
+                        <ButtonComponent
+                          text="查看詳細"
+                          size="large"
+                          name="more-detail"
+                        />
+                      </a>
+                    </Col>
+                  </Row>
+
+
+                  <Row className="ListPetCard" justify="center" align="end">
+                    <Col xl={19} lg={19} md={24} sm={24} xs={24}>
+                      <Row type="flex" align="strat">
+                        <Col
+                          xxl={6}
+                          xl={7}
+                          lg={8}
+                          md={8}
+                          sm={8}
+                          xs={10}
+                          className="listPetJmimgWarp"
+                        >
+                          <img className="listPetJmimg" src={images.ex7} />
+                        </Col>
+                        <Col
+                          xxl={18}
+                          xl={16}
+                          lg={16}
+                          md={16}
+                          sm={16}
+                          xs={14}
+                          className="PetCardCenter"
+                        >
+                          <Row>
+                            <Col>
+                              <p className="PetCardName">貝寶</p>
+                            </Col>
+                          </Row>
+                          <Row type="flex" align="bottom">
+                            <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                              <Row align="middle">
+                                <span className="PetCardText">
+                                  品種：荷蘭兔
+                                </span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：4</span>
+
+                                <span className="PetCardText">
+                                  體驗日期：2023-01-17 ～ 2023-01-20
+                                </span>
+                              </Row>
+                            </Col>
+                          </Row>
+                        </Col>
+                      </Row>
+
+                      
+                    </Col>
+
 
                     <Col
                       xl={5}

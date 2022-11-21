@@ -28,7 +28,17 @@ const images = {
   pet4: require("../assets/images/pet4.jpg"),
   jm: require("../assets/images/jm.jpg"),
   ex: require("../assets/images/ex-pet.jpg"),
+  ex1: require("../assets/images/expet1.jpg"),
+  ex2: require("../assets/images/expet2.jpg"),
 
+  ex4: require("../assets/images/expet4.jpg"),
+  ex5: require("../assets/images/expet5.jpg"),
+  ex6: require("../assets/images/expet6.jpg"),
+  ex7: require("../assets/images/expet7.jpg"),
+  ex8: require("../assets/images/expet8.jpg"),
+  ex9: require("../assets/images/expet9.jpg"),
+
+  knock: require("../assets/images/knock.jpg"),
   //Form
   line:require("../assets/images/line.png"),
 

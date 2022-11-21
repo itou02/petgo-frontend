@@ -191,7 +191,7 @@ function Router() {
           <Route path="share-already" element={<Adoption />} />
           <Route path="share-already-login" element={<AdoptionLogin />} />
           <Route
-            path="share-already/share-pet-detail"
+            path="share-already/share-pet-detail/:id"
             element={<AdoptionCheck />}
           />
           <Route

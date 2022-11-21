@@ -92,7 +92,7 @@ import {
                     className="DetailedJmimgWarp"
                   >
                     <div className="DetailedJmimgWarp">
-                      <img className="DetailedJmimg" src={images.jm} />
+                      <img className="DetailedJmimg" src={images.knock} />
                     </div>
                   </Col>
   
@@ -105,9 +105,9 @@ import {
                         xs={24}
                         className="DetailTextWarp"
                       >
-                        <div className="DetailText">姓名：阿金</div>
-                        <div className="DetailText">品種：拉不拉多</div>
-                        <div className="DetailText">體型：大</div>
+                        <div className="DetailText">姓名：芋頭</div>
+                        <div className="DetailText">品種：米克斯</div>
+                        <div className="DetailText">體型：中型</div>
                       </Col>
                       <Col
                         xl={12}
@@ -116,7 +116,7 @@ import {
                         xs={24}
                         className="DetailTextWarp"
                       >
-                        <div className="DetailText">年齡：5</div>
+                        <div className="DetailText">年齡：6</div>
   
                         <div className="DetailText">性別：女</div>
                         <div className="DetailText">絕育狀況：已結紮</div>
@@ -125,7 +125,7 @@ import {
                       <Col span={24} className="DetailTextWarp">
                       
                         <div className="DetailText">
-                        體驗期間：2016/08/20~2016/08/31
+                        體驗期間：2022-12-15 ～ 2022-12-18
                         </div>
                       </Col>
                     </Row>
@@ -202,42 +202,7 @@ import {
                 </Row>
               </Col>
             </Row>
-            <Row className="commentary">
-              <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                <img src={images.bb} />
-              </Col>
-  
-              <Col xl={19} md={18} sm={16} xs={16}>
-                <Row className="trimPeopleComm">
-                  <Col span={24} className="peopleComm">
-                    <h2>白婷鈺</h2>
-                    <hr />
-                    <p>牠很好帶又乖乖的，個性溫馴可愛</p>
-                  </Col>
-                  <Col span={24} className="commDate">
-                    <span>2022/06/16</span>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <Row className="commentary" dataSource={comments}>
-              <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                <img src={images.bb} />
-              </Col>
-  
-              <Col xl={19} md={18} sm={16} xs={16}>
-                <Row className="trimPeopleComm">
-                  <Col span={24} className="peopleComm">
-                    <h2>白婷鈺</h2>
-                    <hr />
-                    <p>牠很好帶又乖乖的，個性溫馴可愛</p>
-                  </Col>
-                  <Col span={24} className="commDate">
-                    <span>2022/06/16</span>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+       
           </Col>
         </Row>
   
