@@ -50,7 +50,7 @@ function Owner() {
                   md={20}
                   sm={20}
                   xs={22}
-                  className="ListWarp"
+                  // className="ListWarp"
                 >
                   <Row className="ListPetCard" justify="center" align="end">
                     <Col xl={19} lg={19} md={24} sm={24} xs={24}>

@@ -13,7 +13,8 @@ const images = {
   logoText: require("../assets/images/logoText2.png"),
   gold: require("../assets/images/gold.jpg"),
   auto1: require("../assets/images/auto1.jpg"),
-
+  auto2: require("../assets/images/auto2.webp"),
+  auto3: require("../assets/images/auto3.jpg"),
   //ExperienceHome
   ExHome: require("../assets/images/ExperienceHome.jpeg"),
   ExHome1: require("../assets/images/ExperienceHome1.jpg"),

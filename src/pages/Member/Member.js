@@ -1,5 +1,5 @@
 import images from "../../config/images";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ButtonComponent from "../../components/button/button";
 import {
   Select,
@@ -508,26 +508,12 @@ function MemberPage() {
       </div>
     </div>
   );
-  const [posts, setPosts] = useState([])
+
+  const [members, setMembers] = useState([])
 
 
   React.useEffect(() => {
-    // fetch_data()
-    // const token='userToken';
-    // axios.interceptors.request.use(
-    //   (config) => {
-    //     // 從 localStorage 將 token 取出
-    //     const token = localStorage.getItem('userToken');
-    
-    //     // 如果 token 存在的話，則帶入到 headers 當中
-    //     if (token) {
-    //       config.headers['Authorization'] = `Bearer ${token}`;
-    //     }
-    //     return config;
-    //   },
-    //   (err) => Promise.reject(err),
-    // );
-    const token=localStorage.getItem('token');
+    const token = localStorage.getItem('token');
     const config = {
       url: 'http://127.0.0.1:8000/api/member',  // 只有此為必需
       method: 'get', // 大小寫皆可
@@ -536,15 +522,16 @@ function MemberPage() {
         'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': '*',
         'X-Requested-With': 'XMLHttpRequest',
+        'userToken': `${token}`
       },
       responseType: 'json', // 伺服器回應的數據類型
+      
     }
     try {
       axios(config)
         .then(res => {
-          
-          console.log(res)
-          setPosts(res)
+          console.log(res.data.req)
+          setMembers(res.data.req)
         }, []);
     }
     catch (error) {
@@ -552,7 +539,7 @@ function MemberPage() {
       // Do  with error
     }
   }, []);
-  console.log('posts=>', posts);
+  // console.log('members=>', posts);
   return (
 
     <div id="Member">
@@ -594,249 +581,249 @@ function MemberPage() {
           justify="center"
           align="center"
         >
-          <Form
-            name="basic"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete="off"
-          >
-            <Row span={24} type="flex" justify="space-between" align="middle">
-              <Col lg={8} md={24} sm={24} xs={24} type="flex" justify="center">
-                <Upload
-                  name="avatar"
-                  listType="picture-card"
-                  className="avatar-uploader"
-                  showUploadList={false}
-                  action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                  beforeUpload={beforeUpload}
-                  onChange={handleChange}
-                >
-                  {imageUrl ? (
-                    <img
-                      src={imageUrl}
-                      alt="avatar"
-                      style={{
-                        width: "100%",
-                      }}
-                    />
-                  ) : (
-                    uploadButton
-                  )}
-                </Upload>
-              </Col>
-              <Col lg={14} md={24} sm={24} xs={24}>
-                <Row type="flex" align="middle">
-                  <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
-                    <Form.Item
-                      wrapperCol={{
-                        md: 16,
-                        sm: 18,
-                        xs: 2,
-                      }}
-                      label="姓名"
-                      name="username"
-                      rules={[
-                        {
-                          required: true,
-                          message: "請輸入姓名",
-                        },
-                      ]}
-                    >
-                      <Input />
-                    </Form.Item>
-                  </Col>
-                  <Col lg={10} md={10} sm={8} xs={8}>
-                    <Form.Item
-                      label="性別"
-                      name="sex"
-                      rules={[
-                        {
-                          required: true,
-                        },
-                      ]}
-                    >
-                      <Radio.Group>
-                        <Radio value="apple"> 女生 </Radio>
-                        <Radio value="pear"> 男生 </Radio>
-                      </Radio.Group>
-                    </Form.Item>
-                  </Col>
-                </Row>
-
-                <Row type="flex" align="center">
-                  <Col llg={14} md={14} sm={16} xs={16} className="inputWarp">
-                    <Form.Item
-                      wrapperCol={{
-                        md: 16,
-                        sm: 18,
-                        xs: 2,
-                      }}
-                      name="date-picker"
-                      label="生日"
-                      rules={[
-                        {
-                          required: true,
-                        },
-                      ]}
-                    >
-                      <DatePicker
-                        type="text"
-                        disabled="disabled"
-                        placeholder="請選擇日期"
-                      />
-                    </Form.Item>
-                    `
-                  </Col>
-                  <Col lg={10} md={10} sm={8} xs={8}>
-                    <Form.Item
-                      label="年齡"
-                      name="old"
-                      rules={[
-                        {
-                          required: true,
-                        },
-                      ]}
-                    >
-                      <Input type="text" disabled="disabled" />
-                    </Form.Item>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col lg={10} md={10} xs={10}>
-                <Form.Item
-                  wrapperCol={{
-                    md: 14,
-                    sm: 18,
-                    xs: 2,
-                  }}
-                  label="行動電話"
-                  name="phone"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input placeholder="09XX-XXX-XXX" />
-                </Form.Item>
-              </Col>
-              <Col md={14} xs={14}>
-                <Form.Item
-                  wrapperCol={{
-                    md: 22,
-                    xs: 24,
-                  }}
-                  label="地區"
-                  name="Area"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Select
-                    className="AreaSelect"
-                    name="city"
-                    defaultValue={provinceData[0]}
-                    onChange={handleProvinceChange}
+            <Form
+              name="basic"
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+            
+            >
+              <Row span={24} type="flex" justify="space-between" align="middle">
+                <Col lg={8} md={24} sm={24} xs={24} type="flex" justify="center">
+                  <Upload
+                    name="avatar"
+                    listType="picture-card"
+                    className="avatar-uploader"
+                    showUploadList={false}
+                    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    beforeUpload={beforeUpload}
+                    onChange={handleChange}
                   >
-                    {provinceData.map((province) => (
-                      <Option key={province}>{province}</Option>
-                    ))}
-                  </Select>
-                  <Select value={secondCity} onChange={onSecondCityChange} name="district">
-                    {cities.map((city) => (
-                      <Option key={city}>{city}</Option>
-                    ))}
-                  </Select>
-                </Form.Item>
-              </Col>
-            </Row>
+                    {imageUrl ? (
+                      <img
+                        src={imageUrl}
+                        alt="avatar"
+                        style={{
+                          width: "100%",
+                        }}
+                      />
+                    ) : (
+                      uploadButton
+                    )}
+                  </Upload>
+                </Col>
+                <Col lg={14} md={24} sm={24} xs={24}>
+                  <Row type="flex" align="middle">
+                    <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
+                      <Form.Item
+                        wrapperCol={{
+                          md: 16,
+                          sm: 18,
+                          xs: 2,
+                        }}
+                        label="姓名"
+                        name="username"
+                        rules={[
+                          {
+                            required: true,
+                            message: "請輸入姓名",
+                          },
+                        ]}
+                      >
+                        <Input value={members.name} />
+                      </Form.Item>
+                    </Col>
+                    <Col lg={10} md={10} sm={8} xs={8}>
+                      <Form.Item
+                        label="性別"
+                        name="sex"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <Radio.Group>
+                          <Radio value="apple"> 女生 </Radio>
+                          <Radio value="pear"> 男生 </Radio>
+                        </Radio.Group>
+                      </Form.Item>
+                    </Col>
+                  </Row>
 
-            <Row className="FormItemWarp">
-              <Col span={24}>
-                <Form.Item
-                  label="電子郵件"
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row type="flex" justify="space-between" align="bottom">
-              <Col span={18}>
-                <Form.Item
-                  wrapperCol={{ md: 22 }}
-                  label="密碼"
-                  name="password"
-                  rules={[
-                    {
-                      required: true,
-                    },
-                  ]}
-                >
-                  <Input.Password />
-                </Form.Item>
-              </Col>
-              <Col span={6}>
-                <Form.Item>
-                  <Button className="password_btn">更改密碼</Button>
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row>
-              <Col span={24}>
-                <Form.Item
-                  labelCol={{
-                    span: 24,
-                  }}
-                  wrapperCol={{
-                    span: 24,
-                  }}
-                  label="自我介紹"
-                  name="intro"
-                >
-                  <TextArea rows={4} />
-                </Form.Item>
-              </Col>
-            </Row>
-            <Row span={24} type="flex" justify="space-between" align="middle">
-              <Col span={11}>
-                <Form.Item name="FormCancel ">
-                  <ButtonComponent text="取消" name="FormCancel " />
-                </Form.Item>
-              </Col>
-              <Col span={11}>
-                <Form.Item name="FormSave ">
-                  <ButtonComponent text="儲存" name="FormSave" />
-                </Form.Item>
-              </Col>
+                  <Row type="flex" align="center">
+                    <Col llg={14} md={14} sm={16} xs={16} className="inputWarp">
+                      <Form.Item
+                        wrapperCol={{
+                          md: 16,
+                          sm: 18,
+                          xs: 2,
+                        }}
+                        name="date-picker"
+                        label="生日"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <DatePicker
+                          type="text"
+                          disabled="disabled"
+                          placeholder="請選擇日期"
+                        />
+                      </Form.Item>
+                      `
+                    </Col>
+                    <Col lg={10} md={10} sm={8} xs={8}>
+                      <Form.Item
+                        label="年齡"
+                        name="old"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <Input type="text" disabled="disabled" />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <Col lg={10} md={10} xs={10}>
+                  <Form.Item
+                    wrapperCol={{
+                      md: 14,
+                      sm: 18,
+                      xs: 2,
+                    }}
+                    label="行動電話"
+                    name="phone"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input placeholder="09XX-XXX-XXX" />
+                  </Form.Item>
+                </Col>
+                <Col md={14} xs={14}>
+                  <Form.Item
+                    wrapperCol={{
+                      md: 22,
+                      xs: 24,
+                    }}
+                    label="地區"
+                    name="Area"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Select
+                      className="AreaSelect"
+                      name="city"
+                      defaultValue={provinceData[0]}
+                      onChange={handleProvinceChange}
+                    >
+                      {provinceData.map((province) => (
+                        <Option key={province}>{province}</Option>
+                      ))}
+                    </Select>
+                    <Select value={secondCity} onChange={onSecondCityChange} name="district">
+                      {cities.map((city) => (
+                        <Option key={city}>{city}</Option>
+                      ))}
+                    </Select>
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row className="FormItemWarp">
+                <Col span={24}>
+                  <Form.Item
+                    label="電子郵件"
+                    name="email"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row type="flex" justify="space-between" align="bottom">
+                <Col span={18}>
+                  <Form.Item
+                    wrapperCol={{ md: 22 }}
+                    label="密碼"
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input.Password />
+                  </Form.Item>
+                </Col>
+                <Col span={6}>
+                  <Form.Item>
+                    <Button className="password_btn">更改密碼</Button>
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={24}>
+                  <Form.Item
+                    labelCol={{
+                      span: 24,
+                    }}
+                    wrapperCol={{
+                      span: 24,
+                    }}
+                    label="自我介紹"
+                    name="intro"
+                  >
+                    <TextArea rows={4} />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row span={24} type="flex" justify="space-between" align="middle">
+                <Col span={11}>
+                  <Form.Item name="FormCancel ">
+                    <ButtonComponent text="取消" name="FormCancel " />
+                  </Form.Item>
+                </Col>
+                <Col span={11}>
+                  <Form.Item name="FormSave ">
+                    <ButtonComponent text="儲存" name="FormSave" />
+                  </Form.Item>
+                </Col>
 
-              <Col span={24} type="flex" justify="center" align="center">
-                <hr className="buttonHr"></hr>
-              </Col>
+                <Col span={24} type="flex" justify="center" align="center">
+                  <hr className="buttonHr"></hr>
+                </Col>
 
-              <Col span={24} type="flex" justify="center" align="center">
-                <a href="/Rearing-pet">
-                  <ButtonComponent
-                    text="編輯寵物經歷"
-                    size="large"
-                    name="Edit-Petexperience"
-                  />
-                </a>
-              </Col>
-            </Row>
-          </Form>
+                <Col span={24} type="flex" justify="center" align="center">
+                  <a href="/Rearing-pet">
+                    <ButtonComponent
+                      text="編輯寵物經歷"
+                      size="large"
+                      name="Edit-Petexperience"
+                    />
+                  </a>
+                </Col>
+              </Row>
+            </Form>
         </Col>
       </Row>
     </div>
