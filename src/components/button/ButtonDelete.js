@@ -17,10 +17,10 @@ function ButtonDelete(props) {
       okType: 'danger',
       cancelText: '取消',
       onOk() {
-        navigate('/');
+        navigate('/sert-request');
       },
       onCancel() {
-        navigate('/sent-request');
+        navigate('/sent-nequest');
       },
     });
   };

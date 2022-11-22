@@ -1,10 +1,9 @@
 import React from "react";
 import ButtonComponent from "../../components/button/button";
 import ButtonDelete from "../../components/button/ButtonDelete";
-import ButtonAdd from "../../components/button/ButtonAdd";
 import { Row, Col } from "antd";
 import images from "../../config/images";
-import "./getrequest.less";
+import "./sendrequest.less";
 
 function Comment() {
   return (
@@ -21,7 +20,7 @@ function Comment() {
         >
           <Row type="flex" justify="center">
             <Col xl={24} lg={24} md={24} sm={24} xs={24}>
-              <p className="RecordListTitle">我收到的請求</p>
+              <p className="RecordListTitle">我送出的請求</p>
 
               <Row type="flex" justify="center">
                 <Col
@@ -44,7 +43,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.bb} />
+                          <img className="listPetJmimg" src={images.ex} />
                         </Col>
                         <Col
                           xxl={18}
@@ -55,25 +54,32 @@ function Comment() {
                           xs={14}
                           className="PetCardCenter"
                         >
-                          <Row>
+                          <Row align="middle">
                             <Col>
-                              <p className="PetCardName">白白</p>
+                              <p className="PetCardName">地瓜</p>
+                            </Col>
+                            <Col>
+                              <div className="PetCardLabel2">共養寵物</div>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
                                 <span className="PetCardText">
-                                地區:台中市大里區
+                                  品種：傑克羅素耿
                                 </span>
-                                <span className="PetCardText">年齡:19</span>
-                                <span className="PetCardText">性別女</span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：5</span>
 
-                              
+                                <span className="PetCardText">
+                                  體驗日期：2022/06/12-2022/06/30
+                                </span>
                               </Row>
                             </Col>
                           </Row>
                         </Col>
+
+                        
                       </Row>
                     </Col>
 
@@ -87,25 +93,17 @@ function Comment() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                         
-                            <ButtonAdd
-                              text="接受請求"
-                              size="large"
-                              name="accept-request"
-                            />
-                         
-                        </Col>
-                        <Col className="ListButton">
                           
                             <ButtonDelete
                               text="取消請求"
                               size="large"
                               name="cancel-request"
+                              
                             />
                           
                         </Col>
                         <Col className="ListButton">
-                          <a href="/Record/Experience/detailed">
+                          <a href="sent-request/share-pet-detaii">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"
@@ -116,6 +114,9 @@ function Comment() {
                       </Row>
                     </Col>
                   </Row>
+
+
+                 
                 </Col>
               </Row>
             </Col>

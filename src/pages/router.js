@@ -64,6 +64,9 @@ import Comment from "./Comment/index.js";
 import Petlist from "./Petlist/index.js";
 import Norequest from "./sendrequest/norequest.js";
 import Sentrequest from "./sendrequest/sendrequest.js";
+import Sentrequest1 from "./sendrequest/sendrequestD.js";
+import Sentrequest2 from "./sendrequest/sendrequestC.js";
+
 import Receiverequest from "./Getrequest/getrequest";
 import Noreceiverequest from "./Getrequest/norequest";
 
@@ -88,6 +91,9 @@ function Router() {
 
           <Route path="nosent-request" element={<Norequest />} />
           <Route path="sent-request" element={<Sentrequest />} />
+          <Route path="sert-request" element={<Sentrequest1 />} />
+          <Route path="sent-nequest" element={<Sentrequest2 />} />
+
           <Route path="receive-request" element={<Receiverequest />} />
           <Route path="noreceive-request" element={<Noreceiverequest />} />
           <Route path="norequest" element={<Norequest />} />
