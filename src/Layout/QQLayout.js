@@ -29,8 +29,8 @@ const QQLayout = () => {
             <Content>
                 <Outlet />
             </Content>
-            <Footer style={{ textAlign: "center" }}>
-                &copy; 2022 - 2023 PET GO  <FaPhone className="communityicon" /><FaInstagram className="communityicon" /><FaFacebookSquare className="communityicon" />
+            <Footer className="footer" style={{ textAlign: "center" }}>
+                &copy; 2022 - 2023 PET GO  
             </Footer>
         </Layout>
     );

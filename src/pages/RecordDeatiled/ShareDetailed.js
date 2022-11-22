@@ -36,7 +36,7 @@ import {
                     className="DetailedJmimgWarp"
                   >
                     <div className="DetailedJmimgWarp">
-                      <img className="DetailedJmimg" src={images.jm} />
+                      <img className="DetailedJmimg" src={images.ex2} />
                     </div>
                   </Col>
   
@@ -49,9 +49,9 @@ import {
                         xs={24}
                         className="DetailTextWarp"
                       >
-                        <div className="DetailText">姓名：阿金</div>
-                        <div className="DetailText">品種：拉不拉多</div>
-                        <div className="DetailText">體型：大</div>
+                        <div className="DetailText">姓名：虎虎</div>
+                        <div className="DetailText">品種：蝴蝶犬</div>
+                        <div className="DetailText">體型：小型</div>
                       </Col>
                       <Col
                         xl={12}
@@ -68,9 +68,9 @@ import {
   
                       <Col span={24} className="DetailTextWarp">
                         <div className="DetailText">
-                          飼養期間：2016/08~2016/08
+                          飼養期間：2016/08~
                         </div>
-                        <div className="DetailText">共養期間：2016/08/20~ </div>
+                        <div className="DetailText">共養期間：2022-11-14~2022-11-12 </div>
                       </Col>
                     </Row>
                   </Col>

@@ -1,29 +1,59 @@
-import {
-  Form,
-  Col,
-  Row,
-  message,
-  Space,
-  Input,
-  List,
-  Avatar,
-  Comment,
-  Button,
-} from "antd";
-import moment from "moment";
-import React, { useState } from "react";
-
+import React, { useState,createContext } from 'react';
+import {FacebookFilled} from '@ant-design/icons';
+import { BsLine } from "react-icons/bs";
+import { Col,Row ,message,Space,Modal} from "antd";
 import ButtonComponent from "../../components/button/button";
-
-import "./DoingShareDetailed.less";
+// import './owner.less'
+import './adoptionCheckPet.less'
 import images from "../../config/images";
-import { Route } from "react-router-dom";
 
-/*體驗者專區-查看按鈕的詳細寵物頁面*/
-function DoingShareDetailed() {
-  return (
-    <div id="DoingShareDetailed">
-      <Row type="flex" justify="center" align="middle">
+const ReachableContext = createContext(null);
+const UnreachableContext = createContext(null);
+
+const config = {
+    title: 'Use Hook!',
+    content: (
+        <>
+        <ReachableContext.Consumer>{(name) => `Reachable: ${name}!`}</ReachableContext.Consumer>
+        <br />
+        <UnreachableContext.Consumer>{(name) => `Unreachable: ${name}!`}</UnreachableContext.Consumer>
+        </>
+    ),
+  };
+
+/*共養專區-查看詳細寵物頁面*/
+function AdoptionCheckPet() {
+
+    const [modal, contextHolder] = Modal.useModal();
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
+    const handleOk = () => {
+        setIsModalOpen(false);
+    };
+    const handleCancel = () => {
+        setIsModalOpen(false);
+    };
+
+    const info = () => {
+        Modal.info({
+            title: 'This is a notification message',
+            content: (
+            <div>
+                <p>some messages...some messages...</p>
+                <p>some messages...some messages...</p>
+            </div>
+            ), 
+            onOk() {},
+        });
+    };
+
+    return (
+        <div id="adoptionCheckPet">
+              <Row type="flex" justify="center" align="middle">
         <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22}>
           <Row className="PetListDetail" type="flex" justify="center">
             <Col>
@@ -36,7 +66,7 @@ function DoingShareDetailed() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.ex6} />
+                    <img className="DetailedJmimg" src={images.ex} />
                   </div>
                 </Col>
 
@@ -49,9 +79,9 @@ function DoingShareDetailed() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：圓圓</div>
-                      <div className="DetailText">品種：荷蘭兔</div>
-                      <div className="DetailText">體型：小型</div>
+                      <div className="DetailText">姓名：地瓜</div>
+                      <div className="DetailText">品種：貴賓狗</div>
+                      <div className="DetailText">體型：小型犬</div>
                     </Col>
                     <Col
                       xl={12}
@@ -60,18 +90,12 @@ function DoingShareDetailed() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">年齡：2</div>
+                      <div className="DetailText">年齡：5</div>
 
                       <div className="DetailText">性別：女</div>
                       <div className="DetailText">絕育狀況：已結紮</div>
                     </Col>
 
-                    <Col span={24} className="DetailTextWarp">
-                      <div className="DetailText">
-                        飼養期間：2022-12-25 ～ 2022-12-26
-                      </div>
-                      <div className="DetailText">共養期間：2016/08/20~ </div>
-                    </Col>
                   </Row>
                 </Col>
               </Row>
@@ -127,23 +151,23 @@ function DoingShareDetailed() {
         </Col>
       </Row>
       <Row justify="center" className="captionBottom">
-      <Col lg={14} md={18} sm={20} xs={22}>
+        <Col lg={14} md={18} sm={20} xs={22}>
           <Row className="commentary">
             <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.pepole3} />
+              <img src={images.pepole9} />
             </Col>
 
             <Col xl={19} md={18} sm={16} xs={16}>
               <Row justify="center" align="top" className="trimPeopleComm">
                 <Col span={12} className="peopleComm">
                   <div className="peopleCommShare">
-                    <h2>黃鼎佑</h2>
-                    <div className="PetCardLabel2">主要飼主</div>
+                    <h2>蕭承佑</h2>
+                    <div className='PetCardLabel3'>主要飼主</div>
                   </div>
                   <div className="leftPart">
                     <div className="sharePeopleItem">
-                      <p>地區：台中市霧峰區</p>
-                      <p>年齡：20</p>
+                      <p>地區：台中市大里區</p>
+                      <p>年齡：19</p>
                       <p>性別：男</p>
                     </div>
                   </div>
@@ -154,72 +178,34 @@ function DoingShareDetailed() {
                     <hr />
                     <h3>
                       <img className="formLineImg" src={images.line} />
-                      <p>ID：651354364</p>
+                      <p>ID：098752666</p>
                     </h3>
                   </div>
                 </Col>
-               
-              </Row>
               
-            </Col>
-
-            
-          </Row>
-
-          <Row className="commentary">
-            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.bb} />
-            </Col>
-
-            <Col xl={19} md={18} sm={16} xs={16}>
-              <Row justify="center" align="top" className="trimPeopleComm">
-                <Col span={12} className="peopleComm">
-                  <div className="peopleCommShare">
-                    <h2>白白</h2>
-                    
-                      <div className="PetCardLabel2">飼主體驗</div>
-                            
-                  </div>
-                  <div className="leftPart">
-                    <div className="sharePeopleItem">
-                      <p>地區：台中市大里區</p>
-                      <p>年齡：19</p>
-                      <p>性別：女</p>
-                    </div>
-                  </div>
-                </Col>
-                <Col span={12} className="peopleComm">
-                  <div className="rightPart">
-                    <h2>聯絡資訊</h2>
-                    <hr />
-                    <h3>
-                      <img className="formLineImg" src={images.line} />
-                      <p>ID：a52195219a</p>
-                    </h3>
-                  </div>
-                </Col>
-               
               </Row>
-              
             </Col>
-
-            
           </Row>
         </Col>
       </Row>
-
-      <Row className="BtnWarp">
-        <Col>
-          <ButtonComponent
-            text="退出共養"
-            
-            name="DetailedDeteleBtn"
-            onClick="/Record/DoingShare/list"
-          />
-        </Col>
-      </Row>
-    </div>
-  );
+      <Row justify="center">
+                <a href='/sent-request'>
+                  <ButtonComponent
+                    type="primary"
+                    text="返回"
+                    size="large"
+                    name="goToEx"
+                    // handleSubmit={info}
+                  />
+                </a>
+                
+                
+               
+                
+            </Row>
+      
+        </div>
+    );
 }
 
-export default DoingShareDetailed;
+export default AdoptionCheckPet;

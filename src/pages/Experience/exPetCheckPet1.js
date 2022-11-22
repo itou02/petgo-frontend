@@ -1,30 +1,31 @@
-import React, { useState, createContext } from "react";
-import { Col, Row, message, Space, Modal } from "antd";
+import React, { useState, createContext } from 'react';
+import { useParams } from 'react-router-dom'; //使用useParam傳參數
+import { Col,Row ,message,Space,Modal} from "antd";
+import axios from 'axios';
 import ButtonComponent from "../../components/button/button";
 // import './owner.less'
-import "./checkMembersPet.less";
+import './exPetCheckPet.less'
 import images from "../../config/images";
 
 const ReachableContext = createContext(null);
 const UnreachableContext = createContext(null);
 
 const config = {
-  title: "Use Hook!",
-  content: (
-    <>
-      <ReachableContext.Consumer>
-        {(name) => `Reachable: ${name}!`}
-      </ReachableContext.Consumer>
-      <br />
-      <UnreachableContext.Consumer>
-        {(name) => `Unreachable: ${name}!`}
-      </UnreachableContext.Consumer>
-    </>
-  ),
-};
+    title: 'Use Hook!',
+    content: (
+      <>
+        <ReachableContext.Consumer>{(name) => `Reachable: ${name}!`}</ReachableContext.Consumer>
+        <br />
+        <UnreachableContext.Consumer>{(name) => `Unreachable: ${name}!`}</UnreachableContext.Consumer>
+      </>
+    ),
+  };
 
-/*我收到的請求-查看會員詳細-查看詳細寵物頁面*/
+/*體驗者專區-查看按鈕的詳細寵物頁面*/
 function ExPetCheckPet() {
+
+  const baseURL='http://127.0.0.1:8000/';
+
   const [modal, contextHolder] = Modal.useModal();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -32,6 +33,7 @@ function ExPetCheckPet() {
   const showModal = () => {
     setIsModalOpen(true);
   };
+
   const handleOk = () => {
     setIsModalOpen(false);
   };
@@ -41,21 +43,59 @@ function ExPetCheckPet() {
   };
 
   const info = () => {
-    Modal.info({
-      title: "This is a notification message",
-      content: (
-        <div>
-          <p>some messages...some messages...</p>
-          <p>some messages...some messages...</p>
-        </div>
-      ),
-      onOk() {},
-    });
+      Modal.info({
+        title: 'This is a notification message',
+        content: (
+          <div>
+            <p>some messages...some messages...</p>
+            <p>some messages...some messages...</p>
+          </div>
+        ),
+    
+        onOk() {},
+      });
   };
+  let { id } = useParams();
 
-  return (
-    <div id="checkMembersPet">
-      <Row type="flex" justify="center" align="middle">
+  const [details, setDetails] = useState([])
+  const [comments, setComments] = useState([])
+  React.useEffect(() => {
+    // fetch_data()
+    const token=localStorage.getItem('token');
+    const config = {
+      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card/ex-pet-detail/',  // 只有此為必需
+      method: 'get', // 大小寫皆可
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': '*',
+        'X-Requested-With': 'XMLHttpRequest',
+        'userToken':`${token}`
+
+      },
+      responseType: 'json', // 伺服器回應的數據類型
+    }
+
+    try {
+      axios(config)
+        .then(res => {
+          console.log(res.data)
+          setDetails(res.data.detail)
+          setComments(res.data.comments)
+        }, []);
+    }
+    catch (error) {
+      throw error;
+      // Do  with error
+    }
+  }, []);
+  console.log('details=>', details);
+  // console.log('comments=>', comments);
+
+    return (
+        <div id="ExPetCheckPet">
+          
+          <Row type="flex" justify="center" align="middle">
         <Col className="DoingShareDetailedWarp" lg={16} md={18} sm={20} xs={22}>
           <Row className="PetListDetail" type="flex" justify="center">
             <Col>
@@ -68,7 +108,7 @@ function ExPetCheckPet() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.jm} />
+                    <img className="DetailedJmimg" src={images.ex1} />
                   </div>
                 </Col>
 
@@ -81,9 +121,9 @@ function ExPetCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：阿金</div>
-                      <div className="DetailText">品種：拉不拉多</div>
-                      <div className="DetailText">體型：大</div>
+                      <div className="DetailText">姓名：多多</div>
+                      <div className="DetailText">品種：哈瓦帝犬</div>
+                      <div className="DetailText">體型：小型</div>
                     </Col>
                     <Col
                       xl={12}
@@ -92,14 +132,14 @@ function ExPetCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">年齡：5</div>
-                      <div className="DetailText">性別：女</div>
-                      <div className="DetailText">絕育狀況：已結紮</div>
+                      <div className="DetailText">年齡：3</div>
+                      <div className="DetailText">性別：男</div>
+                      <div className="DetailText">絕育狀況：未結紮</div>
                     </Col>
 
                     <Col span={24} className="DetailTextWarp">
                       <div className="DetailText">
-                        體驗期間：2016/08/20~2016/08/31
+                        體驗期間：2022-12-09 ～ 2022-12-12
                       </div>
                     </Col>
                   </Row>
@@ -160,18 +200,18 @@ function ExPetCheckPet() {
         <Col lg={14} md={18} sm={20} xs={22}>
           <Row className="commentary">
             <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-              <img src={images.bb} />
+              <img src={images.pepole9} />
             </Col>
 
             <Col xl={19} md={18} sm={16} xs={16}>
               <Row className="trimPeopleComm">
                 <Col span={24} className="peopleComm">
-                  <h2>白婷鈺</h2>
+                  <h2>蕭承佑</h2>
                   <hr />
                   <p>牠很好帶又乖乖的，個性溫馴可愛</p>
                 </Col>
                 <Col span={24} className="commDate">
-                  <span>2022/06/16</span>
+                  <span>2022/06/16</span> 
                 </Col>
               </Row>
             </Col>
@@ -180,15 +220,16 @@ function ExPetCheckPet() {
       </Row>
 
       <Row justify="center" style={{ marginbottom: "10%" }}>
+        <a href="/sent-request">
         <ButtonComponent
           text="返回"
           size="large"
           name="goToEx"
           onClick="/Record/DoingShare/list"
-        />
+        /></a>
       </Row>
-    </div>
-  );
+        </div>
+    );
 }
 
 export default ExPetCheckPet;

@@ -52,7 +52,7 @@ function SearchRequestFormPage() {
         >
           <Row type="flex" justify="center">
             <Col span={24}>
-              <p className="RequestFormTitle">尋找體驗者</p>
+              <p className="RequestFormTitle">尋找共養者</p>
             </Col>
 
             <Col xl={16} lg={18} md={20} xs={22}>
@@ -478,11 +478,13 @@ function SearchRequestFormPage() {
                 </Row>
                 <Row justify="center">
                   <Col lg={6} md={8} sm={10} xs={10} className="formBtnWarp">
+                    <a href="/share-already">
                     <ButtonComponent
                       text="送出"
                       size="large"
                       name="gotoexperence "
                     />
+                    </a>
                   </Col>
                 </Row>
               </Form>

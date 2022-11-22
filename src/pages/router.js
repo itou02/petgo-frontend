@@ -18,13 +18,15 @@ import ExPet from "./Experience/exPet";
 import ExPetLogin from "./Experience/exPet";
 import ExPetCheck from "./Experience/exPetCheckPet";
 import RequestExPetCheck from "./Experience/exPetCheckPet";
+import RequestExPetCheck1 from "./Experience/exPetCheckPet1";
+
 import ownerExPetCheck from "./Experience/exPetCheckPet";
 
 import Adoption from "./Adoption/adoptionAlready";
 import AdoptionLogin from "./Adoption/adoptionAlready";
 
 import AdoptionCheck from "./Adoption/adoptionCheckPet";
-import RequestAdoptionCheck from "./Adoption/adoptionCheckPet";
+import RequestAdoptionCheck1 from "./Adoption/adoptionCheckPet1";
 import AdoptionNone from "./Adoption/adoptionNotYet";
 import AdoptionNoneLogin from "./Adoption/adoptionNotYet";
 
@@ -179,6 +181,10 @@ function Router() {
             path="sent-request/ex-pet-detail"
             element={<RequestExPetCheck />}
           />
+           <Route
+            path="sent-request/ex-pet-detaii"
+            element={<RequestExPetCheck1 />}
+          />
           <Route path="owner/ex-pet-detail" element={<ownerExPetCheck />} />
 
           {/* 已有共養人 */}
@@ -189,8 +195,8 @@ function Router() {
             element={<AdoptionCheck />}
           />
           <Route
-            path="sent-request/share-pet-detail"
-            element={<RequestAdoptionCheck />}
+            path="sent-request/share-pet-detaii"
+            element={<RequestAdoptionCheck1 />}
           />
 
           {/* 未有共養人 */}
