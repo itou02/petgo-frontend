@@ -1,11 +1,13 @@
 
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Space } from 'antd';
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 
 function ButtonDelete(props) {
   const { text, size, name, handleSubmit, htmlType } = props;
   const { confirm } = Modal;
+  const navigate = useNavigate();
 
   const showDeleteConfirm = () => {
     confirm({
@@ -15,10 +17,10 @@ function ButtonDelete(props) {
       okType: 'danger',
       cancelText: '取消',
       onOk() {
-        console.log('OK');
+        navigate('/');
       },
       onCancel() {
-        console.log('Cancel');
+        navigate('/sent-request');
       },
     });
   };
