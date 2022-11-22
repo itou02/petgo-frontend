@@ -16,6 +16,7 @@ function ButtonDelete(props) {
       cancelText: '取消',
       onOk() {
         console.log('OK');
+        
       },
       onCancel() {
         console.log('Cancel');

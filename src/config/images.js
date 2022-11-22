@@ -37,8 +37,11 @@ const images = {
   ex7: require("../assets/images/expet7.jpg"),
   ex8: require("../assets/images/expet8.jpg"),
   ex9: require("../assets/images/expet9.jpg"),
-
+  ex24: require("../assets/images/pet24.jpg"),
+  ex25: require("../assets/images/pet25.jpg"),
   knock: require("../assets/images/knock.jpg"),
+  google: require("../assets/images/google.png"),
+
   //Form
   line:require("../assets/images/line.png"),
 

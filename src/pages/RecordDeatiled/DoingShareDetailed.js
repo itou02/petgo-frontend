@@ -177,7 +177,7 @@ function DoingShareDetailed() {
                   <div className="peopleCommShare">
                     <h2>白白</h2>
                     
-                      <div className="PetCardLabel2">飼主體驗</div>
+                      <div className="PetCardLabel2">共養人員</div>
                             
                   </div>
                   <div className="leftPart">
@@ -208,15 +208,15 @@ function DoingShareDetailed() {
         </Col>
       </Row>
 
-      <Row className="BtnWarp">
-        <Col>
+      <Row justify="center" style={{ marginbottom: "10%" }}>
+        <a href="/Record/DoingShare/list">
           <ButtonComponent
-            text="退出共養"
-            
-            name="DetailedDeteleBtn"
+            text="返回"
+            size="large"
+            name="goToEx"
             onClick="/Record/DoingShare/list"
           />
-        </Col>
+        </a>
       </Row>
     </div>
   );

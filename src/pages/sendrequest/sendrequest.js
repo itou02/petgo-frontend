@@ -43,7 +43,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.ex} />
+                          <img className="listPetJmimg" src={images.google} />
                         </Col>
                         <Col
                           xxl={18}
@@ -56,7 +56,7 @@ function Comment() {
                         >
                           <Row align="middle">
                             <Col>
-                              <p className="PetCardName">地瓜</p>
+                              <p className="PetCardName">Google</p>
                             </Col>
                             <Col>
                               <div className="PetCardLabel2">共養寵物</div>
@@ -66,13 +66,13 @@ function Comment() {
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
                                 <span className="PetCardText">
-                                  品種：傑克羅素耿
+                                  品種：法鬥
                                 </span>
-                                <span className="PetCardText">性別：男</span>
-                                <span className="PetCardText">年齡：5</span>
+                                <span className="PetCardText">性別：女</span>
+                                <span className="PetCardText">年齡：8</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022/06/12-2022/06/30
+                                  飼養日期：2015/06/12～
                                 </span>
                               </Row>
                             </Col>

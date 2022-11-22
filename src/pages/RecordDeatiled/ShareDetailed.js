@@ -36,7 +36,7 @@ import {
                     className="DetailedJmimgWarp"
                   >
                     <div className="DetailedJmimgWarp">
-                      <img className="DetailedJmimg" src={images.ex2} />
+                      <img className="DetailedJmimg" src={images.ex24} />
                     </div>
                   </Col>
   
@@ -49,8 +49,8 @@ import {
                         xs={24}
                         className="DetailTextWarp"
                       >
-                        <div className="DetailText">姓名：虎虎</div>
-                        <div className="DetailText">品種：蝴蝶犬</div>
+                        <div className="DetailText">姓名：豆豆</div>
+                        <div className="DetailText">品種：吉娃娃</div>
                         <div className="DetailText">體型：小型</div>
                       </Col>
                       <Col
@@ -60,9 +60,9 @@ import {
                         xs={24}
                         className="DetailTextWarp"
                       >
-                        <div className="DetailText">年齡：5</div>
+                        <div className="DetailText">年齡：3</div>
   
-                        <div className="DetailText">性別：女</div>
+                        <div className="DetailText">性別：男</div>
                         <div className="DetailText">絕育狀況：已結紮</div>
                       </Col>
   
@@ -130,21 +130,21 @@ import {
         <Col lg={14} md={18} sm={20} xs={22}>
             <Row className="commentary">
               <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                <img src={images.bb} />
+                <img src={images.pepole7} />
               </Col>
   
               <Col xl={19} md={18} sm={16} xs={16}>
                 <Row justify="center" align="top" className="trimPeopleComm">
                   <Col span={12} className="peopleComm">
                     <div className="peopleCommShare">
-                      <h2>白婷鈺</h2>
-                      <div>主要飼主</div>
+                      <h2>林阿佑</h2>
+                      <div className="PetCardLabel2">主要飼主</div>
                     </div>
                     <div className="leftPart">
                       <div className="sharePeopleItem">
-                        <p>地區：</p>
-                        <p>年齡：</p>
-                        <p>性別：</p>
+                        <p>地區：台北市大安區</p>
+                        <p>年齡：21</p>
+                        <p>性別：男</p>
                       </div>
                     </div>
                   </Col>
@@ -154,18 +154,30 @@ import {
                       <hr />
                       <h3>
                         <img className="formLineImg" src={images.line} />
-                        <p>ID：a52195219a</p>
+                        <p>ID：apple134</p>
                       </h3>
                     </div>
                   </Col>
                   <Col span={24} className="commDate">
-                    <span>2022/06/16</span>
+                   
                   </Col>
                 </Row>
               </Col>
             </Row>
           </Col>
         </Row>
+
+
+        <Row justify="center" style={{ marginbottom: "10%" }}>
+        <a href="/Record/Share/list">
+          <ButtonComponent
+            text="返回"
+            size="large"
+            name="goToEx"
+            onClick="/Record/DoingShare/list"
+          />
+        </a>
+      </Row>
   
       </div>
     );
