@@ -88,7 +88,7 @@ function ExperienceListPage() {
                                 <span className="PetCardText">年齡：6</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022-12-15 ～ 2022-12-18
+                                  體驗日期：2020-12-15 ～ 2020-12-18
                                 </span>
                               </Row>
                             </Col>
@@ -157,7 +157,7 @@ function ExperienceListPage() {
                                 <span className="PetCardText">年齡：4</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2023-01-17 ～ 2023-01-20
+                                  體驗日期：2022-01-17 ～ 2022-01-20
                                 </span>
                               </Row>
                             </Col>

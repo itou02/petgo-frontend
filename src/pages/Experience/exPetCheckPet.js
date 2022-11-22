@@ -210,23 +210,23 @@ function ExPetCheckPet() {
                     <hr />
                 </Col>
             </Row>
-            {(comments.type)==undefined?<div className='undefined'><h1>目前尚無評論</h1></div>:(comments).map((comment, index) => {
+            {(comments)==""?<div className='undefined'><h1>目前尚無評論</h1></div>:(comments).map((comment, index) => {
               return (
-                <Row justify="center"  className="captionBottom">
+                <Row justify="center"  className="captionBottom" key={index}>
                   <Col lg={14} md={18} sm={20} xs={22}>
                     <Row  className="commentary">
                       <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                        <img src={images.bb} />
+                        <img src={baseURL+comment.img} />
                       </Col>
                       <Col xl={19} md={18} sm={16} xs={16} >
                         <Row className="trimPeopleComm">
                           <Col span={24} className="peopleComm">
-                            <h2>白婷鈺</h2>
+                            <h2>{comment.name}</h2>
                             <hr />
-                            <p>牠很好帶又乖乖的，個性溫馴可愛</p>
+                            <p>{comment.comment}</p>
                           </Col>
                           <Col span={24} className="commDate">
-                            <span>2022/06/16</span>
+                            <span>{comment.updated_at}</span>
                           </Col>
                         </Row>
                       </Col>

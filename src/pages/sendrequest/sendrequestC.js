@@ -31,7 +31,7 @@ function Comment() {
                   xs={22}
                   className="ListWarp"
                 >
-                  <Row className="ListPetCard" justify="center" align="end">
+                    <Row className="ListPetCard" justify="center" align="end">
                     <Col xl={19} lg={19} md={24} sm={24} xs={24}>
                       <Row type="flex" align="strat">
                         <Col
@@ -43,7 +43,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.ex10} />
+                          <img className="listPetJmimg" src={images.mi} />
                         </Col>
                         <Col
                           xxl={18}
@@ -56,23 +56,21 @@ function Comment() {
                         >
                           <Row align="middle">
                             <Col>
-                              <p className="PetCardName">Cecilia</p>
+                              <p className="PetCardName">右邊</p>
                             </Col>
                             <Col>
-                              <div className="PetCardLabel3">飼主體驗</div>
+                              <div className="PetCardLabel2">共養寵物</div>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
-                                <span className="PetCardText">
-                                  品種：布偶貓
-                                </span>
-                                <span className="PetCardText">性別：女</span>
-                                <span className="PetCardText">年齡：2</span>
+                                <span className="PetCardText">品種：米克斯</span>
+                                <span className="PetCardText">性別：男</span>
+                                <span className="PetCardText">年齡：4</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022-12-12 ～ 2022-12-16
+                                  飼養日期：2016/08/12～
                                 </span>
                               </Row>
                             </Col>
@@ -91,16 +89,14 @@ function Comment() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                          
-                            <ButtonDelete
-                              text="取消請求"
-                              size="large"
-                              name="cancel-request"
-                            />
-                          
+                          <ButtonDelete
+                            text="取消請求"
+                            size="large"
+                            name="cancel-request"
+                          />
                         </Col>
                         <Col className="ListButton">
-                          <a href="/sent-request/ex-pet-detaii">
+                          <a href="sent-request/share-pet-detaii">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"
@@ -111,6 +107,7 @@ function Comment() {
                       </Row>
                     </Col>
                   </Row>
+
                   <Row className="ListPetCard" justify="center" align="end">
                     <Col xl={19} lg={19} md={24} sm={24} xs={24}>
                       <Row type="flex" align="strat">

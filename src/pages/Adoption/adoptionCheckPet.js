@@ -243,7 +243,7 @@ function AdoptionCheckPet() {
                   </Row>
                   );
                   })}
-                  {(sharers.type)==undefined?"":(sharers).map((sharer, index) => {
+                  {(sharers)=="目前無共養人"?"":sharers.map((sharer, index) => {
                     return (
                       <Row className="commentary" key={index}>
                         <Col xl={5} md={6} sm={8} xs={8} className="peopleImage" >
@@ -254,7 +254,7 @@ function AdoptionCheckPet() {
                             <Col span={12} className="peopleComm">
                               <div className="peopleCommShare">
                                 <h2>{sharer.name}</h2>
-                                <div className='PetCardLabel3'>{sharer.identity}</div>
+                                <div className='PetCardLabel4'>共養人員</div>
                               </div>
                               <div className="leftPart">
                                 <div className="sharePeopleItem">

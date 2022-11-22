@@ -66,7 +66,7 @@ function AdoptionCheckPet() {
                   className="DetailedJmimgWarp"
                 >
                   <div className="DetailedJmimgWarp">
-                    <img className="DetailedJmimg" src={images.ex} />
+                    <img className="DetailedJmimg" src={images.mi} />
                   </div>
                 </Col>
 
@@ -79,9 +79,9 @@ function AdoptionCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">姓名：地瓜</div>
-                      <div className="DetailText">品種：貴賓狗</div>
-                      <div className="DetailText">體型：小型犬</div>
+                      <div className="DetailText">姓名：右邊</div>
+                      <div className="DetailText">品種：米克斯</div>
+                      <div className="DetailText">體型：小型</div>
                     </Col>
                     <Col
                       xl={12}
@@ -90,9 +90,9 @@ function AdoptionCheckPet() {
                       xs={24}
                       className="DetailTextWarp"
                     >
-                      <div className="DetailText">年齡：5</div>
+                      <div className="DetailText">年齡：4</div>
 
-                      <div className="DetailText">性別：女</div>
+                      <div className="DetailText">性別：男</div>
                       <div className="DetailText">絕育狀況：已結紮</div>
                     </Col>
 
