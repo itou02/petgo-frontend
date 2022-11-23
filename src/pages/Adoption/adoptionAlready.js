@@ -5,6 +5,7 @@ import CardComponent from "../../components/card/card";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import { GiPlainCircle } from "react-icons/gi";
 import axios from 'axios';
+import ReactDOM from 'react-dom/client';
 import "./adoptionAlready.less";
 import images from "../../config/images";
 
@@ -449,6 +450,10 @@ function AdoptionAlready() {
   const baseURL='http://127.0.0.1:8000/';
 
   const [sharecards, setSharecards] = useState([])
+  const [varieties, setVarities] = useState([])
+  const [lights, setLights] = useState([])
+
+
   useEffect(() => {
     const config = {
       url: 'http://127.0.0.1:8000/api/share-already-login',  // 只有此為必需
@@ -467,6 +472,8 @@ function AdoptionAlready() {
         .then(res => {
           console.log(res.data.shared)
           setSharecards(res.data.shared)
+          setVarities(res.data.shared)
+          setLights(res.data.shared)
           // console.log(res.data.varieties)
           // setVarieties(res.data.varieties)
         }, []);
@@ -542,22 +549,10 @@ function AdoptionAlready() {
                     className="varietyWarp"
                     value="品種"
                     placeholder="品種"
-                    optionFilterProp="children"
-                    filterOption={(input, option) =>
-                      option.children.includes(input)
-                    }
-                    filterSort={(optionA, optionB) =>
-                      optionA.children
-                        .toLowerCase()
-                        .localeCompare(optionB.children.toLowerCase())
-                    }
                   >
-                    <Option value="1">Not Identified</Option>
-                    <Option value="2">Closed</Option>
-                    <Option value="3">Communicated</Option>
-                    <Option value="4">Identified</Option>
-                    <Option value="5">Resolved</Option>
-                    <Option value="6">Cancelled</Option>
+                    {varieties.map((variety,index) => (
+                      <Option key={index}>{variety.variety}</Option>
+                    ))}
                   </Select>
                 </Form.Item>
               </Col>
@@ -587,170 +582,61 @@ function AdoptionAlready() {
 
       <Row justify="start">
         {sharecards.map((sharecard,index)=>{
-          <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
-            <CardComponent
-              name="card .ant-card-body"
-              img={<img alt="pet" src={baseURL+sharecard.img} />}
-              // img={<img alt="pet" src={images.expet}}
-              title={<h1>{sharecard.name}</h1>}
-              icon={
-                <h1>
-                  <EnvironmentOutlined />
-                  台中市，大里區
-                </h1>
-              }
-              text={
-                <div>
-                  <h4>品種：{sharecard.variety}</h4>
-                  <h4>年齡：{sharecard.age}</h4>
-                  <h4>體型：大型</h4>
-                  <h4>性別：{sharecard.sex}</h4>
-                  <h4>體驗日期:</h4>
-                  <h4>2022/06/12 - 2022/06/30</h4>
-                </div>
-              }
-              btn={
-                <a href="/share-already/share-pet-detail">
-                  <ButtonComponent
-                    text="查看"
-                    name="exPetCheckBtn"
-                    handleSubmit={check}
-                  />
-                </a>
-              }
-              light={
-                <div>
-                  <GiPlainCircle className="lightUp" />
-                  <GiPlainCircle className="lightUp" />
-                  <GiPlainCircle className="lightUp" />
-                </div>
-              }
-            />
-          </Col>
+          return(    
+            <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
+              <CardComponent
+                name="card .ant-card-body"
+                img={<img alt="pet" src={baseURL+sharecard.img} />}
+                // img={<img alt="pet" src={images.expet}}
+                title={<h1>{sharecard.name}</h1>}
+                icon={
+                  <h1>
+                    <EnvironmentOutlined />
+                    {sharecard.location.slice(0,3)+'，'+sharecard.location.slice(3,6)}
+                  </h1>
+                }
+                text={
+                  <div>
+                    <h4>品種：{sharecard.variety}</h4>
+                    <h4>年齡：{sharecard.age}</h4>
+                    <h4>體型：{sharecard.size}</h4>
+                    <h4>性別：{sharecard.sex}</h4>
+                  </div>
+                }
+                btn={
+                  <a href={"/share-already/share-pet-detail/"+sharecard.id}>
+                    <ButtonComponent
+                      text="查看"
+                      name="exPetCheckBtn"
+                      handleSubmit={check}
+                    />
+                  </a>
+                }
+                light={
+                  ((sharecard.headcount)==1?
+                      <div>
+                        <GiPlainCircle className="lightOff" />
+                        <GiPlainCircle className="lightOff" />
+                        <GiPlainCircle className="lightUp" />
+                      </div>:(sharecard.headcount)==2?
+                      <div>
+                        <GiPlainCircle className="lightOff" />
+                        <GiPlainCircle className="lightUp" />
+                        <GiPlainCircle className="lightUp" />
+                      </div>:
+                      <div>
+                        <GiPlainCircle className="lightUp" />
+                        <GiPlainCircle className="lightUp" />
+                        <GiPlainCircle className="lightUp" />
+                      </div>
+                    
+                  )
+                }
+              />
+            </Col>
+          );
         })}
         
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/share-already/share-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-            light={
-              <div>
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-              </div>
-            }
-          />
-        </Col>
-
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/share-already/share-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-            light={
-              <div>
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-              </div>
-            }
-          />
-        </Col>
-
-        <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards">
-          <CardComponent
-            name="card .ant-card-body"
-            img={<img alt="pet" src={images.jm} />}
-            // img={<img alt="pet" src={images.expet}}
-            title={<h1>阿金</h1>}
-            icon={
-              <h1>
-                <EnvironmentOutlined />
-                台中市，大里區
-              </h1>
-            }
-            text={
-              <div>
-                <h4>品種：拉不拉多</h4>
-                <h4>年齡：5</h4>
-                <h4>體型：大型</h4>
-                <h4>性別：女</h4>
-                <h4>體驗日期:</h4>
-                <h4>2022/06/12 - 2022/06/30</h4>
-              </div>
-            }
-            btn={
-              <a href="/share-already/share-pet-detail">
-                <ButtonComponent
-                  text="查看"
-                  name="exPetCheckBtn"
-                  handleSubmit={check}
-                />
-              </a>
-            }
-            light={
-              <div>
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-                <GiPlainCircle className="lightUp" />
-              </div>
-            }
-          />
-        </Col>
       </Row>
     </div>
   );

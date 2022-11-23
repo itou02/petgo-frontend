@@ -36,7 +36,6 @@ function Comment() {
     };
     try {
       axios(config).then((res) => {
-        console.log(res.data.comment);
         setComments(res.data.comment);
       }, []);
     } catch (error) {
@@ -54,32 +53,35 @@ function Comment() {
           </div>
           <Row className="CommentlistrowWarp">
             <Col lg={24} md={24} sm={24} xs={24}>
-              {comments.map((comment,index)=>{
-                return(
-                  <Row className="Commentlistshow" key={index}>
-                    <Col lg={18} md={20} sm={22} xs={24}>
-                      <Row className="commentary">
-                        <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
-                          <img src={comment.img} />
-                        </Col>
-
-                        <Col xl={19} md={18} sm={16} xs={16}>
-                          <Row className="trimPeopleComm">
-                            <Col span={24} className="peopleComm">
-                              <h2>{comment.name}</h2>
-                              <hr />
-                              <p>{comment.comment}</p>
+                {(comments)==undefined?<div className='undefined'><h1>目前尚無評論</h1></div>:
+                (comments).map((comment, index) => {
+                  return (
+                    <Row className="Commentlistshow" key={index}>
+                        <Col lg={18} md={20} sm={22} xs={24}>
+                          <Row className="commentary">
+                            <Col xl={5} md={6} sm={8} xs={8} className="peopleImage">
+                              <img src={comment.img} />
                             </Col>
-                            <Col span={24} className="commDate">
-                              <span>{comment.updated_at}</span>
+                            <Col xl={19} md={18} sm={16} xs={16}>
+                              <Row className="trimPeopleComm">
+                                <Col span={24} className="peopleComm">
+                                  <h2>{comment.name}</h2>
+                                  <hr />
+                                  <p>{comment.comment}</p>
+                                </Col>
+                                <Col span={24} className="commDate">
+                                  <span>{comment.updated_at}</span>
+                                </Col>
+                              </Row>
                             </Col>
                           </Row>
                         </Col>
-                      </Row>
-                    </Col>
-                  </Row>
-                );
-              })}
+                    </Row>
+                  );
+                })}
+                  
+                {/* ); */}
+              {/* })} */}
             </Col>
           </Row>
         </Col>

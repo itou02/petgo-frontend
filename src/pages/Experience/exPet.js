@@ -551,15 +551,6 @@ function ExPet() {
                     className="varietyWarp"
                     value="品種"
                     placeholder="品種"
-                    // optionFilterProp="children"
-                    // filterOption={(input, option) =>
-                    //   option.children.includes(input)
-                    // }
-                    // filterSort={(optionA, optionB) =>
-                    //   optionA.children
-                    //     .toLowerCase()
-                    //     .localeCompare(optionB.children.toLowerCase())
-                    // }
                   >
                     {varieties.map((variety,index) => (
                       <Option key={index}>{variety.variety}</Option>

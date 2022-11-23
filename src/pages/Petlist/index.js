@@ -36,7 +36,7 @@ function Comment(props) {
     try {
       axios(config)
         .then(res => {
-          console.log('123',res.data.req)
+          console.log('123', res.data.req)
           setPets(res.data)
         }, []);
     }
@@ -53,103 +53,147 @@ function Comment(props) {
     <div id="Petlist">
       <Row align="center" className="container">
         <Col lg={16} md={18} sm={20} xs={22} className="Commentlist">
+          <div className="Commenttitle">
+            <h1>寵物清單</h1>
+          </div>
           <Row className="Commentlistrow">
-            <Col className="Commenttitle">
-              <h1>寵物清單</h1>
+            <Col lg={24} md={24} sm={24} xs={24}>
+              {(pets.type) == undefined ?
+                <div className='undefined'><h1>目前尚無寵物資料</h1></div> : (pets).map((pet, index) => {
+                  return (
+                    <Row className="ListPetCard" justify="center" align="end">
+                      <Col lg={18} md={20} sm={22} xs={24}>
+                        <Row type="flex" align="strat">
+                          <Col
+                            xxl={6}
+                            xl={7}
+                            lg={8}
+                            md={8}
+                            sm={8}
+                            xs={10}
+                            className="listPetJmimgWarp"
+                          >
+                            <img className="listPetJmimg" src={images.jm} />
+                          </Col>
+                          <Col
+                            xxl={18}
+                            xl={16}
+                            lg={16}
+                            md={16}
+                            sm={16}
+                            xs={14}
+                            className="PetCardCenter"
+                          >
+                            <Row>
+                              <Col>
+                                <p className="PetCardName">吉米</p>
+                              </Col>
+                            </Row>
+                            <Row type="flex" align="bottom">
+                              <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                                <Row align="middle">
+                                  <span className="PetCardText">
+                                    品種：傑克羅素耿
+                                  </span>
+                                  <span className="PetCardText">性別：男</span>
+                                  <span className="PetCardText">年齡：5</span>
 
-              <div className="addiconWarp">
-                <a href="/pet-list/pet">
-                  <MdAddBox className="addicon" />
-                </a>
-              </div>
-            </Col>
-            {pets.map((pet, index) => {
+                                  <span className="PetCardText">
+                                    體驗日期：2022/06/12-2022/06/30
+                                  </span>
+                                </Row>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
+                      </Col>
 
-              return (
-                <Col lg={24}
-                  md={24}
-                  sm={24}
-                  xs={24}
-                  key={index}>
-                  <Row justify="center" className="PetlistCardWarp">
-
+                      <Col
+                        xl={5}
+                        lg={5}
+                        md={24}
+                        sm={24}
+                        xs={24}
+                        className="ListButtonWarp"
+                      >
+                        <a href="/pet-list/pet">
+                          <ButtonComponent
+                            text="查看詳細"
+                            size="large"
+                            name="more-detail"
+                          />
+                        </a>
+                      </Col>
+                    </Row>
+                  );
+                })}
+              {/* <Row className="ListPetCard">
+                <Col lg={18} md={20} sm={22} xs={24}>
+                  <Row type="flex" align="strat">
                     <Col
-                      lg={18}
-                      md={20}
-                      sm={22}
-                      xs={24}
-
+                      xxl={6}
+                      xl={7}
+                      lg={8}
+                      md={8}
+                      sm={8}
+                      xs={10}
+                      className="listPetJmimgWarp"
                     >
-                      <Row className="ListPetCard" justify="center" align="end">
-                        <Col xl={19} lg={19} md={24} sm={24} xs={24}>
-                          <Row type="flex" align="strat">
-                            <Col
-                              xxl={6}
-                              xl={7}
-                              lg={8}
-                              md={8}
-                              sm={8}
-                              xs={10}
-                              className="listPetJmimgWarp"
-                            >
-                              <img className="listPetJmimg" src={pet.img} />
-                            </Col>
-                            <Col
-                              xxl={18}
-                              xl={16}
-                              lg={16}
-                              md={16}
-                              sm={16}
-                              xs={14}
-                              className="PetCardCenter"
-                            >
-                              <Row>
-                                <Col>
-                                  <p className="PetCardName">{pet.name}</p>
-                                </Col>
-                              </Row>
-                              <Row type="flex" align="bottom">
-                                <Col xl={24} lg={24} md={24} sm={22} xs={22}>
-                                  <Row align="middle">
-                                    <span className="PetCardText">
-                                      品種：{pet.variety}
-                                    </span>
-                                    <span className="PetCardText">性別：{pet.sex}</span>
-                                    <span className="PetCardText">年齡：{pet.age}</span>
-
-                                    <span className="PetCardText">
-                                      體驗日期：2022/06/12-2022/06/30
-                                    </span>
-                                  </Row>
-                                </Col>
-                              </Row>
-                            </Col>
-                          </Row>
+                      <img className="listPetJmimg" src={images.jm} />
+                    </Col>
+                    <Col
+                      xxl={18}
+                      xl={16}
+                      lg={16}
+                      md={16}
+                      sm={16}
+                      xs={14}
+                      className="PetCardCenter"
+                    >
+                      <Row>
+                        <Col>
+                          <p className="PetCardName">吉米</p>
                         </Col>
+                      </Row>
+                      <Row type="flex" align="bottom">
+                        <Col xl={24} lg={24} md={24} sm={22} xs={22}>
+                          <Row align="middle">
+                            <span className="PetCardText">
+                              品種：傑克羅素耿
+                            </span>
+                            <span className="PetCardText">性別：男</span>
+                            <span className="PetCardText">年齡：5</span>
 
-                        <Col
-                          xl={5}
-                          lg={5}
-                          md={24}
-                          sm={24}
-                          xs={24}
-                          className="ListButtonWarp"
-                        >
-                          <a href="/pet-list/pet">
-                            <ButtonComponent
-                              text="查看詳細"
-                              size="large"
-                              name="more-detail"
-                            />
-                          </a>
+                            <span className="PetCardText">
+                              體驗日期：2022/06/12-2022/06/30
+                            </span>
+                          </Row>
                         </Col>
                       </Row>
                     </Col>
                   </Row>
                 </Col>
-              );
-            })}
-            <Col lg={24}
+
+                <Col
+                  xl={5}
+                  lg={5}
+                  md={24}
+                  sm={24}
+                  xs={24}
+                  className="ListButtonWarp"
+                >
+                  <a href="/pet-list/pet">
+                    <ButtonComponent
+                      text="查看詳細"
+                      size="large"
+                      name="more-detail"
+                    />
+                  </a>
+                </Col>
+              </Row> */}
+            </Col>
+
+            {/* <Col lg={24}
               md={24}
               sm={24}
               xs={24}>
@@ -228,7 +272,7 @@ function Comment(props) {
                   </Row>
                 </Col>
               </Row>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
       </Row>

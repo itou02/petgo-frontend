@@ -99,10 +99,10 @@ function Login() {
           localStorage.setItem('token', res.data.userToken);
           // const token=localStorage.getItem('token');
 
-          if (res.status != false)
-            navigate('/');
-          // setPosts(values)
-        }, []);
+        if(res.data.status!=false)
+          navigate('/');
+        // setPosts(values)
+      }, []);
     } catch (error) {
       throw error;
       // Do  with error
