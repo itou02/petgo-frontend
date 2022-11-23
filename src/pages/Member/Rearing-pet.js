@@ -37,43 +37,48 @@ function RearingPetpage() {
   };
 
   const onChange1 = (checkedValues) => {
-    console.log('checked = ', checkedValues);
+    console.log("checked = ", checkedValues);
   };
-  const plainOptions = ['住處允許養寵', '有照顧寵物的時間', '有養寵經濟基礎','願意陪伴寵物','有責任感及耐心','同居者同意且支持','住處穩定'];
+  const plainOptions = [
+    "住處允許養寵",
+    "有照顧寵物的時間",
+    "有養寵經濟基礎",
+    "願意陪伴寵物",
+    "有責任感及耐心",
+    "同居者同意且支持",
+    "住處穩定",
+  ];
   const options = [
     {
-      label: '住處穩定',
-      value: '住處穩定',
+      label: "住處穩定",
+      value: "住處穩定",
     },
     {
-      label: '住處允許養寵',
-      value: '住處允許養寵',
+      label: "住處允許養寵",
+      value: "住處允許養寵",
     },
-  
+
     {
-      label: '願意陪伴寵物',
-      value: '願意陪伴寵物',
-    },
-    {
-      label: '有責任感及耐心',
-      value: '有責任感及耐心',
+      label: "願意陪伴寵物",
+      value: "願意陪伴寵物",
     },
     {
-      label: '有養寵經濟基礎',
-      value: '有養寵經濟基礎',
+      label: "有責任感及耐心",
+      value: "有責任感及耐心",
     },
     {
-      label: '有照顧寵物的時間',
-      value: '有照顧寵物的時間',
+      label: "有養寵經濟基礎",
+      value: "有養寵經濟基礎",
     },
     {
-      label: '同居者同意且支持',
-      value: '同居者同意且支持',
+      label: "有照顧寵物的時間",
+      value: "有照顧寵物的時間",
     },
-   
-  
+    {
+      label: "同居者同意且支持",
+      value: "同居者同意且支持",
+    },
   ];
-  
 
   return (
     <div id="RearingPetwarp">
@@ -91,17 +96,24 @@ function RearingPetpage() {
                   <Checkbox.Group
                     style={{
                       width: "100%",
-                     
                     }}
                     onChange={onChange}
                   >
                     <Row className="RearingPetCheckboxWarp">
-                    <Checkbox.Group  style={{
-                      width: "100%",
-                      padding:"0 5%"
-                    }} options={plainOptions} defaultValue={['有養寵經濟基礎','住處允許養寵','有責任感及耐心','願意陪伴寵物']} onChange={onChange1} />
-   
-                     
+                      <Checkbox.Group
+                        style={{
+                          width: "100%",
+                          padding: "0 5%",
+                        }}
+                        options={plainOptions}
+                        defaultValue={[
+                          "有養寵經濟基礎",
+                          "住處允許養寵",
+                          "有責任感及耐心",
+                          "願意陪伴寵物",
+                        ]}
+                        onChange={onChange1}
+                      />
                     </Row>
                   </Checkbox.Group>
                 </Form.Item>
@@ -387,10 +399,11 @@ function RearingPetpage() {
                           <InputNumber
                             min={0}
                             max={50}
-                            defaultValue={"4年"}
+                            defaultValue={"4"}
                             onChange={onChange2}
                             placeholder="單位(年)"
-                          />
+                          />{" "}
+                          年
                         </Form.Item>
                       </Col>
 
@@ -406,10 +419,11 @@ function RearingPetpage() {
                           <InputNumber
                             min={0}
                             max={100}
-                            defaultValue={"3隻"}
+                            defaultValue={"3"}
                             onChange={onChange2}
                             placeholder="單位(隻)"
-                          />
+                          />{" "}
+                          隻
                         </Form.Item>
                       </Col>
                     </Row>
@@ -424,7 +438,7 @@ function RearingPetpage() {
                       label="飼養過哪些動物"
                       name="WhichPets"
                     >
-                      <Input  defaultValue={"狗、貓、兔子"}/>
+                      <Input defaultValue={"狗、貓、兔子"} />
                     </Form.Item>
                   </Col>
                   <Col md={20} sm={21} xs={21} type="flex" justify="center">
@@ -443,8 +457,6 @@ function RearingPetpage() {
                       </Select>
                     </Form.Item>
                   </Col>
-
-                  
                 </Row>
 
                 <Row
@@ -455,16 +467,23 @@ function RearingPetpage() {
                   className="buttonwarp"
                 >
                   <Col span={11}>
-                    <a href="/">
-                    <ButtonComponent
-                      text="取消"
-                      size="large"
-                      name="FormCancel"
-                    /></a>
+                    <a href="/member">
+                      <ButtonComponent
+                        text="取消"
+                        size="large"
+                        name="FormCancel"
+                      />
+                    </a>
                     {/* <Button style={{ height: 30 }} className="FormCancel">取消</Button> */}
                   </Col>
                   <Col span={11}>
-                    <ButtonComponent text="儲存" size="large" name="FormSave" />
+                    <a href="/member">
+                      <ButtonComponent
+                        text="儲存"
+                        size="large"
+                        name="FormSave"
+                      />
+                    </a>
                     {/* <Button style={{ height: 30 }} className="FormSave">儲存</Button> */}
                   </Col>
                 </Row>

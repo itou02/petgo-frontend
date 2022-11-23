@@ -53,9 +53,15 @@ function Comment(props) {
     <div id="Petlist">
       <Row align="center" className="container">
         <Col lg={16} md={18} sm={20} xs={22} className="Commentlist">
-          <div className="Commenttitle">
-            <h1>寵物清單</h1>
-          </div>
+        <Col className="Commenttitle">
+              <h1>寵物清單</h1>
+
+              <div className="addiconWarp">
+                <a href="/pet-list/pet">
+                  <MdAddBox className="addicon" />
+                </a>
+              </div>
+            </Col>
           <Row className="Commentlistrow">
             <Col lg={24} md={24} sm={24} xs={24}>
               {(pets.type) == undefined ?
@@ -127,7 +133,7 @@ function Comment(props) {
                     </Row>
                   );
                 })}
-              {/* <Row className="ListPetCard">
+               {/* <Row className="ListPetCard">
                 <Col lg={18} md={20} sm={22} xs={24}>
                   <Row type="flex" align="strat">
                     <Col
@@ -190,7 +196,7 @@ function Comment(props) {
                     />
                   </a>
                 </Col>
-              </Row> */}
+              </Row>  */}
             </Col>
 
             {/* <Col lg={24}
@@ -272,7 +278,7 @@ function Comment(props) {
                   </Row>
                 </Col>
               </Row>
-            </Col> */}
+            </Col>   */}
           </Row>
         </Col>
       </Row>

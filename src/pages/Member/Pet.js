@@ -1,5 +1,5 @@
 import images from "../../config/images";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ButtonComponent from "../../components/button/button";
 import {
   Select,
@@ -21,61 +21,56 @@ import "./Pet.less";
 function MemberPage() {
   const { RangePicker } = DatePicker;
 
-  const [posts,setPosts]=useState([])
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     // fetch_data()
 
     const csrftoken = {
-      url: 'http://127.0.0.1:8000/api/csrf_token',  // 只有此為必需
-      method: 'get', // 大小寫皆可
+      url: "http://127.0.0.1:8000/api/csrf_token", // 只有此為必需
+      method: "get", // 大小寫皆可
       headers: {
-        'Accept': 'text/html',
+        Accept: "text/html",
         // 'Content-Type': 'text/html; charset=utf-8',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRF-TOKEN": document.querySelector('meta[name="csrftoken"]'),
       },
-      responseType: 'json', // 伺服器回應的數據類型
-  
-    }
+      responseType: "json", // 伺服器回應的數據類型
+    };
     try {
-      axios(csrftoken)
-      .then(res =>{
-        console.log(res,"測試",res.data.csrftoken)
-      },[]);   
-    }
-    catch (error) {
+      axios(csrftoken).then((res) => {
+        console.log(res, "測試", res.data.csrftoken);
+      }, []);
+    } catch (error) {
       throw error;
       // Do  with error
     }
     const config = {
-      url: 'http://127.0.0.1:8000/api/pet-list/pet-filled/1',  // 只有此為必需
-      method: 'get', // 大小寫皆可
-      headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Headers':'*',
-        'X-Requested-With':'XMLHttpRequest',
-        'X-CSRF-TOKEN': document.querySelector('meta[name="csrftoken"]')
+      url: "http://127.0.0.1:8000/api/pet-list/pet-filled/1", // 只有此為必需
+      method: "get", // 大小寫皆可
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRF-TOKEN": document.querySelector('meta[name="csrftoken"]'),
       },
       // responseType: 'json', // 伺服器回應的數據類型
-    }
+    };
     try {
-      axios(config)
-      .then(res =>{
-        console.log(res.data.req)
-        setPosts(res.data.req)
-      },[]);   
-    }
-    catch (error) {
+      axios(config).then((res) => {
+        console.log(res.data.req);
+        setPosts(res.data.req);
+      }, []);
+    } catch (error) {
       throw error;
       // Do  with error
     }
-  },[]);
-  console.log('posts=>',posts,);
-  console.log('-------------------');
+  }, []);
+  console.log("posts=>", posts);
+  console.log("-------------------");
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -520,7 +515,10 @@ function MemberPage() {
   };
 
   const beforeUpload = (file) => {
-    const isJpgOrPng = file.type === "image/jpeg" || file.type === "image/png";
+    const isJpgOrPng =
+      file.type === "image/jpeg" ||
+      file.type === "image/png" ||
+      file.type === "image/jpg";
 
     if (!isJpgOrPng) {
       message.error("You can only upload JPG/PNG file!");
@@ -575,9 +573,6 @@ function MemberPage() {
   };
 
   return (
-
-
-    
     <Row type="flex" justify="center" align="middle">
       <Col
         xl={16}
@@ -626,7 +621,7 @@ function MemberPage() {
           autoComplete="off"
         >
           <Row span={24} type="flex" justify="space-between" align="middle">
-            <Col  lg={8} md={24} sm={24} xs={24}type="flex" justify="center">
+            <Col lg={8} md={24} sm={24} xs={24} type="flex" justify="center">
               <Upload
                 name="avatar"
                 listType="picture-card"
@@ -650,80 +645,80 @@ function MemberPage() {
               </Upload>
             </Col>
             <Col lg={14} md={24} sm={24} xs={24}>
-                <Row type="flex" align="middle">
-                  <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
-                    <Form.Item
-                      wrapperCol={{
-                        md: 16,
-                        sm: 18,
-                        xs: 2,
-                      }}
-                      label="姓名"
-                      name="username"
-                      rules={[
-                        {
-                          required: true,
-                          message: "請輸入姓名",
-                        },
-                      ]}
-                    >
-                      <Input />
-                    </Form.Item>
-                  </Col>
-                  <Col lg={10} md={10} sm={8} xs={8}>
-                    <Form.Item
-                      label="性別"
-                      name="sex"
-                      rules={[
-                        {
-                          required: true,
-                        },
-                      ]}
-                    >
-                      <Radio.Group>
-                        <Radio value="公"> 公 </Radio>
-                        <Radio value="母"> 母 </Radio>
-                      </Radio.Group>
-                    </Form.Item>
-                  </Col>
-                </Row>
-
-                <Row type="flex" align="center">
+              <Row type="flex" align="middle">
                 <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
-                    <Form.Item
-                      wrapperCol={{
-                        md: 16,
-                        sm: 18,
-                        xs: 2,
-                      }}
-                      label="品種" name="variety" 
-                      rules={[
-                        {
-                          required: true,
-                          message: "請輸入姓名",
-                        },
-                      ]}
-                    >
-                      <Input />
-                    </Form.Item>
-                  </Col>
+                  <Form.Item
+                    wrapperCol={{
+                      md: 16,
+                      sm: 18,
+                      xs: 2,
+                    }}
+                    label="姓名"
+                    name="username"
+                    rules={[
+                      {
+                        required: true,
+                        message: "請輸入姓名",
+                      },
+                    ]}
+                  >
+                    <Input />
+                  </Form.Item>
+                </Col>
+                <Col lg={10} md={10} sm={8} xs={8}>
+                  <Form.Item
+                    label="性別"
+                    name="sex"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Radio.Group>
+                      <Radio value="公"> 公 </Radio>
+                      <Radio value="母"> 母 </Radio>
+                    </Radio.Group>
+                  </Form.Item>
+                </Col>
+              </Row>
 
-                  
-                  <Col lg={10} md={10} sm={8} xs={8}>
-                    <Form.Item
-                      label="年齡"
-                      name="old"
-                      rules={[
-                        {
-                          required: true,
-                        },
-                      ]}
-                    >
-                      <Input type="text" disabled="disabled" />
-                    </Form.Item>
-                  </Col>
-                </Row>
-              </Col>
+              <Row type="flex" align="center">
+                <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
+                  <Form.Item
+                    wrapperCol={{
+                      md: 16,
+                      sm: 18,
+                      xs: 2,
+                    }}
+                    label="品種"
+                    name="variety"
+                    rules={[
+                      {
+                        required: true,
+                        message: "請輸入姓名",
+                      },
+                    ]}
+                  >
+                    <Input />
+                  </Form.Item>
+                </Col>
+
+                <Col lg={10} md={10} sm={8} xs={8}>
+                  <Form.Item
+                    label="年齡"
+                    name="old"
+                    rules={[
+                      {
+                        required: true,
+                      },
+                    ]}
+                  >
+                    <Input type="text" disabled="disabled" />
+                  </Form.Item>
+                </Col>
+              </Row>
+            </Col>
           </Row>
           <Row>
             <Col span={8}>
@@ -775,7 +770,7 @@ function MemberPage() {
                 <DatePicker onChange={onChange} placeholder="選擇日期" />
               </Form.Item>
             </Col>
-           
+
             <Col span={8}>
               <Form.Item
                 wrapperCol={{
@@ -795,9 +790,9 @@ function MemberPage() {
                 labelCol={{
                   span: 24,
                 }}
-                  wrapperCol={{
-                    span: 24,
-                  }}
+                wrapperCol={{
+                  span: 24,
+                }}
                 label="個性(介紹一下毛孩吧)"
               >
                 <TextArea rows={4} />
@@ -810,9 +805,9 @@ function MemberPage() {
                 labelCol={{
                   span: 24,
                 }}
-                  wrapperCol={{
-                    span: 24,
-                  }}
+                wrapperCol={{
+                  span: 24,
+                }}
                 label="提醒"
               >
                 <TextArea rows={4} />
@@ -889,9 +884,17 @@ function MemberPage() {
             </Col>
           </Row>
 
-          <Row span={24} className="buttonWarp" type="flex" justify="space-between" align="middle">
+          <Row
+            span={24}
+            className="buttonWarp"
+            type="flex"
+            justify="space-between"
+            align="middle"
+          >
             <Col span={11}>
-              <ButtonComponent text="取消" size="large" name="FormCancel " />
+              <a href="/petlist">
+                <ButtonComponent text="取消" size="large" name="FormCancel " />
+              </a>
             </Col>
             <Col span={11}>
               <ButtonComponent text="儲存" size="large" name="FormSave" />
