@@ -43,7 +43,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.jm} />
+                          <img className="listPetJmimg" src={images.ex10} />
                         </Col>
                         <Col
                           xxl={18}
@@ -56,30 +56,28 @@ function Comment() {
                         >
                           <Row align="middle">
                             <Col>
-                              <p className="PetCardName">吉米</p>
+                              <p className="PetCardName">Cecilia</p>
                             </Col>
                             <Col>
-                              <div className="PetCardLabel2">共養寵物</div>
+                              <div className="PetCardLabel3">飼主體驗</div>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
                                 <span className="PetCardText">
-                                  品種：傑克羅素耿
+                                  品種：布偶貓
                                 </span>
-                                <span className="PetCardText">性別：男</span>
-                                <span className="PetCardText">年齡：5</span>
+                                <span className="PetCardText">性別：女</span>
+                                <span className="PetCardText">年齡：2</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022/06/12-2022/06/30
+                                  體驗日期：2022-12-12 ～ 2022-12-16
                                 </span>
                               </Row>
                             </Col>
                           </Row>
                         </Col>
-
-                        
                       </Row>
                     </Col>
 
@@ -98,12 +96,11 @@ function Comment() {
                               text="取消請求"
                               size="large"
                               name="cancel-request"
-                              
                             />
                           
                         </Col>
                         <Col className="ListButton">
-                          <a href="sent-request/share-pet-detail">
+                          <a href="/sent-request/ex-pet-detaii">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"
@@ -114,8 +111,6 @@ function Comment() {
                       </Row>
                     </Col>
                   </Row>
-
-
                   <Row className="ListPetCard" justify="center" align="end">
                     <Col xl={19} lg={19} md={24} sm={24} xs={24}>
                       <Row type="flex" align="strat">
@@ -128,7 +123,7 @@ function Comment() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.jm} />
+                          <img className="listPetJmimg" src={images.google} />
                         </Col>
                         <Col
                           xxl={18}
@@ -141,30 +136,26 @@ function Comment() {
                         >
                           <Row align="middle">
                             <Col>
-                              <p className="PetCardName">吉米</p>
+                              <p className="PetCardName">Google</p>
                             </Col>
                             <Col>
-                              <div className="PetCardLabel3">飼主體驗</div>
+                              <div className="PetCardLabel2">共養寵物</div>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
-                                <span className="PetCardText">
-                                  品種：傑克羅素耿
-                                </span>
-                                <span className="PetCardText">性別：男</span>
-                                <span className="PetCardText">年齡：5</span>
+                                <span className="PetCardText">品種：法鬥</span>
+                                <span className="PetCardText">性別：女</span>
+                                <span className="PetCardText">年齡：8</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022/06/12-2022/06/30
+                                  飼養日期：2015/06/12～
                                 </span>
                               </Row>
                             </Col>
                           </Row>
                         </Col>
-
-                        
                       </Row>
                     </Col>
 
@@ -178,16 +169,14 @@ function Comment() {
                     >
                       <Row align="end" className="ButtonWarp">
                         <Col className="ListButton">
-                          <a href="">
-                            <ButtonDelete
-                              text="取消請求"
-                              size="large"
-                              name="cancel-request"
-                            />
-                          </a>
+                          <ButtonDelete
+                            text="取消請求"
+                            size="large"
+                            name="cancel-request"
+                          />
                         </Col>
                         <Col className="ListButton">
-                          <a href="sent-request/ex-pet-detail">
+                          <a href="sent-request/share-pet-detaii">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"

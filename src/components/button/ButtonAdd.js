@@ -1,11 +1,13 @@
 
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import { Button, Modal, Space } from 'antd';
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 
 function ButtonAdd(props) {
   const { text, size, name, handleSubmit, htmlType } = props;
   const { confirm } = Modal;
+  const navigate = useNavigate();
 
   const showConfirm = () => {
     confirm({
@@ -13,10 +15,10 @@ function ButtonAdd(props) {
       icon: <ExclamationCircleOutlined />,
       content: '可以先查看詳細呦~',
       onOk() {
-        console.log('OK');
+        navigate('/');
       },
       onCancel() {
-        console.log('Cancel');
+        navigate('/sent-request');
       },
     });
   };

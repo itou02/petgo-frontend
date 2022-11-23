@@ -54,7 +54,7 @@ function ExperienceListPage() {
                           xs={10}
                           className="listPetJmimgWarp"
                         >
-                          <img className="listPetJmimg" src={images.jm} />
+                          <img className="listPetJmimg" src={images.ex24} />
                         </Col>
                         <Col
                           xxl={18}
@@ -67,20 +67,20 @@ function ExperienceListPage() {
                         >
                           <Row>
                             <Col>
-                              <p className="PetCardName">吉米</p>
+                              <p className="PetCardName">豆豆</p>
                             </Col>
                           </Row>
                           <Row type="flex" align="bottom">
                             <Col xl={24} lg={24} md={24} sm={22} xs={22}>
                               <Row align="middle">
                                 <span className="PetCardText">
-                                  品種：傑克羅素耿
+                                  品種：吉娃娃
                                 </span>
                                 <span className="PetCardText">性別：男</span>
-                                <span className="PetCardText">年齡：5</span>
+                                <span className="PetCardText">年齡：3</span>
 
                                 <span className="PetCardText">
-                                  體驗日期：2022/06/12-2022/06/30
+                                  飼養期間：2019-12-14 ～ 
                                 </span>
                               </Row>
                             </Col>

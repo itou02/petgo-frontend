@@ -18,13 +18,15 @@ import ExPet from "./Experience/exPet";
 import ExPetLogin from "./Experience/exPet";
 import ExPetCheck from "./Experience/exPetCheckPet";
 import RequestExPetCheck from "./Experience/exPetCheckPet";
+import RequestExPetCheck1 from "./Experience/exPetCheckPet1";
+
 import ownerExPetCheck from "./Experience/exPetCheckPet";
 
 import Adoption from "./Adoption/adoptionAlready";
 import AdoptionLogin from "./Adoption/adoptionAlready";
 
 import AdoptionCheck from "./Adoption/adoptionCheckPet";
-import RequestAdoptionCheck from "./Adoption/adoptionCheckPet";
+import RequestAdoptionCheck1 from "./Adoption/adoptionCheckPet1";
 import AdoptionNone from "./Adoption/adoptionNotYet";
 import AdoptionNoneLogin from "./Adoption/adoptionNotYet";
 
@@ -62,6 +64,9 @@ import Comment from "./Comment/index.js";
 import Petlist from "./Petlist/index.js";
 import Norequest from "./sendrequest/norequest.js";
 import Sentrequest from "./sendrequest/sendrequest.js";
+import Sentrequest1 from "./sendrequest/sendrequestD.js";
+import Sentrequest2 from "./sendrequest/sendrequestC.js";
+
 import Receiverequest from "./Getrequest/getrequest";
 import Noreceiverequest from "./Getrequest/norequest";
 
@@ -86,6 +91,9 @@ function Router() {
 
           <Route path="nosent-request" element={<Norequest />} />
           <Route path="sent-request" element={<Sentrequest />} />
+          <Route path="sert-request" element={<Sentrequest1 />} />
+          <Route path="sent-nequest" element={<Sentrequest2 />} />
+
           <Route path="receive-request" element={<Receiverequest />} />
           <Route path="noreceive-request" element={<Noreceiverequest />} />
           <Route path="norequest" element={<Norequest />} />
@@ -179,6 +187,10 @@ function Router() {
             path="sent-request/ex-pet-detail"
             element={<RequestExPetCheck />}
           />
+           <Route
+            path="sent-request/ex-pet-detaii"
+            element={<RequestExPetCheck1 />}
+          />
           <Route path="owner/ex-pet-detail" element={<ownerExPetCheck />} />
 
           {/* 已有共養人 */}
@@ -189,8 +201,8 @@ function Router() {
             element={<AdoptionCheck />}
           />
           <Route
-            path="sent-request/share-pet-detail"
-            element={<RequestAdoptionCheck />}
+            path="sent-request/share-pet-detaii"
+            element={<RequestAdoptionCheck1 />}
           />
 
           {/* 未有共養人 */}

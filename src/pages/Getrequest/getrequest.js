@@ -105,7 +105,7 @@ function Comment() {
                           
                         </Col>
                         <Col className="ListButton">
-                          <a href="/Record/Experience/detailed">
+                          <a href="/receive-request/member-detail">
                             <ButtonComponent
                               text="查看詳細"
                               size="large"
