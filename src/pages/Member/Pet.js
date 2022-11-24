@@ -1,5 +1,6 @@
 import images from "../../config/images";
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ButtonComponent from "../../components/button/button";
 import {
   Select,
@@ -18,10 +19,11 @@ import { LoadingOutlined, PlusOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./Pet.less";
 
-function MemberPage() {
+function PetDetail() {
   const { RangePicker } = DatePicker;
+  let { id } = useParams();
 
-  const [posts, setPosts] = useState([]);
+  const [pets, setPets] = useState([]);
   useEffect(() => {
     // fetch_data()
 
@@ -47,8 +49,9 @@ function MemberPage() {
       throw error;
       // Do  with error
     }
+    const token = localStorage.getItem("token");
     const config = {
-      url: "http://127.0.0.1:8000/api/pet-list/pet-filled/1", // 只有此為必需
+      url: "http://127.0.0.1:8000/api/pet-list/pet-filled/" + id, // 只有此為必需
       method: "get", // 大小寫皆可
       headers: {
         "Content-Type": "application/json",
@@ -56,20 +59,21 @@ function MemberPage() {
         "Access-Control-Allow-Headers": "*",
         "X-Requested-With": "XMLHttpRequest",
         "X-CSRF-TOKEN": document.querySelector('meta[name="csrftoken"]'),
+        userToken: `${token}`,
       },
       // responseType: 'json', // 伺服器回應的數據類型
     };
     try {
       axios(config).then((res) => {
         console.log(res.data.req);
-        setPosts(res.data.req);
+        setPets(res.data.req);
       }, []);
     } catch (error) {
       throw error;
       // Do  with error
     }
   }, []);
-  console.log("posts=>", posts);
+  console.log("pets=>", pets);
   console.log("-------------------");
 
   const onFinish = (values) => {
@@ -571,7 +575,7 @@ function MemberPage() {
   const onSearch = (value) => {
     console.log("search:", value);
   };
-
+  const baseURL = "http://127.0.0.1:8000/";
   return (
     <Row type="flex" justify="center" align="middle">
       <Col
@@ -611,299 +615,317 @@ function MemberPage() {
         justify="center"
         align="center"
       >
-        <Form
-          name="basic"
-          initialValues={{
-            remember: true,
-          }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-        >
-          <Row span={24} type="flex" justify="space-between" align="middle">
-            <Col lg={8} md={24} sm={24} xs={24} type="flex" justify="center">
-              <Upload
-                name="avatar"
-                listType="picture-card"
-                className="avatar-uploader"
-                showUploadList={false}
-                action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
-                beforeUpload={beforeUpload}
-                onChange={handleChange}
-              >
-                {imageUrl ? (
-                  <img
-                    src={imageUrl}
-                    alt="avatar"
-                    style={{
-                      width: "100%",
-                    }}
-                  />
-                ) : (
-                  uploadButton
-                )}
-              </Upload>
-            </Col>
-            <Col lg={14} md={24} sm={24} xs={24}>
-              <Row type="flex" align="middle">
-                <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
+        {pets.map((pet, index) => {
+          return (
+            <Form
+              name="basic"
+              initialValues={{
+                remember: true,
+              }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+              key={index}
+            >
+              <Row span={24} type="flex" justify="space-between" align="middle">
+                <Col
+                  lg={7}
+                  md={24}
+                  sm={24}
+                  xs={24}
+                  type="flex"
+                  justify="center"
+                >
+                  <img className="Petimg" src={baseURL + pet.img} />
+                </Col>
+                <Col lg={16} md={24} sm={24} xs={24}>
+                  <Row type="flex" align="middle">
+                    <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
+                      <Form.Item
+                        wrapperCol={{
+                          md: 16,
+                          sm: 18,
+                          xs: 2,
+                        }}
+                        label="名字"
+                        name="username"
+                        rules={[
+                          {
+                            required: true,
+                            message: "請輸入名字",
+                          },
+                        ]}
+                      >
+                        <Input defaultValue={pet.name} />
+                      </Form.Item>
+                    </Col>
+                    <Col lg={10} md={10} sm={8} xs={8}>
+                      <Form.Item
+                        label="性別"
+                        name="sex"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <Radio.Group defaultValue={pet.sex}>
+                          <Radio value="男"> 男 </Radio>
+                          <Radio value="女"> 女 </Radio>
+                        </Radio.Group>
+                      </Form.Item>
+                    </Col>
+                  </Row>
+
+                  <Row type="flex" align="center">
+                    <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
+                      <Form.Item
+                        wrapperCol={{
+                          md: 16,
+                          sm: 18,
+                          xs: 2,
+                        }}
+                        label="品種"
+                        name="variety"
+                        rules={[
+                          {
+                            required: true,
+                            message: "請輸入品種",
+                          },
+                        ]}
+                      >
+                        <Input defaultValue={pet.variety} />
+                      </Form.Item>
+                    </Col>
+
+                    <Col lg={10} md={10} sm={8} xs={8}>
+                      <Form.Item
+                        label="年齡"
+                        name="age"
+                        rules={[
+                          {
+                            required: true,
+                          },
+                        ]}
+                      >
+                        <Input
+                          type="text"
+                          // disabled="disabled"
+                          defaultValue={pet.age}
+                        />
+                      </Form.Item>
+                    </Col>
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={8}>
                   <Form.Item
                     wrapperCol={{
-                      md: 16,
-                      sm: 18,
-                      xs: 2,
+                      span: 16,
                     }}
-                    label="姓名"
-                    name="username"
+                    label="體型"
+                    name="size"
                     rules={[
                       {
                         required: true,
-                        message: "請輸入姓名",
+                        message: "Please input your username!",
                       },
                     ]}
                   >
-                    <Input />
+                    <Select
+                      showSearch
+                      placeholder="請選擇體型"
+                      optionFilterProp="children"
+                      onChange={onChange}
+                      onSearch={onSearch}
+                      filterOption={(input, option) =>
+                        option.children
+                          .toLowerCase()
+                          .includes(input.toLowerCase())
+                      }
+                      defaultValue={pet.size}
+                    >
+                      <Option value="超小型">超小型</Option>
+                      <Option value="小型">小型</Option>
+                      <Option value="中型">中型</Option>
+                      <Option value="大型">大型</Option>
+                      <Option value="中型">超大型</Option>
+                    </Select>
                   </Form.Item>
                 </Col>
-                <Col lg={10} md={10} sm={8} xs={8}>
+                <Col span={8}>
                   <Form.Item
-                    label="性別"
-                    name="sex"
+                    wrapperCol={{
+                      span: 13,
+                    }}
+                    label="開始飼養"
+                    name="start_rearing"
                     rules={[
                       {
                         required: true,
+                        message: "Please input your username!",
                       },
                     ]}
                   >
-                    <Radio.Group>
-                      <Radio value="公"> 公 </Radio>
-                      <Radio value="母"> 母 </Radio>
+                    <Input
+                      type="text"
+                      placeholder="yyyy-mm"
+                      defaultValue={pet.start_date}
+                    />
+                  </Form.Item>
+                </Col>
+
+                <Col span={8}>
+                  <Form.Item
+                    wrapperCol={{
+                      span: 24,
+                    }}
+                    label="結束飼養"
+                    name="end_rearing"
+                  >
+                    <Input
+                      type="text"
+                      placeholder="yyyy-mm"
+                      defaultValue={pet.end_date}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col span={24}>
+                  <Form.Item
+                    labelCol={{
+                      span: 24,
+                    }}
+                    wrapperCol={{
+                      span: 24,
+                    }}
+                    label="個性(介紹一下毛孩吧)"
+                  >
+                    <TextArea rows={4} defaultValue={pet.intro} />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row>
+                <Col span={24}>
+                  <Form.Item
+                    labelCol={{
+                      span: 24,
+                    }}
+                    wrapperCol={{
+                      span: 24,
+                    }}
+                    label="提醒"
+                  >
+                    <TextArea rows={4} defaultValue={pet.remind} />
+                  </Form.Item>
+                </Col>
+              </Row>
+              <Row type="flex" justify="space-between" align="bottom">
+                <Col span={10}>
+                  <Form.Item
+                    wrapperCol={{
+                      span: 21,
+                    }}
+                    label="常去的醫院診所"
+                  >
+                    <Input placeholder="醫院名字" defaultValue={pet.hospital} />
+                  </Form.Item>
+                </Col>
+                <Col span={14}>
+                  <Form.Item
+                    wrapperCol={{
+                      span: 24,
+                    }}
+                  >
+                    <Input
+                      placeholder="醫院地址"
+                      defaultValue={pet.hospital_address}
+                    />
+                  </Form.Item>
+                </Col>
+              </Row>
+
+              <Row type="flex" align="bottom">
+                <Col span={7}>
+                  <Form.Item
+                    wrapperCol={{
+                      span: 24,
+                    }}
+                    label="絕育狀況"
+                    name="sterilization"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please pick an item!",
+                      },
+                    ]}
+                  >
+                    <Radio.Group defaultValue={pet.ligation}>
+                      <Radio value="是"> 是 </Radio>
+                      <Radio value="否"> 否</Radio>
                     </Radio.Group>
                   </Form.Item>
                 </Col>
-              </Row>
-
-              <Row type="flex" align="center">
-                <Col lg={14} md={14} sm={16} xs={16} className="inputWarp">
+                <Col span={8}>
                   <Form.Item
                     wrapperCol={{
-                      md: 16,
-                      sm: 18,
-                      xs: 2,
+                      span: 21,
                     }}
-                    label="品種"
-                    name="variety"
+                    label="緊急聯絡人"
                     rules={[
                       {
                         required: true,
-                        message: "請輸入姓名",
+                        message: "Please input your username!",
                       },
                     ]}
                   >
-                    <Input />
+                    <Input
+                      placeholder="不能為飼主本人名字"
+                      defaultValue={pet.contact_person}
+                    />
                   </Form.Item>
                 </Col>
-
-                <Col lg={10} md={10} sm={8} xs={8}>
+                <Col span={9}>
                   <Form.Item
-                    label="年齡"
-                    name="old"
-                    rules={[
-                      {
-                        required: true,
-                      },
-                    ]}
+                    wrapperCol={{
+                      span: 24,
+                    }}
                   >
-                    <Input type="text" disabled="disabled" />
+                    <Input
+                      placeholder="連絡電話"
+                      defaultValue={pet.contact_phone}
+                    />
                   </Form.Item>
                 </Col>
               </Row>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={8}>
-              <Form.Item
-                wrapperCol={{
-                  span: 16,
-                }}
-                label="體型"
-                name="bodytype"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your username!",
-                  },
-                ]}
-              >
-                <Select
-                  showSearch
-                  placeholder="請選擇體型"
-                  optionFilterProp="children"
-                  onChange={onChange}
-                  onSearch={onSearch}
-                  filterOption={(input, option) =>
-                    option.children.toLowerCase().includes(input.toLowerCase())
-                  }
-                >
-                  <Option value="超小型">超小型</Option>
-                  <Option value="小型">小型</Option>
-                  <Option value="中型">中型</Option>
-                  <Option value="大型">大型</Option>
-                  <Option value="中型">超大型</Option>
-                </Select>
-              </Form.Item>
-            </Col>
-            <Col span={8}>
-              <Form.Item
-                wrapperCol={{
-                  span: 13,
-                }}
-                label="開始飼養"
-                name="start_rearing"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your username!",
-                  },
-                ]}
-              >
-                <DatePicker onChange={onChange} placeholder="選擇日期" />
-              </Form.Item>
-            </Col>
 
-            <Col span={8}>
-              <Form.Item
-                wrapperCol={{
-                  span: 24,
-                }}
-                label="結束飼養"
-                name="end_rearing"
+              <Row
+                span={24}
+                className="buttonWarp"
+                type="flex"
+                justify="space-between"
+                align="middle"
               >
-                <DatePicker onChange={onChange} placeholder="選擇日期" />
-              </Form.Item>
-            </Col>
-          </Row>
-
-          <Row>
-            <Col span={24}>
-              <Form.Item
-                labelCol={{
-                  span: 24,
-                }}
-                wrapperCol={{
-                  span: 24,
-                }}
-                label="個性(介紹一下毛孩吧)"
-              >
-                <TextArea rows={4} />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row>
-            <Col span={24}>
-              <Form.Item
-                labelCol={{
-                  span: 24,
-                }}
-                wrapperCol={{
-                  span: 24,
-                }}
-                label="提醒"
-              >
-                <TextArea rows={4} />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row type="flex" justify="space-between" align="bottom">
-            <Col span={10}>
-              <Form.Item
-                wrapperCol={{
-                  span: 21,
-                }}
-                label="常去的醫院診所"
-              >
-                <Input placeholder="醫院名字" />
-              </Form.Item>
-            </Col>
-            <Col span={14}>
-              <Form.Item
-                wrapperCol={{
-                  span: 24,
-                }}
-              >
-                <Input placeholder="醫院地址" />
-              </Form.Item>
-            </Col>
-          </Row>
-
-          <Row type="flex" align="bottom">
-            <Col span={7}>
-              <Form.Item
-                wrapperCol={{
-                  span: 24,
-                }}
-                label="絕育狀況"
-                name="sterilization"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please pick an item!",
-                  },
-                ]}
-              >
-                <Radio.Group>
-                  <Radio value="apple"> 是 </Radio>
-                  <Radio value="pear"> 否</Radio>
-                </Radio.Group>
-              </Form.Item>
-            </Col>
-            <Col span={8}>
-              <Form.Item
-                wrapperCol={{
-                  span: 21,
-                }}
-                label="緊急聯絡人"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please input your username!",
-                  },
-                ]}
-              >
-                <Input placeholder="不能為飼主本人名字" />
-              </Form.Item>
-            </Col>
-            <Col span={9}>
-              <Form.Item
-                wrapperCol={{
-                  span: 24,
-                }}
-              >
-                <Input placeholder="連絡電話" />
-              </Form.Item>
-            </Col>
-          </Row>
-
-          <Row
-            span={24}
-            className="buttonWarp"
-            type="flex"
-            justify="space-between"
-            align="middle"
-          >
-            <Col span={11}>
-              <a href="/petlist">
-                <ButtonComponent text="取消" size="large" name="FormCancel " />
-              </a>
-            </Col>
-            <Col span={11}>
-              <ButtonComponent text="儲存" size="large" name="FormSave" />
-            </Col>
-          </Row>
-        </Form>
+                <Col span={11}>
+                  <ButtonComponent
+                    text="取消"
+                    size="large"
+                    name="FormCancel "
+                  />
+                </Col>
+                <Col span={11}>
+                  <ButtonComponent text="儲存" size="large" name="FormSave" />
+                </Col>
+              </Row>
+            </Form>
+          );
+        })}
       </Col>
     </Row>
   );
 }
 
-export default MemberPage;
+export default PetDetail;

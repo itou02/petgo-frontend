@@ -9,7 +9,7 @@ import CardComponent2 from "../../components/card/cardEX";
 
 import React, { useEffect, useState } from "react";
 import _ from "lodash";
-import axios from 'axios';
+import axios from "axios";
 const { Meta } = Card;
 
 /*體驗者專區-首頁-有狗狗*/
@@ -436,9 +436,8 @@ function ExPet() {
     連江縣: ["南竿鄉", "北竿鄉", "莒光鄉", "東引鄉"],
   };
 
+  const baseURL = "http://127.0.0.1:8000/";
 
-  const baseURL='http://127.0.0.1:8000/';
-  
   const [cities, setCities] = useState(cityData[provinceData[0]]);
   const [secondCity, setSecondCity] = useState(cityData[provinceData[0]][0]);
 
@@ -451,43 +450,41 @@ function ExPet() {
     setSecondCity(value);
   };
 
-  const [exs, setExs] = useState([])
-  const [varieties, setVarieties] = useState([])
+  const [exs, setExs] = useState([]);
+  const [varieties, setVarieties] = useState([]);
   React.useEffect(() => {
     // fetch_data()
 
     const config = {
-      url: 'http://127.0.0.1:8000/api/experience/experiencer-illustrate/card',  // 只有此為必需
-      method: 'get', // 大小寫皆可
+      url: "http://127.0.0.1:8000/api/experience/experiencer-illustrate/card", // 只有此為必需
+      method: "get", // 大小寫皆可
       headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Headers': '*',
-        'X-Requested-With': 'XMLHttpRequest',
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
+        "X-Requested-With": "XMLHttpRequest",
       },
-      responseType: 'json', // 伺服器回應的數據類型
-    }
+      responseType: "json", // 伺服器回應的數據類型
+    };
 
     try {
-      axios(config)
-        .then(res => {
-          console.log(res.data.experiences)
-          setExs(res.data.experiences)
-          console.log(res.data.varieties)
-          setVarieties(res.data.varieties)
-        }, []);
-    }
-    catch (error) {
+      axios(config).then((res) => {
+        console.log(res.data.experiences);
+        setExs(res.data.experiences);
+        console.log(res.data.varieties);
+        setVarieties(res.data.varieties);
+      }, []);
+    } catch (error) {
       throw error;
       // Do  with error
     }
   }, []);
   // console.log('posts=>', posts);
   // console.log('post=>', post);
-  
+
   return (
     <div id="ExPet">
-        <Row className="exFilter">
+      <Row className="exFilter">
         <Col md={24}>
           <Row align="middle">
             <Col xl={24} lg={24} md={24} sm={24} xs={24}>
@@ -545,14 +542,14 @@ function ExPet() {
                 sm={12}
                 xs={12}
               >
-                <Form.Item label="品種" name="variety" colon={false}  >
+                <Form.Item label="品種" name="variety" colon={false}>
                   <Select
                     showSearch
                     className="varietyWarp"
                     value="品種"
                     placeholder="品種"
                   >
-                    {varieties.map((variety,index) => (
+                    {varieties.map((variety, index) => (
                       <Option key={index}>{variety.variety}</Option>
                     ))}
                   </Select>
@@ -577,17 +574,23 @@ function ExPet() {
               </Col>
             </Row>
           </Form>
-
-        
         </Col>
       </Row>
       <Row justify="start">
-        {exs.map((ex,index)=>{
-          return(
-            <Col xl={6} lg={8} md={12} sm={12} xs={24} className="exCards" key={index}>
+        {exs.map((ex, index) => {
+          return (
+            <Col
+              xl={6}
+              lg={8}
+              md={12}
+              sm={12}
+              xs={24}
+              className="exCards"
+              key={index}
+            >
               <CardComponent2
                 name="card .ant-card-body"
-                img={<img alt="pet" src={baseURL+ex.img} />}
+                img={<img alt="pet" src={baseURL + ex.img} />}
                 // img={<img alt="pet" src={images.expet}}
                 title={<h1>{ex.name}</h1>}
                 icon={
@@ -603,11 +606,18 @@ function ExPet() {
                     <h4>體型：{ex.size}</h4>
                     <h4>性別：{ex.sex}</h4>
                     <h4>體驗日期:</h4>
-                    <h4>{ex.start_date} ～ {ex.end_date}</h4>
+                    <h4>
+                      {ex.start_date} ～ {ex.end_date}
+                    </h4>
                   </div>
                 }
                 btn={
-                  <a href={"/experience/experiencer-illustrate/card/ex-pet-detail/"+ex.id}>
+                  <a
+                    href={
+                      "/experience/experiencer-illustrate/card/ex-pet-detail/" +
+                      ex.id
+                    }
+                  >
                     <ButtonComponent
                       text="查看"
                       name="exPetCheckBtn"
@@ -619,7 +629,6 @@ function ExPet() {
             </Col>
           );
         })}
-        
       </Row>
     </div>
   );

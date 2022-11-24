@@ -129,7 +129,8 @@ function SearchRequestFormPage() {
                           span: 22,
                         }}
                       >
-                        <Input placeholder="輸入ID" defaultValue="a52195219a" />
+                        <Input placeholder="輸入ID" />
+                        {/* defaultValue="a52195219a" */}
                       </Form.Item>
                     </div>
                   </Col>

@@ -1,4 +1,4 @@
-@import url('../../assets/style/theme.less');
+@import url("../../assets/style/theme.less");
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
@@ -6,7 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Microsoft JhengHei', 'Arial';
+    font-family: "Microsoft JhengHei", "Arial";
     // font-weight: 500;
 }
 
@@ -90,11 +90,13 @@
             .petIntro {
                 .trimIntroTitle {
                     margin-top: 1%;
+
                     h3 {
                         font-weight: 900 !important;
                         color: @dark-main-color;
                     }
                 }
+
                 .trimIntroItem {
                     margin: 2% 2% 6% 2%;
                 }
@@ -105,37 +107,36 @@
                 flex-direction: column;
                 align-self: flex-end;
                 margin: 1%;
+
                 .petBtnTrim {
                     margin-top: 5%;
                 }
             }
         }
-
     }
 
-    @media screen and (max-width:992px) {
+    @media screen and (max-width: 992px) {
         .addExPetWarp {
             position: absolute;
             left: 80%;
         }
     }
 
-    @media screen and (max-width:768px) {
+    @media screen and (max-width: 768px) {
         .addExPetWarp {
             position: absolute;
             left: 78%;
         }
     }
 
-    @media screen and (max-width:576px) {
+    @media screen and (max-width: 576px) {
         .addExPetWarp {
             position: absolute;
             left: 75%;
         }
     }
 
-    @media screen and (max-width:990px) {
-
+    @media screen and (max-width: 990px) {
         .ListButtonWarp {
             margin-top: 0;
         }
@@ -152,21 +153,15 @@
         }
     }
 
-    .ListWarp{
+    .NoPetList {
+        height: 600px;
         background-color: white;
-    
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h1 {
+            font-size: 48px;
+        }
     }
-.ListWarpno{
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 500px;
-
-    h1{
-        font-size: 48px;
-    }
-}
-
-
 }

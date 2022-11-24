@@ -4,8 +4,6 @@ import images from "../../config/images";
 import React from "react";
 import { Col, message, Row, Tag, Steps } from "antd";
 
-
-
 import "./Experience.less";
 
 function ExperienceHomePage() {
@@ -19,7 +17,7 @@ function ExperienceHomePage() {
       <div className="under">
         <div className="ExHomeTxt1">選擇進入身份</div>
         <Row className="block" type="flex" justify="center" align="middle">
-          <Col className="block1"  xl={10} lg={12} md={12} sm={24} xs={24}>
+          <Col className="block1" xl={10} lg={12} md={12} sm={24} xs={24}>
             <a className="wrap" href="/experience/experiencer-illustrate">
               <img className="ExHomeimg" src={images.ExHome1} />
               <div className="blockTitle">體驗者專區</div>
@@ -29,7 +27,7 @@ function ExperienceHomePage() {
             </a>
           </Col>
 
-          <Col className="block1"  xl={10} lg={12} md={12} sm={24} xs={24}>
+          <Col className="block1" xl={10} lg={12} md={12} sm={24} xs={24}>
             <a className="wrap" href="/experience/owner-illustrate">
               <img className="ExHomeimg" src={images.ExHome2} />
               <div className="blockTitle">飼主專區</div>

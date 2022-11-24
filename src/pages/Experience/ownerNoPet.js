@@ -81,7 +81,7 @@ function OwnerNoPet() {
                                     md={20}
                                     sm={20}
                                     xs={22}
-                                    className="ListWarpno"
+                                    className="NoPetList"
                                 >
                                     <h1>尚未新增寵物</h1>
                                 </Col>

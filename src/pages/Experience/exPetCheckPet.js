@@ -248,10 +248,6 @@ function ExPetCheckPet() {
                     // handleSubmit={info}
                   />
                 </a>
-                
-                
-               
-                
             </Row>
         </div>
     );

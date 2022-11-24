@@ -212,7 +212,8 @@ function EXFormPage() {
                           span: 22,
                         }}
                       >
-                        <Input placeholder="輸入ID" defaultValue="a52195219a" />
+                        <Input placeholder="輸入ID" />
+                        {/* defaultValue="a52195219a" */}
                       </Form.Item>
                     </div>
                   </Col>
@@ -660,17 +661,15 @@ function EXFormPage() {
 
                   <Col span={24}>
                     <hr className="formHr"></hr>
-                    <p className="formsubtitle">申請要共養人的原因</p>
+                    <p className="formsubtitle">想體驗的原因</p>
                   </Col>
                   <Col span={22}>
                     <Form.Item
                       name="ReasonApplication"
                       className="formContentTextArea"
                     >
-                      <TextArea
-                        rows={3}
-                        defaultValue="沒有養過寵物很想要體驗看看"
-                      />
+                      <TextArea rows={3} />
+                      {/* defaultValue="沒有養過寵物很想要體驗看看" */}
                     </Form.Item>
                   </Col>
                 </Row>

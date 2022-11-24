@@ -41,6 +41,8 @@ import OIllustrate from "./Experience/ownerIllustrate";
 import ExIllustrate from "./Experience/exIllustrate";
 import Member from "./Member/Member";
 import Pet from "./Member/Pet";
+import PetAdd from "./Member/petAdd";
+
 import RearingPet from "./Member/Rearing-pet";
 import ResetPassword from "./Member/resetPassword";
 
@@ -87,7 +89,8 @@ function Router() {
           <Route path="forget" element={<Forget />} />
           <Route path="forget/revise" element={<Revise />} />
           <Route path="comment" element={<Comment />} />
-          <Route path="petlist" element={<Petlist />} />
+          <Route path="pet-list" element={<Petlist />} />
+          <Route path="pet-list/add" element={<PetAdd/>} />
 
           <Route path="nosent-request" element={<Norequest />} />
           <Route path="sent-request" element={<Sentrequest />} />
@@ -114,7 +117,7 @@ function Router() {
 
           {/* 會員資料 */}
           <Route path="member" element={<Member />} />
-          <Route path="pet-list/pet" element={<Pet />} />
+          <Route path="pet-list/pet/:id" element={<Pet />} />
           <Route path="rearing-pet" element={<RearingPet />} />
           <Route path="member/reset-password" element={<ResetPassword />} />
 

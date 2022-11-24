@@ -75,8 +75,8 @@ function HeaderComponent(props) {
         },
         {
           icon: <FaElementor />,
-          label: <a href="/petlist">寵物清單</a>,
-          key: "petlist",
+          label: <a href="/pet-list">寵物清單</a>,
+          key: "pet-list",
         },
         {
           icon:

@@ -129,7 +129,8 @@ function EXAddFormPage() {
                           span: 22,
                         }}
                       >
-                        <Input placeholder="輸入ID" defaultValue="a52195219a" />
+                        <Input placeholder="輸入ID" />
+                        {/* defaultValue="a52195219a" */}
                       </Form.Item>
                     </div>
                   </Col>
@@ -144,7 +145,7 @@ function EXAddFormPage() {
                       defaultValue="a"
                       buttonStyle="solid"
                     >
-                      <Radio.Button className="ListPetCardRadio" value="b">
+                      <Radio.Button className="ListPetCardRadio">
                         <Row
                           className="ListPetCardForm"
                           type="flex"
